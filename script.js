@@ -1176,6 +1176,10 @@ function setupExercisesButton() {
     document.getElementById('exercises-btn').addEventListener('click', () => {
         document.querySelectorAll('.top-circle').forEach(c => c.classList.remove('active'));
         document.getElementById('exercises-btn').classList.add('active');
+        currentEducation = null;
+        currentTheme = 'general';
+        document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+        document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
         showExercises();
     });
 }
