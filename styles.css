@@ -17,7 +17,7 @@ body {
 }
 @media screen and (orientation: portrait) {
     body {
-        background: linear-gradient(to bottom, #4a7c5d 0%, #4a7c5d 60px, #f0f1f1 60px, #e8f0ec 100%);
+        background: linear-gradient(to bottom, #5a7a68 0%, #5a7a68 60px, #f0f1f1 60px, #e8f0ec 100%);
     }
 }
 .container {
