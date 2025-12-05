@@ -229,16 +229,25 @@ h1 {
 
 .circle-text {
     font-family: 'Georgia', serif;
-    fill: white;
+    fill: #5a7a68;  /* ÆNDRET: Mørk grøn i stedet for white */
     font-size: 15px;
     text-anchor: middle;
     pointer-events: none;
     font-weight: 400;
+    transition: fill 0.3s ease;  /* TILFØJET: Smooth overgang */
+}
+
+.circle.active + text,
+.circle.active ~ text,
+.active .circle-text {
+    fill: white;  /* TILFØJET: Hvid når cirkel er aktiv */
+}
 }
 
 .center-text {
     font-size: 18px;
     font-weight: 500;
+    fill: white !important;  /* TILFØJET: Center altid hvid */
 }
 
 button.back-btn {
