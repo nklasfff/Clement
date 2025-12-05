@@ -47,14 +47,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
 
 .top-circle {
-    width: 110px;
-    height: 110px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #5a7a68;
     display: flex;
@@ -69,11 +69,14 @@ h1 {
 .top-circle span {
     font-family: 'Georgia', serif;
     color: white;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 500;
     text-align: center;
-    padding: 10px;
-    line-height: 1.3;
+    padding: 5px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .top-circle:hover {
@@ -400,12 +403,13 @@ button.back-btn:hover {
     }
     
     .top-circle {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
     
     .top-circle span {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
+        line-height: 1.1;
     }
     
     .svg-container {
