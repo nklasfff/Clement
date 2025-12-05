@@ -1558,23 +1558,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateCenterCircle() {
-    const centerTexts = document.querySelectorAll('.center-text');
-    const displayName = currentEducation ? educations[currentEducation].name : themes[currentTheme].name;
-    
-    if (displayName === "Nervesystemsregulering") {
-        centerTexts[0].textContent = "Nervesystem-";
-        centerTexts[1].textContent = "regulering";
-    } else {
-        const words = displayName.split(' ');
-        if (words.length === 1) {
-            centerTexts[0].textContent = displayName;
-            centerTexts[1].textContent = '';
-        } else {
-            const mid = Math.ceil(words.length / 2);
-            centerTexts[0].textContent = words.slice(0, mid).join(' ');
-            centerTexts[1].textContent = words.slice(mid).join(' ');
-        }
-    }
+    const centerTexts = document.querySelectorAll('.center-text');
+    const displayName = currentEducation ? educations[currentEducation].name : themes[currentTheme].name;
+    
+    // Specielle splittings for lange navne
+    if (displayName === "Nervesystemsterapeut") {
+        centerTexts[0].textContent = "Nervesystem-";
+        centerTexts[1].textContent = "sterapeut";
+    } else if (displayName === "Tilknytningsspeciale") {
+        centerTexts[0].textContent = "Tilknytnings-";
+        centerTexts[1].textContent = "speciale";
+    } else if (displayName === "Teacher Training") {
+        centerTexts[0].textContent = "Teacher";
+        centerTexts[1].textContent = "Training";
+    } else if (displayName === "Nervesystemsregulering") {
+        centerTexts[0].textContent = "Nervesystem-";
+        centerTexts[1].textContent = "regulering";
+    } else {
+        const words = displayName.split(' ');
+        if (words.length === 1) {
+            centerTexts[0].textContent = displayName;
+            centerTexts[1].textContent = '';
+        } else {
+            const mid = Math.ceil(words.length / 2);
+            centerTexts[0].textContent = words.slice(0, mid).join(' ');
+            centerTexts[1].textContent = words.slice(mid).join(' ');
+        }
+    }
 }
 
 function resetToWelcome() {
