@@ -53,8 +53,8 @@ h1 {
 }
 
 .top-circle {
-   width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #5a7a68;
     display: flex;
@@ -69,7 +69,7 @@ h1 {
 .top-circle span {
     font-family: 'Georgia', serif;
     color: white;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 500;
     text-align: center;
     padding: 5px;
@@ -98,7 +98,7 @@ h1 {
 .theme-dropdown {
     display: none;
     position: absolute;
-    top: 120px;
+    top: 70px;
     left: 50%;
     transform: translateX(-50%);
     background: white;
@@ -112,7 +112,7 @@ h1 {
     display: block;
 }
 
-.theme-option {
+.theme-option, .education-option {
     padding: 15px 20px;
     font-family: 'Georgia', serif;
     font-size: 1rem;
@@ -122,21 +122,21 @@ h1 {
     border-bottom: 1px solid #e8f0ec;
 }
 
-.theme-option:last-child {
+.theme-option:last-child, .education-option:last-child {
     border-bottom: none;
     border-radius: 0 0 12px 12px;
 }
 
-.theme-option:first-child {
+.theme-option:first-child, .education-option:first-child {
     border-radius: 12px 12px 0 0;
 }
 
-.theme-option:hover {
+.theme-option:hover, .education-option:hover {
     background: #f8faf9;
     color: #7B9E89;
 }
 
-.theme-option.active {
+.theme-option.active, .education-option.active {
     background: #7B9E89;
     color: white;
 }
@@ -399,16 +399,16 @@ button.back-btn:hover {
     }
     
     .top-circles {
-        gap: 15px;
+        gap: 10px;
     }
     
     .top-circle {
-        width: 70px;
-        height: 70px;
+        width: 55px;
+        height: 55px;
     }
     
     .top-circle span {
-        font-size: 0.58rem;
+        font-size: 0.65rem;
         line-height: 1.1;
     }
     
