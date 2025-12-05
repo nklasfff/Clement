@@ -1693,9 +1693,8 @@ function setupEducationSelector() {
             document.getElementById('education-label').innerHTML = label.replace(' ', '<br>');
             dropdown.classList.remove('show');
             
-            updateCenterCircle();
-            updateAllCircles();
-updateAllConnections();
+          updateCenterCircle();
+showCircleView('nervesystem');
         });
     });
 }
