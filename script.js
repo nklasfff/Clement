@@ -507,15 +507,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateCenterCircle() {
     const centerTexts = document.querySelectorAll('.center-text');
     const themeName = themes[currentTheme].name;
-    const words = themeName.split(' ');
     
-    if (words.length === 1) {
-        centerTexts[0].textContent = themeName;
-        centerTexts[1].textContent = '';
+    if (themeName === "Nervesystemsregulering") {
+        centerTexts[0].textContent = "Nervesystem-";
+        centerTexts[1].textContent = "regulering";
     } else {
-        const mid = Math.ceil(words.length / 2);
-        centerTexts[0].textContent = words.slice(0, mid).join(' ');
-        centerTexts[1].textContent = words.slice(mid).join(' ');
+        const words = themeName.split(' ');
+        if (words.length === 1) {
+            centerTexts[0].textContent = themeName;
+            centerTexts[1].textContent = '';
+        } else {
+            const mid = Math.ceil(words.length / 2);
+            centerTexts[0].textContent = words.slice(0, mid).join(' ');
+            centerTexts[1].textContent = words.slice(mid).join(' ');
+        }
     }
 }
 
