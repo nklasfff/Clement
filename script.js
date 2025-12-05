@@ -1689,7 +1689,9 @@ function setupEducationSelector() {
             e.stopPropagation();
             
             currentEducation = option.dataset.education;
-            currentTheme = 'general';
+currentMode = 'kursist';
+currentTheme = 'general';
+            
             
             document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
