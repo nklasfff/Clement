@@ -1523,6 +1523,11 @@ const educations = {
     }
   }
 };
+const educationNames = {
+    nervesystemsterapeut: 'Nervesystem-<br>sterapeut',
+    teachertraining: 'Teacher<br>Training',
+    tilknytningsspeciale: 'Tilknytnings-<br>speciale'
+};
 const themeNames = {
     general: 'Generelt',
     angst: 'Angst',
