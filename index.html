@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nervesystemsterapi">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#7B9E89">
+    <title>Nervesystemsterapi - Annemarie Clement</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nervesystemsterapi</h1>
+            <p class="subtitle">Forstå hvordan jeg arbejder med dit nervesystem</p>
+        </header>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="klient">Til klienter</button>
+            <button class="mode-btn" data-mode="fagfolk">Til fagfolk</button>
+            <button class="mode-btn" id="exercises-btn">Prøv øvelser</button>
+        </div>
+
+        <div class="main-content">
+            <div class="svg-container">
+                <svg id="nervesystem-model" width="700" height="700" viewBox="0 0 700 700">
+                    <g id="connections">
+                        <line class="connection" data-from="nervesystem" data-to="polyvagal" x1="350" y1="350" x2="350" y2="100"/>
+                        <line class="connection" data-from="nervesystem" data-to="tilknytning" x1="350" y1="350" x2="580" y2="200"/>
+                        <line class="connection" data-from="nervesystem" data-to="kropsterapi" x1="350" y1="350" x2="580" y2="500"/>
+                        <line class="connection" data-from="nervesystem" data-to="psykobiologi" x1="350" y1="350" x2="350" y2="600"/>
+                        <line class="connection" data-from="nervesystem" data-to="traumer" x1="350" y1="350" x2="120" y2="500"/>
+                        <line class="connection" data-from="nervesystem" data-to="relation" x1="350" y1="350" x2="120" y2="200"/>
+                        
+                        <line class="connection" data-from="polyvagal" data-to="tilknytning" x1="350" y1="100" x2="580" y2="200"/>
+                        <line class="connection" data-from="tilknytning" data-to="kropsterapi" x1="580" y1="200" x2="580" y2="500"/>
+                        <line class="connection" data-from="kropsterapi" data-to="psykobiologi" x1="580" y1="500" x2="350" y2="600"/>
+                        <line class="connection" data-from="psykobiologi" data-to="traumer" x1="350" y1="600" x2="120" y2="500"/>
+                        <line class="connection" data-from="traumer" data-to="relation" x1="120" y1="500" x2="120" y2="200"/>
+                        <line class="connection" data-from="relation" data-to="polyvagal" x1="120" y1="200" x2="350" y2="100"/>
+                        
+                        <line class="connection" data-from="polyvagal" data-to="kropsterapi" x1="350" y1="100" x2="580" y2="500"/>
+                        <line class="connection" data-from="polyvagal" data-to="psykobiologi" x1="350" y1="100" x2="350" y2="600"/>
+                        <line class="connection" data-from="polyvagal" data-to="traumer" x1="350" y1="100" x2="120" y2="500"/>
+                        
+                        <line class="connection" data-from="tilknytning" data-to="psykobiologi" x1="580" y1="200" x2="350" y2="600"/>
+                        <line class="connection" data-from="tilknytning" data-to="traumer" x1="580" y1="200" x2="120" y2="500"/>
+                        <line class="connection" data-from="tilknytning" data-to="relation" x1="580" y1="200" x2="120" y2="200"/>
+                        
+                        <line class="connection" data-from="kropsterapi" data-to="traumer" x1="580" y1="500" x2="120" y2="500"/>
+                        <line class="connection" data-from="kropsterapi" data-to="relation" x1="580" y1="500" x2="120" y2="200"/>
+                        
+                        <line class="connection" data-from="psykobiologi" data-to="relation" x1="350" y1="600" x2="120" y2="200"/>
+                    </g>
+
+                    <g id="circles">
+                        <circle class="circle center-circle" data-id="nervesystem" cx="350" cy="350" r="70"/>
+                        <text class="circle-text center-text" x="350" y="345">Nervesystem-</text>
+                        <text class="circle-text center-text" x="350" y="365">regulering</text>
+
+                        <circle class="circle outer-circle" data-id="polyvagal" cx="350" cy="100" r="65"/>
+                        <text class="circle-text outer-text" data-circle="polyvagal" x="350" y="95">Polyvagal</text>
+                        <text class="circle-text outer-text" data-circle="polyvagal" x="350" y="113">teori</text>
+
+                        <circle class="circle outer-circle" data-id="tilknytning" cx="580" cy="200" r="65"/>
+                        <text class="circle-text outer-text" data-circle="tilknytning" x="580" y="195">Tilknytnings-</text>
+                        <text class="circle-text outer-text" data-circle="tilknytning" x="580" y="213">mønstre</text>
+
+                        <circle class="circle outer-circle" data-id="kropsterapi" cx="580" cy="500" r="65"/>
+                        <text class="circle-text outer-text" data-circle="kropsterapi" x="580" y="495">Kropsterapi &</text>
+                        <text class="circle-text outer-text" data-circle="kropsterapi" x="580" y="513">Behandling</text>
+
+                        <circle class="circle outer-circle" data-id="psykobiologi" cx="350" cy="600" r="65"/>
+                        <text class="circle-text outer-text" data-circle="psykobiologi" x="350" y="595">Psyko-</text>
+                        <text class="circle-text outer-text" data-circle="psykobiologi" x="350" y="613">biologi</text>
+
+                        <circle class="circle outer-circle" data-id="traumer" cx="120" cy="500" r="65"/>
+                        <text class="circle-text outer-text" data-circle="traumer" x="120" y="495">Traumer &</text>
+                        <text class="circle-text outer-text" data-circle="traumer" x="120" y="513">Dissociation</text>
+
+                        <circle class="circle outer-circle" data-id="relation" cx="120" cy="200" r="65"/>
+                        <text class="circle-text outer-text" data-circle="relation" x="120" y="195">Terapeutisk</text>
+                        <text class="circle-text outer-text" data-circle="relation" x="120" y="213">Relation</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="info-panel" id="info-panel">
+                <div id="info-content">
+                    <h2>Velkommen</h2>
+                    <p>Her kan du udforske hvordan jeg arbejder med nervesystemet gennem seks forskellige perspektiver.</p>
+                    <p><strong>Sådan bruger du modellen:</strong></p>
+                    <ul>
+                        <li>Klik på en cirkel for at forstå metoden</li>
+                        <li>Skift mellem "Til klienter" og "Til fagfolk" for forskellige dybder</li>
+                        <li>Prøv øvelserne for at mærke metoderne i praksis</li>
+                        <li>Brug "Tilbage" knappen for at navigere</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
