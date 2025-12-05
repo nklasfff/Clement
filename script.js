@@ -1037,7 +1037,7 @@ const circleNames = {
     relation: 'Terapeutisk Relation'
 };
 
-// UDDANNELSER
+// UDDANNELSER - KOMPLET VERSION
 const educations = {
   nervesystemsterapeut: {
     name: "Nervesystemsterapeut",
@@ -1523,12 +1523,6 @@ const educations = {
     }
   }
 };
-const educationNames = {
-    nervesystemsterapeut: 'Nervesystemsterapeut',
-    teachertraining: 'Teacher Training',
-    tilknytningsspeciale: 'Tilknytningsspeciale'
-};
-
 const themeNames = {
     general: 'Generelt',
     angst: 'Angst',
