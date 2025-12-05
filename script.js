@@ -269,6 +269,13 @@ function showCircleView(circleId) {
     if (circleId !== 'nervesystem') {
         const circle = document.querySelector(`[data-id="${circleId}"]`);
         if (circle) circle.classList.add('active');
+        // Gør teksten hvid for aktiv cirkel
+const circleTexts = circle.parentElement.querySelectorAll('text');
+circleTexts.forEach(t => {
+    if (!t.classList.contains('center-text')) {
+        t.setAttribute('fill', 'white');
+    }
+});
     }
     
     const data = content.circles[circleId][currentMode];
@@ -378,4 +385,7 @@ function setupConnectionClicks() {
 function clearAllActive() {
     document.querySelectorAll('.circle:not([data-id="nervesystem"])').forEach(c => c.classList.remove('active'));
     document.querySelectorAll('.connection').forEach(c => c.classList.remove('active'));
+    
+    // Nulstil AL tekst til mørk grøn
+    document.querySelectorAll('.circle-text:not(.center-text)').forEach(t => t.setAttribute('fill', '#5a7a68'));
 }
