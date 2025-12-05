@@ -1039,497 +1039,490 @@ const circleNames = {
 
 // UDDANNELSER
 const educations = {
-  nervesystemsterapeut: {
-name: “Nervesystemsterapeut”,
-circles: {
-nervesystem: {
-kursist: {
-title: “Bliv Certificeret Nervesystemsterapeut”,
-text: “På denne 70 timers uddannelse lærer du at arbejde professionelt med nervesystemer. Du får konkrete værktøjer til at guide andre i regulering gennem øvelser, behandling og forståelse af autonome tilstande. Uddannelsen er både teoretisk funderet og dybt erfaringsbaseret gennem din egen proces.”
-},
-fagfolk: {
-title: “Certificeret Nervesystemsterapeut - 70 Timer”,
-text: “Efteruddannelse der certificerer til professionelt arbejde med nervesystemsregulering. Integrerer polyvagal teori, afspændingspædagogik, åndedrætsarbejde og behandling. Evidensbaseret tilgang kombineret med embodied læring. 5 moduler over 9 måneder med praktisk supervision.”
-}
-},
-polyvagal: {
-kursist: {
-title: “Polyvagal Teori i Praksis”,
-text: “Du lærer Stephen Porges’ polyvagale teori grundigt - de tre tilstande, neuroception og hvordan nervesystemet reagerer på sikkerhed vs. fare. Dette bliver dit primære navigationsværktøj i arbejdet med andre menneskers nervesystemer og din egen regulering.”
-},
-fagfolk: {
-title: “Polyvagal Teori - Klinisk Anvendelse”,
-text: “Dybdegående studium af Porges’ teori med fokus på praktisk anvendelse. Lærer at identificere autonome tilstande hos klienter og facilitere ventral vagal aktivering gennem konkrete interventioner. Træning i neuroception-assessment og polyvagal-informeret samtale.”
-}
-},
-tilknytning: {
-kursist: {
-title: “Tilknytning og Nervesystemet”,
-text: “Du lærer hvordan tilknytningsmønstre er kodet i nervesystemet og hvordan utryg tilknytning manifesterer sig som dysregulering. Du får værktøjer til at arbejde med tilknytning gennem nervesystemsregulering og forstå din egen tilknytningshistorie.”
-},
-fagfolk: {
-title: “Tilknytningsteori Integreret”,
-text: “Integration af Bowlby og Ainsworth’s attachment teori med nervesystemsarbejde. Forståelse af hvordan early co-regulation former autonome mønstre. Kompetencer til at facilitere earned secure attachment gennem reguleringsarbejde og terapeutisk relation.”
-}
-},
-kropsterapi: {
-kursist: {
-title: “Kropsarbejde og Behandling”,
-text: “Du lærer afspændingspædagogisk behandling på briks, åndedrætsarbejde og kropslige øvelser. Du får hands-on erfaring med at guide andre gennem embodied regulering og lærer at lytte til kroppens signaler. Stort fokus på egen kropslig proces.”
-},
-fagfolk: {
-title: “Somatisk Intervention - Praktisk Træning”,
-text: “Afspændingspædagogisk behandlingsteknik, fascial work og respiratorisk intervention. Praktisk træning i bottom-up regulering gennem direkte kropslig kontakt. Embodied facilitation som kerneværktøj. Supervision i behandlingsteknik gennem hele uddannelsen.”
-}
-},
-psykobiologi: {
-kursist: {
-title: “Kroppens Biologi og Nervesystemet”,
-text: “Du får forståelse for hormoner, neurotransmittere og hvordan nervesystemets tilstand påvirker hele biologien. Du lærer at forklare sammenhænge mellem stress, søvn, fordøjelse og mental sundhed på en måde dine klienter kan forstå.”
-},
-fagfolk: {
-title: “Psykobiologi - HPA-akse og Neurotransmittere”,
-text: “HPA-akse funktion, neurotransmitter-systemer (serotonin, dopamin, GABA, oxytocin) og hormonelle processer i relation til nervesystemstilstande. Forståelse af ANS som master regulator. Lærer at kommunikere kompleks neurobiologi til klienter.”
-}
-},
-traumer: {
-kursist: {
-title: “Traumer i Nervesystemet”,
-text: “Du lærer hvordan traumer sidder fast som frosne forsvarstilstande og hvordan man arbejder forsigtigt med traumemateriale gennem nervesystemsregulering. Du får dyb forståelse for dissociation, window of tolerance og din egen traumehistorie.”
-},
-fagfolk: {
-title: “Traumeforståelse - Somatic Experiencing”,
-text: “Peter Levines Somatic Experiencing principper, incomplete defensive responses og titreret aktivering af traumatisk materiale. Forståelse af hvordan PTSD manifesterer sig autonomt. Kompetencer til sikker facilitering inden for window of tolerance med praktisk supervision.”
-}
-},
-relation: {
-kursist: {
-title: “Terapeutisk Tilstedeværelse”,
-text: “Du lærer at bruge din egen regulerede tilstand som værktøj - co-regulering er fundamentet i alt arbejde. Du udvikler evnen til at holde rum og guide andre gennem limbisk afstemning og embodied presence. Din egen proces er central.”
-},
-fagfolk: {
-title: “Co-regulering som Primær Metode”,
-text: “Terapeutens autonome tilstand som primær intervention. Træning i at facilitere sikkerhed gennem egen ventral vagale tilstedeværelse. Mirror neurons, interbrain synchrony og relationel neurobiologi som teoretisk og praktisk fundament. Supervision i terapeutisk tilstedeværelse.”
-}
-}
-},
-connections: {
-‘nervesystem-polyvagal’: {
-kursist: “På uddannelsen lærer du at bruge polyvagal teori som dit primære kort til at forstå og arbejde med nervesystemsregulering.”,
-fagfolk: “Polyvagal teori udgør det teoretiske fundament for al nervesystemsregulering i uddannelsen.”
-},
-‘nervesystem-tilknytning’: {
-kursist: “Du lærer at se tilknytningsmønstre som nervesystem-mønstre og arbejde med begge dele samtidigt.”,
-fagfolk: “Integration af attachment teori med autonomt nervesystem-arbejde som kernekompetence.”
-},
-‘nervesystem-kropsterapi’: {
-kursist: “Kropsarbejde er den primære vej til nervesystemsregulering - du lærer behandling, åndedræt og øvelser.”,
-fagfolk: “Bottom-up somatisk intervention som hovedmetode til autonome modifications.”
-},
-‘nervesystem-psykobiologi’: {
-kursist: “Du får dyb forståelse for sammenhængen mellem nervesystem og biologi - hormoner, søvn, immunsystem.”,
-fagfolk: “Forståelse af ANS som master regulator for alle fysiologiske systemer.”
-},
-‘nervesystem-traumer’: {
-kursist: “Du lærer at arbejde forsigtigt med traumer gennem nervesystemsregulering og embodied processing.”,
-fagfolk: “Trauma-informeret tilgang med fokus på autonome forsvarstilstande og titreret aktivering.”
-},
-‘nervesystem-relation’: {
-kursist: “Din egen regulering bliver dit vigtigste værktøj - du lærer at co-regulere gennem din tilstedeværelse.”,
-fagfolk: “Co-regulering som primær intervention - terapeutens autonome tilstand faciliterer klientens regulering.”
-},
-‘polyvagal-tilknytning’: {
-kursist: “Du lærer at se tilknytningsmønstre som polyvagale profiler og arbejde med sikkerhed som basis.”,
-fagfolk: “Tilknytningsmønstre manifesteres som specifikke autonome signatures.”
-},
-‘polyvagal-kropsterapi’: {
-kursist: “Kropsarbejde aktiverer ventral vagal tilstand - det er den direkte vej til sikkerhed.”,
-fagfolk: “Somatisk intervention aktiverer ventral vagale pathways gennem bottom-up processer.”
-},
-‘polyvagal-psykobiologi’: {
-kursist: “Når nervesystemet er i grøn sikker tilstand, fungerer hele biologien optimalt.”,
-fagfolk: “Ventral vagal aktivering optimerer HPA-akse og alle fysiologiske funktioner.”
-},
-‘polyvagal-traumer’: {
-kursist: “Traumer fryser systemet i rød/gul - du lærer at etablere grøn sikkerhed først.”,
-fagfolk: “Ventral vagal etablering som forudsætning for sikker trauma-processing.”
-},
-‘polyvagal-relation’: {
-kursist: “Din grønne ro smitter til andres nervesystem - det er kernen i co-regulering.”,
-fagfolk: “Social engagement system faciliterer co-regulering gennem terapeuts ventral vagale tilstand.”
-},
-‘tilknytning-kropsterapi’: {
-kursist: “Tilknytningsmønstre sidder i kroppen - du lærer at arbejde med begge gennem behandling.”,
-fagfolk: “Embodied tilknytningsmønstre modificeres gennem proprioceptiv intervention.”
-},
-‘tilknytning-psykobiologi’: {
-kursist: “Tidlig tilknytning formede biologien - du lærer at se disse sammenhænge.”,
-fagfolk: “Forståelse af hvordan attachment præger HPA-akse og oxytocin-systemer.”
-},
-‘tilknytning-traumer’: {
-kursist: “Tilknytningstraumer kræver særlig forsigtighed - du lærer at arbejde langsomt og sikkert.”,
-fagfolk: “Developmental trauma skaber komplekse autonome mønstre - kræver specifik opmærksomhed.”
-},
-‘tilknytning-relation’: {
-kursist: “Den terapeutiske relation bliver stedet hvor ny sikker tilknytning læres.”,
-fagfolk: “Earned secure attachment gennem terapeutisk relation som korrigerende erfaring.”
-},
-‘kropsterapi-psykobiologi’: {
-kursist: “Når kroppen reguleres gennem behandling, følger biologien med - hormoner balanceres.”,
-fagfolk: “Somatisk intervention påvirker direkte HPA-akse og neurotransmitter-systemer.”
-},
-‘kropsterapi-traumer’: {
-kursist: “Traumer sidder i kroppen - du lærer forsigtigt kropsarbejde til integration.”,
-fagfolk: “Incomplete motoriske sekvenser faciliteres gennem titreret proprioceptiv aktivering.”
-},
-‘kropsterapi-relation’: {
-kursist: “Behandling i tryg relation lærer kroppen ny sikkerhed.”,
-fagfolk: “Terapeutisk touch kombineret med relational safety modificerer somatiske mønstre.”
-},
-‘psykobiologi-traumer’: {
-kursist: “Traumer ændrer biologien - du lærer at se disse sammenhænge og arbejde med dem.”,
-fagfolk: “PTSD modificerer HPA-akse og inflammatoriske profiler - kan normaliseres gennem regulering.”
-},
-‘psykobiologi-relation’: {
-kursist: “Trygge relationer er biologi-medicin - du lærer at bruge dette aktivt.”,
-fagfolk: “Secure alliance modificerer neurobiologi - oxytocin øges, cortisol reduceres.”
-},
-‘traumer-relation’: {
-kursist: “Traumearbejde kræver dyb sikkerhed i relationen - du lærer at skabe dette.”,
-fagfolk: “Robust alliance er absolut forudsætning for sikker trauma-processing.”
-}
-}
-}
-},
-    teachertraining: {
-name: “Teacher Training”,
-circles: {
-nervesystem: {
-kursist: {
-title: “Lederuddannelse med Nervesystemet”,
-text: “På denne 9 måneders lederuddannelse lærer du at facilitere nervesystemsarbejde for andre. Du udvikler kompetencer til at holde rum, guide grupper og undervise i nervesystemsregulering. Din egen dybe proces er fundamentet for at kunne lede andre.”
-},
-fagfolk: {
-title: “Teacher Training - Certificeret Facilitator”,
-text: “9 måneders lederuddannelse i 6 moduler. Certificerer til at facilitere nervesystemsarbejde professionelt. Fokus på gruppedynamik, undervisningskompetencer, supervision og etik. Kræver forudgående certificering som nervesystemsterapeut eller tilsvarende.”
-}
-},
-polyvagal: {
-kursist: {
-title: “Undervise i Polyvagal Teori”,
-text: “Du lærer at formidle polyvagal teori til forskellige målgrupper - fra klienter til fagfolk. Du udvikler evnen til at gøre kompleks neurobiologi tilgængelig og relevant gennem metaforer, øvelser og embodied læring.”
-},
-fagfolk: {
-title: “Polyvagal Pædagogik”,
-text: “Didaktiske kompetencer i formidling af polyvagal teori. Lærer at tilpasse kompleksitet til målgruppe. Udvikling af undervisningsmaterialer og øvelser der illustrerer teorien embodied. Træning i at facilitere polyvagal-informerede samtaler i grupper.”
-}
-},
-tilknytning: {
-kursist: {
-title: “Facilitere Tilknytningsarbejde”,
-text: “Du lærer at holde rum for tilknytningsarbejde i grupper - at navigere i komplekse følelser, skabe sikkerhed og facilitere earned secure attachment gennem gruppens co-regulering. Din egen tilknytningsproces fordy
-
-bes.”
-},
-fagfolk: {
-title: “Tilknytn_group_facilitation”,
-text: “Kompetencer til at facilitere attachment-arbejde i gruppekontekst. Forståelse af gruppedynamik gennem tilknytningslinsen. Håndtering af desorganiseret tilknytning i grupper. Supervision i at skabe relational safety som fundament for gruppeproces.”
-}
-},
-kropsterapi: {
-kursist: {
-title: “Embodied Facilitation”,
-text: “Du lærer at facilitere kropslige processer i grupper - at guide åndedrætsarbejde, bevægelse og gruppebehandling. Du udvikler evnen til at læse gruppens somatiske tilstand og justere efter behov. Din egen embodiment er værktøjet.”
-},
-fagfolk: {
-title: “Somatisk Gruppefacilitation”,
-text: “Facilitering af somatiske processer i gruppeformat. Kompetencer i at guide kollektive åndedræts- og bevægelsesøvelser. Håndtering af somatisk overwhelm i grupper. Træning i at bruge egen embodiment som gruppens regulator.”
-}
-},
-psykobiologi: {
-kursist: {
-title: “Formidle Neurobiologi”,
-text: “Du lærer at undervise i psykobiologi på en måde der engagerer og giver mening. Du udvikler evnen til at forbinde abstrakt neurobiologi med konkret livserfaring gennem cases, metaforer og interaktive øvelser.”
-},
-fagfolk: {
-title: “Neurobiologisk Didaktik”,
-text: “Pædagogiske kompetencer i formidling af kompleks neurobiologi. Udvikling af undervisningsdesign der integrerer teori med praksis. Træning i at bruge cases og metaforer. Supervision i at skabe neurobiologisk literacy hos kursister.”
-}
-},
-traumer: {
-kursist: {
-title: “Trauma-informeret Facilitation”,
-text: “Du lærer at facilitere i trauma-informeret tilgang - at skabe sikkerhed, håndtere aktivering og arbejde inden for gruppens window of tolerance. Du får supervision i at navigere komplekse traumereaktioner i gruppekontekst.”
-},
-fagfolk: {
-title: “Trauma-informeret Gruppefacilitation”,
-text: “Specialiserede kompetencer i trauma-informeret gruppefacilitation. Forståelse af kollektiv window of tolerance. Håndtering af gruppeaktivering og dissociation. Supervision i etiske dilemmaer ved traumearbejde i grupper.”
-}
-},
-relation: {
-kursist: {
-title: “Terapeutisk Ledelse”,
-text: “Du udvikler din terapeutiske ledelsesidentitet - at være både facilitator og co-regulator. Du lærer at bruge gruppens relationelle felt aktivt og navigere i overføring og modoverføring. Din egen supervision er central.”
-},
-fagfolk: {
-title: “Relationel Ledelse og Etik”,
-text: “Udvikling af lederidentitet som nervesystemsfacilitator. Forståelse af gruppens relationelle dynamikker. Håndtering af magt, grænser og etiske dilemmaer. Obligatorisk løbende supervision. Fokus på facilitatorens egen fortsatte proces.”
-}
-}
-},
-connections: {
-‘nervesystem-polyvagal’: {
-kursist: “Du lærer at facilitere polyvagal forståelse som grundlag for alt nervesystemsarbejde i grupper.”,
-fagfolk: “Polyvagal teori som didaktisk fundament for nervesystemsfacilitation.”
-},
-‘nervesystem-tilknytning’: {
-kursist: “Du lærer at facilitere tilknytningsarbejde gennem nervesystemsregulering i grupper.”,
-fagfolk: “Integration af attachment-arbejde i nervesystemsfacilitation.”
-},
-‘nervesystem-kropsterapi’: {
-kursist: “Du lærer at guide kropslige nervesystemsøvelser for grupper.”,
-fagfolk: “Somatisk facilitationskompetence som kernefærdighed.”
-},
-‘nervesystem-psykobiologi’: {
-kursist: “Du lærer at formidle sammenhængen mellem nervesystem og biologi engagerende.”,
-fagfolk: “Didaktiske kompetencer i neurobiologisk undervisning.”
-},
-‘nervesystem-traumer’: {
-kursist: “Du lærer trauma-informeret facilitation af nervesystemsarbejde.”,
-fagfolk: “Trauma-informeret tilgang som grundprincip i facilitation.”
-},
-‘nervesystem-relation’: {
-kursist: “Du bruger din egen regulering til at co-regulere hele gruppen.”,
-fagfolk: “Facilitatorens autonome tilstand som primær gruppeintervention.”
-},
-‘polyvagal-tilknytning’: {
-kursist: “Du lærer at formidle hvordan tilknytning og polyvagal teori hænger sammen.”,
-fagfolk: “Didaktik i integration af attachment og polyvagal teori.”
-},
-‘polyvagal-kropsterapi’: {
-kursist: “Du guider grupper i kropsøvelser der aktiverer ventral vagal sikkerhed.”,
-fagfolk: “Facilitering af somatiske øvelser baseret på polyvagal princip per.”
-},
-‘polyvagal-psykobiologi’: {
-kursist: “Du lærer at formidle polyvagal teori som biologisk fundament.”,
-fagfolk: “Integration af polyvagal og neurobiologisk undervisning.”
-},
-‘polyvagal-traumer’: {
-kursist: “Du lærer at facilitere polyvagal forståelse i trauma-informeret arbejde.”,
-fagfolk: “Polyvagal teori som ramme for trauma-informeret gruppearbejde.”
-},
-‘polyvagal-relation’: {
-kursist: “Du bruger polyvagal teori til at forstå og navigere gruppedynamikker.”,
-fagfolk: “Polyvagal forståelse af gruppens relationelle felt.”
-},
-‘tilknytning-kropsterapi’: {
-kursist: “Du lærer at facilitere embodied tilknytningsarbejde i grupper.”,
-fagfolk: “Somatisk facilitation af attachment-processer.”
-},
-‘tilknytning-psykobiologi’: {
-kursist: “Du lærer at formidle tilknytningens biologiske fundament.”,
-fagfolk: “Undervisning i neurobiologi bag tilknytningsmønstre.”
-},
-‘tilknytning-traumer’: {
-kursist: “Du lærer at facilitere tilknytningstraumer med særlig forsigtighed.”,
-fagfolk: “Specialiseret facilitation af developmental trauma.”
-},
-‘tilknytning-relation’: {
-kursist: “Du bruger gruppens relationelle felt til tilknytningshealing.”,
-fagfolk: “Facilitering af earned secure attachment gennem gruppe.”
-},
-‘kropsterapi-psykobiologi’: {
-kursist: “Du lærer at formidle hvordan kropsarbejde påvirker biologien.”,
-fagfolk: “Undervisning i somatisk interventions neurobiologiske basis.”
-},
-‘kropsterapi-traumer’: {
-kursist: “Du lærer at guide trauma-informeret kropsarbejde sikkert.”,
-fagfolk: “Facilitering af titreret somatisk trauma-processing i grupper.”
-},
-‘kropsterapi-relation’: {
-kursist: “Du bruger kropsligt nærvær til at co-regulere gruppen.”,
-fagfolk: “Embodied facilitation som relationel intervention.”
-},
-‘psykobiologi-traumer’: {
-kursist: “Du lærer at formidle traumets neurobiologiske konsekvenser.”,
-fagfolk: “Undervisning i PTSD-neurobiologi tilgængeligt.”
-},
-‘psykobiologi-relation’: {
-kursist: “Du lærer at formidle relationens neurobiologiske kraft.”,
-fagfolk: “Undervisning i relationel neurobiologi.”
-},
-‘traumer-relation’: {
-kursist: “Du lærer at facilitere traumearbejde i dybt sikkert relationelt rum.”,
-fagfolk: “Skabelse af relational safety som forudsætning for traumearbejde.”
-}
-}
-}
-    
-    },
-    tilknytningsspeciale: {
-name: “Tilknytningsspeciale”,
-circles: {
-nervesystem: {
-kursist: {
-title: “3-Dages Intensivkursus”,
-text: “På disse tre intensive dage dykker vi dybt ned i tilknytningsmønstre gennem nervesystemslinsen. Du lærer de 4 mønstre grundigt og får konkrete værktøjer til at arbejde med hver især. Kurset er både teoretisk og dybt personligt.”
-},
-fagfolk: {
-title: “Tilknytningsspeciale - 3 Dage”,
-text: “Intensivkursus i tilknytningsmønstre med fokus på nervesystemsmanifestationer. Dybdegående studium af de 4 mønstre med konkrete interventionsstrategier. Omfatter både teori, cases og egen tilknytningsproces. Forudsætter grundlæggende viden om nervesystemsarbejde.”
-}
-},
-polyvagal: {
-kursist: {
-title: “Polyvagale Tilknytningsmønstre”,
-text: “Du lærer at se hvert tilknytningsmønster som en specifik polyvagal profil. Tryg tilknytning som ventral vagal fleksibilitet, utryg tilknytning som rigid sympatisk eller dorsal dominans. Dette giver dig nøglen til at arbejde med mønsterne.”
-},
-fagfolk: {
-title: “Tilknytning som Polyvagale Profiler”,
-text: “Detaljeret mapping af tilknytningsmønstre til polyvagale profiler. Sikker = ventral vagal fleksibilitet. Ambivalent = sympatisk hyperactivation. Undvigende = dorsal deactivation. Desorganiseret = simultane modsatrettede states. Interventionsstrategier for hver profil.”
-}
-},
-tilknytning: {
-kursist: {
-title: “De 4 Tilknytningsmønstre Grundigt”,
-text: “Du lærer tryg, undvigende, ambivalent og desorganiseret tilknytning i dybden. Hvordan de opstår, hvordan de manifesterer sig i voksenlivet og hvordan de kan ændres. Du udforsker dit eget mønster og får redskaber til forandring.”
-},
-fagfolk: {
-title: “Tilknytningstypologi - Dybdeforståelse”,
-text: “Omfattende studium af Ainsworth’s typologi med Main’s Adult Attachment Interview-perspektiv. Developmental oprindelse, neurobiologisk substrat og kliniske manifestationer af hvert mønster. Assessment-værktøjer og interventionsstrategier. Fokus på earned secure attachment som terapeutisk mål.”
-}
-},
-kropsterapi: {
-kursist: {
-title: “Tilknytning i Kroppen”,
-text: “Du lærer hvordan hvert tilknytningsmønster sidder som specifikke kropslige mønstre - i åndedræt, tonus, bevægelse. Du får konkrete somatiske øvelser til arbejde med hvert mønster og lærer at læse tilknytning through kroppen.”
-},
-fagfolk: {
-title: “Embodied Tilknytningsmønstre”,
-text: “Tilknytningsmønstre manifesteret somatisk. Sikker = åben krop, dyb åndedræt. Undvigende = rigid tonus, shallow breathing. Ambivalent = hypervigilant muskulatur. Desorganiseret = fragmenteret embodiment. Somatiske interventioner specifikt tilpasset hvert mønster.”
-}
-},
-psykobiologi: {
-kursist: {
-title: “Tilknytningens Neurobiologi”,
-text: “Du lærer hvordan tidlig tilknytning formede din biologi - HPA-akse, oxytocin-system, stressrespons. Du får forståelse for hvordan forskellige mønstre har forskellige biologiske signatures og hvordan de kan modificeres.”
-},
-fagfolk: {
-title: “Neurobiologisk Substrat af Tilknytning”,
-text: “HPA-akse modificering gennem early attachment experiences. Oxytocin og vasopressin-receptor sensitivitet former tilknytningsmønstre. Cortisol-reaktivitet varierer systematisk mellem mønstre. Neuroplasticitet som basis for earned secure attachment gennem terapeutisk intervention.”
-}
-},
-traumer: {
-kursist: {
-title: “Tilknytningstraumer”,
-text: “Du lærer om developmental trauma inden for tilknytningssystemet - når omsorgspersonen var både kilde til fare og sikkerhed. Du får forståelse for desorganiseret tilkn ytning og særlige metoder til at arbejde med det.”
-},
-fagfolk: {
-title: “Developmental Trauma og Desorganisering”,
-text: “Desorganiseret tilknytning som resultat af frightened/frightening caregiving. Simultane activation af attachment og defense systems. Neurobiologiske konsekvenser omfatter dysreguleret HPA-akse og fragmenteret selvoplevelse. Specialiserede interventioner kræver robust alliance og langsom safety-etablering.”
-}
-},
-relation: {
-kursist: {
-title: “Earned Secure Attachment”,
-text: “Du lærer hvordan unsikker tilknytning kan ændres til sikker gennem terapeutisk relation. Du får forståelse for hvordan du selv kan facilitere earned secure attachment og oplever det gennem kursets relationelle rum.”
-},
-fagfolk: {
-title: “Terapeutisk Facilitation af ESA”,
-text: “Earned secure attachment gennem korrigerende emotionelle erfaringer i terapeutisk relation. Terapeuts konsistente tilgængelighed, afstemning og rupture-repair cycles modificerer indre arbejdsmodeller. Requires langvarig terapeutisk alliance med fokus på relationel reconsolidation gennem gentagen experience.”
-}
-}
-},
-connections: {
-‘nervesystem-polyvagal’: {
-kursist: “Tilknytningsmønstre ER polyvagale mønstre - de er to sider af samme sag.”,
-fagfolk: “Tilknytningsmanifestationer forstået gennem polyvagal ramme.”
-},
-‘nervesystem-tilknytning’: {
-kursist: “At arbejde med tilknytning ER at arbejde med nervesystemet.”,
-fagfolk: “Tilknytningsintervention som nervesystemsintervention.”
-},
-‘nervesystem-kropsterapi’: {
-kursist: “Tilknytningsmønstre sidder i kroppen og kan ændres gennem kropsarbejde.”,
-fagfolk: “Somatisk intervention modificerer embodied tilknytningsmønstre.”
-},
-‘nervesystem-psykobiologi’: {
-kursist: “Tilknytning formede din biologi - men biologien kan omformes.”,
-fagfolk: “Tilknytningsmønstre præger neurobiologi modificerbart gennem intervention.”
-},
-‘nervesystem-traumer’: {
-kursist: “Tilknytningstraumer kræver særlig forsigtighed i nervesystemsarbejdet.”,
-fagfolk: “Developmental trauma skaber komplekse autonome mønstre.”
-},
-‘nervesystem-relation’: {
-kursist: “Nye tilknytningsoplevelser sker gennem reguleret nervesystem i relation.”,
-fagfolk: “Earned secure attachment gennem co-regulering i terapeutisk alliance.”
-},
-‘polyvagal-tilknytning’: {
-kursist: “Hvert tilknytningsmønster har sin polyvagale signatur.”,
-fagfolk: “Systematisk mapping af attachment til autonome profiler.”
-},
-‘polyvagal-kropsterapi’: {
-kursist: “Kropsarbejde aktiverer den ventrale sikkerhed nødvendig for tilknytningshealing.”,
-fagfolk: “Ventral vagal aktivering som forudsætning for attachment-arbejde.”
-},
-‘polyvagal-psykobiologi’: {
-kursist: “Polyvagal tilstand påvirker direkte tilknytningsbiologien - oxytocin, cortisol.”,
-fagfolk: “Ventral vagal aktivering optimerer attachment-relaterede neurotransmittere.”
-},
-‘polyvagal-traumer’: {
-kursist: “Tilknytningstraumer fastlåste systemet i usikre tilstande.”,
-fagfolk: “Developmental trauma dysregulerer polyvagale responses.”
-},
-‘polyvagal-relation’: {
-kursist: “Ventral vagal sikkerhed i relation lærer nye tilknytningsmønstre.”,
-fagfolk: “Co-regulering faciliterer earned secure attachment.”
-},
-‘tilknytning-kropsterapi’: {
-kursist: “Hvert tilknytningsmønster har sit kropslige udtryk der kan arbejdes med.”,
-fagfolk: “Mønster-specifikke somatiske interventioner.”
-},
-‘tilknytning-psykobiologi’: {
-kursist: “Forskellige tilknytningsmønstre har forskellige biologiske signaturer.”,
-fagfolk: “Systematisk variation i HPA-akse og oxytocin mellem mønstre.”
-},
-‘tilknytning-traumer’: {
-kursist: “Desorganiseret tilknytning opstår fra traumer i tidlige relationer.”,
-fagfolk: “Developmental trauma som oprindelse til desorganiseret attachment.”
-},
-‘tilknytning-relation’: {
-kursist: “Nye tilknytningsmønstre læres gennem nye relationelle oplevelser.”,
-fagfolk: “Earned secure attachment gennem korrigerende erfaring.”
-},
-‘kropsterapi-psykobiologi’: {
-kursist: “Kropsarbejde påvirker tilknytningsbiologien direkte.”,
-fagfolk: “Somatisk intervention modificerer attachment-neurobiologi.”
-},
-‘kropsterapi-traumer’: {
-kursist: “Tilknytningstraumer er embodied og kræver somatisk arbejde.”,
-fagfolk: “Developmental trauma manifesteres somatisk.”
-},
-‘kropsterapi-relation’: {
-kursist: “Tryg berøring i relation lærer kroppen nye tilknytningsmønstre.”,
-fagfolk: “Terapeutisk touch modificerer embodied attachment.”
-},
-‘psykobiologi-traumer’: {
-kursist: “Tilknytningstraumer ændrede biologien - healing normaliserer den.”,
-fagfolk: “Developmental trauma modificerer HPA-akse og neurotransmittere.”
-},
-‘psykobiologi-relation’: {
-kursist: “Trygge relationer er tilknytnings-medicin på biologisk niveau.”,
-fagfolk: “Secure alliance modificerer attachment-neurobiologi.”
-},
-‘traumer-relation’: {
-kursist: “Tilknytningstraumer kan kun heales i meget tryg relation.”,
-fagfolk: “Developmental trauma kræver robust alliance.”
-}
-}
-}
-  
+  nervesystemsterapeut: {
+    name: "Nervesystemsterapeut",
+    circles: {
+      nervesystem: {
+        kursist: {
+          title: "Bliv Certificeret Nervesystemsterapeut",
+          text: "På denne 70 timers uddannelse lærer du at arbejde professionelt med nervesystemer. Du får konkrete værktøjer til at guide andre i regulering gennem øvelser, behandling og forståelse af autonome tilstande. Uddannelsen er både teoretisk funderet og dybt erfaringsbaseret gennem din egen proces."
+        },
+        fagfolk: {
+          title: "Certificeret Nervesystemsterapeut - 70 Timer",
+          text: "Efteruddannelse der certificerer til professionelt arbejde med nervesystemsregulering. Integrerer polyvagal teori, afspændingspædagogik, åndedrætsarbejde og behandling. Evidensbaseret tilgang kombineret med embodied læring. 5 moduler over 9 måneder med praktisk supervision."
+        }
+      },
+      polyvagal: {
+        kursist: {
+          title: "Polyvagal Teori i Praksis",
+          text: "Du lærer Stephen Porges' polyvagale teori grundigt - de tre tilstande, neuroception og hvordan nervesystemet reagerer på sikkerhed vs. fare. Dette bliver dit primære navigationsværktøj i arbejdet med andre menneskers nervesystemer og din egen regulering."
+        },
+        fagfolk: {
+          title: "Polyvagal Teori - Klinisk Anvendelse",
+          text: "Dybdegående studium af Porges' teori med fokus på praktisk anvendelse. Lærer at identificere autonome tilstande hos klienter og facilitere ventral vagal aktivering gennem konkrete interventioner. Træning i neuroception-assessment og polyvagal-informeret samtale."
+        }
+      },
+      tilknytning: {
+        kursist: {
+          title: "Tilknytning og Nervesystemet",
+          text: "Du lærer hvordan tilknytningsmønstre er kodet i nervesystemet og hvordan utryg tilknytning manifesterer sig som dysregulering. Du får værktøjer til at arbejde med tilknytning gennem nervesystemsregulering og forstå din egen tilknytningshistorie."
+        },
+        fagfolk: {
+          title: "Tilknytningsteori Integreret",
+          text: "Integration af Bowlby og Ainsworth's attachment teori med nervesystemsarbejde. Forståelse af hvordan early co-regulation former autonome mønstre. Kompetencer til at facilitere earned secure attachment gennem reguleringsarbejde og terapeutisk relation."
+        }
+      },
+      kropsterapi: {
+        kursist: {
+          title: "Kropsarbejde og Behandling",
+          text: "Du lærer afspændingspædagogisk behandling på briks, åndedrætsarbejde og kropslige øvelser. Du får hands-on erfaring med at guide andre gennem embodied regulering og lærer at lytte til kroppens signaler. Stort fokus på egen kropslig proces."
+        },
+        fagfolk: {
+          title: "Somatisk Intervention - Praktisk Træning",
+          text: "Afspændingspædagogisk behandlingsteknik, fascial work og respiratorisk intervention. Praktisk træning i bottom-up regulering gennem direkte kropslig kontakt. Embodied facilitation som kerneværktøj. Supervision i behandlingsteknik gennem hele uddannelsen."
+        }
+      },
+      psykobiologi: {
+        kursist: {
+          title: "Kroppens Biologi og Nervesystemet",
+          text: "Du får forståelse for hormoner, neurotransmittere og hvordan nervesystemets tilstand påvirker hele biologien. Du lærer at forklare sammenhænge mellem stress, søvn, fordøjelse og mental sundhed på en måde dine klienter kan forstå."
+        },
+        fagfolk: {
+          title: "Psykobiologi - HPA-akse og Neurotransmittere",
+          text: "HPA-akse funktion, neurotransmitter-systemer (serotonin, dopamin, GABA, oxytocin) og hormonelle processer i relation til nervesystemstilstande. Forståelse af ANS som master regulator. Lærer at kommunikere kompleks neurobiologi til klienter."
+        }
+      },
+      traumer: {
+        kursist: {
+          title: "Traumer i Nervesystemet",
+          text: "Du lærer hvordan traumer sidder fast som frosne forsvarstilstande og hvordan man arbejder forsigtigt med traumemateriale gennem nervesystemsregulering. Du får dyb forståelse for dissociation, window of tolerance og din egen traumehistorie."
+        },
+        fagfolk: {
+          title: "Traumeforståelse - Somatic Experiencing",
+          text: "Peter Levines Somatic Experiencing principper, incomplete defensive responses og titreret aktivering af traumatisk materiale. Forståelse af hvordan PTSD manifesterer sig autonomt. Kompetencer til sikker facilitering inden for window of tolerance med praktisk supervision."
+        }
+      },
+      relation: {
+        kursist: {
+          title: "Terapeutisk Tilstedeværelse",
+          text: "Du lærer at bruge din egen regulerede tilstand som værktøj - co-regulering er fundamentet i alt arbejde. Du udvikler evnen til at holde rum og guide andre gennem limbisk afstemning og embodied presence. Din egen proces er central."
+        },
+        fagfolk: {
+          title: "Co-regulering som Primær Metode",
+          text: "Terapeutens autonome tilstand som primær intervention. Træning i at facilitere sikkerhed gennem egen ventral vagale tilstedeværelse. Mirror neurons, interbrain synchrony og relationel neurobiologi som teoretisk og praktisk fundament. Supervision i terapeutisk tilstedeværelse."
+        }
+      }
+    },
+    connections: {
+      'nervesystem-polyvagal': {
+        kursist: "På uddannelsen lærer du at bruge polyvagal teori som dit primære kort til at forstå og arbejde med nervesystemsregulering.",
+        fagfolk: "Polyvagal teori udgør det teoretiske fundament for al nervesystemsregulering i uddannelsen."
+      },
+      'nervesystem-tilknytning': {
+        kursist: "Du lærer at se tilknytningsmønstre som nervesystem-mønstre og arbejde med begge dele samtidigt.",
+        fagfolk: "Integration af attachment teori med autonomt nervesystem-arbejde som kernekompetence."
+      },
+      'nervesystem-kropsterapi': {
+        kursist: "Kropsarbejde er den primære vej til nervesystemsregulering - du lærer behandling, åndedræt og øvelser.",
+        fagfolk: "Bottom-up somatisk intervention som hovedmetode til autonome modifications."
+      },
+      'nervesystem-psykobiologi': {
+        kursist: "Du får dyb forståelse for sammenhængen mellem nervesystem og biologi - hormoner, søvn, immunsystem.",
+        fagfolk: "Forståelse af ANS som master regulator for alle fysiologiske systemer."
+      },
+      'nervesystem-traumer': {
+        kursist: "Du lærer at arbejde forsigtigt med traumer gennem nervesystemsregulering og embodied processing.",
+        fagfolk: "Trauma-informeret tilgang med fokus på autonome forsvarstilstande og titreret aktivering."
+      },
+      'nervesystem-relation': {
+        kursist: "Din egen regulering bliver dit vigtigste værktøj - du lærer at co-regulere gennem din tilstedeværelse.",
+        fagfolk: "Co-regulering som primær intervention - terapeutens autonome tilstand faciliterer klientens regulering."
+      },
+      'polyvagal-tilknytning': {
+        kursist: "Du lærer at se tilknytningsmønstre som polyvagale profiler og arbejde med sikkerhed som basis.",
+        fagfolk: "Tilknytningsmønstre manifesteres som specifikke autonome signatures."
+      },
+      'polyvagal-kropsterapi': {
+        kursist: "Kropsarbejde aktiverer ventral vagal tilstand - det er den direkte vej til sikkerhed.",
+        fagfolk: "Somatisk intervention aktiverer ventral vagale pathways gennem bottom-up processer."
+      },
+      'polyvagal-psykobiologi': {
+        kursist: "Når nervesystemet er i grøn sikker tilstand, fungerer hele biologien optimalt.",
+        fagfolk: "Ventral vagal aktivering optimerer HPA-akse og alle fysiologiske funktioner."
+      },
+      'polyvagal-traumer': {
+        kursist: "Traumer fryser systemet i rød/gul - du lærer at etablere grøn sikkerhed først.",
+        fagfolk: "Ventral vagal etablering som forudsætning for sikker trauma-processing."
+      },
+      'polyvagal-relation': {
+        kursist: "Din grønne ro smitter til andres nervesystem - det er kernen i co-regulering.",
+        fagfolk: "Social engagement system faciliterer co-regulering gennem terapeuts ventral vagale tilstand."
+      },
+      'tilknytning-kropsterapi': {
+        kursist: "Tilknytningsmønstre sidder i kroppen - du lærer at arbejde med begge gennem behandling.",
+        fagfolk: "Embodied tilknytningsmønstre modificeres gennem proprioceptiv intervention."
+      },
+      'tilknytning-psykobiologi': {
+        kursist: "Tidlig tilknytning formede biologien - du lærer at se disse sammenhænge.",
+        fagfolk: "Forståelse af hvordan attachment præger HPA-akse og oxytocin-systemer."
+      },
+      'tilknytning-traumer': {
+        kursist: "Tilknytningstraumer kræver særlig forsigtighed - du lærer at arbejde langsomt og sikkert.",
+        fagfolk: "Developmental trauma skaber komplekse autonome mønstre - kræver specifik opmærksomhed."
+      },
+      'tilknytning-relation': {
+        kursist: "Den terapeutiske relation bliver stedet hvor ny sikker tilknytning læres.",
+        fagfolk: "Earned secure attachment gennem terapeutisk relation som korrigerende erfaring."
+      },
+      'kropsterapi-psykobiologi': {
+        kursist: "Når kroppen reguleres gennem behandling, følger biologien med - hormoner balanceres.",
+        fagfolk: "Somatisk intervention påvirker direkte HPA-akse og neurotransmitter-systemer."
+      },
+      'kropsterapi-traumer': {
+        kursist: "Traumer sidder i kroppen - du lærer forsigtigt kropsarbejde til integration.",
+        fagfolk: "Incomplete motoriske sekvenser faciliteres gennem titreret proprioceptiv aktivering."
+      },
+      'kropsterapi-relation': {
+        kursist: "Behandling i tryg relation lærer kroppen ny sikkerhed.",
+        fagfolk: "Terapeutisk touch kombineret med relational safety modificerer somatiske mønstre."
+      },
+      'psykobiologi-traumer': {
+        kursist: "Traumer ændrer biologien - du lærer at se disse sammenhænge og arbejde med dem.",
+        fagfolk: "PTSD modificerer HPA-akse og inflammatoriske profiler - kan normaliseres gennem regulering."
+      },
+      'psykobiologi-relation': {
+        kursist: "Trygge relationer er biologi-medicin - du lærer at bruge dette aktivt.",
+        fagfolk: "Secure alliance modificerer neurobiologi - oxytocin øges, cortisol reduceres."
+      },
+      'traumer-relation': {
+        kursist: "Traumearbejde kræver dyb sikkerhed i relationen - du lærer at skabe dette.",
+        fagfolk: "Robust alliance er absolut forudsætning for sikker trauma-processing."
+      }
+    }
+  },
+  teachertraining: {
+    name: "Teacher Training",
+    circles: {
+      nervesystem: {
+        kursist: {
+          title: "Lederuddannelse med Nervesystemet",
+          text: "På denne 9 måneders lederuddannelse lærer du at facilitere nervesystemsarbejde for andre. Du udvikler kompetencer til at holde rum, guide grupper og undervise i nervesystemsregulering. Din egen dybe proces er fundamentet for at kunne lede andre."
+        },
+        fagfolk: {
+          title: "Teacher Training - Certificeret Facilitator",
+          text: "9 måneders lederuddannelse i 6 moduler. Certificerer til at facilitere nervesystemsarbejde professionelt. Fokus på gruppedynamik, undervisningskompetencer, supervision og etik. Kræver forudgående certificering som nervesystemsterapeut eller tilsvarende."
+        }
+      },
+      polyvagal: {
+        kursist: {
+          title: "Undervise i Polyvagal Teori",
+          text: "Du lærer at formidle polyvagal teori til forskellige målgrupper - fra klienter til fagfolk. Du udvikler evnen til at gøre kompleks neurobiologi tilgængelig og relevant gennem metaforer, øvelser og embodied læring."
+        },
+        fagfolk: {
+          title: "Polyvagal Pædagogik",
+          text: "Didaktiske kompetencer i formidling af polyvagal teori. Lærer at tilpasse kompleksitet til målgruppe. Udvikling af undervisningsmaterialer og øvelser der illustrerer teorien embodied. Træning i at facilitere polyvagal-informerede samtaler i grupper."
+        }
+      },
+      tilknytning: {
+        kursist: {
+          title: "Facilitere Tilknytningsarbejde",
+          text: "Du lærer at holde rum for tilknytningsarbejde i grupper - at navigere i komplekse følelser, skabe sikkerhed og facilitere earned secure attachment gennem gruppens co-regulering. Din egen tilknytningsproces fordybes."
+        },
+        fagfolk: {
+          title: "Tilknytnings-gruppefacilitation",
+          text: "Kompetencer til at facilitere attachment-arbejde i gruppekontekst. Forståelse af gruppedynamik gennem tilknytningslinsen. Håndtering af desorganiseret tilknytning i grupper. Supervision i at skabe relational safety som fundament for gruppeproces."
+        }
+      },
+      kropsterapi: {
+        kursist: {
+          title: "Embodied Facilitation",
+          text: "Du lærer at facilitere kropslige processer i grupper - at guide åndedrætsarbejde, bevægelse og gruppebehandling. Du udvikler evnen til at læse gruppens somatiske tilstand og justere efter behov. Din egen embodiment er værktøjet."
+        },
+        fagfolk: {
+          title: "Somatisk Gruppefacilitation",
+          text: "Facilitering af somatiske processer i gruppeformat. Kompetencer i at guide kollektive åndedræts- og bevægelsesøvelser. Håndtering af somatisk overwhelm i grupper. Træning i at bruge egen embodiment som gruppens regulator."
+        }
+      },
+      psykobiologi: {
+        kursist: {
+          title: "Formidle Neurobiologi",
+          text: "Du lærer at undervise i psykobiologi på en måde der engagerer og giver mening. Du udvikler evnen til at forbinde abstrakt neurobiologi med konkret livserfaring gennem cases, metaforer og interaktive øvelser."
+        },
+        fagfolk: {
+          title: "Neurobiologisk Didaktik",
+          text: "Pædagogiske kompetencer i formidling af kompleks neurobiologi. Udvikling af undervisningsdesign der integrerer teori med praksis. Træning i at bruge cases og metaforer. Supervision i at skabe neurobiologisk literacy hos kursister."
+        }
+      },
+      traumer: {
+        kursist: {
+          title: "Trauma-informeret Facilitation",
+          text: "Du lærer at facilitere i trauma-informeret tilgang - at skabe sikkerhed, håndtere aktivering og arbejde inden for gruppens window of tolerance. Du får supervision i at navigere komplekse traumereaktioner i gruppekontekst."
+        },
+        fagfolk: {
+          title: "Trauma-informeret Gruppefacilitation",
+          text: "Specialiserede kompetencer i trauma-informeret gruppefacilitation. Forståelse af kollektiv window of tolerance. Håndtering af gruppeaktivering og dissociation. Supervision i etiske dilemmaer ved traumearbejde i grupper."
+        }
+      },
+      relation: {
+        kursist: {
+          title: "Terapeutisk Ledelse",
+          text: "Du udvikler din terapeutiske ledelsesidentitet - at være både facilitator og co-regulator. Du lærer at bruge gruppens relationelle felt aktivt og navigere i overføring og modoverføring. Din egen supervision er central."
+        },
+        fagfolk: {
+          title: "Relationel Ledelse og Etik",
+          text: "Udvikling af lederidentitet som nervesystemsfacilitator. Forståelse af gruppens relationelle dynamikker. Håndtering af magt, grænser og etiske dilemmaer. Obligatorisk løbende supervision. Fokus på facilitatorens egen fortsatte proces."
+        }
+      }
+    },
+    connections: {
+      'nervesystem-polyvagal': {
+        kursist: "Du lærer at facilitere polyvagal forståelse som grundlag for alt nervesystemsarbejde i grupper.",
+        fagfolk: "Polyvagal teori som didaktisk fundament for nervesystemsfacilitation."
+      },
+      'nervesystem-tilknytning': {
+        kursist: "Du lærer at facilitere tilknytningsarbejde gennem nervesystemsregulering i grupper.",
+        fagfolk: "Integration af attachment-arbejde i nervesystemsfacilitation."
+      },
+      'nervesystem-kropsterapi': {
+        kursist: "Du lærer at guide kropslige nervesystemsøvelser for grupper.",
+        fagfolk: "Somatisk facilitationskompetence som kernefærdighed."
+      },
+      'nervesystem-psykobiologi': {
+        kursist: "Du lærer at formidle sammenhængen mellem nervesystem og biologi engagerende.",
+        fagfolk: "Didaktiske kompetencer i neurobiologisk undervisning."
+      },
+      'nervesystem-traumer': {
+        kursist: "Du lærer trauma-informeret facilitation af nervesystemsarbejde.",
+        fagfolk: "Trauma-informeret tilgang som grundprincip i facilitation."
+      },
+      'nervesystem-relation': {
+        kursist: "Du bruger din egen regulering til at co-regulere hele gruppen.",
+        fagfolk: "Facilitatorens autonome tilstand som primær gruppeintervention."
+      },
+      'polyvagal-tilknytning': {
+        kursist: "Du lærer at formidle hvordan tilknytning og polyvagal teori hænger sammen.",
+        fagfolk: "Didaktik i integration af attachment og polyvagal teori."
+      },
+      'polyvagal-kropsterapi': {
+        kursist: "Du guider grupper i kropsøvelser der aktiverer ventral vagal sikkerhed.",
+        fagfolk: "Facilitering af somatiske øvelser baseret på polyvagal principper."
+      },
+      'polyvagal-psykobiologi': {
+        kursist: "Du lærer at formidle polyvagal teori som biologisk fundament.",
+        fagfolk: "Integration af polyvagal og neurobiologisk undervisning."
+      },
+      'polyvagal-traumer': {
+        kursist: "Du lærer at facilitere polyvagal forståelse i trauma-informeret arbejde.",
+        fagfolk: "Polyvagal teori som ramme for trauma-informeret gruppearbejde."
+      },
+      'polyvagal-relation': {
+        kursist: "Du bruger polyvagal teori til at forstå og navigere gruppedynamikker.",
+        fagfolk: "Polyvagal forståelse af gruppens relationelle felt."
+      },
+      'tilknytning-kropsterapi': {
+        kursist: "Du lærer at facilitere embodied tilknytningsarbejde i grupper.",
+        fagfolk: "Somatisk facilitation af attachment-processer."
+      },
+      'tilknytning-psykobiologi': {
+        kursist: "Du lærer at formidle tilknytningens biologiske fundament.",
+        fagfolk: "Undervisning i neurobiologi bag tilknytningsmønstre."
+      },
+      'tilknytning-traumer': {
+        kursist: "Du lærer at facilitere tilknytningstraumer med særlig forsigtighed.",
+        fagfolk: "Specialiseret facilitation af developmental trauma."
+      },
+      'tilknytning-relation': {
+        kursist: "Du bruger gruppens relationelle felt til tilknytningshealing.",
+        fagfolk: "Facilitering af earned secure attachment gennem gruppe."
+      },
+      'kropsterapi-psykobiologi': {
+        kursist: "Du lærer at formidle hvordan kropsarbejde påvirker biologien.",
+        fagfolk: "Undervisning i somatisk interventions neurobiologiske basis."
+      },
+      'kropsterapi-traumer': {
+        kursist: "Du lærer at guide trauma-informeret kropsarbejde sikkert.",
+        fagfolk: "Facilitering af titreret somatisk trauma-processing i grupper."
+      },
+      'kropsterapi-relation': {
+        kursist: "Du bruger kropsligt nærvær til at co-regulere gruppen.",
+        fagfolk: "Embodied facilitation som relationel intervention."
+      },
+      'psykobiologi-traumer': {
+        kursist: "Du lærer at formidle traumets neurobiologiske konsekvenser.",
+        fagfolk: "Undervisning i PTSD-neurobiologi tilgængeligt."
+      },
+      'psykobiologi-relation': {
+        kursist: "Du lærer at formidle relationens neurobiologiske kraft.",
+        fagfolk: "Undervisning i relationel neurobiologi."
+      },
+      'traumer-relation': {
+        kursist: "Du lærer at facilitere traumearbejde i dybt sikkert relationelt rum.",
+        fagfolk: "Skabelse af relational safety som forudsætning for traumearbejde."
+      }
+    }
+  },
+  tilknytningsspeciale: {
+    name: "Tilknytningsspeciale",
+    circles: {
+      nervesystem: {
+        kursist: {
+          title: "3-Dages Intensivkursus",
+          text: "På disse tre intensive dage dykker vi dybt ned i tilknytningsmønstre gennem nervesystemslinsen. Du lærer de 4 mønstre grundigt og får konkrete værktøjer til at arbejde med hver især. Kurset er både teoretisk og dybt personligt."
+        },
+        fagfolk: {
+          title: "Tilknytningsspeciale - 3 Dage",
+          text: "Intensivkursus i tilknytningsmønstre med fokus på nervesystemsmanifestationer. Dybdegående studium af de 4 mønstre med konkrete interventionsstrategier. Omfatter både teori, cases og egen tilknytningsproces. Forudsætter grundlæggende viden om nervesystemsarbejde."
+        }
+      },
+      polyvagal: {
+        kursist: {
+          title: "Polyvagale Tilknytningsmønstre",
+          text: "Du lærer at se hvert tilknytningsmønster som en specifik polyvagal profil. Tryg tilknytning som ventral vagal fleksibilitet, utryg tilknytning som rigid sympatisk eller dorsal dominans. Dette giver dig nøglen til at arbejde med mønsterne."
+        },
+        fagfolk: {
+          title: "Tilknytning som Polyvagale Profiler",
+          text: "Detaljeret mapping af tilknytningsmønstre til polyvagale profiler. Sikker = ventral vagal fleksibilitet. Ambivalent = sympatisk hyperactivation. Undvigende = dorsal deactivation. Desorganiseret = simultane modsatrettede states. Interventionsstrategier for hver profil."
+        }
+      },
+      tilknytning: {
+        kursist: {
+          title: "De 4 Tilknytningsmønstre Grundigt",
+          text: "Du lærer tryg, undvigende, ambivalent og desorganiseret tilknytning i dybden. Hvordan de opstår, hvordan de manifesterer sig i voksenlivet og hvordan de kan ændres. Du udforsker dit eget mønster og får redskaber til forandring."
+        },
+        fagfolk: {
+          title: "Tilknytningstypologi - Dybdeforståelse",
+          text: "Omfattende studium af Ainsworth's typologi med Main's Adult Attachment Interview-perspektiv. Developmental oprindelse, neurobiologisk substrat og kliniske manifestationer af hvert mønster. Assessment-værktøjer og interventionsstrategier. Fokus på earned secure attachment som terapeutisk mål."
+        }
+      },
+      kropsterapi: {
+        kursist: {
+          title: "Tilknytning i Kroppen",
+          text: "Du lærer hvordan hvert tilknytningsmønster sidder som specifikke kropslige mønstre - i åndedræt, tonus, bevægelse. Du får konkrete somatiske øvelser til arbejde med hvert mønster og lærer at læse tilknytning through kroppen."
+        },
+        fagfolk: {
+          title: "Embodied Tilknytningsmønstre",
+          text: "Tilknytningsmønstre manifesteret somatisk. Sikker = åben krop, dyb åndedræt. Undvigende = rigid tonus, shallow breathing. Ambivalent = hypervigilant muskulatur. Desorganiseret = fragmenteret embodiment. Somatiske interventioner specifikt tilpasset hvert mønster."
+        }
+      },
+      psykobiologi: {
+        kursist: {
+          title: "Tilknytningens Neurobiologi",
+          text: "Du lærer hvordan tidlig tilknytning formede din biologi - HPA-akse, oxytocin-system, stressrespons. Du får forståelse for hvordan forskellige mønstre har forskellige biologiske signatures og hvordan de kan modificeres."
+        },
+        fagfolk: {
+          title: "Neurobiologisk Substrat af Tilknytning",
+          text: "HPA-akse modificering gennem early attachment experiences. Oxytocin og vasopressin-receptor sensitivitet former tilknytningsmønstre. Cortisol-reaktivitet varierer systematisk mellem mønstre. Neuroplasticitet som basis for earned secure attachment gennem terapeutisk intervention."
+        }
+      },
+      traumer: {
+        kursist: {
+          title: "Tilknytningstraumer",
+          text: "Du lærer om developmental trauma inden for tilknytningssystemet - når omsorgspersonen var både kilde til fare og sikkerhed. Du får forståelse for desorganiseret tilknytning og særlige metoder til at arbejde med det."
+        },
+        fagfolk: {
+          title: "Developmental Trauma og Desorganisering",
+          text: "Desorganiseret tilknytning som resultat af frightened/frightening caregiving. Simultane activation af attachment og defense systems. Neurobiologiske konsekvenser omfatter dysreguleret HPA-akse og fragmenteret selvoplevelse. Specialiserede interventioner kræver robust alliance og langsom safety-etablering."
+        }
+      },
+      relation: {
+        kursist: {
+          title: "Earned Secure Attachment",
+          text: "Du lærer hvordan unsikker tilknytning kan ændres til sikker gennem terapeutisk relation. Du får forståelse for hvordan du selv kan facilitere earned secure attachment og oplever det gennem kursets relationelle rum."
+        },
+        fagfolk: {
+          title: "Terapeutisk Facilitation af ESA",
+          text: "Earned secure attachment gennem korrigerende emotionelle erfaringer i terapeutisk relation. Terapeuts konsistente tilgængelighed, afstemning og rupture-repair cycles modificerer indre arbejdsmodeller. Requires langvarig terapeutisk alliance med fokus på relationel reconsolidation gennem gentagen experience."
+        }
+      }
+    },
+    connections: {
+      'nervesystem-polyvagal': {
+        kursist: "Tilknytningsmønstre ER polyvagale mønstre - de er to sider af samme sag.",
+        fagfolk: "Tilknytningsmanifestationer forstået gennem polyvagal ramme."
+      },
+      'nervesystem-tilknytning': {
+        kursist: "At arbejde med tilknytning ER at arbejde med nervesystemet.",
+        fagfolk: "Tilknytningsintervention som nervesystemsintervention."
+      },
+      'nervesystem-kropsterapi': {
+        kursist: "Tilknytningsmønstre sidder i kroppen og kan ændres gennem kropsarbejde.",
+        fagfolk: "Somatisk intervention modificerer embodied tilknytningsmønstre."
+      },
+      'nervesystem-psykobiologi': {
+        kursist: "Tilknytning formede din biologi - men biologien kan omformes.",
+        fagfolk: "Tilknytningsmønstre præger neurobiologi modificerbart gennem intervention."
+      },
+      'nervesystem-traumer': {
+        kursist: "Tilknytningstraumer kræver særlig forsigtighed i nervesystemsarbejdet.",
+        fagfolk: "Developmental trauma skaber komplekse autonome mønstre."
+      },
+      'nervesystem-relation': {
+        kursist: "Nye tilknytningsoplevelser sker gennem reguleret nervesystem i relation.",
+        fagfolk: "Earned secure attachment gennem co-regulering i terapeutisk alliance."
+      },
+      'polyvagal-tilknytning': {
+        kursist: "Hvert tilknytningsmønster har sin polyvagale signatur.",
+        fagfolk: "Systematisk mapping af attachment til autonome profiler."
+      },
+      'polyvagal-kropsterapi': {
+        kursist: "Kropsarbejde aktiverer den ventrale sikkerhed nødvendig for tilknytningshealing.",
+        fagfolk: "Ventral vagal aktivering som forudsætning for attachment-arbejde."
+      },
+      'polyvagal-psykobiologi': {
+        kursist: "Polyvagal tilstand påvirker direkte tilknytningsbiologien - oxytocin, cortisol.",
+        fagfolk: "Ventral vagal aktivering optimerer attachment-relaterede neurotransmittere."
+      },
+      'polyvagal-traumer': {
+        kursist: "Tilknytningstraumer fastlåste systemet i usikre tilstande.",
+        fagfolk: "Developmental trauma dysregulerer polyvagale responses."
+      },
+      'polyvagal-relation': {
+        kursist: "Ventral vagal sikkerhed i relation lærer nye tilknytningsmønstre.",
+        fagfolk: "Co-regulering faciliterer earned secure attachment."
+      },
+      'tilknytning-kropsterapi': {
+        kursist: "Hvert tilknytningsmønster har sit kropslige udtryk der kan arbejdes med.",
+        fagfolk: "Mønster-specifikke somatiske interventioner."
+      },
+      'tilknytning-psykobiologi': {
+        kursist: "Forskellige tilknytningsmønstre har forskellige biologiske signaturer.",
+        fagfolk: "Systematisk variation i HPA-akse og oxytocin mellem mønstre."
+      },
+      'tilknytning-traumer': {
+        kursist: "Desorganiseret tilknytning opstår fra traumer i tidlige relationer.",
+        fagfolk: "Developmental trauma som oprindelse til desorganiseret attachment."
+      },
+      'tilknytning-relation': {
+        kursist: "Nye tilknytningsmønstre læres gennem nye relationelle oplevelser.",
+        fagfolk: "Earned secure attachment gennem korrigerende erfaring."
+      },
+      'kropsterapi-psykobiologi': {
+        kursist: "Kropsarbejde påvirker tilknytningsbiologien direkte.",
+        fagfolk: "Somatisk intervention modificerer attachment-neurobiologi."
+      },
+      'kropsterapi-traumer': {
+        kursist: "Tilknytningstraumer er embodied og kræver somatisk arbejde.",
+        fagfolk: "Developmental trauma manifesteres somatisk."
+      },
+      'kropsterapi-relation': {
+        kursist: "Tryg berøring i relation lærer kroppen nye tilknytningsmønstre.",
+        fagfolk: "Terapeutisk touch modificerer embodied attachment."
+      },
+      'psykobiologi-traumer': {
+        kursist: "Tilknytningstraumer ændrede biologien - healing normaliserer den.",
+        fagfolk: "Developmental trauma modificerer HPA-akse og neurotransmittere."
+      },
+      'psykobiologi-relation': {
+        kursist: "Trygge relationer er tilknytnings-medicin på biologisk niveau.",
+        fagfolk: "Secure alliance modificerer attachment-neurobiologi."
+      },
+      'traumer-relation': {
+        kursist: "Tilknytningstraumer kan kun heales i meget tryg relation.",
+        fagfolk: "Developmental trauma kræver robust alliance."
+      }
+    }
+  }
 };
-
 const educationNames = {
     nervesystemsterapeut: 'Nervesystemsterapeut',
     teachertraining: 'Teacher Training',
