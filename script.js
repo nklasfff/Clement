@@ -172,7 +172,6 @@ const circleNames = {
 let currentMode = 'klient';
 let currentView = 'welcome';
 let currentCircle = null;
-let currentConnection = null;
 
 window.addEventListener('load', () => {
     resetToWelcome();
@@ -188,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function resetToWelcome() {
     currentView = 'welcome';
     currentCircle = null;
-    currentConnection = null;
     currentMode = 'klient';
     
     document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -219,8 +217,6 @@ function setupModeButtons() {
             
             if (currentView === 'circle' && currentCircle) {
                 showCircleView(currentCircle);
-            } else if (currentView === 'connection' && currentConnection) {
-                showConnectionView(currentConnection.from, currentConnection.to, currentConnection.fromCircle);
             }
             
             setTimeout(() => {
@@ -234,7 +230,6 @@ function setupModeButtons() {
 function showWelcome() {
     currentView = 'welcome';
     currentCircle = null;
-    currentConnection = null;
     clearAllActive();
     
     document.getElementById('info-content').innerHTML = `
@@ -262,7 +257,6 @@ function setupCircleClicks() {
 function showCircleView(circleId) {
     currentView = 'circle';
     currentCircle = circleId;
-    currentConnection = null;
     clearAllActive();
     
     if (circleId !== 'nervesystem') {
@@ -281,21 +275,23 @@ function showCircleView(circleId) {
     const connectedCircles = getConnectedCircles(circleId);
     
     let connectionsHTML = '';
-    if (connectedCircles.length > 0) {
-        connectionsHTML = `
-            <div class="connection-list">
-                <p><strong>Se hvordan ${circleNames[circleId]} hænger sammen med:</strong></p>
-                ${connectedCircles.map(targetId => {
-                    const targetName = circleNames[targetId];
-                    return `
-                        <div class="connection-item" onclick="showCircleView('${targetId}')">
-                            <div class="connection-item-title">→ ${targetName}</div>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-        `;
-    }
+    connectedCircles.forEach(targetId => {
+        const key1 = `${circleId}-${targetId}`;
+        const key2 = `${targetId}-${circleId}`;
+        const connectionData = content.connections[key1] || content.connections[key2];
+        
+        if (connectionData) {
+            const targetName = circleNames[targetId];
+            const dynamikText = connectionData[currentMode];
+            
+            connectionsHTML += `
+                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e8f0ec;">
+                    <h3 style="color: #7B9E89; font-size: 1.2rem; margin-bottom: 10px;">${circleNames[circleId]} ↔ ${targetName}</h3>
+                    <p>${dynamikText}</p>
+                </div>
+            `;
+        }
+    });
     
     document.getElementById('info-content').innerHTML = `
         <div style="margin-bottom: 20px;">
@@ -307,70 +303,8 @@ function showCircleView(circleId) {
     `;
 }
 
-function showConnectionView(from, to, fromCircle) {
-    currentView = 'connection';
-    currentConnection = { from, to, fromCircle };
-    clearAllActive();
-    
-    if (from !== 'nervesystem') {
-        const circle1 = document.querySelector(`[data-id="${from}"]`);
-        if (circle1) {
-            circle1.classList.add('active');
-            const texts1 = document.querySelectorAll(`[data-circle="${from}"]`);
-            texts1.forEach(t => {
-                t.style.fill = 'white';
-                t.setAttribute('fill', 'white');
-            });
-        }
-    }
-    if (to !== 'nervesystem') {
-        const circle2 = document.querySelector(`[data-id="${to}"]`);
-        if (circle2) {
-            circle2.classList.add('active');
-            const texts2 = document.querySelectorAll(`[data-circle="${to}"]`);
-            texts2.forEach(t => {
-                t.style.fill = 'white';
-                t.setAttribute('fill', 'white');
-            });
-        }
-    }
-    
-    let line = document.querySelector(`[data-from="${from}"][data-to="${to}"]`);
-    if (!line) {
-        line = document.querySelector(`[data-from="${to}"][data-to="${from}"]`);
-    }
-    if (line) line.classList.add('active');
-    
-    const key1 = `${from}-${to}`;
-    const key2 = `${to}-${from}`;
-    const connectionData = content.connections[key1] || content.connections[key2];
-    
-    if (!connectionData) {
-        document.getElementById('info-content').innerHTML = `
-            <div style="margin-bottom: 20px;">
-                <button onclick="showCircleView('${fromCircle}')" class="back-btn">← Tilbage til ${circleNames[fromCircle]}</button>
-            </div>
-            <h2>Forbindelse ikke fundet</h2>
-        `;
-        return;
-    }
-    
-    const text = connectionData[currentMode];
-    const fromName = circleNames[from];
-    const toName = circleNames[to];
-    
-    document.getElementById('info-content').innerHTML = `
-        <div style="margin-bottom: 20px;">
-            <button onclick="showCircleView('${fromCircle}')" class="back-btn">← Tilbage til ${circleNames[fromCircle]}</button>
-        </div>
-        <h2>Dynamik: ${fromName} ↔ ${toName}</h2>
-        <p><strong>${text}</strong></p>
-    `;
-}
-
 window.showWelcome = showWelcome;
 window.showCircleView = showCircleView;
-window.showConnectionView = showConnectionView;
 
 function getConnectedCircles(circleId) {
     const allCircles = ['nervesystem', 'polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
@@ -389,8 +323,8 @@ function setupConnectionClicks() {
             e.stopPropagation();
             const from = line.dataset.from;
             const to = line.dataset.to;
-            const fromCircle = from === 'nervesystem' ? to : from;
-            showConnectionView(from, to, fromCircle);
+            const circleToShow = from === 'nervesystem' ? to : from;
+            showCircleView(circleToShow);
         });
     });
 }
