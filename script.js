@@ -322,24 +322,165 @@ const themes = {
             }
         }
     },
-    tilknytning: {
+    
+   tilknytning: {
         name: "Tilknytning",
         circles: {
             nervesystem: {
                 klient: {
                     title: "Nervesystemet og Tilknytning",
-                    text: "Dit tilknytningsmønster er kodet ind i nervesystemets reaktioner. Når vi regulerer nervesystemet, åbner vi muligheden for at skabe nye, sundere tilknytningsmønstre."
+                    text: "Dit tilknytningsmønster er kodet ind i nervesystemets reaktioner. Når vi regulerer nervesystemet, åbner vi muligheden for at skabe nye, sundere tilknytningsmønstre gennem faktiske oplevelser af sikkerhed."
                 },
                 fagfolk: {
                     title: "Autonomt Nervesystem og Tilknytning",
-                    text: "Tilknytningsmønstre er fundamentalt autonome mønstre. Nervesystemsregulering er forudsætning for earned secure attachment."
+                    text: "Tilknytningsmønstre er fundamentalt autonome mønstre. Nervesystemsregulering er forudsætning for earned secure attachment. Arbejder med vagal tone som basis for relationel kapacitet og affektregulering."
+                }
+            },
+            polyvagal: {
+                klient: {
+                    title: "Polyvagal og Tilknytning",
+                    text: "Hvert tilknytningsmønster har sin nervesystem-signatur. Tryg tilknytning lever i grøn zone, mens utryg tilknytning sidder fast i gul eller rød. Vi lærer dit system at finde den grønne sikkerhed."
+                },
+                fagfolk: {
+                    title: "Polyvagal Teori og Tilknytning",
+                    text: "Sikker tilknytning korrelerer med ventral vagal dominans og polyvagal fleksibilitet. Unsikre mønstre viser rigid sympatisk (ambivalent) eller dorsal (undvigende) activation. Social engagement system er neurologisk substrat for attachment."
+                }
+            },
+            tilknytning: {
+                klient: {
+                    title: "Forstå Dit Tilknytningsmønster",
+                    text: "Vi udforsker sammen dit tilknytningsmønster - ikke for at dømme det, men for at forstå det. Når du ser mønstret kan du begynde at skabe nye måder at være i relationer på."
+                },
+                fagfolk: {
+                    title: "Tilknytningsteori i Praksis",
+                    text: "Adult Attachment Interview-inspireret udforskning af indre arbejdsmodeller. Fokus på reflective functioning og mentalization som veje til earned secure attachment. Integration af tilknytningsteori med neurobiologisk forståelse."
+                }
+            },
+            kropsterapi: {
+                klient: {
+                    title: "Tilknytning i Kroppen",
+                    text: "Tilknytningsmønstre sidder i hvordan du holder vejret, spænder kroppen, lukker ned. Gennem kropsarbejde kan vi skabe nye fysiske oplevelser af sikkerhed der ændrer mønstret."
+                },
+                fagfolk: {
+                    title: "Embodied Tilknytning",
+                    text: "Tilknytningsmønstre manifesteres somatisk i åndedræt, tonus, fasicial densitet. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv re-patterning."
+                }
+            },
+            psykobiologi: {
+                klient: {
+                    title: "Tilknytningens Biologi",
+                    text: "Dit tilknytningsmønster formede din biologis reaktioner på stress og nærhed. Men biologien er ikke fastlåst - gennem nye oplevelser kan vi omforme den."
+                },
+                fagfolk: {
+                    title: "Neurobiologi af Tilknytning",
+                    text: "Tidlig tilknytning former HPA-akse sensitivitet og oxytocin-receptor udtryk. Unsikker tilknytning korrelerer med dysreguleret cortisol og reduceret belønningsrespons. Earned secure attachment kan modificere disse biologiske signatures."
+                }
+            },
+            traumer: {
+                klient: {
+                    title: "Traumer i Tilknytning",
+                    text: "Traumer i tidlige relationer skaber desorganiseret tilknytning - hvor relationer er både farlige og det eneste sikre. Det kræver ekstra forsigtighed og tålmodighed at arbejde med."
+                },
+                fagfolk: {
+                    title: "Developmental Trauma og Tilknytning",
+                    text: "Developmental trauma inden for attachment system resulterer i desorganiseret tilknytning med simultane modsatrettede attachment og defense responses. Kræver langsom etablering af relational safety før tilknytningsarbejde kan påbegyndes."
+                }
+            },
+            relation: {
+                klient: {
+                    title: "Nye Tilknytningsoplevelser",
+                    text: "Vores terapeutiske relation bliver stedet hvor du kan opleve tryg tilknytning - måske for første gang. Det er gennem denne oplevelse at gamle mønstre kan ændres."
+                },
+                fagfolk: {
+                    title: "Earned Secure Attachment",
+                    text: "Terapeutisk relation som korrigerende emotionel erfaring. Konsistent tilgængelighed og afstemning modificerer indre arbejdsmodeller. Earned secure attachment faciliteres gennem gentagen erfaring af secure base og safe haven."
                 }
             }
         },
         connections: {
             'nervesystem-polyvagal': {
-                klient: "[Tilknytnings-kontekst dynamik kommer her]",
-                fagfolk: "[Faglig tilknytnings-dynamik]"
+                klient: "Tilknytningsmønstre er kodet som nervesystem-reaktioner. Polyvagal forståelse viser hvordan tryg tilknytning lever i grøn sikker tilstand.",
+                fagfolk: "Tilknytningsmønstre manifesteres som specifikke polyvagale profiler. Sikker tilknytning korrelerer med ventral vagal fleksibilitet."
+            },
+            'nervesystem-tilknytning': {
+                klient: "Når vi arbejder med nervesystemet, arbejder vi direkte med tilknytningsmønstre - de er det samme.",
+                fagfolk: "Tilknytningsintervention er nervesystemsintervention. Earned secure attachment kræver autonome modifications."
+            },
+            'nervesystem-kropsterapi': {
+                klient: "Tilknytningsmønstre sidder i kroppen. Kropsarbejde ændrer både nervesystem og tilknytning samtidigt.",
+                fagfolk: "Tilknytningsmønstre er embodied. Somatisk intervention modificerer både autonome mønstre og relationelle skemaer."
+            },
+            'nervesystem-psykobiologi': {
+                klient: "Tilknytningsmønstre formede din biologi. Ved at arbejde med nervesystemet omformer vi biologien.",
+                fagfolk: "Tilknytning præger neurobiologi. Nervesystemsregulering kan modificere HPA-akse og oxytocin-systemer formet af early attachment."
+            },
+            'nervesystem-traumer': {
+                klient: "Tilknytningstraumer sidder dybt i nervesystemet. Healing kræver særlig forsigtighed og langsom opbygning af sikkerhed.",
+                fagfolk: "Developmental trauma skaber desorganiseret tilknytning med komplekse autonome mønstre. Kræver robuste interventionsteknikker."
+            },
+            'nervesystem-relation': {
+                klient: "Dit nervesystem lærer nye tilknytningsmønstre gennem vores trygge relation.",
+                fagfolk: "Terapeutisk relation faciliterer earned secure attachment gennem co-regulering og autonome modifications."
+            },
+            'polyvagal-tilknytning': {
+                klient: "Hvert tilknytningsmønster har sin polyvagale signatur. Tryg er grøn, utryg er gul eller rød.",
+                fagfolk: "Tilknytningsmønstre korrelerer med specifikke polyvagale profiler og autonome response-patterns."
+            },
+            'polyvagal-kropsterapi': {
+                klient: "Kropsarbejde aktiverer den grønne sikre tilstand som er fundamentet for tryg tilknytning.",
+                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways nødvendige for secure attachment capacity."
+            },
+            'polyvagal-psykobiologi': {
+                klient: "Den grønne sikre tilstand skaber den biologi der muliggør tryg tilknytning.",
+                fagfolk: "Ventral vagal dominans optimerer neurobiologiske systemer der understøtter secure attachment."
+            },
+            'polyvagal-traumer': {
+                klient: "Tilknytningstraumer låste systemet i usikre tilstande. Grøn sikkerhed er vejen til healing.",
+                fagfolk: "Developmental trauma dysregulerer polyvagale responses. Ventral vagal etablering er forudsætning for tilknytningsarbejde."
+            },
+            'polyvagal-relation': {
+                klient: "Min grønne ro lærer dit system tryg tilknytning gennem vores relation.",
+                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og faciliterer secure attachment learning."
+            },
+            'tilknytning-kropsterapi': {
+                klient: "Tilknytningsmønstre lever i kroppen. Kropsarbejde skaber nye oplevelser af sikkerhed.",
+                fagfolk: "Embodied tilknytningsmønstre modificeres gennem proprioceptiv og interoceptiv re-patterning."
+            },
+            'tilknytning-psykobiologi': {
+                klient: "Tidlig tilknytning formede din biologi. Ny sikker tilknytning kan omforme den.",
+                fagfolk: "Tilknytningsmønstre præger HPA-akse og oxytocin-systemer. Earned secure attachment modificerer biologi."
+            },
+            'tilknytning-traumer': {
+                klient: "Traumer i tidlige tilknytninger kræver ekstra forsigtighed - både farligt og eneste sikkerhed.",
+                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning med modsatrettede impulser. Langsom safety-etablering påkrævet."
+            },
+            'tilknytning-relation': {
+                klient: "Vores relation bliver det sted hvor du oplever tryg tilknytning for første gang eller igen.",
+                fagfolk: "Terapeutisk relation som korrigerende erfaring modificerer indre arbejdsmodeller gennem konsistent tilgængelighed."
+            },
+            'kropsterapi-psykobiologi': {
+                klient: "Kropsarbejde skaber nye tilknytningsoplevelser der ændrer biologien.",
+                fagfolk: "Somatisk intervention påvirker neurobiologiske systemer der understøtter attachment capacity."
+            },
+            'kropsterapi-traumer': {
+                klient: "Tilknytningstraumer sidder i kroppen. Forsigtigt kropsarbejde integrerer det splittet.",
+                fagfolk: "Developmental trauma manifesteres somatisk. Titreret intervention faciliterer integration."
+            },
+            'kropsterapi-relation': {
+                klient: "Tryg berøring i vores relation lærer kroppen at tilknytning kan være sikker.",
+                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer embodied tilknytningsmønstre."
+            },
+            'psykobiologi-traumer': {
+                klient: "Tilknytningstraumer ændrede din biologi. Healing normaliserer den.",
+                fagfolk: "Developmental trauma modificerer neurobiologi. Tilknytningsarbejde kan normalisere biologiske signatures."
+            },
+            'psykobiologi-relation': {
+                klient: "Vores trygge relation er biologi-medicin der skaber tilknytningssikkerhed.",
+                fagfolk: "Secure alliance modificerer oxytocin og cortisol-systemer og faciliterer biologisk grundlag for attachment."
+            },
+            'traumer-relation': {
+                klient: "Tilknytningstraumer kan kun heales i dyb relationel sikkerhed.",
+                fagfolk: "Developmental trauma kræver robust alliance før processing. Relational safety er absolut forudsætning."
             }
         }
     },
