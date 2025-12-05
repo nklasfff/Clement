@@ -1694,7 +1694,8 @@ function setupEducationSelector() {
             dropdown.classList.remove('show');
             
             updateCenterCircle();
-            showCircleView('nervesystem');
+            updateAllCircles();
+updateAllConnections();
         });
     });
 }
