@@ -1,4 +1,3 @@
-// Content database
 const content = {
     circles: {
         nervesystem: {
@@ -270,9 +269,11 @@ function showCircleView(circleId) {
         const circle = document.querySelector(`[data-id="${circleId}"]`);
         if (circle) {
             circle.classList.add('active');
-            // Gør tekster HVIDE for denne aktive cirkel
             const texts = document.querySelectorAll(`[data-circle="${circleId}"]`);
-            texts.forEach(t => t.setAttribute('fill', 'white'));
+            texts.forEach(t => {
+                t.style.fill = 'white';
+                t.setAttribute('fill', 'white');
+            });
         }
     }
     
@@ -316,7 +317,10 @@ function showConnectionView(from, to, fromCircle) {
         if (circle1) {
             circle1.classList.add('active');
             const texts1 = document.querySelectorAll(`[data-circle="${from}"]`);
-            texts1.forEach(t => t.setAttribute('fill', 'white'));
+            texts1.forEach(t => {
+                t.style.fill = 'white';
+                t.setAttribute('fill', 'white');
+            });
         }
     }
     if (to !== 'nervesystem') {
@@ -324,7 +328,10 @@ function showConnectionView(from, to, fromCircle) {
         if (circle2) {
             circle2.classList.add('active');
             const texts2 = document.querySelectorAll(`[data-circle="${to}"]`);
-            texts2.forEach(t => t.setAttribute('fill', 'white'));
+            texts2.forEach(t => {
+                t.style.fill = 'white';
+                t.setAttribute('fill', 'white');
+            });
         }
     }
     
@@ -392,8 +399,8 @@ function clearAllActive() {
     document.querySelectorAll('.circle:not([data-id="nervesystem"])').forEach(c => c.classList.remove('active'));
     document.querySelectorAll('.connection').forEach(c => c.classList.remove('active'));
     
-    // Nulstil ALLE ydre tekster til mørk grøn
     document.querySelectorAll('.outer-text').forEach(t => {
+        t.style.fill = '#5a7a68';
         t.setAttribute('fill', '#5a7a68');
     });
 }
