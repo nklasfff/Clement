@@ -186,9 +186,6 @@ h1 {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(123, 158, 137, 0.15);
-    overflow-y: auto;
-    max-height: 700px;
-    -webkit-overflow-scrolling: touch;
 }
 
 #info-content {

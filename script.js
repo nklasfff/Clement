@@ -1675,12 +1675,12 @@ function setupThemeSelector() {
             
             showCircleView('nervesystem');
 
-            // Scroll to info panel for mobile/PWA - delayed to ensure content is rendered
+            // Scroll to info content for mobile/PWA - delayed to ensure content is rendered
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    const infoPanel = document.getElementById('info-panel');
-                    if (infoPanel) {
-                        infoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const infoContent = document.getElementById('info-content');
+                    if (infoContent) {
+                        infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
@@ -1723,12 +1723,12 @@ currentTheme = 'general';
           updateCenterCircle();
 showCircleView('nervesystem');
 
-            // Scroll to info panel for mobile/PWA - delayed to ensure content is rendered
+            // Scroll to info content for mobile/PWA - delayed to ensure content is rendered
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    const infoPanel = document.getElementById('info-panel');
-                    if (infoPanel) {
-                        infoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const infoContent = document.getElementById('info-content');
+                    if (infoContent) {
+                        infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
