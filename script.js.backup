@@ -1674,16 +1674,6 @@ function setupThemeSelector() {
             updateCenterCircle();
             
             showCircleView('nervesystem');
-
-            // Scroll to info panel for mobile/PWA - delayed to ensure content is rendered
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const infoPanel = document.getElementById('info-panel');
-                    if (infoPanel) {
-                        infoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
         });
     });
 }
@@ -1722,16 +1712,6 @@ currentTheme = 'general';
             
           updateCenterCircle();
 showCircleView('nervesystem');
-
-            // Scroll to info panel for mobile/PWA - delayed to ensure content is rendered
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const infoPanel = document.getElementById('info-panel');
-                    if (infoPanel) {
-                        infoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
         });
     });
 }
