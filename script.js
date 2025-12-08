@@ -1770,6 +1770,9 @@ function showExercises() {
             <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
         </div>
     `;
+
+    // Reset scroll position to top
+    document.getElementById('info-panel').scrollTop = 0;
 }
 
 function showWelcome() {
@@ -1788,6 +1791,9 @@ function showWelcome() {
             <li>Prøv øvelserne for at mærke metoderne i praksis</li>
         </ul>
     `;
+
+    // Reset scroll position to top
+    document.getElementById('info-panel').scrollTop = 0;
 }
 
 function setupCircleClicks() {
@@ -1828,6 +1834,8 @@ function showCircleView(circleId) {
                 <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
             </div>
         `;
+        // Reset scroll position to top
+        document.getElementById('info-panel').scrollTop = 0;
         return;
     }
     
@@ -1861,6 +1869,9 @@ function showCircleView(circleId) {
             <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
         </div>
     `;
+
+    // Reset scroll position to top
+    document.getElementById('info-panel').scrollTop = 0;
 }
 
 window.showWelcome = showWelcome;
