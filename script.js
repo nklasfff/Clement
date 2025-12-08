@@ -1763,12 +1763,12 @@ function showExercises() {
     `).join('');
     
     document.getElementById('info-content').innerHTML = `
-        <div style="margin-bottom: 20px;">
-            <button onclick="showWelcome()" class="back-btn">← Tilbage til oversigt</button>
-        </div>
         <h2>Prøv øvelserne</h2>
         <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
         ${exercisesHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
     `;
 }
 
@@ -1822,11 +1822,11 @@ function showCircleView(circleId) {
     
     if (!circleData || !circleData[currentMode]) {
         document.getElementById('info-content').innerHTML = `
-            <div style="margin-bottom: 20px;">
-                <button onclick="showWelcome()" class="back-btn">← Tilbage til oversigt</button>
-            </div>
             <h2>Indhold kommer snart</h2>
             <p>Dette tema er under udvikling. Prøv "Angst" temaet for at se fuldt indhold.</p>
+            <div style="margin-top: 30px; text-align: center;">
+                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+            </div>
         `;
         return;
     }
@@ -1854,12 +1854,12 @@ function showCircleView(circleId) {
     });
     
     document.getElementById('info-content').innerHTML = `
-        <div style="margin-bottom: 20px;">
-            <button onclick="showWelcome()" class="back-btn">← Tilbage til oversigt</button>
-        </div>
         <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
     `;
 }
 
