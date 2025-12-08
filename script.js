@@ -1674,14 +1674,6 @@ function setupThemeSelector() {
             updateCenterCircle();
             
             showCircleView('nervesystem');
-
-            // Scroll til info-panel
-            setTimeout(() => {
-                document.getElementById('info-panel')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
         });
     });
 }
@@ -1720,14 +1712,6 @@ currentTheme = 'general';
             
           updateCenterCircle();
 showCircleView('nervesystem');
-
-            // Scroll til info-panel
-            setTimeout(() => {
-                document.getElementById('info-panel')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
         });
     });
 }
