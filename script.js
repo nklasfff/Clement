@@ -1871,12 +1871,12 @@ function showCircleView(circleId) {
         
         if (connectionData && connectionData[currentMode]) {
             const targetName = circleNames[targetId];
+            const dynamikText = connectionData[currentMode];
             
             connectionsHTML += `
                 <div style="margin-top: 30px; padding-top: 25px; border-top: 2px solid #e8f0ec;">
                     <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
                     <p>${dynamikText}</p>
-                </div>
     `;
             `;
         }
@@ -1884,6 +1884,7 @@ function showCircleView(circleId) {
     
     document.getElementById('info-content').innerHTML = `
         <h2>Prøv øvelserne</h2>
+    `;
         <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsHTML}
