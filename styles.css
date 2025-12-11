@@ -130,7 +130,14 @@ h1 {
     display: block;
 }
 
-.theme-option, .education-option {
+/* Position exercises dropdown towards center to keep text readable */
+#exercises-dropdown {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+.theme-option, .education-option, .exercise-option {
     padding: 15px 20px;
     font-family: 'Georgia', serif;
     font-size: 1rem;
@@ -140,21 +147,21 @@ h1 {
     border-bottom: 1px solid #e8f0ec;
 }
 
-.theme-option:last-child, .education-option:last-child {
+.theme-option:last-child, .education-option:last-child, .exercise-option:last-child {
     border-bottom: none;
     border-radius: 0 0 12px 12px;
 }
 
-.theme-option:first-child, .education-option:first-child {
+.theme-option:first-child, .education-option:first-child, .exercise-option:first-child {
     border-radius: 12px 12px 0 0;
 }
 
-.theme-option:hover, .education-option:hover {
+.theme-option:hover, .education-option:hover, .exercise-option:hover {
     background: #f8faf9;
     color: #7B9E89;
 }
 
-.theme-option.active, .education-option.active {
+.theme-option.active, .education-option.active, .exercise-option.active {
     background: #7B9E89;
     color: white;
 }
