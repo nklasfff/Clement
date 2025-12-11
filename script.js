@@ -1808,7 +1808,14 @@ function showWelcome() {
         <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
         <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
     `;
-
+    `;
+    
+    const infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(() => {
+        infoPanel.scrollTop = 0;
+        window.scrollTo(0, 0);
+    });
+}
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
