@@ -1896,7 +1896,6 @@ function showCircleView(circleId) {
         window.scrollTo(0, 0);
     });
 }
-        </div>
 
 function getConnectedCircles(circleId) {
     const allCircles = ['polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
