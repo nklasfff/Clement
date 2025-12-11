@@ -1885,8 +1885,6 @@ function showCircleView(circleId) {
                     <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
                     <p>${dynamikText}</p>
     `;
-            `;
-        }
     });
     
     document.getElementById('info-content').innerHTML = `
