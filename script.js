@@ -1794,11 +1794,12 @@ function showExercises() {
 }
 
 function showWelcome() {
-    currentView = 'welcome';
-    currentCircle = null;
-    clearAllActive();
-    
-    document.getElementById('info-content').innerHTML = `        <h2>Velkommen til min verden</h2>
+    currentView = 'welcome';
+    currentCircle = null;
+    clearAllActive();
+    
+    document.getElementById('info-content').innerHTML = `
+        <h2>Velkommen til min verden</h2>
         <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
         <h2>Du kender følelsen</h2>
@@ -1814,7 +1815,8 @@ function showWelcome() {
 
         <h2>Min metode</h2>
         <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
-        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>`;
+        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
+    `;
 
     // Reset scroll position to top - use requestAnimationFrame for iOS PWA compatibility
     const infoPanel = document.getElementById('info-panel');
