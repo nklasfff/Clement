@@ -1760,28 +1760,57 @@ showCircleView('nervesystem');
 }
 
 function setupExercisesButton() {
-    document.getElementById('exercises-btn').addEventListener('click', () => {
-        document.querySelectorAll('.top-circle').forEach(c => c.classList.remove('active'));
-        document.getElementById('exercises-btn').classList.add('active');
-        currentEducation = null;
-        currentTheme = 'general';
-        document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
-        document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
-        showExercises();
-        // Scroll to info content after showing exercises
-        setTimeout(() => {
-            const infoContent = document.getElementById('info-content');
-            if (infoContent) {
-                // Scroll with offset to avoid notch and show border
-                const rect = infoContent.getBoundingClientRect();
-                const offset = 80; // Offset for header + safe area
-                window.scrollTo({
-                    top: window.pageYOffset + rect.top - offset,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50);
-    });
+    const selector = document.getElementById('exercises-btn');
+    const dropdown = document.getElementById('exercises-dropdown');
+
+    selector.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+        const themeDrop = document.getElementById('theme-dropdown');
+        const eduDrop = document.getElementById('education-dropdown');
+        if (themeDrop) themeDrop.classList.remove('show');
+        if (eduDrop) eduDrop.classList.remove('show');
+    });
+
+    document.addEventListener('click', () => {
+        dropdown.classList.remove('show');
+    });
+
+    document.querySelectorAll('.exercise-option').forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            const exerciseIndex = parseInt(option.dataset.exercise);
+
+            document.querySelectorAll('.top-circle').forEach(c => c.classList.remove('active'));
+            selector.classList.add('active');
+
+            currentEducation = null;
+            currentTheme = 'general';
+            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
+
+            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+
+            dropdown.classList.remove('show');
+
+            showExercises(exerciseIndex);
+
+            // Scroll to specific exercise after showing all exercises
+            setTimeout(() => {
+                const exerciseCard = document.querySelectorAll('.exercise-card')[exerciseIndex];
+                if (exerciseCard) {
+                    const rect = exerciseCard.getBoundingClientRect();
+                    const offset = 80;
+                    window.scrollTo({
+                        top: window.pageYOffset + rect.top - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        });
+    });
 }
 
 function showExercises() {
