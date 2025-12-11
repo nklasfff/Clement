@@ -1818,14 +1818,13 @@ function showWelcome() {
         <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
     `;
 
-    // Reset scroll position to top - use requestAnimationFrame for iOS PWA compatibility
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
-        // Also scroll window in case PWA uses different scroll container
         window.scrollTo(0, 0);
     });
 }
+
 
 function setupCircleClicks() {
     const circles = document.querySelectorAll('.circle');
