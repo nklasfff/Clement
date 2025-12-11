@@ -1632,6 +1632,11 @@ function setupTopCircles() {
             infoPanel.style.opacity = '0.3';
             setTimeout(() => {
                 infoPanel.style.opacity = '1';
+                // Scroll to info content after fade-in
+                const infoContent = document.getElementById('info-content');
+                if (infoContent) {
+                    infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }, 150);
             
             if (currentView === 'circle' && currentCircle) {
@@ -1745,6 +1750,13 @@ function setupExercisesButton() {
         document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
         document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
         showExercises();
+        // Scroll to info content after showing exercises
+        setTimeout(() => {
+            const infoContent = document.getElementById('info-content');
+            if (infoContent) {
+                infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 50);
     });
 }
 
