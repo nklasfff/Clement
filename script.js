@@ -1885,7 +1885,11 @@ function showCircleView(circleId) {
                     <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
                     <p>${dynamikText}</p>
                 </div>
-        <h2>${data.title}</h2>
+            `;
+        }
+    });
+    
+    document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsHTML}
         <div style="margin-top: 30px; text-align: center;">
