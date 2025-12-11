@@ -1884,17 +1884,21 @@ function showCircleView(circleId) {
                 <div style="margin-top: 30px; padding-top: 25px; border-top: 2px solid #e8f0ec;">
                     <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
                     <p>${dynamikText}</p>
-    `;
-    });
-    
-    document.getElementById('info-content').innerHTML = `
-        <h2>Prøv øvelserne</h2>
-    `;
+    document.getElementById('info-content').innerHTML = `
         <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsHTML}
         <div style="margin-top: 30px; text-align: center;">
             <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
+    `;
+    
+    const infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(() => {
+        infoPanel.scrollTop = 0;
+        window.scrollTo(0, 0);
+    });
+}
         </div>
 
 function getConnectedCircles(circleId) {
