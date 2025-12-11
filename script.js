@@ -1884,40 +1884,12 @@ function showCircleView(circleId) {
     
     document.getElementById('info-content').innerHTML = `
         <h2>Prøv øvelserne</h2>
-        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
-        ${exercisesHTML}
+        <h2>${data.title}</h2>
+        <p>${data.text}</p>
+        ${connectionsHTML}
         <div style="margin-top: 30px; text-align: center;">
             <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
         </div>
-        <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
-
-        <h2>Du kender følelsen</h2>
-        <p>Vi kender den alle sammen. At sidde fast. At have ondt – i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
-        <p>Og som behandler kender du frustrationen ved at søge den rette videreuddannelse – kurser der lover guld og grønne skove, men som ikke helt rammer det du mangler. Som ikke matcher din måde at arbejde på. Som ikke går dybt nok. Du længes efter viden der virkelig løfter din faglighed.</p>
-
-        <h2>Hvad ligger bag?</h2>
-        <p>Bag både smerten og frustrationen ligger ofte nervesystemet. Når vi overser sammenhængen – at alt hænger sammen med alt – udebliver resultaterne. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser. Det er fundamentet. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
-        <p>For dig som behandler kan det være overvældende at finde den uddannelse der netop giver dig de redskaber du kan bruge. Hvor teori møder praksis. Hvor du selv kommer i proces. Hvor det bliver kropsligt og konkret.</p>
-
-        <h2>Hvordan kan det vendes?</h2>
-        <p>Transformation sker gennem forståelse. Når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder helbredelsen.</p>
-
-        <h2>Min metode</h2>
-        <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
-        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>`;
-
-    // Reset scroll position to top - use requestAnimationFrame for iOS PWA compatibility
-    const infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(() => {
-        infoPanel.scrollTop = 0;
-        // Also scroll window in case PWA uses different scroll container
-        window.scrollTo(0, 0);
-    });
-}
-
-window.showWelcome = showWelcome;
-window.showCircleView = showCircleView;
-window.showExercises = showExercises;
 
 function getConnectedCircles(circleId) {
     const allCircles = ['polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
