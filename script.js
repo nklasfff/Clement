@@ -1949,3 +1949,10 @@ function clearAllActive() {
         t.setAttribute('fill', '#5a7a68');
     });
 }
+        <h2>Prøv øvelserne</h2>
+        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
+        ${exercisesHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
+    `;
