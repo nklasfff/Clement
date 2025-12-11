@@ -1635,7 +1635,13 @@ function setupTopCircles() {
                 // Scroll to info content after fade-in
                 const infoContent = document.getElementById('info-content');
                 if (infoContent) {
-                    infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Scroll with offset to avoid notch and show border
+                    const rect = infoContent.getBoundingClientRect();
+                    const offset = 80; // Offset for header + safe area
+                    window.scrollTo({
+                        top: window.pageYOffset + rect.top - offset,
+                        behavior: 'smooth'
+                    });
                 }
             }, 150);
             
@@ -1685,7 +1691,13 @@ function setupThemeSelector() {
                 requestAnimationFrame(() => {
                     const infoContent = document.getElementById('info-content');
                     if (infoContent) {
-                        infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Scroll with offset to avoid notch and show border
+                    const rect = infoContent.getBoundingClientRect();
+                    const offset = 80; // Offset for header + safe area
+                    window.scrollTo({
+                        top: window.pageYOffset + rect.top - offset,
+                        behavior: 'smooth'
+                    });
                     }
                 });
             });
@@ -1733,7 +1745,13 @@ showCircleView('nervesystem');
                 requestAnimationFrame(() => {
                     const infoContent = document.getElementById('info-content');
                     if (infoContent) {
-                        infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Scroll with offset to avoid notch and show border
+                    const rect = infoContent.getBoundingClientRect();
+                    const offset = 80; // Offset for header + safe area
+                    window.scrollTo({
+                        top: window.pageYOffset + rect.top - offset,
+                        behavior: 'smooth'
+                    });
                     }
                 });
             });
@@ -1754,7 +1772,13 @@ function setupExercisesButton() {
         setTimeout(() => {
             const infoContent = document.getElementById('info-content');
             if (infoContent) {
-                infoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Scroll with offset to avoid notch and show border
+                const rect = infoContent.getBoundingClientRect();
+                const offset = 80; // Offset for header + safe area
+                window.scrollTo({
+                    top: window.pageYOffset + rect.top - offset,
+                    behavior: 'smooth'
+                });
             }
         }, 50);
     });
