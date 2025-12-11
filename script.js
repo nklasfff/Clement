@@ -1766,7 +1766,13 @@ function showExercises() {
         </div>
     `).join('');
     
-    document.getElementById('info-content').innerHTML = `        <h2>Velkommen til min verden</h2>
+    document.getElementById('info-content').innerHTML = `
+        <h2>Prøv øvelserne</h2>
+        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
+        ${exercisesHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
         <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
         <h2>Du kender følelsen</h2>
@@ -1857,7 +1863,13 @@ function showCircleView(circleId) {
     const circleData = sourceData.circles[circleId];
     
     if (!circleData || !circleData[currentMode]) {
-        document.getElementById('info-content').innerHTML = `        <h2>Velkommen til min verden</h2>
+        document.getElementById('info-content').innerHTML = `
+        <h2>Prøv øvelserne</h2>
+        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
+        ${exercisesHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
         <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
         <h2>Du kender følelsen</h2>
@@ -1901,7 +1913,13 @@ function showCircleView(circleId) {
         }
     });
     
-    document.getElementById('info-content').innerHTML = `        <h2>Velkommen til min verden</h2>
+    document.getElementById('info-content').innerHTML = `
+        <h2>Prøv øvelserne</h2>
+        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
+        ${exercisesHTML}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
         <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
         <h2>Du kender følelsen</h2>
