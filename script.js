@@ -1601,10 +1601,13 @@ function resetToWelcome() {
         }
     });
     
-    document.getElementById('theme-label').textContent = 'Vælg tema';
+    document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
     document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
     document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
     document.getElementById('exercises-btn').classList.remove('active');
+    document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+    document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
+    document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
     
     clearAllActive();
     updateCenterCircle();
@@ -1612,46 +1615,38 @@ function resetToWelcome() {
 }
 
 function setupTopCircles() {
-    document.querySelectorAll('.top-circle[data-mode]').forEach(circle => {
-        circle.addEventListener('click', () => {
-            document.querySelectorAll('.top-circle[data-mode]').forEach(c => c.classList.remove('active'));
-            document.getElementById('exercises-btn').classList.remove('active');
-            circle.classList.add('active');
-            
-            currentMode = circle.dataset.mode;
-            currentTheme = 'general';
-            currentEducation = null;
-            
-            document.getElementById('theme-label').textContent = 'Vælg tema';
-            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
-            document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
-            
-            updateCenterCircle();
-            
-            const infoPanel = document.getElementById('info-content');
-            infoPanel.style.opacity = '0.3';
-            setTimeout(() => {
-                infoPanel.style.opacity = '1';
-                // Scroll to info content after fade-in
-                const infoContent = document.getElementById('info-content');
-                if (infoContent) {
-                    // Scroll with offset to avoid notch and show border
-                    const rect = infoContent.getBoundingClientRect();
-                    const offset = 80; // Offset for header + safe area
-                    window.scrollTo({
-                        top: window.pageYOffset + rect.top - offset,
-                        behavior: 'smooth'
-                    });
+    document.querySelectorAll('.top-circle[data-mode]').forEach(circle => {
+        circle.addEventListener('click', () => {
+            document.querySelectorAll('.top-circle[data-mode]').forEach(c => c.classList.remove('active'));
+            document.getElementById('exercises-btn').classList.remove('active');
+            circle.classList.add('active');
+            
+            currentMode = circle.dataset.mode;
+            currentTheme = 'general';
+            currentEducation = null;
+            
+            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
+            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
+            
+            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+            document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
+            
+            updateCenterCircle();
+            
+            const infoPanelContent = document.getElementById('info-content');
+            infoPanelContent.style.opacity = '0.3';
+            setTimeout(() => {
+                if (currentView === 'circle' && currentCircle) {
+                    showCircleView(currentCircle);
+                } else {
+                    showWelcome();
                 }
-            }, 150);
-            
-            if (currentView === 'circle' && currentCircle) {
-                showCircleView(currentCircle);
-            } else {
-                showWelcome();
-            }
-        });
-    });
+                infoPanelContent.style.opacity = '1';
+            }, 150);
+        });
+    });
 }
 
 function setupThemeSelector() {
@@ -1675,6 +1670,11 @@ function setupThemeSelector() {
             
             currentTheme = option.dataset.theme;
             currentEducation = null;
+
+            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+            document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
+            document.getElementById('exercises-btn').classList.remove('active');
+            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
             
             document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
@@ -1685,22 +1685,6 @@ function setupThemeSelector() {
             updateCenterCircle();
             
             showCircleView('nervesystem');
-
-            // Scroll to info content for mobile/PWA - delayed to ensure content is rendered
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const infoContent = document.getElementById('info-content');
-                    if (infoContent) {
-                        // Scroll with offset to avoid notch and show border
-                    const rect = infoContent.getBoundingClientRect();
-                    const offset = 80; // Offset for header + safe area
-                    window.scrollTo({
-                        top: window.pageYOffset + rect.top - offset,
-                        behavior: 'smooth'
-                    });
-                    }
-                });
-            });
         });
     });
 }
@@ -1728,6 +1712,11 @@ function setupEducationSelector() {
             currentEducation = option.dataset.education;
 currentMode = 'kursist';
 currentTheme = 'general';
+            
+            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
+            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+            document.getElementById('exercises-btn').classList.remove('active');
+            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
             
             
             document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
@@ -1739,22 +1728,6 @@ currentTheme = 'general';
             
           updateCenterCircle();
 showCircleView('nervesystem');
-
-            // Scroll to info content for mobile/PWA - delayed to ensure content is rendered
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const infoContent = document.getElementById('info-content');
-                    if (infoContent) {
-                        // Scroll with offset to avoid notch and show border
-                    const rect = infoContent.getBoundingClientRect();
-                    const offset = 80; // Offset for header + safe area
-                    window.scrollTo({
-                        top: window.pageYOffset + rect.top - offset,
-                        behavior: 'smooth'
-                    });
-                    }
-                });
-            });
         });
     });
 }
@@ -1836,16 +1809,22 @@ function showExercises() {
         <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
         ${exercisesHTML}
         <div style="margin-top: 30px; text-align: center;">
-            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
         </div>
     `;
 
-    // Reset scroll position to top - use requestAnimationFrame for iOS PWA compatibility
+    // Scroll to info panel so the user sees the exercises content
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
-        // Also scroll window in case PWA uses different scroll container
-        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+            const rect = infoPanel.getBoundingClientRect();
+            const offset = 80;
+            window.scrollTo({
+                top: window.pageYOffset + rect.top - offset,
+                behavior: 'smooth'
+            });
+        });
     });
 }
 
@@ -1917,11 +1896,20 @@ function showCircleView(circleId) {
             <h2>Indhold kommer snart</h2>
             <p>Dette tema er under udvikling. Prøv "Angst" temaet for at se fuldt indhold.</p>
             <div style="margin-top: 30px; text-align: center;">
-                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+                <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
             </div>
         `;
-        // Reset scroll position to top
-        document.getElementById('info-panel').scrollTop = 0;
+        // Scroll to info panel
+        const infoPanel = document.getElementById('info-panel');
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(() => {
+            const rect = infoPanel.getBoundingClientRect();
+            const offset = 80;
+            window.scrollTo({
+                top: window.pageYOffset + rect.top - offset,
+                behavior: 'smooth'
+            });
+        });
         return;
     }
     
@@ -1951,14 +1939,22 @@ function showCircleView(circleId) {
         <p>${data.text}</p>
         ${connectionsHTML}
         <div style="margin-top: 30px; text-align: center;">
-            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="back-btn">↑ Tilbage til toppen</button>
+            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
         </div>
     `;
-    
+
+    // Scroll to info panel so the user sees the content
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
-        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+            const rect = infoPanel.getBoundingClientRect();
+            const offset = 80;
+            window.scrollTo({
+                top: window.pageYOffset + rect.top - offset,
+                behavior: 'smooth'
+            });
+        });
     });
 }
 
