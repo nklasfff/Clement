@@ -1670,6 +1670,12 @@ function setupThemeSelector() {
             
             currentTheme = option.dataset.theme;
             currentEducation = null;
+            if (currentMode === 'kursist') {
+                currentMode = 'klient';
+                document.querySelectorAll('.top-circle[data-mode]').forEach(c => c.classList.remove('active'));
+                const klientBtn = document.querySelector('.top-circle[data-mode="klient"]');
+                if (klientBtn) klientBtn.classList.add('active');
+            }
 
             document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
             document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
@@ -1760,6 +1766,9 @@ function setupExercisesButton() {
 
             currentEducation = null;
             currentTheme = 'general';
+            if (currentMode === 'kursist') {
+                currentMode = 'klient';
+            }
             document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
             document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
 
