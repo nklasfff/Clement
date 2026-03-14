@@ -1,1999 +1,496 @@
-// KOMPLET CONTENT DATABASE
-const themes = {
-    general: {
-        name: "Nervesystemsregulering",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemsregulering",
-                    text: "Dit nervesystem styrer alt - fra hvordan du sover, fordøjer mad, håndterer stress og føler dig i din krop. Et nervesystem i balance giver både dyb indre ro og energi til at leve livet. Jeg hjælper dig med at forstå og regulere dit nervesystem, så du kan finde tilbage til balance og trivsel."
-                },
-                fagfolk: {
-                    title: "Nervesystemsregulering - Klinisk Perspektiv",
-                    text: "Polyvagal-informeret tilgang til autonomt nervesystem-regulering som fundament for mental og fysisk sundhed. Arbejder med ventral vagal aktivering, neuroception og co-regulering. Integrerer Stephen Porges' forskning i praktisk terapeutisk anvendelse med fokus på bottom-up processer."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Teori",
-                    text: "Dit nervesystem har tre forskellige tilstande: Sikkerhed og forbindelse (grøn), alarm og mobilisering (gul), og nedlukning (rød). Når du forstår hvilken tilstand du er i, kan du lære at regulere dig selv tilbage til den grønne sikre tilstand, hvor healing og trivsel kan ske."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori - Klinisk Anvendelse",
-                    text: "Stephen Porges' hierarkiske model af autonomt nervesystem: ventral vagal (social engagement), sympatisk (mobilisering), dorsal vagal (immobilisering). Neuroception som central mekanisme for autonome shifts. Terapeutisk fokus på ventral vagal tone som forudsætning for regulering og healing."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytningsmønstre",
-                    text: "Måden du knytter dig til andre på blev skabt tidligt i livet. De fire tilknytningsmønstre (tryg, undvigende, ambivalent, desorganiseret) påvirker hvordan du er i relationer og med dig selv. At forstå dit mønster er første skridt til at skabe nye, sundere måder at være på."
-                },
-                fagfolk: {
-                    title: "Tilknytningsmønstre - Teoretisk Ramme",
-                    text: "Bowlby og Ainsworth's tilknytningstypologi: sikker, undvigende, ambivalent, desorganiseret. Indre arbejdsmodeller som implicitte relationelle skemaer. Earned secure attachment gennem terapeutisk relation. Fokus på hvordan tidlige tilknytningsmønstre manifesterer sig i autonome nervesystem-respons og affektregulering."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropsterapi & Behandling",
-                    text: "Din krop husker alt - både det gode og det svære. Gennem blid behandling på briks, arbejde med åndedræt og fascia hjælper jeg kroppen med at slippe gamle mønstre og spændinger. Kroppen ved hvordan den skal hele sig selv - den har bare brug for de rette betingelser."
-                },
-                fagfolk: {
-                    title: "Kropsterapi - Somatisk Tilgang",
-                    text: "Afspændingspædagogisk behandling på briks kombineret med fascial release og åndedrætsarbejde. Integrerer sensorimotorisk psykoterapi og somatic experiencing principper. Bottom-up regulering gennem direkte kropslig intervention. Fokus på proprioceptiv og interoceptiv awareness som vej til autonomt nervesystem-regulering."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Psykobiologi",
-                    text: "Dine følelser, tanker og oplevelser er dybt forbundet med din krops biologi - hormoner, neurotransmittere og nervesystemets tilstand. Når biologien kommer i balance, bliver det lettere at tænke klart, føle stabilt og handle fornuftigt. Jeg arbejder med både psyken og biologien."
-                },
-                fagfolk: {
-                    title: "Psykobiologi - Neurobiologisk Integration",
-                    text: "Integrativ forståelse af HPA-akse, neurotransmitter-systemer (serotonin, dopamin, GABA) og hormonelle processer (cortisol, oxytocin) i relation til psykisk regulering. Autonomt nervesystem som central moderator. Evidens-baseret tilgang til hvordan kropslige interventioner påvirker neurobiologiske systemer."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer & Dissociation",
-                    text: "Traumer sidder fast i nervesystemet, ikke kun i minderne. Når noget overvældende sker, kan dele af dig 'koble fra' (dissociation) for at beskytte dig. Jeg hjælper med forsigtigt at integrere det frakoblede, så du kan føle dig hel og til stede i dit liv igen."
-                },
-                fagfolk: {
-                    title: "Traumer & Dissociation - Traumebearbejdning",
-                    text: "Peter Levines Somatic Experiencing og van der Kolks traumeforskning som teoretisk fundament. Fokus på incomplete defensive responses og fryseresponser lagret i nervesystemet. Gradvis titrering og pendulering mellem activation og ro. Dissociation som overlevelsesmekanisme der kræver specifik opmærksomhed på window of tolerance."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Terapeutisk Relation",
-                    text: "Healing sker i relationer, ikke i isolation. I vores arbejde sammen skaber vi et trygt rum hvor dit nervesystem kan slappe af. Min tilstedeværelse og ro hjælper dit nervesystem med at finde sin egen ro. Relationen er ikke bare rammen - den er selve medicininen."
-                },
-                fagfolk: {
-                    title: "Terapeutisk Relation - Neurobiologisk Grundlag",
-                    text: "Relationel neurobiologi som teoretisk ramme. Co-regulering gennem terapeutens ventral vagale tilstand. Mirror neurons og interbrain synchrony som fysiologiske mekanismer. Earned secure attachment gennem korrigerende emotionelle erfaringer. Terapeutisk alliance som forudsætning for autonomt nervesystem-arbejde."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Nervesystemsregulering bygger direkte på polyvagal teori - når du forstår dine tre tilstande (sikkerhed, alarm, nedlukning), kan du lære at regulere mellem dem og finde tilbage til sikkerhed.",
-                fagfolk: "Polyvagal teori udgør det teoretiske fundament for nervesystemsregulering. Hierarkisk forståelse af autonome tilstande som basis for terapeutisk intervention gennem ventral vagal aktivering."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Dit tilknytningsmønster påvirker hvordan dit nervesystem reagerer i relationer. At arbejde med nervesystemet hjælper med at ændre gamle tilknytningsmønstre gennem nye oplevelser af sikkerhed.",
-                fagfolk: "Tilknytningsmønstre manifesterer sig som autonome nervesystem-mønstre. Nervesystemsregulering faciliterer earned secure attachment gennem somatisk korrigering af implicitte relationelle skemaer."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Kroppen og nervesystemet er ét - du kan ikke regulere nervesystemet uden at involvere kroppen. Behandling, åndedræt og bevægelse er konkrete måder at hjælpe nervesystemet tilbage i balance.",
-                fagfolk: "Somatisk intervention er direkte nervesystemsregulering. Bottom-up processer gennem fascial work, åndedræt og behandling modulerer vagal tone og autonome tilstande mere effektivt end top-down kognitive interventioner alene."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Når nervesystemet kommer i balance, følger hormonerne og neurotransmitterne med. Bedre søvn, fordøjelse og humør er direkte resultater af et reguleret nervesystem.",
-                fagfolk: "Autonomt nervesystem fungerer som master regulator for HPA-akse og neurotransmitter-systemer. Ventral vagal aktivering faciliterer hormonel balance (cortisol-reduktion, oxytocin-frigivelse) og optimal neurotransmitter-funktion."
-            },
-            'nervesystem-traumer': {
-                klient: "Traumer sidder fast som 'frosne' tilstande i nervesystemet. Ved at arbejde forsigtigt med nervesystemets regulering kan traumemateriale integreres uden at overvælde.",
-                fagfolk: "Traumatisk materiale er lagret som autonome forsvarstilstande (freeze, collapse). Nervesystemsregulering gennem titrering og pendulering faciliterer completion af incomplete defensive responses uden re-traumatisering."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer regulering gennem relationer. I terapien 'låner' dit nervesystem ro fra mit, indtil det selv kan finde den. Det kaldes co-regulering.",
-                fagfolk: "Terapeutisk relation er primær vej til nervesystemsregulering. Terapeuts ventral vagale tilstand co-regulerer klientens autonome system gennem interpersonal neurobiological synchrony og social engagement-system aktivering."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Hvert tilknytningsmønster har sin egen nervesystem-signatur. Tryg tilknytning lever i den grønne sikre tilstand, mens utryg tilknytning ofte sidder fast i alarm eller nedlukning.",
-                fagfolk: "Tilknytningsmønstre er embodied som specifikke autonome profiler. Sikker tilknytning korrelerer med ventral vagal fleksibilitet, mens unsikre mønstre viser rigid sympatisk hyperarousal eller dorsal hypoarousal."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Når kroppen behandles med nærvær og respekt, sender det sikkerhedssignaler til nervesystemet. Blid berøring og åndedrætsarbejde aktiverer den grønne sikre tilstand.",
-                fagfolk: "Somatisk intervention via berøring og åndedræt aktiverer ventral vagale pathways gennem C-fibre (affektiv touch) og respiratorisk sinus arrhythmia. Direkte bottom-up modulering af polyvagal tone."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Når du er i den grønne sikre tilstand, fungerer din biologi optimalt - god søvn, stærkt immunforsvar, god fordøjelse. I alarm eller nedlukning går alt i ubalance.",
-                fagfolk: "Ventral vagal tilstand optimerer alle fysiologiske systemer: HPA-akse regulering, immunfunktion, fordøjelse. Sympatisk eller dorsal dominans dysregulerer hormoner, inflammatoriske markører og metaboliske processer."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fryser nervesystemet fast i alarm eller nedlukning. At finde tilbage til sikker tilstand er første skridt i traumehealing - så kan det frosne materiale begynde at tø op.",
-                fagfolk: "Traumatisk immobilisering repræsenterer dorsal vagal dominans med sympatisk co-activation. Healing kræver først etablering af ventral vagal sikkerhed før traumatisk materiale kan integreres gennem oscillation mellem activation og ro."
-            },
-            'polyvagal-relation': {
-                klient: "Du kan mærke når et andet menneske er i sikker tilstand - det smitter. I terapi bruger vi denne 'smitte' bevidst, så dit nervesystem lærer sikkerhed gennem mit nærvær.",
-                fagfolk: "Social engagement system (ventral vagal) faciliterer co-regulering gennem prosodi, ansigtsudtryk, kropsholdning. Terapeuts autonome tilstand påvirker direkte klientens gennem mirror neurons og interbrain synchronization."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningsmønstre sidder i kroppen - måden du holder vejret, spænder musklerne, lukker ned. Kropsarbejde kan ændre disse mønstre mere effektivt end ord alene.",
-                fagfolk: "Tilknytningsmønstre manifesterer sig somatisk i åndedræt, muskeltonus, fascial densitet. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv og interoceptiv re-patterning."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Dit tidlige tilknytningsmønster formede din biologi - hvordan du producerer stresshormoner, hvor følsom du er for oxytocin (kærlighedshormonet). Men biologien kan omformes gennem nye erfaringer.",
-                fagfolk: "Tidlig tilknytning former HPA-akse respons og oxytocin-receptor sensitivitet. Unsikker tilknytning korrelerer med dysreguleret cortisol og reduceret oxytocin-respons. Earned secure attachment kan modificere disse biologiske mønstre gennem gentagen korrigerende erfaring."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytningsrelationer skaber ofte desorganiseret tilknytning - hvor relationer både er det farlige og det sikre. Det kræver særlig forsigtighed at arbejde med.",
-                fagfolk: "Developmental trauma inden for tilknytningssystem resulterer ofte i desorganiseret tilknytning - simultant activation af attachment og defense systems. Kræver specifik opmærksomhed på terapeutens egen regulering og langsom etablering af relational safety."
-            },
-            'tilknytning-relation': {
-                klient: "Terapeutisk relation kan være det sted hvor du lærer tryg tilknytning for første gang - eller genoplever den. Gennem vores relation omskrives dine indre modeller af hvad relationer kan være.",
-                fagfolk: "Earned secure attachment gennem terapeutisk relation som korrigerende emotionel erfaring. Terapeuts konsistente tilgængelighed og afstemning modificerer indre arbejdsmodeller og faciliterer shift fra unsikre til sikre tilknytningsmønstre gennem relational reconsolidation."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Kroppen og biologien taler samme sprog. Når du arbejder med åndedræt og fascia, påvirker du direkte hormoner og neurotransmittere - kroppen er indgangen til at ændre kemien.",
-                fagfolk: "Fascial release og åndedrætsarbejde påvirker direkte vagal afferent signalering, hvilket modulerer brainstem nuclei og dermed neurotransmitter-frigivelse. Mekanisk stimulation af fascia påvirker interoceptive processing og autonome outputs."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer sidder lagret i kroppen som spændinger, begrænsede åndedræt og følelsesløshed. Gennem forsigtigt kropsarbejde kan det frosne begynde at tø, og kroppen husker hvordan den føles hel.",
-                fagfolk: "Somatic experiencing principper: traumer manifesterer sig som incomplete motoriske sekvenser og fasicial restrictions. Behandling faciliterer completion gennem titreret proprioceptiv og interoceptiv activation, resolverende defensive immobilization states gennem gradvis mobilisering."
-            },
-            'kropsterapi-relation': {
-                klient: "At blive behandlet med respekt og nærvær lærer din krop at relationer kan være sikre. Berøring i terapien er ikke bare fysisk - det er også relationel healing.",
-                fagfolk: "Terapeutisk touch som relationel intervention. Affektiv C-fibre stimulation kombineret med terapeutens ventral vagale tilstedeværelse faciliterer simultant somatisk og relationel reconsolidation. Embodied co-regulering gennem hands-on work."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrer din biologi - du producerer mere stresshormon, mindre glædeshormon. Men biologien kan normaliseres igen når traumerne bearbejdes og nervesystemet kommer i balance.",
-                fagfolk: "PTSD og developmental trauma modificerer permanent HPA-akse reactivity, cortisol rytmer og inflammatoriske profiler. Traumebehandling gennem nervesystemsregulering kan normalisere disse biologiske markører gennem restoration af autonomic flexibility."
-            },
-            'psykobiologi-relation': {
-                klient: "Gode relationer er biologi-medicin - de øger oxytocin, sænker cortisol, styrker immunforsvaret. Terapeutisk relation har målbar biologisk effekt på din krop.",
-                fagfolk: "Secure therapeutic relationship øger endogent oxytocin, reducerer cortisol og pro-inflammatoriske cytokiner. Social connection aktiverer belønningssystemer (dopaminerg) og bufferer HPA-akse respons. Relationel intervention er direkte biologisk intervention."
-            },
-            'traumer-relation': {
-                klient: "At arbejde med traumer kræver dyb sikkerhed i relationen. Uden et trygt fundament vil traumebearbejdning føles overvældende. Relationen kommer først, traumearbejdet bagefter.",
-                fagfolk: "Traumebehandling forudsætter etableret therapeutic alliance og terapeutens robuste autonome regulering. Uden relational safety risikeres re-traumatisering gennem overwhelm. Co-regulering er forudsætning for sikker activation af traumatisk materiale."
-            }
-        }
-    },
-    angst: {
-        name: "Angst",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemsregulering ved Angst",
-                    text: "Angst er nervesystemets alarm der kører konstant. Jeg hjælper dig med at regulere ned fra den kroniske alarmtilstand, så dit nervesystem kan lære at det faktisk er sikkert. Når systemet roer sig, forsvinder angsten naturligt."
-                },
-                fagfolk: {
-                    title: "Nervesystemsregulering ved Angstlidelser",
-                    text: "Angst manifesterer sig som kronisk sympatisk activation med nedsat vagal tone. Arbejder med gradvis down-regulation gennem bottom-up interventioner der genopbygger ventral vagal kapacitet og udvider window of tolerance."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Angst",
-                    text: "Angst er når dit nervesystem sidder fast i gul zone - konstant alarm. Jeg lærer dig at genkende signalerne og finde veje tilbage til grøn sikker tilstand gennem konkrete teknikker."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Angst",
-                    text: "Angstlidelser repræsenterer fastholdelse i sympatisk mobilisering uden adgang til ventral vagal regulering. Neuroception fejltolker sikre situationer som farlige. Terapeutisk mål er genskabelse af polyvagal fleksibilitet."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Angst",
-                    text: "Meget angst har rødder i utryg tilknytning - hvor verden føltes upålidelig tidligt i livet. Vi arbejder med at skabe nye oplevelser af sikkerhed så angsten kan slippe sit greb."
-                },
-                fagfolk: {
-                    title: "Tilknytningsmønstre ved Angst",
-                    text: "Ambivalent og desorganiseret tilknytning korrelerer stærkt med angstlidelser. Hyperactivation af attachment system og konstant scanning for fare. Earned secure attachment reducerer angst-symptomer gennem reguleret autonomt nervesystem."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropsarbejde ved Angst",
-                    text: "Angst sidder i spændte skuldre, kort åndedræt og sammentrukket krop. Gennem blid behandling og åndedrætsarbejde lærer kroppen at slippe alarmen og finde ro igen."
-                },
-                fagfolk: {
-                    title: "Somatisk Intervention ved Angst",
-                    text: "Angst manifesteres somatisk som muskulær hypertonus, shallow breathing og fasicial restrictions. Direkte fascial release og respiratorisk intervention modulerer autonome outputs mere effektivt end top-down kognitive tilgange alene."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Biologien bag Angst",
-                    text: "Ved angst producerer kroppen for meget stresshormon og for lidt rolighedshormon. Ved at regulere nervesystemet normaliserer vi biologien - og angsten falder."
-                },
-                fagfolk: {
-                    title: "Neurobiologi ved Angstlidelser",
-                    text: "Dysreguleret HPA-akse med forhøjet baseline cortisol, reduceret GABA og serotonin. Autonomt nervesystem-regulering normaliserer neurotransmitter-balance og reducerer inflammatoriske markører associeret med kronisk angst."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Angst",
-                    text: "Angst er ofte resultatet af gamle traumer hvor nervesystemet aldrig slap alarmen. Vi arbejder forsigtigt med at fuldføre det ufærdige, så systemet kan slappe af."
-                },
-                fagfolk: {
-                    title: "Traumatisk Oprindelse af Angst",
-                    text: "Generaliseret angst ofte rodfæstet i uløste traumatiske incomplete defensive responses. Persistent hyperarousal som følge af manglende completion. Intervention gennem titreret trauma-processing reducerer angst-symptomer."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Healing af Angst",
-                    text: "I vores trygge relation lærer dit nervesystem at verden kan være sikker. Min ro smitter til dit system - det kaldes co-regulering, og det er fundamentet for at angsten kan forsvinde."
-                },
-                fagfolk: {
-                    title: "Relationel Neurobiologi ved Angst",
-                    text: "Terapeutens ventral vagale tilstedeværelse co-regulerer klientens hyperaroused autonome system. Gentagen erfaring af relational safety rekalibrerer neuroception og reducerer baseline angst gennem interpersonal neurobiological synchrony."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Ved angst sidder nervesystemet fast i alarm-tilstand. Polyvagal forståelse giver dig nøglen til at skifte gear tilbage til sikkerhed.",
-                fagfolk: "Angst er kronisk sympatisk dominans uden ventral vagal adgang. Polyvagal-intervention genetablerer hierarkisk fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Angstens nervesystem-mønstre blev ofte skabt i utryg tilknytning. Ved at heale tilknytningen heales angsten.",
-                fagfolk: "Angst-relaterede autonome mønstre har ofte oprindelse i unsikker tilknytning. Earned secure attachment modificerer disse mønstre."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Angst holder kroppen i konstant spænding. Kropsarbejde frigiver spændingerne og lader nervesystemet regulere ned.",
-                fagfolk: "Angst-relateret somatisk hypertonus opretholdes autonome stress-responses. Fascial release bryder denne cyklus."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Angstens biologi - høj cortisol, lav serotonin - normaliseres når nervesystemet finder ro.",
-                fagfolk: "Nervesystemsregulering ved angst normaliserer HPA-akse og neurotransmitter-profiler."
-            },
-            'nervesystem-traumer': {
-                klient: "Angst er ofte frosne traumer i nervesystemet. Ved at løsne det frosne forsvinder angsten.",
-                fagfolk: "Angst som persisterende incomplete defensive response. Completion gennem titrering reducerer symptomer."
-            },
-            'nervesystem-relation': {
-                klient: "Dit angstfyldte nervesystem lærer ro gennem vores relation - det er kernen i healing.",
-                fagfolk: "Co-regulering i terapeutisk alliance er primær vej til modification af angst-relaterede autonome mønstre."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et nervesystem der lever i gul alarm. Vi lærer det grøn sikkerhed.",
-                fagfolk: "Ambivalent tilknytning manifesteres som rigid sympatisk activation ved angst. Ventral vagal adgang er terapeutisk mål."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Når kroppen behandles og lærer ro, sender det direkte beskeder til den gule alarm-zone om at det er sikkert.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways og bryder sympatisk dominans ved angst."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Den grønne sikre tilstand skaber den rette biologi - lav cortisol, høj serotonin. Angst forsvinder.",
-                fagfolk: "Ventral vagal aktivering optimerer neurotransmitter-balance og HPA-akse funktion ved angst."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer låste systemet i gul alarm. At finde grøn sikkerhed først er nøglen til at heale traumet og angsten.",
-                fagfolk: "Etablering af ventral vagal sikkerhed er forudsætning for trauma-processing ved angst."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne ro smitter til dit gule angst-system gennem vores relation. Det er hvordan healing sker.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer sympatisk hyperarousal gennem social engagement system."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Utryg tilknytning skabte en anspændt krop. Kropsarbejde lærer både krop og tilknytning ny sikkerhed.",
-                fagfolk: "Tilknytningsmønstre ved angst er embodied. Somatisk intervention modificerer implicitte skemaer."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede en biologi klar til angst. Ny sikker tilknytning omformer biologien.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse sensitivitet ved angst. Earned secure attachment normaliserer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytninger skabte angst som livslangt mønster. Healing kræver ekstra forsigtighed.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning og angst. Kræver langsom relational safety-etablering."
-            },
-            'tilknytning-relation': {
-                klient: "Vores trygge relation bliver det sted hvor du oplever sikker tilknytning - og angsten kan slippe.",
-                fagfolk: "Terapeutisk relation som korrigerende tilknytningserfaring modificerer autonome angst-mønstre."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen slipper angstens spændinger, følger biologien med - hormoner og neurotransmittere balanceres.",
-                fagfolk: "Fascial release ved angst påvirker direkte vagal afferenter og neurotransmitter-frigivelse."
-            },
-            'kropsterapi-traumer': {
-                klient: "Angst-traumer sidder frosset i kroppen. Meget forsigtigt kropsarbejde låser det frosne op.",
-                fagfolk: "Angst-relaterede traumer manifesteres somatisk. Titreret proprioceptiv activation faciliterer integration."
-            },
-            'kropsterapi-relation': {
-                klient: "At modtage tryg berøring i vores relation lærer din angstfyldte krop at verden kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer angst-relaterede somatiske mønstre."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrede din biologi til angst-tilstand. Healing af traumet normaliserer biologien.",
-                fagfolk: "Traumatisk modification af HPA-akse skaber angst. Trauma-processing normaliserer biologiske markører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin - den sænker cortisol og øger rolighedshormon, angsten falder.",
-                fagfolk: "Secure alliance øger oxytocin og reducerer cortisol ved angst gennem neurobiologiske mekanismer."
-            },
-            'traumer-relation': {
-                klient: "Angst-traumerne kan kun heales i dyb relationel sikkerhed. Vores relation er fundamentet.",
-                fagfolk: "Trauma-baseret angst kræver robust alliance før processing. Co-regulering er absolut forudsætning."
-            }
-        }
-    },
-   
-   tilknytning: {
-        name: "Tilknytning",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet og Tilknytning",
-                    text: "Dit tilknytningsmønster er kodet ind i nervesystemets reaktioner. Når vi regulerer nervesystemet, åbner vi muligheden for at skabe nye, sundere tilknytningsmønstre gennem faktiske oplevelser af sikkerhed."
-                },
-                fagfolk: {
-                    title: "Autonomt Nervesystem og Tilknytning",
-                    text: "Tilknytningsmønstre er fundamentalt autonome mønstre. Nervesystemsregulering er forudsætning for earned secure attachment. Arbejder med vagal tone som basis for relationel kapacitet og affektregulering."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal og Tilknytning",
-                    text: "Hvert tilknytningsmønster har sin nervesystem-signatur. Tryg tilknytning lever i grøn zone, mens utryg tilknytning sidder fast i gul eller rød. Vi lærer dit system at finde den grønne sikkerhed."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Tilknytning",
-                    text: "Sikker tilknytning korrelerer med ventral vagal dominans og polyvagal fleksibilitet. Unsikre mønstre viser rigid sympatisk (ambivalent) eller dorsal (undvigende) activation. Social engagement system er neurologisk substrat for attachment."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Forstå Dit Tilknytningsmønster",
-                    text: "Vi udforsker sammen dit tilknytningsmønster - ikke for at dømme det, men for at forstå det. Når du ser mønstret kan du begynde at skabe nye måder at være i relationer på."
-                },
-                fagfolk: {
-                    title: "Tilknytningsteori i Praksis",
-                    text: "Adult Attachment Interview-inspireret udforskning af indre arbejdsmodeller. Fokus på reflective functioning og mentalization som veje til earned secure attachment. Integration af tilknytningsteori med neurobiologisk forståelse."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Tilknytning i Kroppen",
-                    text: "Tilknytningsmønstre sidder i hvordan du holder vejret, spænder kroppen, lukker ned. Gennem kropsarbejde kan vi skabe nye fysiske oplevelser af sikkerhed der ændrer mønstret."
-                },
-                fagfolk: {
-                    title: "Embodied Tilknytning",
-                    text: "Tilknytningsmønstre manifesteres somatisk i åndedræt, tonus, fasicial densitet. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv re-patterning."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Tilknytningens Biologi",
-                    text: "Dit tilknytningsmønster formede din biologis reaktioner på stress og nærhed. Men biologien er ikke fastlåst - gennem nye oplevelser kan vi omforme den."
-                },
-                fagfolk: {
-                    title: "Neurobiologi af Tilknytning",
-                    text: "Tidlig tilknytning former HPA-akse sensitivitet og oxytocin-receptor udtryk. Unsikker tilknytning korrelerer med dysreguleret cortisol og reduceret belønningsrespons. Earned secure attachment kan modificere disse biologiske signatures."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer i Tilknytning",
-                    text: "Traumer i tidlige relationer skaber desorganiseret tilknytning - hvor relationer er både farlige og det eneste sikre. Det kræver ekstra forsigtighed og tålmodighed at arbejde med."
-                },
-                fagfolk: {
-                    title: "Developmental Trauma og Tilknytning",
-                    text: "Developmental trauma inden for attachment system resulterer i desorganiseret tilknytning med simultane modsatrettede attachment og defense responses. Kræver langsom etablering af relational safety før tilknytningsarbejde kan påbegyndes."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Nye Tilknytningsoplevelser",
-                    text: "Vores terapeutiske relation bliver stedet hvor du kan opleve tryg tilknytning - måske for første gang. Det er gennem denne oplevelse at gamle mønstre kan ændres."
-                },
-                fagfolk: {
-                    title: "Earned Secure Attachment",
-                    text: "Terapeutisk relation som korrigerende emotionel erfaring. Konsistent tilgængelighed og afstemning modificerer indre arbejdsmodeller. Earned secure attachment faciliteres gennem gentagen erfaring af secure base og safe haven."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Tilknytningsmønstre er kodet som nervesystem-reaktioner. Polyvagal forståelse viser hvordan tryg tilknytning lever i grøn sikker tilstand.",
-                fagfolk: "Tilknytningsmønstre manifesteres som specifikke polyvagale profiler. Sikker tilknytning korrelerer med ventral vagal fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Når vi arbejder med nervesystemet, arbejder vi direkte med tilknytningsmønstre - de er det samme.",
-                fagfolk: "Tilknytningsintervention er nervesystemsintervention. Earned secure attachment kræver autonome modifications."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Tilknytningsmønstre sidder i kroppen. Kropsarbejde ændrer både nervesystem og tilknytning samtidigt.",
-                fagfolk: "Tilknytningsmønstre er embodied. Somatisk intervention modificerer både autonome mønstre og relationelle skemaer."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Tilknytningsmønstre formede din biologi. Ved at arbejde med nervesystemet omformer vi biologien.",
-                fagfolk: "Tilknytning præger neurobiologi. Nervesystemsregulering kan modificere HPA-akse og oxytocin-systemer formet af early attachment."
-            },
-            'nervesystem-traumer': {
-                klient: "Tilknytningstraumer sidder dybt i nervesystemet. Healing kræver særlig forsigtighed og langsom opbygning af sikkerhed.",
-                fagfolk: "Developmental trauma skaber desorganiseret tilknytning med komplekse autonome mønstre. Kræver robuste interventionsteknikker."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer nye tilknytningsmønstre gennem vores trygge relation.",
-                fagfolk: "Terapeutisk relation faciliterer earned secure attachment gennem co-regulering og autonome modifications."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Hvert tilknytningsmønster har sin polyvagale signatur. Tryg er grøn, utryg er gul eller rød.",
-                fagfolk: "Tilknytningsmønstre korrelerer med specifikke polyvagale profiler og autonome response-patterns."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne sikre tilstand som er fundamentet for tryg tilknytning.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways nødvendige for secure attachment capacity."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Den grønne sikre tilstand skaber den biologi der muliggør tryg tilknytning.",
-                fagfolk: "Ventral vagal dominans optimerer neurobiologiske systemer der understøtter secure attachment."
-            },
-            'polyvagal-traumer': {
-                klient: "Tilknytningstraumer låste systemet i usikre tilstande. Grøn sikkerhed er vejen til healing.",
-                fagfolk: "Developmental trauma dysregulerer polyvagale responses. Ventral vagal etablering er forudsætning for tilknytningsarbejde."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne ro lærer dit system tryg tilknytning gennem vores relation.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og faciliterer secure attachment learning."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningsmønstre lever i kroppen. Kropsarbejde skaber nye oplevelser af sikkerhed.",
-                fagfolk: "Embodied tilknytningsmønstre modificeres gennem proprioceptiv og interoceptiv re-patterning."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Tidlig tilknytning formede din biologi. Ny sikker tilknytning kan omforme den.",
-                fagfolk: "Tilknytningsmønstre præger HPA-akse og oxytocin-systemer. Earned secure attachment modificerer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytninger kræver ekstra forsigtighed - både farligt og eneste sikkerhed.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning med modsatrettede impulser. Langsom safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation bliver det sted hvor du oplever tryg tilknytning for første gang eller igen.",
-                fagfolk: "Terapeutisk relation som korrigerende erfaring modificerer indre arbejdsmodeller gennem konsistent tilgængelighed."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Kropsarbejde skaber nye tilknytningsoplevelser der ændrer biologien.",
-                fagfolk: "Somatisk intervention påvirker neurobiologiske systemer der understøtter attachment capacity."
-            },
-            'kropsterapi-traumer': {
-                klient: "Tilknytningstraumer sidder i kroppen. Forsigtigt kropsarbejde integrerer det splittet.",
-                fagfolk: "Developmental trauma manifesteres somatisk. Titreret intervention faciliterer integration."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer kroppen at tilknytning kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer embodied tilknytningsmønstre."
-            },
-            'psykobiologi-traumer': {
-                klient: "Tilknytningstraumer ændrede din biologi. Healing normaliserer den.",
-                fagfolk: "Developmental trauma modificerer neurobiologi. Tilknytningsarbejde kan normalisere biologiske signatures."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin der skaber tilknytningssikkerhed.",
-                fagfolk: "Secure alliance modificerer oxytocin og cortisol-systemer og faciliterer biologisk grundlag for attachment."
-            },
-            'traumer-relation': {
-                klient: "Tilknytningstraumer kan kun heales i dyb relationel sikkerhed.",
-                fagfolk: "Developmental trauma kræver robust alliance før processing. Relational safety er absolut forudsætning."
-            }
-        }
-    },
-    stress: {
-        name: "Stress",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet under Stress",
-                    text: "Stress er når nervesystemet kører i overtid uden at få pause. Vi arbejder med at lære dit system at skifte gear - at kunne mobilisere energi når nødvendigt, men også finde dyb hvile."
-                },
-                fagfolk: {
-                    title: "Stressregulering via ANS",
-                    text: "Kronisk stress repræsenterer manglende polyvagal fleksibilitet med fastholdelse i sympatisk activation. Terapeutisk fokus på genopbygning af vagal brake-funktion og restoration af naturlig autonome oscillation mellem activation og restoration."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Stress",
-                    text: "Stress er gul zone uden vej tilbage til grøn. Vi finder sammen de konkrete triggere der sender dig i stress og lærer dig veje tilbage til den sikre grønne tilstand."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori ved Stress",
-                    text: "Kronisk stress er vedvarende sympatisk dominans uden ventral vagal recovery. Nedsat vagal brake function. Intervention gennem aktivering af social engagement system og respiratory sinus arrhythmia restoration."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Stress",
-                    text: "Hvis du voksede op uden pålidelig hjælp til at regulere stress, har dit system aldrig lært det. Vi skaber den manglende co-regulering nu, så dit system lærer at stresse ned."
-                },
-                fagfolk: {
-                    title: "Tilknytning og Stressregulering",
-                    text: "Manglende early co-regulation resulterer i deficits i selvregulering af stress. Unsikker tilknytning korrelerer med dysreguleret HPA-akse og øget stress-vulnerabilitet. Terapeutisk co-regulation lærer systemet ny stress-respons."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Stress i Kroppen",
-                    text: "Stress manifesterer sig som spændinger, hovedpine, dårlig søvn. Gennem behandling og åndedrætsarbejde hjælper vi kroppen med fysisk at slippe stress-mønstrene."
-                },
-                fagfolk: {
-                    title: "Somatisk Stressintervention",
-                    text: "Stress-relateret muskulær hypertonus og fasicial restrictions opretholdes autonome stress-responses. Direkte somatisk intervention via fascial release og vagus-aktivering gennem åndedræt modulerer HPA-akse reactivity."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Stress-biologien",
-                    text: "Ved kronisk stress producerer kroppen konstant cortisol hvilket nedslider systemet. Vi arbejder med at normalisere din biologi så kroppen kan hele og restituere sig."
-                },
-                fagfolk: {
-                    title: "Neurobiologi ved Kronisk Stress",
-                    text: "Kronisk stress dysregulerer HPA-akse med fladt cortisol-døgnrytme, reduceret DHEA, øget inflammatoriske cytokiner. Autonomt nervesystem-regulering kan normalisere disse biomarkører gennem restoration af vagal tone."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Stress",
-                    text: "Meget kronisk stress har rod i gamle traumer hvor systemet lærte at verden er farlig. Vi arbejder forsigtigt med at heale traumerne så stress-responsen kan normaliseres."
-                },
-                fagfolk: {
-                    title: "Traumatisk Stress",
-                    text: "PTSD og developmental trauma skaber persisterende baseline hyperarousal. Incomplete fight/flight responses opretholdes som kronisk stress. Trauma-processing gennem somatic experiencing reducerer stress-symptomer."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Ro ved Stress",
-                    text: "I vores trygge relation lærer dit nervesystem at det er okay at slippe kontrollen. Min ro bliver din ro - det er sådan stress-mønstre kan ændres fundamentalt."
-                },
-                fagfolk: {
-                    title: "Co-regulering af Stress",
-                    text: "Terapeutens ventral vagale tilstand fungerer som ekstern regulator af klientens stress-response. Gentagen co-regulation opbygger intern kapacitet til selvregulering gennem neuroplasticitet i autonome circuits."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Stress er nervesystemet i gul alarm uden ro. Polyvagal forståelse viser vejen tilbage til grøn.",
-                fagfolk: "Kronisk stress er sympatisk dominans uden ventral vagal recovery. Polyvagal intervention restaurerer fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Stress-mønstre blev ofte skabt i utryg tilknytning uden co-regulering. Vi skaber den manglende regulering nu.",
-                fagfolk: "Manglende early co-regulation skaber stress-vulnerabilitet. Terapeutisk co-regulation modificerer autonome mønstre."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Stress sidder som spændinger i kroppen. Kropsarbejde frigiver spændinger og regulerer nervesystemet.",
-                fagfolk: "Stress-relateret somatisk hypertonus opretholdes stress-responses. Fascial release bryder cyklus."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Stress-biologien med høj cortisol normaliseres når nervesystemet finder ro.",
-                fagfolk: "Nervesystemsregulering ved stress normaliserer HPA-akse dysregulation."
-            },
-            'nervesystem-traumer': {
-                klient: "Kronisk stress har ofte rod i gamle traumer. Healing af traumer normaliserer stress-respons.",
-                fagfolk: "PTSD skaber persisterende hyperarousal. Trauma-processing reducerer baseline stress."
-            },
-            'nervesystem-relation': {
-                klient: "Dit stress-system lærer ro gennem vores trygge relation - det er vejen til varig ændring.",
-                fagfolk: "Co-regulering i alliance modificerer stress-relaterede autonome mønstre gennem neuroplasticitet."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et system der stresser let. Vi lærer det ny sikkerhed.",
-                fagfolk: "Unsikker tilknytning korrelerer med stress-vulnerabilitet. Earned secure attachment reducerer sympatisk reactivity."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne ro-tilstand som modvægt til gul stress.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways og modulerer stress-responses."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber optimal biologi - stress-hormonerne normaliseres.",
-                fagfolk: "Ventral vagal aktivering optimerer HPA-akse funktion og reducerer stress-biomarkører."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i stress. Grøn sikkerhed først, så kan traumet heales.",
-                fagfolk: "Traumatisk hyperarousal kræver ventral vagal etablering før trauma-processing."
-            },
-            'polyvagal-relation': {
-                klient: "Min ro smitter til dit stress-system gennem vores relation.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer sympatisk hyperarousal ved stress."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Manglende early co-regulering skabte stress i kroppen. Kropsarbejde lærer ny regulering.",
-                fagfolk: "Stress-vulnerabilitet er embodied. Somatisk intervention modificerer stress-relaterede somatiske mønstre."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede en stress-følsom biologi. Ny sikkerhed omformer den.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse sensitivitet. Earned secure attachment modificerer stress-biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Tilknytningstraumer skabte kronisk stress. Healing kræver tryg relation først.",
-                fagfolk: "Developmental trauma resulterer i dysreguleret stress-respons. Langsom safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation lærer dit system at stress kan reguleres i trygge relationer.",
-                fagfolk: "Terapeutisk co-regulation modificerer stress-vulnerabilitet gennem earned secure attachment."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen slipper stress-spændinger, normaliseres hormoner og neurotransmittere.",
-                fagfolk: "Fascial release ved stress påvirker vagal afferenter og HPA-akse funktion."
-            },
-            'kropsterapi-traumer': {
-                klient: "Stress-traumer sidder frosset i kroppen. Forsigtigt kropsarbejde frigiver dem.",
-                fagfolk: "Traumatisk stress manifesteres somatisk. Titreret intervention faciliterer completion."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer kroppen at stress kan reguleres.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer stress-responses."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrede stress-biologien. Healing normaliserer cortisol og andre hormoner.",
-                fagfolk: "Traumatisk modification af HPA-akse. Trauma-processing kan normalisere stress-biomarkører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er stress-medicin - sænker cortisol, øger ro-hormoner.",
-                fagfolk: "Secure alliance modificerer HPA-akse og oxytocin-systemer ved kronisk stress."
-            },
-            'traumer-relation': {
-                klient: "Stress-traumer kan kun heales i dyb sikkerhed. Vores relation er fundamentet.",
-                fagfolk: "Trauma-baseret stress kræver robust alliance før processing. Co-regulering absolut påkrævet."
-            }
-        }
-    },
-    traumer: {
-        name: "Traumer",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet efter Traume",
-                    text: "Traumer fryser nervesystemet i forsvarstilstande. Vi arbejder forsigtigt med at optø det frosne så systemet kan finde tilbage til naturlig fleksibilitet og sikkerhed."
-                },
-                fagfolk: {
-                    title: "ANS-regulering ved Traume",
-                    text: "Traumatisk materiale lagret som autonome forsvarstilstande (freeze, collapse, fight/flight). Terapeutisk fokus på titreret activation inden for window of tolerance for at facilitere completion af incomplete defensive responses."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Traume",
-                    text: "Traumer sender systemet i rød nedluknings-zone eller gul alarm. Vi finder veje til gradvis at aktivere den grønne sikre zone som fundament for at traumet kan integreres."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori ved Traume",
-                    text: "Traumatisk immobilisering repræsenterer dorsal vagal dominans med sympatisk co-activation. Healing kræver først etablering af ventral vagal sikkerhed før traumemateriale kan aktiveres gennem oscillation mellem states."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytningstraumer",
-                    text: "Traumer i tidlige tilknytningsrelationer er de sværeste fordi de skete hvor du skulle være mest sikker. Vi arbejder med ekstra omsorg for at skabe ny sikkerhed."
-                },
-                fagfolk: {
-                    title: "Developmental Trauma",
-                    text: "Developmental trauma inden for attachment system skaber desorganiseret tilknytning og kompleks PTSD. Kræver langvarig etablering af therapeutic alliance før traumemateriale kan adresseres. Fokus på relationel sikkerhed som forudsætning."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Traumer i Kroppen",
-                    text: "Traumer sidder som frosne mønstre i kroppen - spændinger, følelsesløshed, fragmentering. Gennem meget forsigtigt kropsarbejde kan det frosne begynde at optø i eget tempo."
-                },
-                fagfolk: {
-                    title: "Somatic Experiencing",
-                    text: "Traumatisk materiale manifesteres som incomplete motoriske sekvenser, fasicial immobility, reduced interoception. Intervention gennem titreret proprioceptiv og interoceptiv activation faciliterer completion og restoration af embodied wholeness."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Traumets Biologi",
-                    text: "Traumer ændrer kroppens biologi dybtgående - hormoner, immunsystem, søvn. Ved at heale traumet normaliserer biologien sig gradvist og kroppen kan restituere."
-                },
-                fagfolk: {
-                    title: "Neurobiologi efter Traume",
-                    text: "PTSD modificerer permanent HPA-akse med fladt cortisol-døgnrytme, øget inflammatoriske cytokiner, altered hippocampal volume. Trauma-processing kan normalisere disse biomarkører gennem restoration af autonomic flexibility."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "At Heale Traumer",
-                    text: "Traumer heales ikke ved at tale om dem, men ved forsigtigt at fuldføre det der blev afbrudt. Vi arbejder med kroppen og nervesystemet for at integrere det splittet."
-                },
-                fagfolk: {
-                    title: "Traumebearbejdning",
-                    text: "Peter Levines Somatic Experiencing og van der Kolks forskning som fundament. Fokus på completion af incomplete defensive responses gennem titrering og pendulering. Dissociation kræver specifik opmærksomhed på window of tolerance."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Sikkerhed ved Traume",
-                    text: "At arbejde med traumer kræver dyb tillid. Vores relation bliver det sikre fundament hvorfra du kan se på det svære uden at blive overvældet."
-                },
-                fagfolk: {
-                    title: "Terapeutisk Alliance ved Traume",
-                    text: "Traumebehandling forudsætter robust therapeutic alliance og terapeutens egen autonome regulering. Uden relational safety risikeres re-traumatisering. Co-regulering er absolut forudsætning for sikker activation af traumatisk materiale."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Traumer fryser nervesystemet i rød eller gul. Polyvagal forståelse viser vejen til grøn sikkerhed først.",
-                fagfolk: "Traumatisk immobilisering er dorsal/sympatisk co-activation. Ventral vagal etablering er forudsætning for processing."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Tilknytningstraumer påvirker nervesystemet dybest fordi de skete hvor du skulle være sikrest.",
-                fagfolk: "Developmental trauma skaber komplekse autonome mønstre. Earned secure attachment gennem terapeutisk relation er central."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Traumer sidder frosset i nervesystem og krop. Forsigtigt kropsarbejde optør begge dele.",
-                fagfolk: "Traumatisk materiale manifesteres somatisk og autonomt. Titreret somatisk intervention faciliterer completion."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Traumer ændrer nervesystem og biologi. Ved at heale det ene, heales det andet.",
-                fagfolk: "PTSD modificerer både autonomt nervesystem og neurobiologi. Regulering normaliserer begge."
-            },
-            'nervesystem-traumer': {
-                klient: "At arbejde med traumer ER at arbejde med nervesystemet - de er ét og samme.",
-                fagfolk: "Traumatisk materiale ER autonome forsvarstilstande. Trauma-processing ER nervesystemsregulering."
-            },
-            'nervesystem-relation': {
-                klient: "Dit traumatiserede nervesystem lærer sikkerhed gennem vores trygge relation.",
-                fagfolk: "Co-regulering i robust alliance faciliterer sikker trauma-processing gennem autonome modifications."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Tilknytningstraumer skabte usikre polyvagale mønstre. Vi lærer systemet grøn sikkerhed.",
-                fagfolk: "Developmental trauma dysregulerer polyvagale responses. Earned secure attachment restaurerer fleksibilitet."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer grøn sikkerhed som fundament for at traumet kan integreres.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways nødvendige for sikker trauma-processing."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber den biologi der muliggør trauma-healing.",
-                fagfolk: "Ventral vagal aktivering optimerer neurobiologi for trauma-processing og integration."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i rød/gul. Grøn sikkerhed er nøglen til at låse det op.",
-                fagfolk: "Traumatisk immobilisering kræver ventral vagal etablering før materiale kan aktiveres sikkert."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne sikkerhed lærer dit traumatiserede system at det kan være sikkert.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og skaber sikker base for trauma-arbejde."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningstraumer er embodied. Forsigtigt kropsarbejde integrerer det splittet.",
-                fagfolk: "Developmental trauma manifesteres somatisk. Titreret somatisk intervention faciliterer reconsolidation."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Tilknytningstraumer formede biologien. Healing af traumer normaliserer den.",
-                fagfolk: "Developmental trauma modificerer neurobiologi. Tilknytningsarbejde kan normalisere biologiske signatures."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tilknytning er de dybeste - både farligt og eneste sikkerhed på samme tid.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning med modsatrettede impulser. Ekstra forsigtighed påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation bliver det sikre sted hvor tilknytningstraumer kan heales.",
-                fagfolk: "Terapeutisk relation som korrigerende erfaring er central for developmental trauma healing."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen integrerer traumet, følger biologien med - hormoner normaliseres.",
-                fagfolk: "Somatisk trauma-processing påvirker neurobiologi og normaliserer HPA-akse dysregulation."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer sidder i kroppen som ufærdige forsvar. Kropsarbejde fuldfører dem.",
-                fagfolk: "Incomplete defensive responses manifesteres somatisk. Titreret intervention faciliterer completion."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer traumatiseret krop at verden kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety faciliterer somatisk trauma-integration."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrer biologien dybtgående. Healing normaliserer hormoner og immunsystem.",
-                fagfolk: "PTSD modificerer HPA-akse og inflammatoriske profiler. Trauma-processing normaliserer biomarkører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin der gør trauma-healing mulig.",
-                fagfolk: "Secure alliance modificerer neurobiologi og skaber optimal kontekst for trauma-processing."
-            },
-            'traumer-relation': {
-                klient: "Traumer kan kun heales i dyb sikkerhed. Vores relation ER healing.",
-                fagfolk: "Traumebehandling forudsætter robust alliance. Uden relational safety risikeres re-traumatisering."
-            }
-        }
-    },
-    sovn: {
-        name: "Søvn",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Søvn og Nervesystemet",
-                    text: "Søvn kræver at nervesystemet kan slippe kontrollen og falde til ro. Ved søvnproblemer lærer vi dit system at det er sikkert at slappe helt af og overlade sig til søvnen."
-                },
-                fagfolk: {
-                    title: "Søvnregulering via ANS",
-                    text: "Søvn kræver ventral vagal dominans og parasympatisk activation. Søvnforstyrrelser ofte resultat af manglende down-regulation capability. Intervention gennem vagal tone-opbygning og circadian rhythm restoration."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal og Søvn",
-                    text: "Søvn er kun mulig i den grønne sikre zone. Hvis dit system sidder fast i gul alarm kan du ikke sove. Vi finder veje til den dybe grønne ro som er forudsætning for søvn."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Søvn",
-                    text: "Søvn kræver ventral vagal sikkerhed. Insomni ofte udtryk for sympatisk hyperarousal eller dorsal shutdown uden ventral vagal adgang. Terapeutisk mål er etablering af polyvagal fleksibilitet for circadian oscillation."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Søvn",
-                    text: "Hvis du aldrig lærte at verden var sikker nok til at lukke øjnene i, har dit system svært ved at sove. Vi arbejder med at skabe den manglende grundsikkerhed."
-                },
-                fagfolk: {
-                    title: "Attachment og Søvnregulering",
-                    text: "Desorganiseret og unsikker tilknytning korrelerer med søvnforstyrrelser. Manglende early co-regulation af arousal påvirker søvnkapacitet livslangt. Earned secure attachment kan restaurere naturlig søvnregulering."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropslig Søvnforbedring",
-                    text: "Spændinger i kroppen holder dig vågen. Gennem behandling og særligt åndedrætsarbejde lærer kroppen at slippe og finde den dybe ro der inviterer søvn."
-                },
-                fagfolk: {
-                    title: "Somatisk Søvnintervention",
-                    text: "Muskulær hypertonus og fasicial restrictions inhiberer parasympatisk activation nødvendig for søvn. Fascial release og vagus-aktivering gennem diaphragmatisk åndedræt faciliterer transition til søvn-permissive state."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Søvnens Biologi",
-                    text: "Din søvn-væk rytme styres af hormoner og nervesystemet. Vi arbejder med at normalisere biologien så din naturlige døgnrytme kan genetableres."
-                },
-                fagfolk: {
-                    title: "Søvn-Neurobiologi",
-                    text: "Søvnforstyrrelser involverer dysreguleret HPA-akse med forhøjet natcortisol, reduceret melatonin, altered circadian rhythm. Autonomt nervesystem-regulering kan normalisere disse patterns gennem vagal tone restoration."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Søvn",
-                    text: "Traumer skaber hyper-vågenhed hvor systemet ikke tør slippe kontrollen nok til at sove. Ved at heale traumerne kan den naturlige søvnevne returnere."
-                },
-                fagfolk: {
-                    title: "Traumatisk Hypervigilance",
-                    text: "PTSD-relateret hypervigilance inhiberer søvn gennem persistent sympatisk activation. Traumebearbejdning reducerer baseline arousal og restaurerer capacity for circadian down-regulation nødvendig for søvn."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Tryg nok til at Sove",
-                    text: "Vores arbejde sammen skaber en dyb sikkerhed som dit system kan tage med sig. Når systemet lærer at verden er sikker nok, kommer søvnen naturligt."
-                },
-                fagfolk: {
-                    title: "Relationel Søvnregulering",
-                    text: "Terapeutisk co-regulation opbygger intern kapacitet til self-soothing nødvendig for søvn. Gentagen erfaring af ventral vagal sikkerhed i relation generaliserer til capacity for autonomous down-regulation ved sengetid."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Søvn kræver at nervesystemet er i grøn ro. Polyvagal forståelse viser vejen dertil.",
-                fagfolk: "Søvn kræver ventral vagal dominans. Polyvagal intervention faciliterer transition til søvn-permissive state."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Søvnproblemer har ofte rod i utryg tilknytning uden co-regulering. Vi skaber den manglende sikkerhed.",
-                fagfolk: "Manglende early co-regulation af arousal påvirker søvn. Earned secure attachment restaurerer søvnregulering."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Kroppen kan ikke sove når den er anspændt. Kropsarbejde lærer den at slippe.",
-                fagfolk: "Somatisk hypertonus inhiberer søvn. Fascial release faciliterer parasympatisk activation nødvendig for søvn."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Når nervesystemet roer sig, normaliseres søvn-biologien - melatonin stiger, cortisol falder.",
-                fagfolk: "Nervesystemsregulering normaliserer circadian rhythm og søvn-relaterede hormoner."
-            },
-            'nervesystem-traumer': {
-                klient: "Traumer skaber vågenhed der forhindrer søvn. Healing af traumer genopretter søvnevne.",
-                fagfolk: "PTSD-relateret hypervigilance inhiberer søvn. Trauma-processing reducerer baseline arousal."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer dyb ro gennem vores relation - ro nok til søvn.",
-                fagfolk: "Terapeutisk co-regulation opbygger intern kapacitet til down-regulation nødvendig for søvn."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et system der ikke kan slappe af til søvn. Vi lærer det sikkerhed.",
-                fagfolk: "Unsikker tilknytning korrelerer med søvnforstyrrelser. Earned secure attachment faciliterer søvn."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne ro der gør søvn mulig.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways for søvn-transition."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber den rette søvn-biologi - melatonin, lav cortisol.",
-                fagfolk: "Ventral vagal aktivering optimerer circadian hormoner og faciliterer søvn."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i vågenhed. Grøn sikkerhed er vejen til søvn igen.",
-                fagfolk: "Traumatisk hyperarousal inhiberer ventral vagal access. Sikkerhed-etablering er forudsætning."
-            },
-            'polyvagal-relation': {
-                klient: "Min ro lærer dit system den dybe sikkerhed der muliggør søvn.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og lærer systemet down-regulation for søvn."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Manglende sikkerhed skabte en kropp der ikke kan slappe af til søvn. Kropsarbejde lærer ro.",
-                fagfolk: "Søvnproblemer er ofte embodied tilknytningsproblemer. Somatisk intervention modificerer mønstre."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede søvn-biologi. Ny sikkerhed normaliserer den.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse og søvn-hormoner. Earned secure attachment modificerer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Tilknytningstraumer skabte vågenhed og søvnløshed. Healing kræver dyb sikkerhed.",
-                fagfolk: "Developmental trauma resulterer i søvnforstyrrelser. Langsom relational safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores trygge relation lærer dit system at det er sikkert nok til at sove.",
-                fagfolk: "Terapeutisk relation som sikker base faciliterer internalisering af self-soothing for søvn."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen lærer ro, følger søvn-biologien med - hormoner normaliseres.",
-                fagfolk: "Somatisk ro-aktivering påvirker HPA-akse og circadian hormoner for søvn."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer holder kroppen vågen. Forsigtigt kropsarbejde frigiver den til søvn.",
-                fagfolk: "Traumatisk somatisk hyperarousal inhiberer søvn. Titreret intervention reducerer activation."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring lærer kroppen at den kan slappe af nok til søvn.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety faciliterer somatisk down-regulation."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ødelagde søvn-biologien. Healing normaliserer hormoner og søvnrytme.",
-                fagfolk: "PTSD modificerer circadian rhythm og HPA-akse. Trauma-processing kan normalisere søvn-biologi."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er søvn-medicin - normaliserer hormoner og skaber ro.",
-                fagfolk: "Secure alliance modificerer HPA-akse og faciliterer biologisk grundlag for søvn."
-            },
-            'traumer-relation': {
-                klient: "Traumer kan kun heales i dyb sikkerhed - og så kommer søvnen tilbage.",
-                fagfolk: "Traumebehandling kræver robust alliance. Relational safety faciliterer resolution af hypervigilance."
-            }
-        }
-    }
-   
+// Content database - TRE altid stort, nu med sclerose-mode
+const content = {
+    circles: {
+        tre: {
+            klient: {
+                title: "TRE - Tension & Trauma Releasing Exercises",
+                text: "TRE er en simpel metode hvor du gennem 7 øvelser aktiverer kroppens naturlige rystemekanisme. Når du tremorer (ryster), hjælper det din krop med at slippe spændinger og komme i balance. Det er som når dyr ryster efter en farlig situation - det hjælper nervesystemet med at vende tilbage til ro."
+            },
+            fagfolk: {
+                title: "TRE - Klinisk Perspektiv",
+                text: "TRE aktiverer neurogene tremor gennem systematisk muskeltrætning, primært i psoas og ben-muskulatur. Metoden faciliterer autonomt nervesystem-regulering uden at kræve narrativ processing af trauma. Effektiv som standalone eller integreret i eksisterende terapeutisk praksis."
+            },
+            videnskab: {
+                title: "TRE - Neurobiologisk Mekanisme",
+                text: "TRE inducerer neurogen tremor via muskel-spindle aktivering og proprioceptiv feedback. Tremor faciliterer polyvagal regulering, completion af incomplete defensive responses, og reorganisering af sensomotoriske mønstre associeret med traumatisk stress. Dokumenteret effekt på HPA-akse og autonomt nervesystem."
+            },
+            sclerose: {
+                title: "TRE for Mennesker med Sclerose",
+                text: "TRE kan hjælpe med at reducere muskelspasticitet og kronisk spænding der ofte følger med sclerose. Tremor arbejder mildt med nervesystemet uden at udmatte kroppen. Mange med sclerose oplever forbedret søvn, mindre smerte og bedre energiniveau. Metoden er skånsom og kan tilpasses din aktuelle tilstand og energi."
+            }
+        },
+        polyvagal: {
+            klient: {
+                title: "Polyvagal Teori - Dit Nervesystem",
+                text: "Din krop har tre forskellige 'gear': Ro og fordøjelse (grøn), alarm og kamp/flugt (gul), og nedlukning (rød). Når du tremorer, hjælper det din krop med at skifte fra alarm eller nedlukning tilbage til det grønne gear, hvor du kan føle dig sikker og forbundet."
+            },
+            fagfolk: {
+                title: "Polyvagal Teori - Autonomt Nervesystem",
+                text: "Stephen Porges' teori beskriver tre fylogenetiske lag: ventral vagal (social engagement), sympatisk (mobilisering), dorsal vagal (immobilisering). TRE faciliterer bevægelse fra sympatisk hyperarousal eller dorsal shutdown tilbage til ventral vagal regulering gennem neuroceptive signaler om sikkerhed."
+            },
+            videnskab: {
+                title: "Polyvagal Teori - Neurofysiologi",
+                text: "Vagalt modulerede kardiale og respiratoriske mønstre reflekterer autonomt nervesystem-tilstand. Tremor aktiverer afferent vagal signalering, hvilket nedregulerer amygdala-respons og faciliterer præfrontal korteks engagement. Respiratory sinus arrhythmia (RSA) forbedres, indikerende for øget vagal tone."
+            },
+            sclerose: {
+                title: "Nervesystem-Regulering ved Sclerose",
+                text: "Sclerose påvirker nervesystemet dybt - både gennem sygdommens fysiske effekt på nerveceller og gennem den kroniske stress ved at leve med sygdommen. TRE hjælper nervesystemet med at finde ro-tilstanden, hvilket kan reducere inflammation, forbedre immunfunktion og give bedre symptomkontrol. Når nervesystemet er i ro-tilstand, fungerer kroppens selvhelingsmekanismer bedre."
+            }
+        },
+        narrative: {
+            klient: {
+                title: "Kropsorienteret Psykoterapi - Krop og Sind",
+                text: "Din krop og din psyke hænger uløseligt sammen. Når livet gør ondt, spænder kroppen - og de spændinger bliver ofte siddende i årevis. Gennem vejrtrækning, kropsøvelser og vibration arbejder vi med at forløse det der sidder fast. Det handler ikke kun om at tale om problemerne, men om at mærke og bevæge dem gennem kroppen. Når kroppen slipper, følger sindet med."
+            },
+            fagfolk: {
+                title: "Kropsorienteret Psykoterapi - Somatisk Integration",
+                text: "Integration af krop og psyke som terapeutisk grundprincip. Tilbageholdte udtryk - længsel, vrede, angst - lagres som muskelspændinger, underspændte muskler og fastlåste kropsholdninger. Gennem dybere vejrtrækning, kropsøvelser og vibration forløses tilbageholdt udtryk. Bottom-up tilgang der kombinerer samtale med direkte kropslig intervention. Bygger bro mellem bioenergetisk tradition og moderne traumeforståelse."
+            },
+            videnskab: {
+                title: "Kropsorienteret Psykoterapi - Neurobiologisk Grundlag",
+                text: "Somatisk psykoterapi modulerer autonomt nervesystem gennem proprioceptiv og interoceptiv stimulation. Vejrtrækningsøvelser påvirker vagal tone direkte via respiratorisk sinus arrhytmi. Vibration og bevægelsesøvelser aktiverer mechanoreceptorer i fascia og muskler, hvilket modulerer afferent signalering til insula og somatosensorisk korteks. Interoceptiv awareness korrelerer med emotionel reguleringskapacitet."
+            },
+            sclerose: {
+                title: "Kropsarbejde Tilpasset Sclerose",
+                text: "Med sclerose er kroppen ofte et sted fyldt med frustration - spasticitet, træthed, smerter. Kropsorienteret psykoterapi tilbyder en vej til at genetablere et positivt forhold til kroppen. Skånsomme vejrtrækningsøvelser, blid vibration og tilpassede kropsøvelser hjælper med at reducere spænding uden at udmatte. Du lærer at lytte til kroppens signaler og arbejde med den i stedet for mod den. Mange oplever at spasticiteten mildnes og energiniveauet forbedres."
+            }
+        },
+        enactivisme: {
+            klient: {
+                title: "Trauma & Stress - Når Kroppen Husker",
+                text: "Når noget overvældende sker - en ulykke, et tab, langvarig stress - forbereder kroppen sig på at kæmpe eller flygte. Hvis den reaktion bliver afbrudt, sidder energien fast som spænding, uro eller følelsesløshed. TRE hjælper kroppen med at fuldføre den afbrudte reaktion og slippe den fastlåste energi, så du kan vende tilbage til ro og tilstedeværelse."
+            },
+            fagfolk: {
+                title: "Trauma & Stress - Somatisk Traumeforståelse",
+                text: "Traumatisk materiale lagres som autonome forsvarstilstande: freeze, flight, fight og collapse. Incomplete defensive responses vedligeholder sympatisk hyperarousal eller dorsal immobilisering. TRE faciliterer completion af disse afbrudte responser gennem neurogen tremor uden at kræve narrativ genbearbejdning. Centralt: window of tolerance, titrering og pendulering mellem aktivering og ro. Freezing, flooding og dissociation som kliniske markører for reguleringskapacitet."
+            },
+            videnskab: {
+                title: "Trauma & Stress - Neurobiologiske Mekanismer",
+                text: "Traumatisk stress aktiverer HPA-aksen med forhøjet cortisol og adrenalin, samt amygdala-medieret frygtrespons. Kronisk stress medfører hippocampal atrofi, præfrontal hypoaktivitet og dysreguleret autonomt nervesystem. Incomplete defensive responses vedligeholdes via periaqueductal gray (PAG) og brainstem reflexer. TRE aktiverer central pattern generators der faciliterer motorisk completion og efterfølgende autonomt shift fra defensiv til eksplorativ tilstand."
+            },
+            sclerose: {
+                title: "Stress og Trauma ved Sclerose",
+                text: "At få en sclerose-diagnose er i sig selv traumatisk - pludselig usikkerhed, tab af kontrol over kroppen, frygt for fremtiden. Dertil kommer den kroniske stress ved at leve med en uforudsigelig sygdom: attakker, symptomforværring, medicinsk behandling. Denne vedvarende stress belaster nervesystemet og kan forværre symptomerne. TRE hjælper med at forløse den ophobede stress og de afbrudte forsvarsreaktioner fra diagnosetidspunkt og tilbageslag, så kroppen kan bevæge sig fra kronisk alarm til ro - hvilket er afgørende for immunfunktion og symptomhåndtering."
+            }
+        },
+        levine: {
+            klient: {
+                title: "Sclerose & Kronisk Sygdom - TRE som Selvhjælp",
+                text: "Når du lever med en kronisk sygdom som sclerose, er kroppen under konstant pres. TRE tilbyder en skånsom metode til selvregulering som du kan bruge hjemme. Mange oplever reduceret spasticitet, bedre søvn, mindre træthed og færre smerter. Metoden tilpasses altid din aktuelle tilstand - på dårlige dage kan øvelserne gøres liggende, og intensiteten reguleres efter dit energiniveau. Over 1000 mennesker med sclerose har allerede haft gavn af TRE."
+            },
+            fagfolk: {
+                title: "Sclerose & Kronisk Sygdom - Klinisk Erfaring",
+                text: "13 års klinisk erfaring fra Scleroseforeningen med over 1000 MS-patienter har dokumenteret TRE's effekt ved kronisk sygdom. Tilpasning af TRE til kronisk sygdom kræver særlig opmærksomhed på energiforvaltning, dosering og window of tolerance. Spasticitet har både en neurologisk komponent (demyelinisering) og en autonom komponent (defensiv tonus) - TRE adresserer primært den autonome komponent. To videnskabelige studier gennemført af Scleroseforeningen bekræfter forbedret livskvalitet. TRE fungerer som selvhjælpsmetode der reducerer afhængighed af terapeut."
+            },
+            videnskab: {
+                title: "Sclerose & Kronisk Sygdom - Forskningsgrundlag",
+                text: "Multipel sklerose involverer neuroinflammation og demyelinisering af centralnervesystemet. Autonomt nervesystem-dysregulering er dokumenteret komorbiditet ved MS med reduceret heart rate variability (HRV) og forhøjet sympatisk tonus. TRE-induceret tremor modulerer autonomt nervesystem mod parasympatisk dominans, hvilket potentielt reducerer neuroinflammation via den cholinerge antiinflammatoriske pathway. Pivotstudie præsenteret ved ECTRIMS 2022 viste signifikant forbedret livskvalitet hos RRMS-patienter efter body-mind intervention. Spasticitet reduceres gennem nedregulering af defensiv muskeltonus medieret af autonomt nervesystem."
+            },
+            sclerose: {
+                title: "Din Vej med TRE og Sclerose",
+                text: "Du er ikke alene. Over 1000 mennesker med sclerose har brugt TRE og oplevet forbedringer i deres hverdag - mindre spasticitet, bedre søvn, mere energi, mindre smerte. TRE erstatter ikke din medicinske behandling, men det giver dig et redskab til selv at påvirke din tilstand. Øvelserne tilpasses altid dig: siddende, liggende eller stående, afhængig af hvad der fungerer for dig den dag. Start langsomt, mærk efter, og lad kroppen guide dig. To videnskabelige studier fra den danske Scleroseforening har vist at TRE forbedrer livskvaliteten for mennesker med sclerose."
+            }
+        },
+        reich: {
+            klient: {
+                title: "Bioenergetik - Muskulært Panser",
+                text: "Når livet er hårdt, spænder vi kroppen som beskyttelse - og glemmer at slippe igen. Det bliver til mønstre i musklerne ('panser') der holder følelser og energi tilbage. Tremor hjælper musklerne med at slippe de gamle mønstre, så energi og følelser kan bevæge sig frit igen."
+            },
+            fagfolk: {
+                title: "Bioenergetik - Character Armor",
+                text: "Reich og Lowens teori om character armor: kroniske muskelspændinger embodier psykologisk forsvar. TRE faciliterer mildnelse af armor gennem neurogen tremor, hvilket restaurerer energetisk flow og affektiv tilgængelighed. Komplementerer verbal psykoterapi ved at arbejde gennem kroppen."
+            },
+            videnskab: {
+                title: "Bioenergetik - Fascial og Muskulær Reorganisering",
+                text: "Kronisk muskelspænding modificerer fascial viscoelastiske egenskaber og proprioceptiv signalering. TRE-induceret tremor reorganiserer myofasciale holding patterns gennem rhythmisk belastning og mekanisk stimulation. Ændrer både strukturelle og neurale komponenter af 'armoring'."
+            },
+            sclerose: {
+                title: "Spasticitet og Muskulært Panser ved Sclerose",
+                text: "Sclerose skaber spasticitet gennem neurologisk skade, men oveni ligger ofte ekstra muskelspænding fra forsvar og kompensation - et 'panser' af kronisk kontraktion. TRE arbejder med begge lag: Den neurologiske spasticitet mildnes gennem nervesystem-regulering, og det psykologiske panser ('jeg må holde sammen', 'jeg må kæmpe') får lov til at slippe. Når begge typer spænding reduceres, forbedres mobilitet, smerte og energiniveau markant."
+            }
+        },
+        psykologi: {
+            klient: {
+                title: "Klinisk Psykologi - Sikkerhed og Relation",
+                text: "For at din krop kan slippe må du føle dig sikker. En terapeut eller guide skaber det trygge rum hvor tremor kan ske. Det handler ikke kun om teknikken - men også om at du føler dig set, hørt og accepteret. Healing sker i relationer, ikke i isolation."
+            },
+            fagfolk: {
+                title: "Klinisk Psykologi - Terapeutisk Relation",
+                text: "TRE effektivitet afhænger af terapeutisk alliance og co-regulering. Providers embodied tilstedeværelse faciliterer klientens neuroceptive oplevelse af sikkerhed (polyvagal). Integration af somatisk arbejde med psykologisk forståelse af attachment, dissociation og titration. Relationel neurobiologi i praksis."
+            },
+            videnskab: {
+                title: "Klinisk Psykologi - Interpersonal Neurobiology",
+                text: "Terapeutisk relation modificerer klientens autonomt nervesystem via social engagement system (ventral vagal). Terapeuts egen regulering co-regulerer klient gennem mirror neurons og interbrain synchrony. TRE effectiveness medieres af attachment security og therapeutic alliance quality."
+            },
+            sclerose: {
+                title: "Terapeutisk Relation ved Sclerose",
+                text: "Med sclerose er kroppen ofte et sted fyldt med svigt, smerte og frygt. At turde tremor - at turde slippe kontrol - kræver dyb sikkerhed. En terapeut der forstår både sclerose og TRE, som selv er rolig og til stede i kroppen, skaber det containment der gør transformation mulig. Relationel sikkerhed er ikke 'nice to have' men fysiologisk nødvendigt - terapeutens regulerede nervesystem co-regulerer klientens gennem tilstedeværelse og anerkendelse."
+            }
+        }
+    },
+    connections: {
+        // === UÆNDREDE FORBINDELSER (6 stk) ===
+        'tre-polyvagal': {
+            klient: "Tremor hjælper dit nervesystem med at skifte fra alarm eller nedlukning tilbage til ro og sikkerhed.",
+            fagfolk: "TRE faciliterer polyvagal regulering fra sympatisk/dorsal tilstand til ventral vagal sikkerhed.",
+            videnskab: "Neurogen tremor modulerer vagal efferens og nedregulerer amygdala-respons via brainstem circuits.",
+            sclerose: "Ved sclerose er nervesystemet ofte i kronisk stress-tilstand, hvilket forværrer inflammation og symptomer. TRE's tremor-mekanisme hjælper nervesystemet tilbage til ro-tilstand hvor healing og regenerering kan ske - kritisk for symptomkontrol."
+        },
+        'tre-reich': {
+            klient: "Tremor hjælper de spændte muskler med at slippe gamle beskyttelsesmønstre.",
+            fagfolk: "TRE mildner character armor gennem neurogen tremor, restaurerende energetisk flow.",
+            videnskab: "Tremor reorganiserer myofasciale holding patterns gennem rhythmisk mekanisk stimulation.",
+            sclerose: "Ved sclerose er der både neurologisk spasticitet og psykologisk muskulært panser. TRE arbejder med begge lag - mildner spasticitet gennem nervesystem-regulering og løsner det kompensatoriske panser, hvilket forbedrer mobilitet og reducerer smerte."
+        },
+        'tre-psykologi': {
+            klient: "Med en tryg terapeut kan din krop turde tremor - sikkerhed i relationen muliggør healing.",
+            fagfolk: "Terapeutisk alliance og co-regulering faciliterer TRE's effectiveness gennem neuroceptiv sikkerhed.",
+            videnskab: "Providers regulerede autonome tilstand co-regulerer klient via social engagement system.",
+            sclerose: "Med sclerose er kroppen ofte forbundet med svigt og frygt. At turde tremor kræver dyb sikkerhed. En terapeut der forstår både sclerose og TRE skaber det containment der gør transformation mulig - relationel sikkerhed er fysiologisk nødvendigt."
+        },
+        'polyvagal-reich': {
+            klient: "Muskulært panser er kroppens måde at blive i alarm-tilstand.",
+            fagfolk: "Character armor manifesterer kronisk sympatisk aktivering eller dorsal immobilisering.",
+            videnskab: "Reichian armor er somatisk manifestation af dysreguleret autonomt nervesystem.",
+            sclerose: "Spasticitet ved sclerose er delvist neurologisk, delvist autonomt nervesystem-drevet. Når TRE bringer nervesystemet i ro, reduceres den autonome komponent af spasticiteten markant."
+        },
+        'polyvagal-psykologi': {
+            klient: "En rolig terapeut hjælper dit nervesystem med at finde ro - sikkerhed smitter relationelt.",
+            fagfolk: "Terapeutens ventral vagal tilstand co-regulerer klientens nervesystem gennem social engagement.",
+            videnskab: "Provider's autonomic state influences client's via ventral vagal pathways.",
+            sclerose: "Ved sclerose hvor nervesystemet er dysreguleret, er co-regulering gennem terapeutisk relation afgørende. Terapeutens rolige tilstedeværelse giver nervesystemet en 'ekstern regulator' at låne fra."
+        },
+        'reich-psykologi': {
+            klient: "Terapeuten skal selv være afslappet og til stede i kroppen for at hjælpe dig.",
+            fagfolk: "Terapeutens embodiment påvirker klientens - bioenergetisk resonans er faktisk co-regulering.",
+            videnskab: "Provider's somatic state influences client's via mirror neurons og autonomic synchrony.",
+            sclerose: "Med sclerose hvor kroppen er spastisk og spændt, er terapeutens embodied afslappethed en kraftfuld intervention. Spejlneuroner og autonomisk synkronisering betyder at terapeutens ro direkte påvirker klientens nervesystem."
+        },
+
+        // === OPDATEREDE FORBINDELSER (15 stk) ===
+
+        // TRE ↔ Kropsorienteret Psykoterapi
+        'tre-narrative': {
+            klient: "TRE er en del af den kropsorienterede tilgang - tremor er en af de mest direkte veje til at forløse spændinger i kroppen. Sammen med vejrtrækning og kropsøvelser giver det kroppen flere redskaber til healing.",
+            fagfolk: "TRE integreres i kropsorienteret psykoterapi som specifik bottom-up intervention. Neurogen tremor komplementerer bioenergetiske øvelser, vejrtrækningsarbejde og vibrationsteknikker. Tilsammen udgør de en holistisk somatisk tilgang til regulering.",
+            videnskab: "TRE-induceret tremor og kropsorienterede interventioner (vejrtrækning, vibration, bevægelse) aktiverer overlappende neurofysiologiske pathways: vagal afferens, proprioceptiv feedback og interoceptiv processing. Kombineret effekt på autonomt nervesystem overstiger individuelle interventioners effekt.",
+            sclerose: "For mennesker med sclerose er kropsorienteret psykoterapi rammen, og TRE er et af de mest tilgængelige redskaber inden for den ramme. Tremor kan udføres liggende eller siddende og kræver minimal energi - men giver kroppen en direkte vej til at slippe spænding og finde ro."
+        },
+        // TRE ↔ Trauma & Stress
+        'tre-enactivisme': {
+            klient: "TRE er udviklet specifikt til at hjælpe kroppen med at slippe traumer og stress. De 7 øvelser aktiverer kroppens naturlige evne til at ryste den fastlåste spænding fri - uden at du behøver tale om det svære.",
+            fagfolk: "TRE er designet som traumeforløsende intervention. Neurogen tremor faciliterer completion af incomplete defensive responses og reducerer kronisk sympatisk hyperarousal. Metoden er effektiv netop fordi den ikke kræver narrativ genbearbejdning - den arbejder direkte med det somatisk lagrede.",
+            videnskab: "TRE adresserer traumatisk stress på neurobiologisk niveau: tremor faciliterer motorisk completion via central pattern generators, nedregulerer HPA-akse aktivering, og modulerer amygdala-respons. Særligt effektiv ved somatisk lagret trauma der ikke er tilgængelig for kognitiv processing.",
+            sclerose: "Sclerose-forløbet indeholder ofte multiple traumatiske oplevelser: diagnosechok, attakker, tab af funktion. TRE giver kroppen mulighed for at forløse den ophobede stress uden at kræve energikrævende samtaleprocesser - en afgørende fordel når energi er en begrænset ressource."
+        },
+        // TRE ↔ Sclerose & Kronisk Sygdom
+        'tre-levine': {
+            klient: "TRE er blevet brugt med over 1000 mennesker med sclerose. Metoden tilpasses din tilstand og kan udføres siddende eller liggende. Mange oplever mindre spasticitet, bedre søvn og mere energi allerede efter få sessioner.",
+            fagfolk: "13 års systematisk klinisk erfaring med TRE ved MS dokumenterer metodens anvendelighed ved kronisk sygdom. Nøglen er tilpasning: dosering af tremor, energiforvaltning og respekt for window of tolerance. To videnskabelige studier fra Scleroseforeningen bekræfter forbedret livskvalitet.",
+            videnskab: "TRE ved kronisk sygdom adresserer autonomt nervesystem-dysregulering som komorbid faktor. Ved MS reducerer TRE defensiv muskeltonus (autonom spasticitet-komponent) og modulerer neuroinflammation via den cholinerge antiinflammatoriske pathway. Pivotstudie ved ECTRIMS 2022 viste signifikant livskvalitetsforbedring.",
+            sclerose: "TRE er ikke en kur mod sclerose, men det er et kraftfuldt redskab til at forbedre din hverdag. Øvelserne tilpasses altid din aktuelle tilstand. Start med korte sessioner, mærk efter bagefter, og byg langsomt op. Din krop ved hvad den har brug for - TRE giver den et sprog til at udtrykke det."
+        },
+        // Polyvagal ↔ Kropsorienteret Psykoterapi
+        'polyvagal-narrative': {
+            klient: "Når dit nervesystem er i alarm, er kroppen spændt og låst. Kropsorienteret psykoterapi bruger vejrtrækning og øvelser til at hjælpe nervesystemet tilbage til ro - præcis der hvor polyvagal teorien viser at healing kan ske.",
+            fagfolk: "Polyvagal teori giver det teoretiske fundament for kropsorienteret psykoterapis interventioner. Vejrtrækningsarbejde påvirker vagal tone direkte, kropsøvelser modulerer autonom tilstand, og vibration stimulerer ventral vagal aktivering. Neuroception af sikkerhed faciliteres gennem somatisk intervention.",
+            videnskab: "Kropsorienterede interventioner modulerer det polyvagale hierarki direkte: langsomme udåndinger øger RSA og vagal tone, proprioceptiv stimulation via øvelser påvirker neuroception, og vibration aktiverer mechanoreceptorer der signalerer sikkerhed til autonomt nervesystem via afferent vagal pathway.",
+            sclerose: "Ved sclerose er nervesystemet ofte fastkørt i alarm- eller nedlukningstilstand. Kropsorienteret psykoterapis redskaber - blid vejrtrækning, tilpassede øvelser, vibration - giver konkrete måder at hjælpe nervesystemet mod ro-tilstanden. Det er polyvagal teori omsat til praksis i en krop der har brug for skånsom tilgang."
+        },
+        // Polyvagal ↔ Trauma & Stress
+        'polyvagal-enactivisme': {
+            klient: "Polyvagal teorien forklarer hvorfor traumer sidder fast: nervesystemet er låst i alarm eller nedlukning. Forståelsen af de tre 'gear' hjælper dig med at genkende hvor du er, og finde vej tilbage til sikkerhed.",
+            fagfolk: "Polyvagal teori leverer den autonome ramme for traumeforståelse. Traumatisk materiale vedligeholdes som dysregulerede autonome tilstande: kronisk sympatisk aktivering (hyperarousal) eller dorsal vagal immobilisering (freeze/collapse). Window of tolerance defineres af den ventral vagale kapacitet.",
+            videnskab: "Traumatisk stress manifesterer sig som polyvagal dysregulering: forhøjet sympatisk tonus, reduceret vagal bremse, dysreguleret neuroception. Amygdala-hyperreaktivitet og præfrontal hypoaktivitet reflekterer tab af ventral vagal modulering. Traumebehandling kræver genoprettelse af polyvagal fleksibilitet.",
+            sclerose: "Sclerose skaber en dobbelt belastning: sygdommen selv stresser nervesystemet, og traumet ved at leve med kronisk sygdom holder det i alarm. Polyvagal forståelse hjælper med at se hvorfor symptomerne forværres under stress - og hvorfor ro-tilstanden er så afgørende for symptomkontrol."
+        },
+        // Polyvagal ↔ Sclerose & Kronisk Sygdom
+        'polyvagal-levine': {
+            klient: "Når du har en kronisk sygdom, er dit nervesystem ofte i konstant alarmberedskab. Polyvagal teorien forklarer hvorfor det forværrer symptomerne - og hvorfor det at finde ro ikke bare føles godt, men faktisk hjælper kroppen med at hele.",
+            fagfolk: "Polyvagal dysregulering er dokumenteret komorbiditet ved MS: reduceret HRV, forhøjet sympatisk baseline, nedsat vagal tone. Kronisk sygdom vedligeholder autonom dysregulering gennem vedvarende neuroception af fare. Genoprettelse af ventral vagal kapacitet er terapeutisk mål ved kronisk sygdom.",
+            videnskab: "MS-patienter udviser signifikant reduceret heart rate variability og parasympatisk tonus. Kronisk autonom dysregulering accelererer neuroinflammation via manglende aktivering af den cholinerge antiinflammatoriske pathway. Vagal nerve stimulation - mekanisk via TRE eller elektrisk - er undersøgt som antiinflammatorisk intervention.",
+            sclerose: "Dit nervesystem arbejder overarbejde med sclerose. Polyvagal teorien viser at når nervesystemet er i kronisk alarm, forværres inflammation, spasticitet og træthed. At lære at bringe nervesystemet i ro er ikke luksus - det er en del af din behandling. TRE giver dig et redskab til det."
+        },
+        // Kropsorienteret Psykoterapi ↔ Trauma & Stress
+        'narrative-enactivisme': {
+            klient: "Traumer sidder i kroppen, ikke kun i hovedet. Derfor er kropsarbejde så vigtigt i traumebehandling - du kan ikke tale dig ud af noget der sidder i musklerne. Kropsorienteret psykoterapi giver kroppen lov til at forløse det den holder fast i.",
+            fagfolk: "Kropsorienteret psykoterapi er særligt indiceret ved somatisk lagret trauma. Bottom-up interventioner (vejrtrækning, vibration, kropsøvelser) omgår kognitiv forsvar og arbejder direkte med det autonome nervesystems dysregulering. Kombinationen af kropslig forløsning og psykologisk integration giver varig forandring.",
+            videnskab: "Traumatisk materiale lagres primært subkortikalt som sensomotoriske og autonome mønstre, utilgængeligt for ren top-down processing. Kropsorienterede interventioner aktiverer bottom-up pathways: proprioceptiv stimulation, interoceptiv awareness og motorisk completion faciliterer reconsolidation af traumatisk hukommelse.",
+            sclerose: "Mennesker med sclerose bærer ofte på multiple traumer: diagnosechok, tab af funktioner, medicinske procedurer. Kropsorienteret psykoterapi tilbyder en skånsom måde at arbejde med dette trauma - gennem kroppen, i et tempo der respekterer din energi og dine begrænsninger."
+        },
+        // Kropsorienteret Psykoterapi ↔ Sclerose & Kronisk Sygdom
+        'narrative-levine': {
+            klient: "Kropsorienteret psykoterapi tilpasses din kroniske sygdom. Det handler om at genetablere kontakt med kroppen som en ressource - ikke som en fjende. Skånsomme øvelser, vejrtrækning og vibration kan gøre en stor forskel for spasticitet, smerte og energi.",
+            fagfolk: "Ved kronisk sygdom tilpasses kropsorienteret psykoterapi med fokus på energiforvaltning, dosering og respekt for kroppens aktuelle kapacitet. Bioenergetiske principper om grounding og containment er særligt relevante. Body Fusion Work - blanding af bioenergetik, TRE og elementer fra yoga - er udviklet specifikt til denne målgruppe.",
+            videnskab: "Kropsorienterede interventioner ved kronisk sygdom adresserer den autonome dysregulering der er komorbid med somatisk sygdom. Tilpasset somatisk stimulation - doseret vejrtrækning, mild vibration, skånsom bevægelse - modulerer autonom balance uden at overskride den begrænsede energikapacitet.",
+            sclerose: "Kropsorienteret psykoterapi kan tilpasses præcis din situation med sclerose. Øvelser kan gøres siddende eller liggende. Intensiteten justeres efter din energi den dag. Det handler om at give kroppen gode oplevelser - at mærke at den kan slappe af, at den kan finde ro, at den stadig har ressourcer."
+        },
+        // Kropsorienteret Psykoterapi ↔ Bioenergetik
+        'narrative-reich': {
+            klient: "Bioenergetik er fundamentet for den kropsorienterede tilgang. Alexander Lowens arbejde med muskulært panser, grounding og energiflow er kernen i at forstå hvordan kroppen holder fast - og hvordan den kan slippe.",
+            fagfolk: "Kropsorienteret psykoterapi er direkte afledt af bioenergetisk tradition (Lowen/Reich). Bioenergetik leverer det teoretiske grundlag: character armor, energetisk flow, grounding. Kropsorienteret psykoterapi udvider med moderne forståelse af autonomt nervesystem og integrerer TRE og andre somatiske metoder.",
+            videnskab: "Bioenergetisk analyse og kropsorienteret psykoterapi deler neurobiologisk grundlag: kroniske muskelspændingsmønstre (armor) reflekterer dysreguleret autonomt nervesystem. Interventioner der adresserer myofascial holding samtidig med autonom regulering viser stærkere effekt end unimodale tilgange.",
+            sclerose: "Bioenergetikkens fokus på grounding - kontakten med kroppen og jorden - er særligt vigtigt ved sclerose, hvor kroppen kan føles utryg og upålidelig. At arbejde med grounding og energiflow i et tilpasset tempo hjælper med at genetablere en basal tryghed i kroppen."
+        },
+        // Kropsorienteret Psykoterapi ↔ Klinisk Psykologi
+        'narrative-psykologi': {
+            klient: "Kropsorienteret psykoterapi forbinder krop og sind i terapien. Du taler om det der er svært, og mærker det i kroppen samtidig. En psykolog der også arbejder med kroppen kan hjælpe dig på begge niveauer.",
+            fagfolk: "Integration af kropsorienteret psykoterapi og klinisk psykologi er kernen i en holistisk tilgang. Samtale giver kognitiv forståelse og narrativ integration, mens kropsarbejde forløser det somatisk lagrede. Terapeuten bygger bro mellem intellektuel indsigt og kropslig erfaring.",
+            videnskab: "Top-down (kognitiv psykoterapi) og bottom-up (somatisk intervention) processer er komplementære reguleringsmekanismer. Præfrontal modulering af amygdala (top-down) og vagal afferens til præfrontal korteks (bottom-up) udgør en bidirektionel reguleringsloop. Optimal terapeutisk effekt opnås ved integration af begge tilgange.",
+            sclerose: "Med sclerose er der brug for begge dele: psykologisk støtte til at håndtere sygdommens følelsesmæssige belastning, og kropsarbejde til at hjælpe med de fysiske symptomer. En terapeut der mestrer begge tilgange kan møde dig som et helt menneske - ikke bare en diagnose."
+        },
+        // Trauma & Stress ↔ Sclerose & Kronisk Sygdom
+        'enactivisme-levine': {
+            klient: "Kronisk sygdom og trauma hænger tæt sammen. Selve diagnosen er traumatisk, og den vedvarende stress ved sygdommen holder nervesystemet i alarmberedskab. At arbejde med traumet er en vigtig del af at håndtere sygdommen.",
+            fagfolk: "Kronisk sygdom er inherent traumatiserende: diagnosechok, tab af autonomi, medicinsk intervention, uforudsigelighed. Traumeresponser (freeze, hypervigilance) vedligeholder autonom dysregulering der forværrer somatiske symptomer. Traumebehandling er derfor integral del af behandling ved kronisk sygdom.",
+            videnskab: "Traumatisk stress og kronisk sygdom deler neurobiologisk substrat: HPA-akse dysregulering, autonom ubalance, neuroinflammation. Ved MS forværrer kronisk stress neuroinflammation via forhøjet cortisol og nedsat vagal antiinflammatorisk aktivitet. Traumebehandling har potentiale til at reducere sygdomsaktivitet gennem autonom re-regulering.",
+            sclerose: "Din sclerose og din stress er tæt forbundne. Stress forværrer symptomerne, og symptomerne skaber mere stress - en ond cirkel. At arbejde med de traumatiske oplevelser forbundet med sygdommen kan bryde cirklen og give nervesystemet mulighed for at finde mere ro."
+        },
+        // Trauma & Stress ↔ Bioenergetik
+        'enactivisme-reich': {
+            klient: "Når traumer sidder fast i kroppen, bliver de til kronisk muskelspænding - et 'panser' der beskytter men også begrænser dig. Bioenergetik forstår denne sammenhæng og arbejder med at forløse traumet gennem kroppen.",
+            fagfolk: "Reichs og Lowens forståelse af character armor som somatiseret trauma er direkte relevant for traumebehandling. Kroniske muskelspændingsmønstre lagrer incomplete defensive responses. Bioenergetisk arbejde med armor-dissolution komplementerer TRE's tremor-baserede traumeforløsning.",
+            videnskab: "Traumatisk stress inducerer kronisk muskelspænding via vedvarende sympatisk aktivering og motorisk inhibering. Reichian armor og traumerelaterede myofasciale holding patterns deler neurobiologisk substrat: persisterende gamma-motoriske neuron aktivering og fascial remodellering. Bioenergetisk intervention og TRE adresserer begge dette substrat.",
+            sclerose: "Ved sclerose er der et komplekst samspil mellem neurologisk spasticitet, traumerelateret muskelspænding og bioenergetisk panser. At skelne mellem og arbejde med alle tre lag kræver en integreret tilgang der kombinerer forståelse af sygdommen med traumebehandling og bioenergetisk arbejde."
+        },
+        // Trauma & Stress ↔ Klinisk Psykologi
+        'enactivisme-psykologi': {
+            klient: "At bearbejde traumer kræver et trygt rum og en tryg relation. En psykolog hjælper dig med at forstå dine reaktioner og giver den sikkerhed der er nødvendig for at kroppen kan slippe.",
+            fagfolk: "Traumebehandling kræver solid terapeutisk alliance og forståelse af dissociation, titration og window of tolerance. Klinisk psykologisk kompetence sikrer at traumearbejdet sker inden for sikre rammer. Integration af somatisk traumeforløsning med psykologisk forståelse giver optimal behandling.",
+            videnskab: "Terapeutisk relation modulerer klientens neuroception og autonome tilstand via social engagement system. Ved traumebehandling er dette særligt kritisk: co-regulering gennem terapeutisk alliance etablerer den ventral vagale platform der er forudsætning for sikker processing af traumatisk materiale.",
+            sclerose: "Traumet ved at leve med sclerose er komplekst og vedvarende. En psykolog der forstår kronisk sygdom kan hjælpe dig med at bearbejde diagnosechok, tab og usikkerhed i et trygt rum - og integrere kropslige metoder der hjælper nervesystemet med at finde ro."
+        },
+        // Sclerose & Kronisk Sygdom ↔ Bioenergetik
+        'levine-reich': {
+            klient: "Bioenergetikkens fokus på grounding og energiflow er særligt vigtigt når du lever med kronisk sygdom. At mærke kontakten med kroppen og jorden giver en basal tryghed der hjælper med symptomhåndtering.",
+            fagfolk: "Bioenergetiske principper tilpasses kronisk sygdom: grounding styrker kropslig stabilitet, vibrationsøvelser doseres efter energiniveau, character armor-arbejde tilpasses spasticitet. Body Fusion Work integrerer bioenergetik med TRE specifikt for denne målgruppe. Lowens begreb om 'vibrancy' - en vibrerende, levende krop - er terapeutisk mål også ved kronisk sygdom.",
+            videnskab: "Bioenergetisk intervention ved kronisk sygdom adresserer den autonome komponent af somatiske symptomer. Grounding-øvelser modulerer proprioceptiv feedback og stabiliserer autonom regulering. Vibration stimulerer mechanoreceptorer og faciliterer myofascial release. Doseret bioenergetisk arbejde forbedrer energiforvaltning ved fatigue-domineret sygdom.",
+            sclerose: "Bioenergetik blev oprindeligt brugt med scleroseramte før TRE. Grounding-øvelser hjælper med balance og stabilitet. Vibrationsarbejde mildner spasticitet. Energiøvelser hjælper med træthed. Alt tilpasses din dag - nogle dage er der energi til stående øvelser, andre dage arbejdes der liggende med vejrtrækning og blid vibration."
+        },
+        // Sclerose & Kronisk Sygdom ↔ Klinisk Psykologi
+        'levine-psykologi': {
+            klient: "At leve med kronisk sygdom påvirker hele dit liv - relationer, arbejde, selvbillede. En psykolog kan hjælpe dig med at navigere alt det, mens kropsligt arbejde hjælper med de fysiske symptomer. Du fortjener støtte på begge niveauer.",
+            fagfolk: "Kronisk sygdom kræver psykologisk kompetence inden for sorgprocesser, identitetstransformation, mestring og accept. Integration med kropsligt arbejde giver holistisk behandling. Terapeutisk relation er særligt vigtig for mennesker hvis krop opleves som upålidelig - co-regulering kompenserer for nedsat evne til selvregulering.",
+            videnskab: "Psykologisk intervention ved kronisk sygdom modulerer stress-respons og autonomt nervesystem via top-down regulering. Kombineret med bottom-up somatisk intervention (TRE, kropsarbejde) opnås bidirektionel regulering. Terapeutisk alliance quality korrelerer med behandlingsoutcome og sygdomsmestring.",
+            sclerose: "Sclerose påvirker ikke kun kroppen men hele dit liv. En psykolog der forstår sygdommen kan hjælpe med sorg over tab, angst for fremtiden, og de relationelle udfordringer der følger. Kombineret med TRE og kropsarbejde får du støtte til hele dig - krop, sind og relationer."
+        }
+    }
 };
 
-const exercises = [
-    {
-        title: "Find ro i nervesystemet",
-        intro: "Denne øvelse er kernen i mit arbejde. Ved at lande i kroppen og mærke vejrtrækningen, aktiverer du naturligt den del af nervesystemet der skaber ro og sikkerhed. Det er simpelt, men dybt virkningsfuldt - og du kan gøre det hvor som helst.",
-        steps: [
-            "Sid eller læg dig komfortabelt. Luk gerne øjnene.",
-            "Læg én hånd på dit bryst og én på maven.",
-            "Mærk vejrtrækningen bevæge sig under dine hænder.",
-            "Pust langsomt ud gennem munden - længere end du puster ind.",
-            "Fortsæt i 3-5 minutter. Mærk kroppen blive tungere og mere afslappet."
-        ]
-    },
-    {
-        title: "Mærk din sikre tilstand",
-        intro: "Polyvagal teori lærer os at nervesystemet har forskellige tilstande. I denne øvelse lærer du at genkende og aktivere din 'grønne' sikre tilstand - den tilstand hvor healing sker. At kunne finde tilbage hertil er fundamentalt for dit velvære.",
-        steps: [
-            "Tænk på et sted hvor du føler dig tryg - måske dit hjem, naturen, eller hos en elsket person.",
-            "Luk øjnene og forestil dig at være der nu. Se detaljerne.",
-            "Mærk hvordan din krop reagerer. Bliver skuldrene bløde? Bliver vejret dybere?",
-            "Læg mærke til disse signaler - det er din sikre tilstand.",
-            "Øv dig i at genkalde denne følelse når du har brug for ro."
-        ]
-    },
-    {
-        title: "Vagus-aktivering gennem åndedræt",
-        intro: "Vagusnerven er motorvejen mellem hjerne og krop. Når vi aktiverer den gennem åndedræt, sender vi direkte besked til nervesystemet om at det er sikkert at slappe af. Denne øvelse er særligt kraftfuld ved stress og uro.",
-        steps: [
-            "Sid oprejst med en lige ryg.",
-            "Pust ind gennem næsen i 4 tællinger.",
-            "Hold vejret i 4 tællinger.",
-            "Pust langsomt ud gennem munden i 6-8 tællinger.",
-            "Gentag 10 gange. Mærk roen brede sig i kroppen."
-        ]
-    },
-    {
-        title: "Selvafgrænsning - mærk dit rum",
-        intro: "Tilknytning handler også om at kunne mærke hvor du slutter og andre begynder. Denne øvelse styrker din kropslige selvfornemmelse og giver en følelse af at have et eget sikkert rum - særligt værdifuldt hvis du let 'mister dig selv' i relationer.",
-        steps: [
-            "Stå med fødderne i hoftebredde. Mærk kontakten med gulvet.",
-            "Ryk let op og ned i knæene - mærk din vægt i benene.",
-            "Løft langsomt armene ud til siden - mærk dit rum omkring dig.",
-            "Forestil dig en boble omkring dig - det er dit rum.",
-            "Ånd roligt og mærk: 'Dette er mit rum. Jeg er her.'"
-        ]
-    },
-    {
-        title: "Body scan - lyt til kroppen",
-        intro: "Kroppen taler konstant til os gennem fornemmelser, men vi har glemt at lytte. Body scan genåbner denne dialog. Det er en grundlæggende øvelse i min praksis fordi den lærer dig at mærke hvad kroppen faktisk har brug for - før det bliver til symptomer.",
-        steps: [
-            "Læg dig på ryggen. Luk øjnene.",
-            "Start med fødderne - mærk dem uden at ændre noget.",
-            "Bevæg langsomt opmærksomheden op gennem ben, mave, bryst, arme, hoved.",
-            "Hvis du finder spændinger, ånd blidt ind i dem - lad dem være der.",
-            "Når du når hovedet, mærk hele kroppen på én gang i 1-2 minutter."
-        ]
-    }
-];
+// Mapping til cirkel navne
 const circleNames = {
-    nervesystem: 'Nervesystemsregulering',
-    polyvagal: 'Polyvagal teori',
-    tilknytning: 'Tilknytningsmønstre',
-    kropsterapi: 'Kropsterapi & Behandling',
-    psykobiologi: 'Psykobiologi',
-    traumer: 'Traumer & Dissociation',
-    relation: 'Terapeutisk Relation'
+    tre: 'TRE',
+    polyvagal: 'Polyvagal teori',
+    narrative: 'Kropsorienteret Psykoterapi',
+    enactivisme: 'Trauma & Stress',
+    levine: 'Sclerose & Kronisk Sygdom',
+    reich: 'Bioenergetik',
+    psykologi: 'Klinisk Psykologi'
 };
 
-// UDDANNELSER - KOMPLET VERSION
-const educations = {
-  nervesystemsterapeut: {
-    name: "Nervesystemsterapeut",
-    circles: {
-      nervesystem: {
-        kursist: {
-          title: "Bliv Certificeret Nervesystemsterapeut",
-          text: "På denne 70 timers uddannelse lærer du at arbejde professionelt med nervesystemer. Du får konkrete værktøjer til at guide andre i regulering gennem øvelser, behandling og forståelse af autonome tilstande. Uddannelsen er både teoretisk funderet og dybt erfaringsbaseret gennem din egen proces."
-        },
-        fagfolk: {
-          title: "Certificeret Nervesystemsterapeut - 70 Timer",
-          text: "Efteruddannelse der certificerer til professionelt arbejde med nervesystemsregulering. Integrerer polyvagal teori, afspændingspædagogik, åndedrætsarbejde og behandling. Evidensbaseret tilgang kombineret med embodied læring. 5 moduler over 9 måneder med praktisk supervision."
-        }
-      },
-      polyvagal: {
-        kursist: {
-          title: "Polyvagal Teori i Praksis",
-          text: "Du lærer Stephen Porges' polyvagale teori grundigt - de tre tilstande, neuroception og hvordan nervesystemet reagerer på sikkerhed vs. fare. Dette bliver dit primære navigationsværktøj i arbejdet med andre menneskers nervesystemer og din egen regulering."
-        },
-        fagfolk: {
-          title: "Polyvagal Teori - Klinisk Anvendelse",
-          text: "Dybdegående studium af Porges' teori med fokus på praktisk anvendelse. Lærer at identificere autonome tilstande hos klienter og facilitere ventral vagal aktivering gennem konkrete interventioner. Træning i neuroception-assessment og polyvagal-informeret samtale."
-        }
-      },
-      tilknytning: {
-        kursist: {
-          title: "Tilknytning og Nervesystemet",
-          text: "Du lærer hvordan tilknytningsmønstre er kodet i nervesystemet og hvordan utryg tilknytning manifesterer sig som dysregulering. Du får værktøjer til at arbejde med tilknytning gennem nervesystemsregulering og forstå din egen tilknytningshistorie."
-        },
-        fagfolk: {
-          title: "Tilknytningsteori Integreret",
-          text: "Integration af Bowlby og Ainsworth's attachment teori med nervesystemsarbejde. Forståelse af hvordan early co-regulation former autonome mønstre. Kompetencer til at facilitere earned secure attachment gennem reguleringsarbejde og terapeutisk relation."
-        }
-      },
-      kropsterapi: {
-        kursist: {
-          title: "Kropsarbejde og Behandling",
-          text: "Du lærer afspændingspædagogisk behandling på briks, åndedrætsarbejde og kropslige øvelser. Du får hands-on erfaring med at guide andre gennem embodied regulering og lærer at lytte til kroppens signaler. Stort fokus på egen kropslig proces."
-        },
-        fagfolk: {
-          title: "Somatisk Intervention - Praktisk Træning",
-          text: "Afspændingspædagogisk behandlingsteknik, fascial work og respiratorisk intervention. Praktisk træning i bottom-up regulering gennem direkte kropslig kontakt. Embodied facilitation som kerneværktøj. Supervision i behandlingsteknik gennem hele uddannelsen."
-        }
-      },
-      psykobiologi: {
-        kursist: {
-          title: "Kroppens Biologi og Nervesystemet",
-          text: "Du får forståelse for hormoner, neurotransmittere og hvordan nervesystemets tilstand påvirker hele biologien. Du lærer at forklare sammenhænge mellem stress, søvn, fordøjelse og mental sundhed på en måde dine klienter kan forstå."
-        },
-        fagfolk: {
-          title: "Psykobiologi - HPA-akse og Neurotransmittere",
-          text: "HPA-akse funktion, neurotransmitter-systemer (serotonin, dopamin, GABA, oxytocin) og hormonelle processer i relation til nervesystemstilstande. Forståelse af ANS som master regulator. Lærer at kommunikere kompleks neurobiologi til klienter."
-        }
-      },
-      traumer: {
-        kursist: {
-          title: "Traumer i Nervesystemet",
-          text: "Du lærer hvordan traumer sidder fast som frosne forsvarstilstande og hvordan man arbejder forsigtigt med traumemateriale gennem nervesystemsregulering. Du får dyb forståelse for dissociation, window of tolerance og din egen traumehistorie."
-        },
-        fagfolk: {
-          title: "Traumeforståelse - Somatic Experiencing",
-          text: "Peter Levines Somatic Experiencing principper, incomplete defensive responses og titreret aktivering af traumatisk materiale. Forståelse af hvordan PTSD manifesterer sig autonomt. Kompetencer til sikker facilitering inden for window of tolerance med praktisk supervision."
-        }
-      },
-      relation: {
-        kursist: {
-          title: "Terapeutisk Tilstedeværelse",
-          text: "Du lærer at bruge din egen regulerede tilstand som værktøj - co-regulering er fundamentet i alt arbejde. Du udvikler evnen til at holde rum og guide andre gennem limbisk afstemning og embodied presence. Din egen proces er central."
-        },
-        fagfolk: {
-          title: "Co-regulering som Primær Metode",
-          text: "Terapeutens autonome tilstand som primær intervention. Træning i at facilitere sikkerhed gennem egen ventral vagale tilstedeværelse. Mirror neurons, interbrain synchrony og relationel neurobiologi som teoretisk og praktisk fundament. Supervision i terapeutisk tilstedeværelse."
-        }
-      }
-    },
-    connections: {
-      'nervesystem-polyvagal': {
-        kursist: "På uddannelsen lærer du at bruge polyvagal teori som dit primære kort til at forstå og arbejde med nervesystemsregulering.",
-        fagfolk: "Polyvagal teori udgør det teoretiske fundament for al nervesystemsregulering i uddannelsen."
-      },
-      'nervesystem-tilknytning': {
-        kursist: "Du lærer at se tilknytningsmønstre som nervesystem-mønstre og arbejde med begge dele samtidigt.",
-        fagfolk: "Integration af attachment teori med autonomt nervesystem-arbejde som kernekompetence."
-      },
-      'nervesystem-kropsterapi': {
-        kursist: "Kropsarbejde er den primære vej til nervesystemsregulering - du lærer behandling, åndedræt og øvelser.",
-        fagfolk: "Bottom-up somatisk intervention som hovedmetode til autonome modifications."
-      },
-      'nervesystem-psykobiologi': {
-        kursist: "Du får dyb forståelse for sammenhængen mellem nervesystem og biologi - hormoner, søvn, immunsystem.",
-        fagfolk: "Forståelse af ANS som master regulator for alle fysiologiske systemer."
-      },
-      'nervesystem-traumer': {
-        kursist: "Du lærer at arbejde forsigtigt med traumer gennem nervesystemsregulering og embodied processing.",
-        fagfolk: "Trauma-informeret tilgang med fokus på autonome forsvarstilstande og titreret aktivering."
-      },
-      'nervesystem-relation': {
-        kursist: "Din egen regulering bliver dit vigtigste værktøj - du lærer at co-regulere gennem din tilstedeværelse.",
-        fagfolk: "Co-regulering som primær intervention - terapeutens autonome tilstand faciliterer klientens regulering."
-      },
-      'polyvagal-tilknytning': {
-        kursist: "Du lærer at se tilknytningsmønstre som polyvagale profiler og arbejde med sikkerhed som basis.",
-        fagfolk: "Tilknytningsmønstre manifesteres som specifikke autonome signatures."
-      },
-      'polyvagal-kropsterapi': {
-        kursist: "Kropsarbejde aktiverer ventral vagal tilstand - det er den direkte vej til sikkerhed.",
-        fagfolk: "Somatisk intervention aktiverer ventral vagale pathways gennem bottom-up processer."
-      },
-      'polyvagal-psykobiologi': {
-        kursist: "Når nervesystemet er i grøn sikker tilstand, fungerer hele biologien optimalt.",
-        fagfolk: "Ventral vagal aktivering optimerer HPA-akse og alle fysiologiske funktioner."
-      },
-      'polyvagal-traumer': {
-        kursist: "Traumer fryser systemet i rød/gul - du lærer at etablere grøn sikkerhed først.",
-        fagfolk: "Ventral vagal etablering som forudsætning for sikker trauma-processing."
-      },
-      'polyvagal-relation': {
-        kursist: "Din grønne ro smitter til andres nervesystem - det er kernen i co-regulering.",
-        fagfolk: "Social engagement system faciliterer co-regulering gennem terapeuts ventral vagale tilstand."
-      },
-      'tilknytning-kropsterapi': {
-        kursist: "Tilknytningsmønstre sidder i kroppen - du lærer at arbejde med begge gennem behandling.",
-        fagfolk: "Embodied tilknytningsmønstre modificeres gennem proprioceptiv intervention."
-      },
-      'tilknytning-psykobiologi': {
-        kursist: "Tidlig tilknytning formede biologien - du lærer at se disse sammenhænge.",
-        fagfolk: "Forståelse af hvordan attachment præger HPA-akse og oxytocin-systemer."
-      },
-      'tilknytning-traumer': {
-        kursist: "Tilknytningstraumer kræver særlig forsigtighed - du lærer at arbejde langsomt og sikkert.",
-        fagfolk: "Developmental trauma skaber komplekse autonome mønstre - kræver specifik opmærksomhed."
-      },
-      'tilknytning-relation': {
-        kursist: "Den terapeutiske relation bliver stedet hvor ny sikker tilknytning læres.",
-        fagfolk: "Earned secure attachment gennem terapeutisk relation som korrigerende erfaring."
-      },
-      'kropsterapi-psykobiologi': {
-        kursist: "Når kroppen reguleres gennem behandling, følger biologien med - hormoner balanceres.",
-        fagfolk: "Somatisk intervention påvirker direkte HPA-akse og neurotransmitter-systemer."
-      },
-      'kropsterapi-traumer': {
-        kursist: "Traumer sidder i kroppen - du lærer forsigtigt kropsarbejde til integration.",
-        fagfolk: "Incomplete motoriske sekvenser faciliteres gennem titreret proprioceptiv aktivering."
-      },
-      'kropsterapi-relation': {
-        kursist: "Behandling i tryg relation lærer kroppen ny sikkerhed.",
-        fagfolk: "Terapeutisk touch kombineret med relational safety modificerer somatiske mønstre."
-      },
-      'psykobiologi-traumer': {
-        kursist: "Traumer ændrer biologien - du lærer at se disse sammenhænge og arbejde med dem.",
-        fagfolk: "PTSD modificerer HPA-akse og inflammatoriske profiler - kan normaliseres gennem regulering."
-      },
-      'psykobiologi-relation': {
-        kursist: "Trygge relationer er biologi-medicin - du lærer at bruge dette aktivt.",
-        fagfolk: "Secure alliance modificerer neurobiologi - oxytocin øges, cortisol reduceres."
-      },
-      'traumer-relation': {
-        kursist: "Traumearbejde kræver dyb sikkerhed i relationen - du lærer at skabe dette.",
-        fagfolk: "Robust alliance er absolut forudsætning for sikker trauma-processing."
-      }
-    }
-  },
-  teachertraining: {
-    name: "Teacher Training",
-    circles: {
-      nervesystem: {
-        kursist: {
-          title: "Lederuddannelse med Nervesystemet",
-          text: "På denne 9 måneders lederuddannelse lærer du at facilitere nervesystemsarbejde for andre. Du udvikler kompetencer til at holde rum, guide grupper og undervise i nervesystemsregulering. Din egen dybe proces er fundamentet for at kunne lede andre."
-        },
-        fagfolk: {
-          title: "Teacher Training - Certificeret Facilitator",
-          text: "9 måneders lederuddannelse i 6 moduler. Certificerer til at facilitere nervesystemsarbejde professionelt. Fokus på gruppedynamik, undervisningskompetencer, supervision og etik. Kræver forudgående certificering som nervesystemsterapeut eller tilsvarende."
-        }
-      },
-      polyvagal: {
-        kursist: {
-          title: "Undervise i Polyvagal Teori",
-          text: "Du lærer at formidle polyvagal teori til forskellige målgrupper - fra klienter til fagfolk. Du udvikler evnen til at gøre kompleks neurobiologi tilgængelig og relevant gennem metaforer, øvelser og embodied læring."
-        },
-        fagfolk: {
-          title: "Polyvagal Pædagogik",
-          text: "Didaktiske kompetencer i formidling af polyvagal teori. Lærer at tilpasse kompleksitet til målgruppe. Udvikling af undervisningsmaterialer og øvelser der illustrerer teorien embodied. Træning i at facilitere polyvagal-informerede samtaler i grupper."
-        }
-      },
-      tilknytning: {
-        kursist: {
-          title: "Facilitere Tilknytningsarbejde",
-          text: "Du lærer at holde rum for tilknytningsarbejde i grupper - at navigere i komplekse følelser, skabe sikkerhed og facilitere earned secure attachment gennem gruppens co-regulering. Din egen tilknytningsproces fordybes."
-        },
-        fagfolk: {
-          title: "Tilknytnings-gruppefacilitation",
-          text: "Kompetencer til at facilitere attachment-arbejde i gruppekontekst. Forståelse af gruppedynamik gennem tilknytningslinsen. Håndtering af desorganiseret tilknytning i grupper. Supervision i at skabe relational safety som fundament for gruppeproces."
-        }
-      },
-      kropsterapi: {
-        kursist: {
-          title: "Embodied Facilitation",
-          text: "Du lærer at facilitere kropslige processer i grupper - at guide åndedrætsarbejde, bevægelse og gruppebehandling. Du udvikler evnen til at læse gruppens somatiske tilstand og justere efter behov. Din egen embodiment er værktøjet."
-        },
-        fagfolk: {
-          title: "Somatisk Gruppefacilitation",
-          text: "Facilitering af somatiske processer i gruppeformat. Kompetencer i at guide kollektive åndedræts- og bevægelsesøvelser. Håndtering af somatisk overwhelm i grupper. Træning i at bruge egen embodiment som gruppens regulator."
-        }
-      },
-      psykobiologi: {
-        kursist: {
-          title: "Formidle Neurobiologi",
-          text: "Du lærer at undervise i psykobiologi på en måde der engagerer og giver mening. Du udvikler evnen til at forbinde abstrakt neurobiologi med konkret livserfaring gennem cases, metaforer og interaktive øvelser."
-        },
-        fagfolk: {
-          title: "Neurobiologisk Didaktik",
-          text: "Pædagogiske kompetencer i formidling af kompleks neurobiologi. Udvikling af undervisningsdesign der integrerer teori med praksis. Træning i at bruge cases og metaforer. Supervision i at skabe neurobiologisk literacy hos kursister."
-        }
-      },
-      traumer: {
-        kursist: {
-          title: "Trauma-informeret Facilitation",
-          text: "Du lærer at facilitere i trauma-informeret tilgang - at skabe sikkerhed, håndtere aktivering og arbejde inden for gruppens window of tolerance. Du får supervision i at navigere komplekse traumereaktioner i gruppekontekst."
-        },
-        fagfolk: {
-          title: "Trauma-informeret Gruppefacilitation",
-          text: "Specialiserede kompetencer i trauma-informeret gruppefacilitation. Forståelse af kollektiv window of tolerance. Håndtering af gruppeaktivering og dissociation. Supervision i etiske dilemmaer ved traumearbejde i grupper."
-        }
-      },
-      relation: {
-        kursist: {
-          title: "Terapeutisk Ledelse",
-          text: "Du udvikler din terapeutiske ledelsesidentitet - at være både facilitator og co-regulator. Du lærer at bruge gruppens relationelle felt aktivt og navigere i overføring og modoverføring. Din egen supervision er central."
-        },
-        fagfolk: {
-          title: "Relationel Ledelse og Etik",
-          text: "Udvikling af lederidentitet som nervesystemsfacilitator. Forståelse af gruppens relationelle dynamikker. Håndtering af magt, grænser og etiske dilemmaer. Obligatorisk løbende supervision. Fokus på facilitatorens egen fortsatte proces."
-        }
-      }
-    },
-    connections: {
-      'nervesystem-polyvagal': {
-        kursist: "Du lærer at facilitere polyvagal forståelse som grundlag for alt nervesystemsarbejde i grupper.",
-        fagfolk: "Polyvagal teori som didaktisk fundament for nervesystemsfacilitation."
-      },
-      'nervesystem-tilknytning': {
-        kursist: "Du lærer at facilitere tilknytningsarbejde gennem nervesystemsregulering i grupper.",
-        fagfolk: "Integration af attachment-arbejde i nervesystemsfacilitation."
-      },
-      'nervesystem-kropsterapi': {
-        kursist: "Du lærer at guide kropslige nervesystemsøvelser for grupper.",
-        fagfolk: "Somatisk facilitationskompetence som kernefærdighed."
-      },
-      'nervesystem-psykobiologi': {
-        kursist: "Du lærer at formidle sammenhængen mellem nervesystem og biologi engagerende.",
-        fagfolk: "Didaktiske kompetencer i neurobiologisk undervisning."
-      },
-      'nervesystem-traumer': {
-        kursist: "Du lærer trauma-informeret facilitation af nervesystemsarbejde.",
-        fagfolk: "Trauma-informeret tilgang som grundprincip i facilitation."
-      },
-      'nervesystem-relation': {
-        kursist: "Du bruger din egen regulering til at co-regulere hele gruppen.",
-        fagfolk: "Facilitatorens autonome tilstand som primær gruppeintervention."
-      },
-      'polyvagal-tilknytning': {
-        kursist: "Du lærer at formidle hvordan tilknytning og polyvagal teori hænger sammen.",
-        fagfolk: "Didaktik i integration af attachment og polyvagal teori."
-      },
-      'polyvagal-kropsterapi': {
-        kursist: "Du guider grupper i kropsøvelser der aktiverer ventral vagal sikkerhed.",
-        fagfolk: "Facilitering af somatiske øvelser baseret på polyvagal principper."
-      },
-      'polyvagal-psykobiologi': {
-        kursist: "Du lærer at formidle polyvagal teori som biologisk fundament.",
-        fagfolk: "Integration af polyvagal og neurobiologisk undervisning."
-      },
-      'polyvagal-traumer': {
-        kursist: "Du lærer at facilitere polyvagal forståelse i trauma-informeret arbejde.",
-        fagfolk: "Polyvagal teori som ramme for trauma-informeret gruppearbejde."
-      },
-      'polyvagal-relation': {
-        kursist: "Du bruger polyvagal teori til at forstå og navigere gruppedynamikker.",
-        fagfolk: "Polyvagal forståelse af gruppens relationelle felt."
-      },
-      'tilknytning-kropsterapi': {
-        kursist: "Du lærer at facilitere embodied tilknytningsarbejde i grupper.",
-        fagfolk: "Somatisk facilitation af attachment-processer."
-      },
-      'tilknytning-psykobiologi': {
-        kursist: "Du lærer at formidle tilknytningens biologiske fundament.",
-        fagfolk: "Undervisning i neurobiologi bag tilknytningsmønstre."
-      },
-      'tilknytning-traumer': {
-        kursist: "Du lærer at facilitere tilknytningstraumer med særlig forsigtighed.",
-        fagfolk: "Specialiseret facilitation af developmental trauma."
-      },
-      'tilknytning-relation': {
-        kursist: "Du bruger gruppens relationelle felt til tilknytningshealing.",
-        fagfolk: "Facilitering af earned secure attachment gennem gruppe."
-      },
-      'kropsterapi-psykobiologi': {
-        kursist: "Du lærer at formidle hvordan kropsarbejde påvirker biologien.",
-        fagfolk: "Undervisning i somatisk interventions neurobiologiske basis."
-      },
-      'kropsterapi-traumer': {
-        kursist: "Du lærer at guide trauma-informeret kropsarbejde sikkert.",
-        fagfolk: "Facilitering af titreret somatisk trauma-processing i grupper."
-      },
-      'kropsterapi-relation': {
-        kursist: "Du bruger kropsligt nærvær til at co-regulere gruppen.",
-        fagfolk: "Embodied facilitation som relationel intervention."
-      },
-      'psykobiologi-traumer': {
-        kursist: "Du lærer at formidle traumets neurobiologiske konsekvenser.",
-        fagfolk: "Undervisning i PTSD-neurobiologi tilgængeligt."
-      },
-      'psykobiologi-relation': {
-        kursist: "Du lærer at formidle relationens neurobiologiske kraft.",
-        fagfolk: "Undervisning i relationel neurobiologi."
-      },
-      'traumer-relation': {
-        kursist: "Du lærer at facilitere traumearbejde i dybt sikkert relationelt rum.",
-        fagfolk: "Skabelse af relational safety som forudsætning for traumearbejde."
-      }
-    }
-  },
-  tilknytningsspeciale: {
-    name: "Tilknytningsspeciale",
-    circles: {
-      nervesystem: {
-        kursist: {
-          title: "3-Dages Intensivkursus",
-          text: "På disse tre intensive dage dykker vi dybt ned i tilknytningsmønstre gennem nervesystemslinsen. Du lærer de 4 mønstre grundigt og får konkrete værktøjer til at arbejde med hver især. Kurset er både teoretisk og dybt personligt."
-        },
-        fagfolk: {
-          title: "Tilknytningsspeciale - 3 Dage",
-          text: "Intensivkursus i tilknytningsmønstre med fokus på nervesystemsmanifestationer. Dybdegående studium af de 4 mønstre med konkrete interventionsstrategier. Omfatter både teori, cases og egen tilknytningsproces. Forudsætter grundlæggende viden om nervesystemsarbejde."
-        }
-      },
-      polyvagal: {
-        kursist: {
-          title: "Polyvagale Tilknytningsmønstre",
-          text: "Du lærer at se hvert tilknytningsmønster som en specifik polyvagal profil. Tryg tilknytning som ventral vagal fleksibilitet, utryg tilknytning som rigid sympatisk eller dorsal dominans. Dette giver dig nøglen til at arbejde med mønsterne."
-        },
-        fagfolk: {
-          title: "Tilknytning som Polyvagale Profiler",
-          text: "Detaljeret mapping af tilknytningsmønstre til polyvagale profiler. Sikker = ventral vagal fleksibilitet. Ambivalent = sympatisk hyperactivation. Undvigende = dorsal deactivation. Desorganiseret = simultane modsatrettede states. Interventionsstrategier for hver profil."
-        }
-      },
-      tilknytning: {
-        kursist: {
-          title: "De 4 Tilknytningsmønstre Grundigt",
-          text: "Du lærer tryg, undvigende, ambivalent og desorganiseret tilknytning i dybden. Hvordan de opstår, hvordan de manifesterer sig i voksenlivet og hvordan de kan ændres. Du udforsker dit eget mønster og får redskaber til forandring."
-        },
-        fagfolk: {
-          title: "Tilknytningstypologi - Dybdeforståelse",
-          text: "Omfattende studium af Ainsworth's typologi med Main's Adult Attachment Interview-perspektiv. Developmental oprindelse, neurobiologisk substrat og kliniske manifestationer af hvert mønster. Assessment-værktøjer og interventionsstrategier. Fokus på earned secure attachment som terapeutisk mål."
-        }
-      },
-      kropsterapi: {
-        kursist: {
-          title: "Tilknytning i Kroppen",
-          text: "Du lærer hvordan hvert tilknytningsmønster sidder som specifikke kropslige mønstre - i åndedræt, tonus, bevægelse. Du får konkrete somatiske øvelser til arbejde med hvert mønster og lærer at læse tilknytning through kroppen."
-        },
-        fagfolk: {
-          title: "Embodied Tilknytningsmønstre",
-          text: "Tilknytningsmønstre manifesteret somatisk. Sikker = åben krop, dyb åndedræt. Undvigende = rigid tonus, shallow breathing. Ambivalent = hypervigilant muskulatur. Desorganiseret = fragmenteret embodiment. Somatiske interventioner specifikt tilpasset hvert mønster."
-        }
-      },
-      psykobiologi: {
-        kursist: {
-          title: "Tilknytningens Neurobiologi",
-          text: "Du lærer hvordan tidlig tilknytning formede din biologi - HPA-akse, oxytocin-system, stressrespons. Du får forståelse for hvordan forskellige mønstre har forskellige biologiske signatures og hvordan de kan modificeres."
-        },
-        fagfolk: {
-          title: "Neurobiologisk Substrat af Tilknytning",
-          text: "HPA-akse modificering gennem early attachment experiences. Oxytocin og vasopressin-receptor sensitivitet former tilknytningsmønstre. Cortisol-reaktivitet varierer systematisk mellem mønstre. Neuroplasticitet som basis for earned secure attachment gennem terapeutisk intervention."
-        }
-      },
-      traumer: {
-        kursist: {
-          title: "Tilknytningstraumer",
-          text: "Du lærer om developmental trauma inden for tilknytningssystemet - når omsorgspersonen var både kilde til fare og sikkerhed. Du får forståelse for desorganiseret tilknytning og særlige metoder til at arbejde med det."
-        },
-        fagfolk: {
-          title: "Developmental Trauma og Desorganisering",
-          text: "Desorganiseret tilknytning som resultat af frightened/frightening caregiving. Simultane activation af attachment og defense systems. Neurobiologiske konsekvenser omfatter dysreguleret HPA-akse og fragmenteret selvoplevelse. Specialiserede interventioner kræver robust alliance og langsom safety-etablering."
-        }
-      },
-      relation: {
-        kursist: {
-          title: "Earned Secure Attachment",
-          text: "Du lærer hvordan unsikker tilknytning kan ændres til sikker gennem terapeutisk relation. Du får forståelse for hvordan du selv kan facilitere earned secure attachment og oplever det gennem kursets relationelle rum."
-        },
-        fagfolk: {
-          title: "Terapeutisk Facilitation af ESA",
-          text: "Earned secure attachment gennem korrigerende emotionelle erfaringer i terapeutisk relation. Terapeuts konsistente tilgængelighed, afstemning og rupture-repair cycles modificerer indre arbejdsmodeller. Requires langvarig terapeutisk alliance med fokus på relationel reconsolidation gennem gentagen experience."
-        }
-      }
-    },
-    connections: {
-      'nervesystem-polyvagal': {
-        kursist: "Tilknytningsmønstre ER polyvagale mønstre - de er to sider af samme sag.",
-        fagfolk: "Tilknytningsmanifestationer forstået gennem polyvagal ramme."
-      },
-      'nervesystem-tilknytning': {
-        kursist: "At arbejde med tilknytning ER at arbejde med nervesystemet.",
-        fagfolk: "Tilknytningsintervention som nervesystemsintervention."
-      },
-      'nervesystem-kropsterapi': {
-        kursist: "Tilknytningsmønstre sidder i kroppen og kan ændres gennem kropsarbejde.",
-        fagfolk: "Somatisk intervention modificerer embodied tilknytningsmønstre."
-      },
-      'nervesystem-psykobiologi': {
-        kursist: "Tilknytning formede din biologi - men biologien kan omformes.",
-        fagfolk: "Tilknytningsmønstre præger neurobiologi modificerbart gennem intervention."
-      },
-      'nervesystem-traumer': {
-        kursist: "Tilknytningstraumer kræver særlig forsigtighed i nervesystemsarbejdet.",
-        fagfolk: "Developmental trauma skaber komplekse autonome mønstre."
-      },
-      'nervesystem-relation': {
-        kursist: "Nye tilknytningsoplevelser sker gennem reguleret nervesystem i relation.",
-        fagfolk: "Earned secure attachment gennem co-regulering i terapeutisk alliance."
-      },
-      'polyvagal-tilknytning': {
-        kursist: "Hvert tilknytningsmønster har sin polyvagale signatur.",
-        fagfolk: "Systematisk mapping af attachment til autonome profiler."
-      },
-      'polyvagal-kropsterapi': {
-        kursist: "Kropsarbejde aktiverer den ventrale sikkerhed nødvendig for tilknytningshealing.",
-        fagfolk: "Ventral vagal aktivering som forudsætning for attachment-arbejde."
-      },
-      'polyvagal-psykobiologi': {
-        kursist: "Polyvagal tilstand påvirker direkte tilknytningsbiologien - oxytocin, cortisol.",
-        fagfolk: "Ventral vagal aktivering optimerer attachment-relaterede neurotransmittere."
-      },
-      'polyvagal-traumer': {
-        kursist: "Tilknytningstraumer fastlåste systemet i usikre tilstande.",
-        fagfolk: "Developmental trauma dysregulerer polyvagale responses."
-      },
-      'polyvagal-relation': {
-        kursist: "Ventral vagal sikkerhed i relation lærer nye tilknytningsmønstre.",
-        fagfolk: "Co-regulering faciliterer earned secure attachment."
-      },
-      'tilknytning-kropsterapi': {
-        kursist: "Hvert tilknytningsmønster har sit kropslige udtryk der kan arbejdes med.",
-        fagfolk: "Mønster-specifikke somatiske interventioner."
-      },
-      'tilknytning-psykobiologi': {
-        kursist: "Forskellige tilknytningsmønstre har forskellige biologiske signaturer.",
-        fagfolk: "Systematisk variation i HPA-akse og oxytocin mellem mønstre."
-      },
-      'tilknytning-traumer': {
-        kursist: "Desorganiseret tilknytning opstår fra traumer i tidlige relationer.",
-        fagfolk: "Developmental trauma som oprindelse til desorganiseret attachment."
-      },
-      'tilknytning-relation': {
-        kursist: "Nye tilknytningsmønstre læres gennem nye relationelle oplevelser.",
-        fagfolk: "Earned secure attachment gennem korrigerende erfaring."
-      },
-      'kropsterapi-psykobiologi': {
-        kursist: "Kropsarbejde påvirker tilknytningsbiologien direkte.",
-        fagfolk: "Somatisk intervention modificerer attachment-neurobiologi."
-      },
-      'kropsterapi-traumer': {
-        kursist: "Tilknytningstraumer er embodied og kræver somatisk arbejde.",
-        fagfolk: "Developmental trauma manifesteres somatisk."
-      },
-      'kropsterapi-relation': {
-        kursist: "Tryg berøring i relation lærer kroppen nye tilknytningsmønstre.",
-        fagfolk: "Terapeutisk touch modificerer embodied attachment."
-      },
-      'psykobiologi-traumer': {
-        kursist: "Tilknytningstraumer ændrede biologien - healing normaliserer den.",
-        fagfolk: "Developmental trauma modificerer HPA-akse og neurotransmittere."
-      },
-      'psykobiologi-relation': {
-        kursist: "Trygge relationer er tilknytnings-medicin på biologisk niveau.",
-        fagfolk: "Secure alliance modificerer attachment-neurobiologi."
-      },
-      'traumer-relation': {
-        kursist: "Tilknytningstraumer kan kun heales i meget tryg relation.",
-        fagfolk: "Developmental trauma kræver robust alliance."
-      }
-    }
-  }
-};
-const educationNames = {
-    nervesystemsterapeut: 'Nervesystem-<br>sterapeut',
-    teachertraining: 'Teacher<br>Training',
-    tilknytningsspeciale: 'Tilknytnings-<br>speciale'
-};
-const themeNames = {
-    general: 'Generelt',
-    angst: 'Angst',
-    tilknytning: 'Tilknytning',
-    stress: 'Stress',
-    traumer: 'Traumer',
-    sovn: 'Søvn'
-};
+// State management
 let currentMode = 'klient';
-let currentTheme = 'general';
-let currentEducation = null;
-let currentView = 'welcome';
+let currentView = 'welcome'; // 'welcome', 'circle', 'connection'
 let currentCircle = null;
+let currentConnection = null;
 
-window.addEventListener('load', () => {
-    resetToWelcome();
-});
-
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    setupTopCircles();
-    setupThemeSelector();
-    setupEducationSelector();
-    setupExercisesButton();
-    setupCircleClicks();
-    setupConnectionClicks();
-    resetToWelcome();
-    updateCenterCircle();
+    setupModeButtons();
+    setupCircleClicks();
+    setupConnectionClicks();
+    showWelcome();
 });
 
-function updateCenterCircle() {
-    const centerTexts = document.querySelectorAll('.center-text');
-    const displayName = currentEducation ? educations[currentEducation].name : themes[currentTheme].name;
-    
-    // Specielle splittings for lange navne
-    if (displayName === "Nervesystemsterapeut") {
-        centerTexts[0].textContent = "Nervesystem-";
-        centerTexts[1].textContent = "sterapeut";
-    } else if (displayName === "Tilknytningsspeciale") {
-        centerTexts[0].textContent = "Tilknytnings-";
-        centerTexts[1].textContent = "speciale";
-    } else if (displayName === "Teacher Training") {
-        centerTexts[0].textContent = "Teacher";
-        centerTexts[1].textContent = "Training";
-    } else if (displayName === "Nervesystemsregulering") {
-        centerTexts[0].textContent = "Nervesystem-";
-        centerTexts[1].textContent = "regulering";
-    } else {
-        const words = displayName.split(' ');
-        if (words.length === 1) {
-            centerTexts[0].textContent = displayName;
-            centerTexts[1].textContent = '';
-        } else {
-            const mid = Math.ceil(words.length / 2);
-            centerTexts[0].textContent = words.slice(0, mid).join(' ');
-            centerTexts[1].textContent = words.slice(mid).join(' ');
-        }
-    }
-}
+// Mode selector - VISUELT TYDELIGT
+function setupModeButtons() {
+    const buttons = document.querySelectorAll('.mode-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Visual feedback
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-function resetToWelcome() {
-    currentView = 'welcome';
-    currentCircle = null;
-    currentMode = 'klient';
-    currentTheme = 'general';
-    currentEducation = null;
-    
-    document.querySelectorAll('.top-circle[data-mode]').forEach(circle => {
-        circle.classList.remove('active');
-        if (circle.dataset.mode === 'klient') {
-            circle.classList.add('active');
-        }
-    });
-    
-    document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
-    document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
-    document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
-    document.getElementById('exercises-btn').classList.remove('active');
-    document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
-    document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
-    document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
-    
-    clearAllActive();
-    updateCenterCircle();
-    showWelcome();
-}
+            const oldMode = currentMode;
+            currentMode = btn.dataset.mode;
 
-function setupTopCircles() {
-    document.querySelectorAll('.top-circle[data-mode]').forEach(circle => {
-        circle.addEventListener('click', () => {
-            document.querySelectorAll('.top-circle[data-mode]').forEach(c => c.classList.remove('active'));
-            document.getElementById('exercises-btn').classList.remove('active');
-            circle.classList.add('active');
-            
-            currentMode = circle.dataset.mode;
-            currentTheme = 'general';
-            currentEducation = null;
-            
-            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
-            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
-            document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
-            
-            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
-            document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
-            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
-            
-            updateCenterCircle();
-            
-            const infoPanelContent = document.getElementById('info-content');
-            infoPanelContent.style.opacity = '0.3';
+            // Flash effekt for at vise noget skete
+            const infoPanel = document.getElementById('info-content');
+            infoPanel.style.opacity = '0.3';
             setTimeout(() => {
-                if (currentView === 'circle' && currentCircle) {
-                    showCircleView(currentCircle);
-                } else {
-                    showWelcome();
-                }
-                infoPanelContent.style.opacity = '1';
+                infoPanel.style.opacity = '1';
             }, 150);
-        });
-    });
-}
 
-function setupThemeSelector() {
-    const selector = document.getElementById('theme-selector');
-    const dropdown = document.getElementById('theme-dropdown');
-    
-    selector.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-        const eduDrop = document.getElementById('education-dropdown');
-        if (eduDrop) eduDrop.classList.remove('show');
-    });
-    
-    document.addEventListener('click', () => {
-        dropdown.classList.remove('show');
-    });
-    
-    document.querySelectorAll('.theme-option').forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.stopPropagation();
-            
-            currentTheme = option.dataset.theme;
-            currentEducation = null;
-            if (currentMode === 'kursist') {
-                currentMode = 'klient';
-                document.querySelectorAll('.top-circle[data-mode]').forEach(c => c.classList.remove('active'));
-                const klientBtn = document.querySelector('.top-circle[data-mode="klient"]');
-                if (klientBtn) klientBtn.classList.add('active');
+            // Opdater indhold baseret på aktuel view
+            if (currentView === 'circle' && currentCircle) {
+                showCircleView(currentCircle);
+            } else if (currentView === 'connection' && currentConnection) {
+                showConnectionView(currentConnection.from, currentConnection.to, currentConnection.fromCircle);
             }
-
-            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
-            document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
-            document.getElementById('exercises-btn').classList.remove('active');
-            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
-            
-            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-            
-            document.getElementById('theme-label').textContent = themeNames[currentTheme];
-            dropdown.classList.remove('show');
-            
-            updateCenterCircle();
-            
-            showCircleView('nervesystem');
-        });
-    });
-}
-
-function setupEducationSelector() {
-    const selector = document.getElementById('education-selector');
-    const dropdown = document.getElementById('education-dropdown');
-    
-    if (!selector || !dropdown) return;
-    
-    selector.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-        document.getElementById('theme-dropdown').classList.remove('show');
-    });
-    
-    document.addEventListener('click', () => {
-        dropdown.classList.remove('show');
-    });
-    
-    document.querySelectorAll('.education-option').forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.stopPropagation();
-            
-            currentEducation = option.dataset.education;
-currentMode = 'kursist';
-currentTheme = 'general';
-            
-            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
-            document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
-            document.getElementById('exercises-btn').classList.remove('active');
-            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
-            
-            
-            document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-            
-            const label = educationNames[currentEducation];
-            document.getElementById('education-label').innerHTML = label.replace(' ', '<br>');
-            dropdown.classList.remove('show');
-            
-          updateCenterCircle();
-showCircleView('nervesystem');
-        });
-    });
-}
-
-function setupExercisesButton() {
-    const selector = document.getElementById('exercises-btn');
-    const dropdown = document.getElementById('exercises-dropdown');
-
-    selector.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-        const themeDrop = document.getElementById('theme-dropdown');
-        const eduDrop = document.getElementById('education-dropdown');
-        if (themeDrop) themeDrop.classList.remove('show');
-        if (eduDrop) eduDrop.classList.remove('show');
-    });
-
-    document.addEventListener('click', () => {
-        dropdown.classList.remove('show');
-    });
-
-    document.querySelectorAll('.exercise-option').forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.stopPropagation();
-
-            const exerciseIndex = parseInt(option.dataset.exercise);
-
-            document.querySelectorAll('.top-circle').forEach(c => c.classList.remove('active'));
-            selector.classList.add('active');
-
-            currentEducation = null;
-            currentTheme = 'general';
-            if (currentMode === 'kursist') {
-                currentMode = 'klient';
-            }
-            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
-            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
-
-            document.querySelectorAll('.exercise-option').forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-
-            dropdown.classList.remove('show');
-
-            showExercises(exerciseIndex);
-
-            // Scroll to specific exercise after showing all exercises
-            setTimeout(() => {
-                const exerciseCard = document.querySelectorAll('.exercise-card')[exerciseIndex];
-                if (exerciseCard) {
-                    const rect = exerciseCard.getBoundingClientRect();
-                    const offset = 80;
-                    window.scrollTo({
-                        top: window.pageYOffset + rect.top - offset,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
         });
     });
 }
 
-function showExercises() {
-    currentView = 'exercises';
-    clearAllActive();
-    
-    const exercisesHTML = exercises.map((exercise, index) => `
-        <div class="exercise-card">
-            <h3>${exercise.title}</h3>
-            <p class="exercise-intro">${exercise.intro}</p>
-            <div class="exercise-steps">
-                ${exercise.steps.map((step, i) => `
-                    <div class="exercise-step" data-step="${i + 1}">
-                        ${step}
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `).join('');
-    
-    document.getElementById('info-content').innerHTML = `
-        <h2>Prøv øvelserne</h2>
-        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
-        ${exercisesHTML}
-        <div style="margin-top: 30px; text-align: center;">
-            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-        </div>
-    `;
-
-    // Scroll to info panel so the user sees the exercises content
-    const infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(() => {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(() => {
-            const rect = infoPanel.getBoundingClientRect();
-            const offset = 80;
-            window.scrollTo({
-                top: window.pageYOffset + rect.top - offset,
-                behavior: 'smooth'
-            });
-        });
-    });
-}
-
+// Welcome screen
 function showWelcome() {
     currentView = 'welcome';
     currentCircle = null;
+    currentConnection = null;
     clearAllActive();
-    
+
     document.getElementById('info-content').innerHTML = `
-        <h2>Velkommen til min verden</h2>
-        <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
-
-        <h2>Du kender følelsen</h2>
-        <p>Vi kender den alle sammen. At sidde fast. At have ondt – i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
-        <p>Og som behandler kender du frustrationen ved at søge den rette videreuddannelse – kurser der lover guld og grønne skove, men som ikke helt rammer det du mangler. Som ikke matcher din måde at arbejde på. Som ikke går dybt nok. Du længes efter viden der virkelig løfter din faglighed.</p>
-
-        <h2>Hvad ligger bag?</h2>
-        <p>Bag både smerten og frustrationen ligger ofte nervesystemet. Når vi overser sammenhængen – at alt hænger sammen med alt – udebliver resultaterne. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser. Det er fundamentet. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
-        <p>For dig som behandler kan det være overvældende at finde den uddannelse der netop giver dig de redskaber du kan bruge. Hvor teori møder praksis. Hvor du selv kommer i proces. Hvor det bliver kropsligt og konkret.</p>
-
-        <h2>Hvordan kan det vendes?</h2>
-        <p>Transformation sker gennem forståelse. Når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder helbredelsen.</p>
-
-        <h2>Min metode</h2>
-        <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
-        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
+        <h2>Velkommen til TRE Forståelsesmodellen</h2>
+        <p>Denne interaktive model viser hvordan TRE virker gennem seks forskellige perspektiver.</p>
+        <p><strong>Sådan bruger du modellen:</strong></p>
+        <ul>
+            <li>Klik på en cirkel for at udforske det perspektiv</li>
+            <li>Skift mellem niveauer øverst: Klienter, Fagfolk, Videnskabeligt, eller Sclerose</li>
+            <li>Brug "Tilbage" knappen for at navigere</li>
+        </ul>
     `;
+}
 
-    const infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(() => {
-        infoPanel.scrollTop = 0;
-        window.scrollTo(0, 0);
+// Circle clicks
+function setupCircleClicks() {
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach(circle => {
+        circle.addEventListener('click', () => {
+            const id = circle.dataset.id;
+            showCircleView(id);
+        });
     });
 }
 
-
-function setupCircleClicks() {
-    const circles = document.querySelectorAll('.circle');
-    circles.forEach(circle => {
-        circle.addEventListener('click', () => {
-            const id = circle.dataset.id;
-            showCircleView(id);
-        });
-    });
-}
-
+// Vis cirkel view - KUN denne cirkel, liste af forbindelser
 function showCircleView(circleId) {
-    currentView = 'circle';
-    currentCircle = circleId;
-    clearAllActive();
-    
-    if (circleId !== 'nervesystem') {
-        const circle = document.querySelector(`[data-id="${circleId}"]`);
-        if (circle) {
-            circle.classList.add('active');
-            const texts = document.querySelectorAll(`[data-circle="${circleId}"]`);
-            texts.forEach(t => {
-                t.style.fill = 'white';
-                t.setAttribute('fill', 'white');
-            });
-        }
-    }
-    
-    const sourceData = currentEducation ? educations[currentEducation] : themes[currentTheme];
-    const circleData = sourceData.circles[circleId];
-    
-    if (!circleData || !circleData[currentMode]) {
-        document.getElementById('info-content').innerHTML = `
-            <h2>Indhold kommer snart</h2>
-            <p>Dette tema er under udvikling. Prøv "Angst" temaet for at se fuldt indhold.</p>
-            <div style="margin-top: 30px; text-align: center;">
-                <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
+    currentView = 'circle';
+    currentCircle = circleId;
+    currentConnection = null;
+    clearAllActive();
+
+    // Aktiver KUN denne cirkel (ikke TRE hvis det ikke er TRE)
+    const circle = document.querySelector(`[data-id="${circleId}"]`);
+    if (circle && circleId !== 'tre') {
+        circle.classList.add('active');
+    }
+
+    // Vis info
+    const data = content.circles[circleId][currentMode];
+    const connectedCircles = getConnectedCircles(circleId);
+
+    let connectionsHTML = '';
+    if (connectedCircles.length > 0) {
+        connectionsHTML = `
+            <div class="connection-list">
+                <p><strong>Se hvordan ${circleNames[circleId]} hænger sammen med:</strong></p>
+                ${connectedCircles.map(targetId => {
+                    const targetName = circleNames[targetId];
+                    return `
+                        <div class="connection-item" onclick="showConnectionView('${circleId}', '${targetId}', '${circleId}')">
+                            <div class="connection-item-title">\u2192 ${targetName}</div>
+                        </div>
+                    `;
+                }).join('')}
             </div>
         `;
-        // Scroll to info panel
-        const infoPanel = document.getElementById('info-panel');
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(() => {
-            const rect = infoPanel.getBoundingClientRect();
-            const offset = 80;
-            window.scrollTo({
-                top: window.pageYOffset + rect.top - offset,
-                behavior: 'smooth'
-            });
-        });
-        return;
-    }
-    
-    const data = circleData[currentMode];
-    const connectedCircles = getConnectedCircles(circleId);
-    
-    let connectionsHTML = '';
-    connectedCircles.forEach(targetId => {
-        const key1 = `${circleId}-${targetId}`;
-        const key2 = `${targetId}-${circleId}`;
-        const connectionData = sourceData.connections ? (sourceData.connections[key1] || sourceData.connections[key2]) : null;
-        
-        if (connectionData && connectionData[currentMode]) {
-            const targetName = circleNames[targetId];
-            const dynamikText = connectionData[currentMode];
-            
-            connectionsHTML += `
-                <div style="margin-top: 30px; padding-top: 25px; border-top: 2px solid #e8f0ec;">
-                    <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
-                    <p>${dynamikText}</p>
-                </div>
-            `;
-        }
-    });
-    
-    document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
+    }
+
+    document.getElementById('info-content').innerHTML = `
+        <div style="margin-bottom: 20px;">
+            <button onclick="showWelcome()" style="background: none; border: none; color: #447BB3; font-size: 1rem; cursor: pointer; font-family: 'Times New Roman', Times, serif;">\u2190 Tilbage til oversigt</button>
+        </div>
+        <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsHTML}
-        <div style="margin-top: 30px; text-align: center;">
-            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-        </div>
     `;
+}
 
-    // Scroll to info panel so the user sees the content
-    const infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(() => {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(() => {
-            const rect = infoPanel.getBoundingClientRect();
-            const offset = 80;
-            window.scrollTo({
-                top: window.pageYOffset + rect.top - offset,
-                behavior: 'smooth'
-            });
+// Connection view
+function showConnectionView(from, to, fromCircle) {
+    currentView = 'connection';
+    currentConnection = { from, to, fromCircle };
+    clearAllActive();
+
+    // Aktiver de to cirkler og linjen (men ikke TRE cirkel)
+    if (from !== 'tre') {
+        const circle1 = document.querySelector(`[data-id="${from}"]`);
+        if (circle1) circle1.classList.add('active');
+    }
+    if (to !== 'tre') {
+        const circle2 = document.querySelector(`[data-id="${to}"]`);
+        if (circle2) circle2.classList.add('active');
+    }
+
+    // Find og aktiver linjen
+    let line = document.querySelector(`[data-from="${from}"][data-to="${to}"]`);
+    if (!line) {
+        line = document.querySelector(`[data-from="${to}"][data-to="${from}"]`);
+    }
+    if (line) {
+        line.classList.add('active');
+    }
+
+    // Vis connection info
+    const key1 = `${from}-${to}`;
+    const key2 = `${to}-${from}`;
+    const connectionData = content.connections[key1] || content.connections[key2];
+
+    if (!connectionData) {
+        document.getElementById('info-content').innerHTML = `
+            <div style="margin-bottom: 20px;">
+                <button onclick="showCircleView('${fromCircle}')" style="background: none; border: none; color: #447BB3; font-size: 1rem; cursor: pointer; font-family: 'Times New Roman', Times, serif;">\u2190 Tilbage til ${circleNames[fromCircle]}</button>
+            </div>
+            <h2>Forbindelse ikke fundet</h2>
+        `;
+        return;
+    }
+
+    const text = connectionData[currentMode];
+    const fromName = circleNames[from];
+    const toName = circleNames[to];
+
+    document.getElementById('info-content').innerHTML = `
+        <div style="margin-bottom: 20px;">
+            <button onclick="showCircleView('${fromCircle}')" style="background: none; border: none; color: #447BB3; font-size: 1rem; cursor: pointer; font-family: 'Times New Roman', Times, serif;">\u2190 Tilbage til ${circleNames[fromCircle]}</button>
+        </div>
+        <h2>Dynamik: ${fromName} \u2194 ${toName}</h2>
+        <p><strong>${text}</strong></p>
+    `;
+}
+
+// Globale funktioner
+window.showWelcome = showWelcome;
+window.showCircleView = showCircleView;
+window.showConnectionView = showConnectionView;
+
+// Find forbundne cirkler
+function getConnectedCircles(circleId) {
+    const allCircles = ['tre', 'polyvagal', 'narrative', 'enactivisme', 'levine', 'reich', 'psykologi'];
+    return allCircles.filter(id => {
+        if (id === circleId) return false;
+        const key1 = `${circleId}-${id}`;
+        const key2 = `${id}-${circleId}`;
+        return content.connections[key1] || content.connections[key2];
+    });
+}
+
+// Connection clicks (fra SVG)
+function setupConnectionClicks() {
+    const connections = document.querySelectorAll('.connection');
+    connections.forEach(line => {
+        line.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const from = line.dataset.from;
+            const to = line.dataset.to;
+            // Hvis fra TRE, vis target cirkel først
+            const fromCircle = from === 'tre' ? to : from;
+            showConnectionView(from, to, fromCircle);
         });
     });
 }
 
-function getConnectedCircles(circleId) {
-    const allCircles = ['polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
-    if (circleId === 'nervesystem') {
-        return allCircles;
-    }
-    return ['nervesystem'].concat(allCircles.filter(id => id !== circleId));
-}
-
-function setupConnectionClicks() {
-    const connections = document.querySelectorAll('.connection');
-    connections.forEach(line => {
-        line.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const from = line.dataset.from;
-            const to = line.dataset.to;
-            const circleToShow = from === 'nervesystem' ? to : from;
-            showCircleView(circleToShow);
-        });
-    });
-}
-
+// Clear all active - TRE forbliver GRÅ
 function clearAllActive() {
-    document.querySelectorAll('.circle:not([data-id="nervesystem"])').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.connection').forEach(c => c.classList.remove('active'));
-    
-    document.querySelectorAll('.outer-text').forEach(t => {
-        t.style.fill = '#5a7a68';
-        t.setAttribute('fill', '#5a7a68');
-    });
+    document.querySelectorAll('.circle:not([data-id="tre"])').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.connection').forEach(c => c.classList.remove('active'));
 }
