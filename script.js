@@ -1553,6 +1553,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupExercisesButton();
     setupCircleClicks();
     setupConnectionClicks();
+    setupMenu();
+    setupSearch();
+    setupOnboarding();
     resetToWelcome();
     updateCenterCircle();
 });
@@ -1992,4 +1995,364 @@ function clearAllActive() {
         t.style.fill = '#5a7a68';
         t.setAttribute('fill', '#5a7a68');
     });
+}
+
+// ===== HAMBURGER MENU =====
+function setupMenu() {
+    const menuBtn = document.getElementById('menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuClose = document.getElementById('menu-close');
+
+    if (!menuBtn || !menuOverlay) return;
+
+    menuBtn.addEventListener('click', () => {
+        menuOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeMenu() {
+        menuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    menuClose.addEventListener('click', closeMenu);
+
+    menuOverlay.addEventListener('click', (e) => {
+        if (e.target === menuOverlay) closeMenu();
+    });
+
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const menuAction = item.dataset.menu;
+            closeMenu();
+            showMenuContent(menuAction);
+        });
+    });
+}
+
+function showMenuContent(action) {
+    const content = {
+        about: {
+            title: 'Om Annemarie Clement',
+            html: '<p>Annemarie Clement er uddannet nervesystemsterapeut, afspændingspædagog og kropsterapeut med mange års erfaring i at arbejde med menneskers nervesystemer.</p><p>Hun har specialiseret sig i polyvagal teori, tilknytningsmønstre og traumebearbejdning, og integrerer disse tilgange i en helhedsorienteret behandlingsform.</p><p>Annemarie underviser også kommende terapeuter gennem sine certificeringsuddannelser og specialkurser.</p>'
+        },
+        method: {
+            title: 'Min metode',
+            html: '<p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Polyvagal teori, Tilknytningsmønstre, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, og Terapeutisk Relation.</p><p>Disse dimensioner arbejder sammen i en integreret helhed, hvor forandring i én dimension påvirker alle de andre. Det er denne helhedsforståelse der gør metoden effektiv.</p><p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>'
+        },
+        contact: {
+            title: 'Kontakt',
+            html: '<p>Har du spørgsmål om behandling, uddannelser eller denne app? Du er velkommen til at kontakte Annemarie Clement.</p><p>Besøg <strong>annemarie-clement.dk</strong> for mere information om behandlinger og uddannelser.</p>'
+        },
+        privacy: {
+            title: 'Privatlivspolitik',
+            html: '<p>Denne app indsamler ingen personlige data. Der bruges ingen cookies, ingen tracking og ingen analytics.</p><p>Al indhold vises lokalt i din browser, og der sendes ingen information til eksterne servere.</p><p>Appen fungerer offline efter første indlæsning.</p>'
+        },
+        settings: {
+            title: 'Indstillinger',
+            html: '<p>Indstillinger for appen kommer snart.</p><p>Fremtidige muligheder vil inkludere:</p><ul><li>Valg af foretrukken visningstilstand (klient/fagfolk)</li><li>Tekststørrelse</li><li>Foretrukket tema ved opstart</li></ul>'
+        }
+    };
+
+    const c = content[action];
+    if (!c) return;
+
+    document.getElementById('info-content').innerHTML = '<h2>' + c.title + '</h2>' + c.html + '<div style="margin-top: 30px; text-align: center;"><button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button></div>';
+
+    const infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(() => {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(() => {
+            const rect = infoPanel.getBoundingClientRect();
+            const offset = 80;
+            window.scrollTo({
+                top: window.pageYOffset + rect.top - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+// ===== SEARCH =====
+function buildSearchIndex() {
+    const index = [];
+
+    for (const [themeId, theme] of Object.entries(themes)) {
+        for (const [circleId, circle] of Object.entries(theme.circles)) {
+            for (const mode of ['klient', 'fagfolk']) {
+                if (circle[mode]) {
+                    index.push({
+                        title: circle[mode].title,
+                        text: circle[mode].text,
+                        type: 'circle',
+                        themeId: themeId,
+                        themeName: theme.name,
+                        circleId: circleId,
+                        mode: mode,
+                        label: theme.name + ' — ' + circleNames[circleId]
+                    });
+                }
+            }
+        }
+        for (const [connId, conn] of Object.entries(theme.connections || {})) {
+            for (const mode of ['klient', 'fagfolk']) {
+                if (conn[mode]) {
+                    var parts = connId.split('-');
+                    index.push({
+                        title: circleNames[parts[0]] + ' ↔ ' + circleNames[parts[1]],
+                        text: conn[mode],
+                        type: 'connection',
+                        themeId: themeId,
+                        themeName: theme.name,
+                        circleId: parts[0] === 'nervesystem' ? parts[1] : parts[0],
+                        mode: mode,
+                        label: theme.name + ' — ' + circleNames[parts[0]] + ' ↔ ' + circleNames[parts[1]]
+                    });
+                }
+            }
+        }
+    }
+
+    var eduNames = { nervesystemsterapeut: 'Nervesystemsterapeut', teachertraining: 'Teacher Training', tilknytningsspeciale: 'Tilknytningsspeciale' };
+    for (const [eduId, edu] of Object.entries(educations)) {
+        for (const [circleId, circle] of Object.entries(edu.circles)) {
+            for (const mode of ['kursist', 'fagfolk']) {
+                if (circle[mode]) {
+                    index.push({
+                        title: circle[mode].title,
+                        text: circle[mode].text,
+                        type: 'education-circle',
+                        educationId: eduId,
+                        educationName: eduNames[eduId],
+                        circleId: circleId,
+                        mode: mode,
+                        label: eduNames[eduId] + ' — ' + circleNames[circleId]
+                    });
+                }
+            }
+        }
+    }
+
+    return index;
+}
+
+function setupSearch() {
+    var searchBtn = document.getElementById('search-btn');
+    var searchOverlay = document.getElementById('search-overlay');
+    var searchInput = document.getElementById('search-input');
+    var searchClear = document.getElementById('search-clear');
+    var searchClose = document.getElementById('search-close');
+    var searchResults = document.getElementById('search-results');
+
+    if (!searchBtn || !searchOverlay) return;
+
+    var searchIndex = buildSearchIndex();
+
+    function openSearch() {
+        searchOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() { searchInput.focus(); }, 300);
+    }
+
+    function closeSearch() {
+        searchOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+        searchInput.value = '';
+        searchClear.classList.remove('visible');
+        searchResults.innerHTML = '';
+        document.querySelectorAll('.search-tag').forEach(function(t) { t.classList.remove('active'); });
+    }
+
+    searchBtn.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+
+    searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        searchClear.classList.remove('visible');
+        searchResults.innerHTML = '';
+        document.querySelectorAll('.search-tag').forEach(function(t) { t.classList.remove('active'); });
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener('input', function() {
+        var query = searchInput.value.trim();
+        searchClear.classList.toggle('visible', query.length > 0);
+        if (query.length > 0) {
+            document.querySelectorAll('.search-tag').forEach(function(t) { t.classList.remove('active'); });
+        }
+        performSearch(query, searchIndex, searchResults, closeSearch);
+    });
+
+    document.querySelectorAll('.search-tag').forEach(function(tag) {
+        tag.addEventListener('click', function() {
+            var term = tag.dataset.search;
+            document.querySelectorAll('.search-tag').forEach(function(t) { t.classList.remove('active'); });
+            tag.classList.add('active');
+            searchInput.value = term;
+            searchClear.classList.add('visible');
+            performSearch(term, searchIndex, searchResults, closeSearch);
+        });
+    });
+}
+
+function performSearch(query, index, resultsContainer, closeCallback) {
+    if (query.length < 2) {
+        resultsContainer.innerHTML = '';
+        return;
+    }
+
+    var lower = query.toLowerCase();
+    var matches = [];
+
+    for (var i = 0; i < index.length; i++) {
+        var item = index[i];
+        var titleMatch = item.title.toLowerCase().indexOf(lower) >= 0;
+        var textMatch = item.text.toLowerCase().indexOf(lower) >= 0;
+        if (titleMatch || textMatch) {
+            matches.push({ item: item, titleMatch: titleMatch });
+        }
+    }
+
+    matches.sort(function(a, b) {
+        if (a.titleMatch && !b.titleMatch) return -1;
+        if (!a.titleMatch && b.titleMatch) return 1;
+        return a.item.label.localeCompare(b.item.label);
+    });
+
+    var shown = matches.slice(0, 15);
+
+    if (shown.length === 0) {
+        resultsContainer.innerHTML = '<div class="search-no-results">Ingen resultater fundet</div>';
+        return;
+    }
+
+    var html = '';
+    for (var j = 0; j < shown.length; j++) {
+        var m = shown[j].item;
+        var snippet = getSnippet(m.text, lower);
+        var modeLabel = m.mode === 'klient' ? 'Klient' : m.mode === 'kursist' ? 'Kursist' : 'Fagfolk';
+        html += '<div class="search-result-item" data-type="' + m.type + '" data-theme="' + (m.themeId || '') + '" data-education="' + (m.educationId || '') + '" data-circle="' + m.circleId + '" data-mode="' + m.mode + '">';
+        html += '<div class="search-result-title">' + m.label + ' <span style="font-size:0.8rem;color:#9aaa9e;font-weight:400;">(' + modeLabel + ')</span></div>';
+        html += '<div class="search-result-context">' + snippet + '</div>';
+        html += '</div>';
+    }
+    resultsContainer.innerHTML = html;
+
+    resultsContainer.querySelectorAll('.search-result-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+            var type = el.dataset.type;
+            var circleId = el.dataset.circle;
+            var mode = el.dataset.mode;
+            var themeId = el.dataset.theme;
+            var eduId = el.dataset.education;
+
+            closeCallback();
+
+            if (type === 'education-circle') {
+                currentEducation = eduId;
+                currentMode = mode;
+                currentTheme = 'general';
+                var label = educations[eduId].name;
+                document.getElementById('education-label').innerHTML = label.replace(' ', '<br>');
+                document.querySelectorAll('.education-option').forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.education === eduId);
+                });
+                updateCenterCircle();
+            } else {
+                currentEducation = null;
+                currentMode = mode;
+                currentTheme = themeId;
+                document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+                document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+                var themeLabel = themes[themeId].name;
+                document.getElementById('theme-label').innerHTML = themeLabel === 'Nervesystemsregulering' ? 'Vælg<br>tema' : themeLabel;
+                document.querySelectorAll('.theme-option').forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.theme === themeId);
+                });
+                updateCenterCircle();
+            }
+
+            document.querySelectorAll('.top-circle[data-mode]').forEach(function(c) {
+                c.classList.toggle('active', c.dataset.mode === mode);
+            });
+
+            showCircleView(circleId);
+        });
+    });
+}
+
+function getSnippet(text, query) {
+    var lower = text.toLowerCase();
+    var idx = lower.indexOf(query);
+    if (idx === -1) return text.substring(0, 120) + '...';
+
+    var start = Math.max(0, idx - 40);
+    var end = Math.min(text.length, idx + query.length + 80);
+    var snippet = '';
+    if (start > 0) snippet += '...';
+    snippet += text.substring(start, end);
+    if (end < text.length) snippet += '...';
+
+    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    snippet = snippet.replace(new RegExp(escaped, 'gi'), function(match) { return '<mark>' + match + '</mark>'; });
+    return snippet;
+}
+
+// ===== ONBOARDING =====
+function setupOnboarding() {
+    var overlay = document.getElementById('onboarding-overlay');
+    var nextBtn = document.getElementById('onboarding-next');
+    var skipBtn = document.getElementById('onboarding-skip');
+    if (!overlay || !nextBtn) return;
+
+    // Check if already seen
+    try {
+        if (localStorage.getItem('onboarding-seen')) return;
+    } catch(e) {}
+
+    var currentStep = 0;
+    var totalSteps = 5;
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    function goToStep(step) {
+        currentStep = step;
+        document.querySelectorAll('.onboarding-step').forEach(function(s) { s.classList.remove('active'); });
+        document.querySelectorAll('.onboarding-dot').forEach(function(d) { d.classList.remove('active'); });
+
+        var stepEl = document.querySelector('.onboarding-step[data-step="' + step + '"]');
+        var dotEl = document.querySelector('.onboarding-dot[data-dot="' + step + '"]');
+        if (stepEl) stepEl.classList.add('active');
+        if (dotEl) dotEl.classList.add('active');
+
+        if (step === totalSteps - 1) {
+            nextBtn.textContent = 'Kom i gang';
+        } else {
+            nextBtn.textContent = 'Næste';
+        }
+    }
+
+    function closeOnboarding() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        try { localStorage.setItem('onboarding-seen', '1'); } catch(e) {}
+    }
+
+    nextBtn.addEventListener('click', function() {
+        if (currentStep < totalSteps - 1) {
+            goToStep(currentStep + 1);
+        } else {
+            closeOnboarding();
+        }
+    });
+
+    skipBtn.addEventListener('click', closeOnboarding);
+
+    document.querySelectorAll('.onboarding-dot').forEach(function(dot) {
+        dot.addEventListener('click', function() {
+            goToStep(parseInt(dot.dataset.dot));
+        });
+    });
 }

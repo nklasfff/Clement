@@ -12,6 +12,59 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Hamburger menu button -->
+    <button class="nav-btn menu-btn" id="menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Search button -->
+    <button class="nav-btn search-btn" id="search-btn" aria-label="Søg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+        </svg>
+    </button>
+
+    <!-- Menu overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-panel">
+            <button class="menu-close" id="menu-close" aria-label="Luk menu">&times;</button>
+            <nav class="menu-nav">
+                <a href="#" class="menu-item" data-menu="about">Om Annemarie</a>
+                <a href="#" class="menu-item" data-menu="method">Min metode</a>
+                <a href="#" class="menu-item" data-menu="contact">Kontakt</a>
+                <a href="#" class="menu-item" data-menu="privacy">Privatlivspolitik</a>
+                <a href="#" class="menu-item" data-menu="settings">Indstillinger</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Search overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Søg i indhold..." autocomplete="off">
+                <button class="search-clear" id="search-clear" aria-label="Ryd søgning">&times;</button>
+                <button class="search-close" id="search-close" aria-label="Luk søgning">&times;</button>
+            </div>
+            <div class="search-tags" id="search-tags">
+                <button class="search-tag" data-search="nervesystem">Nervesystem</button>
+                <button class="search-tag" data-search="angst">Angst</button>
+                <button class="search-tag" data-search="stress">Stress</button>
+                <button class="search-tag" data-search="traumer">Traumer</button>
+                <button class="search-tag" data-search="tilknytning">Tilknytning</button>
+                <button class="search-tag" data-search="søvn">Søvn</button>
+                <button class="search-tag" data-search="polyvagal">Polyvagal</button>
+                <button class="search-tag" data-search="kropsterapi">Kropsterapi</button>
+                <button class="search-tag" data-search="regulering">Regulering</button>
+                <button class="search-tag" data-search="relation">Relation</button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
     <div class="container">
         <header>
         <div class="hero-image">
@@ -143,6 +196,93 @@
 <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
 <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onboarding overlay -->
+    <div class="onboarding-overlay" id="onboarding-overlay">
+        <div class="onboarding-card">
+            <div class="onboarding-steps">
+                <div class="onboarding-step active" data-step="0">
+                    <div class="onboarding-icon">
+                        <svg width="48" height="48" viewBox="0 0 700 700" fill="none">
+                            <circle cx="350" cy="350" r="60" fill="#5a7a68"/>
+                            <circle cx="350" cy="140" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                            <circle cx="530" cy="240" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                            <circle cx="530" cy="460" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                            <circle cx="350" cy="560" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                            <circle cx="170" cy="460" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                            <circle cx="170" cy="240" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h2>Velkommen</h2>
+                    <p>Denne app er dit redskab til at forstå nervesystemsterapi — Annemarie Clements helhedsorienterede metode.</p>
+                    <p class="onboarding-hint">Udforsk seks dimensioner der alle hænger sammen i en integreret cirkelmodel.</p>
+                </div>
+                <div class="onboarding-step" data-step="1">
+                    <div class="onboarding-icon">
+                        <div class="onboarding-circles-demo">
+                            <div class="demo-circle demo-klient">Til<br>klienter</div>
+                            <div class="demo-circle demo-fagfolk">Til<br>fagfolk</div>
+                        </div>
+                    </div>
+                    <h2>To perspektiver</h2>
+                    <p><strong>Til klienter</strong> — varm og personlig forklaring af hvordan nervesystemet påvirker dig.</p>
+                    <p><strong>Til fagfolk</strong> — klinisk og videnskabelig dybde med fagterminologi.</p>
+                    <p class="onboarding-hint">Skift frit mellem de to perspektiver med knapperne øverst.</p>
+                </div>
+                <div class="onboarding-step" data-step="2">
+                    <div class="onboarding-icon">
+                        <div class="onboarding-circles-demo">
+                            <div class="demo-circle demo-theme">Vælg<br>tema</div>
+                            <div class="demo-circle demo-edu">Uddan-<br>nelser</div>
+                            <div class="demo-circle demo-exercise">Prøv<br>øvelser</div>
+                        </div>
+                    </div>
+                    <h2>Temaer, uddannelser & øvelser</h2>
+                    <p><strong>Temaer</strong> — filtrer indholdet efter emner som angst, stress, traumer eller søvn.</p>
+                    <p><strong>Uddannelser</strong> — se indhold for Annemaries tre uddannelsesprogrammer.</p>
+                    <p><strong>Øvelser</strong> — prøv fem praktiske nervesystemsøvelser.</p>
+                </div>
+                <div class="onboarding-step" data-step="3">
+                    <div class="onboarding-icon">
+                        <div class="onboarding-nav-demo">
+                            <div class="demo-hamburger"><span></span><span></span><span></span></div>
+                            <div class="demo-search">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Menu & søgning</h2>
+                    <p>Brug <strong>menuen</strong> i venstre hjørne for at finde information om Annemarie, privatlivspolitik og indstillinger.</p>
+                    <p>Brug <strong>søgningen</strong> i højre hjørne til hurtigt at finde indhold på tværs af alle temaer.</p>
+                </div>
+                <div class="onboarding-step" data-step="4">
+                    <div class="onboarding-icon">
+                        <div class="onboarding-tap-demo">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/>
+                                <path d="M12 18v4"/>
+                                <path d="M8 22h8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2>Tryk og udforsk</h2>
+                    <p>Tryk på en <strong>cirkel</strong> for at læse om den dimension. Tryk på <strong>stregerne</strong> mellem cirkler for at se hvordan dimensionerne hænger sammen.</p>
+                    <p class="onboarding-hint">Alt hænger sammen med alt — det er kernen i nervesystemsterapi.</p>
+                </div>
+            </div>
+            <div class="onboarding-dots" id="onboarding-dots">
+                <span class="onboarding-dot active" data-dot="0"></span>
+                <span class="onboarding-dot" data-dot="1"></span>
+                <span class="onboarding-dot" data-dot="2"></span>
+                <span class="onboarding-dot" data-dot="3"></span>
+                <span class="onboarding-dot" data-dot="4"></span>
+            </div>
+            <div class="onboarding-actions">
+                <button class="onboarding-skip" id="onboarding-skip">Spring over</button>
+                <button class="onboarding-next" id="onboarding-next">Næste</button>
             </div>
         </div>
     </div>
