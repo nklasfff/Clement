@@ -1804,11 +1804,7 @@ function showExercises() {
             <h3>${exercise.title}</h3>
             <p class="exercise-intro">${exercise.intro}</p>
             <div class="exercise-steps">
-                ${exercise.steps.map((step, i) => `
-                    <div class="exercise-step" data-step="${i + 1}">
-                        ${step}
-                    </div>
-                `).join('')}
+        ${exercise.steps.map((step, i) => `<div class="exercise-step" data-step="${i + 1}">${step}</div>`).join('')}
             </div>
         </div>
     `).join('');
