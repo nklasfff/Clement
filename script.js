@@ -1,973 +1,973 @@
 // KOMPLET CONTENT DATABASE
 const themes = {
-    general: {
-        name: "Nervesystemsregulering",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemsregulering",
-                    text: "Dit nervesystem styrer alt - fra hvordan du sover, fordøjer mad, håndterer stress og føler dig i din krop. Et nervesystem i balance giver både dyb indre ro og energi til at leve livet. Jeg hjælper dig med at forstå og regulere dit nervesystem, så du kan finde tilbage til balance og trivsel."
-                },
-                fagfolk: {
-                    title: "Nervesystemsregulering - Klinisk Perspektiv",
-                    text: "Polyvagal-informeret tilgang til autonomt nervesystem-regulering som fundament for mental og fysisk sundhed. Arbejder med ventral vagal aktivering, neuroception og co-regulering. Integrerer Stephen Porges' forskning i praktisk terapeutisk anvendelse med fokus på bottom-up processer."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Teori",
-                    text: "Dit nervesystem har tre forskellige tilstande: Sikkerhed og forbindelse (grøn), alarm og mobilisering (gul), og nedlukning (rød). Når du forstår hvilken tilstand du er i, kan du lære at regulere dig selv tilbage til den grønne sikre tilstand, hvor healing og trivsel kan ske."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori - Klinisk Anvendelse",
-                    text: "Stephen Porges' hierarkiske model af autonomt nervesystem: ventral vagal (social engagement), sympatisk (mobilisering), dorsal vagal (immobilisering). Neuroception som central mekanisme for autonome shifts. Terapeutisk fokus på ventral vagal tone som forudsætning for regulering og healing."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytningsmønstre",
-                    text: "Måden du knytter dig til andre på blev skabt tidligt i livet. De fire tilknytningsmønstre (tryg, undvigende, ambivalent, desorganiseret) påvirker hvordan du er i relationer og med dig selv. At forstå dit mønster er første skridt til at skabe nye, sundere måder at være på."
-                },
-                fagfolk: {
-                    title: "Tilknytningsmønstre - Teoretisk Ramme",
-                    text: "Bowlby og Ainsworth's tilknytningstypologi: sikker, undvigende, ambivalent, desorganiseret. Indre arbejdsmodeller som implicitte relationelle skemaer. Earned secure attachment gennem terapeutisk relation. Fokus på hvordan tidlige tilknytningsmønstre manifesterer sig i autonome nervesystem-respons og affektregulering."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropsterapi & Behandling",
-                    text: "Din krop husker alt - både det gode og det svære. Gennem blid behandling på briks, arbejde med åndedræt og fascia hjælper jeg kroppen med at slippe gamle mønstre og spændinger. Kroppen ved hvordan den skal hele sig selv - den har bare brug for de rette betingelser."
-                },
-                fagfolk: {
-                    title: "Kropsterapi - Somatisk Tilgang",
-                    text: "Afspændingspædagogisk behandling på briks kombineret med fascial release og åndedrætsarbejde. Integrerer sensorimotorisk psykoterapi og somatic experiencing principper. Bottom-up regulering gennem direkte kropslig intervention. Fokus på proprioceptiv og interoceptiv awareness som vej til autonomt nervesystem-regulering."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Psykobiologi",
-                    text: "Dine følelser, tanker og oplevelser er dybt forbundet med din krops biologi - hormoner, neurotransmittere og nervesystemets tilstand. Når biologien kommer i balance, bliver det lettere at tænke klart, føle stabilt og handle fornuftigt. Jeg arbejder med både psyken og biologien."
-                },
-                fagfolk: {
-                    title: "Psykobiologi - Neurobiologisk Integration",
-                    text: "Integrativ forståelse af HPA-akse, neurotransmitter-systemer (serotonin, dopamin, GABA) og hormonelle processer (cortisol, oxytocin) i relation til psykisk regulering. Autonomt nervesystem som central moderator. Evidens-baseret tilgang til hvordan kropslige interventioner påvirker neurobiologiske systemer."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer & Dissociation",
-                    text: "Traumer sidder fast i nervesystemet, ikke kun i minderne. Når noget overvældende sker, kan dele af dig 'koble fra' (dissociation) for at beskytte dig. Jeg hjælper med forsigtigt at integrere det frakoblede, så du kan føle dig hel og til stede i dit liv igen."
-                },
-                fagfolk: {
-                    title: "Traumer & Dissociation - Traumebearbejdning",
-                    text: "Peter Levines Somatic Experiencing og van der Kolks traumeforskning som teoretisk fundament. Fokus på incomplete defensive responses og fryseresponser lagret i nervesystemet. Gradvis titrering og pendulering mellem activation og ro. Dissociation som overlevelsesmekanisme der kræver specifik opmærksomhed på window of tolerance."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Terapeutisk Relation",
-                    text: "Healing sker i relationer, ikke i isolation. I vores arbejde sammen skaber vi et trygt rum hvor dit nervesystem kan slappe af. Min tilstedeværelse og ro hjælper dit nervesystem med at finde sin egen ro. Relationen er ikke bare rammen - den er selve medicininen."
-                },
-                fagfolk: {
-                    title: "Terapeutisk Relation - Neurobiologisk Grundlag",
-                    text: "Relationel neurobiologi som teoretisk ramme. Co-regulering gennem terapeutens ventral vagale tilstand. Mirror neurons og interbrain synchrony som fysiologiske mekanismer. Earned secure attachment gennem korrigerende emotionelle erfaringer. Terapeutisk alliance som forudsætning for autonomt nervesystem-arbejde."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Nervesystemsregulering bygger direkte på polyvagal teori - når du forstår dine tre tilstande (sikkerhed, alarm, nedlukning), kan du lære at regulere mellem dem og finde tilbage til sikkerhed.",
-                fagfolk: "Polyvagal teori udgør det teoretiske fundament for nervesystemsregulering. Hierarkisk forståelse af autonome tilstande som basis for terapeutisk intervention gennem ventral vagal aktivering."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Dit tilknytningsmønster påvirker hvordan dit nervesystem reagerer i relationer. At arbejde med nervesystemet hjælper med at ændre gamle tilknytningsmønstre gennem nye oplevelser af sikkerhed.",
-                fagfolk: "Tilknytningsmønstre manifesterer sig som autonome nervesystem-mønstre. Nervesystemsregulering faciliterer earned secure attachment gennem somatisk korrigering af implicitte relationelle skemaer."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Kroppen og nervesystemet er ét - du kan ikke regulere nervesystemet uden at involvere kroppen. Behandling, åndedræt og bevægelse er konkrete måder at hjælpe nervesystemet tilbage i balance.",
-                fagfolk: "Somatisk intervention er direkte nervesystemsregulering. Bottom-up processer gennem fascial work, åndedræt og behandling modulerer vagal tone og autonome tilstande mere effektivt end top-down kognitive interventioner alene."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Når nervesystemet kommer i balance, følger hormonerne og neurotransmitterne med. Bedre søvn, fordøjelse og humør er direkte resultater af et reguleret nervesystem.",
-                fagfolk: "Autonomt nervesystem fungerer som master regulator for HPA-akse og neurotransmitter-systemer. Ventral vagal aktivering faciliterer hormonel balance (cortisol-reduktion, oxytocin-frigivelse) og optimal neurotransmitter-funktion."
-            },
-            'nervesystem-traumer': {
-                klient: "Traumer sidder fast som 'frosne' tilstande i nervesystemet. Ved at arbejde forsigtigt med nervesystemets regulering kan traumemateriale integreres uden at overvælde.",
-                fagfolk: "Traumatisk materiale er lagret som autonome forsvarstilstande (freeze, collapse). Nervesystemsregulering gennem titrering og pendulering faciliterer completion af incomplete defensive responses uden re-traumatisering."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer regulering gennem relationer. I terapien 'låner' dit nervesystem ro fra mit, indtil det selv kan finde den. Det kaldes co-regulering.",
-                fagfolk: "Terapeutisk relation er primær vej til nervesystemsregulering. Terapeuts ventral vagale tilstand co-regulerer klientens autonome system gennem interpersonal neurobiological synchrony og social engagement-system aktivering."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Hvert tilknytningsmønster har sin egen nervesystem-signatur. Tryg tilknytning lever i den grønne sikre tilstand, mens utryg tilknytning ofte sidder fast i alarm eller nedlukning.",
-                fagfolk: "Tilknytningsmønstre er embodied som specifikke autonome profiler. Sikker tilknytning korrelerer med ventral vagal fleksibilitet, mens unsikre mønstre viser rigid sympatisk hyperarousal eller dorsal hypoarousal."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Når kroppen behandles med nærvær og respekt, sender det sikkerhedssignaler til nervesystemet. Blid berøring og åndedrætsarbejde aktiverer den grønne sikre tilstand.",
-                fagfolk: "Somatisk intervention via berøring og åndedræt aktiverer ventral vagale pathways gennem C-fibre (affektiv touch) og respiratorisk sinus arrhythmia. Direkte bottom-up modulering af polyvagal tone."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Når du er i den grønne sikre tilstand, fungerer din biologi optimalt - god søvn, stærkt immunforsvar, god fordøjelse. I alarm eller nedlukning går alt i ubalance.",
-                fagfolk: "Ventral vagal tilstand optimerer alle fysiologiske systemer: HPA-akse regulering, immunfunktion, fordøjelse. Sympatisk eller dorsal dominans dysregulerer hormoner, inflammatoriske markører og metaboliske processer."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fryser nervesystemet fast i alarm eller nedlukning. At finde tilbage til sikker tilstand er første skridt i traumehealing - så kan det frosne materiale begynde at tø op.",
-                fagfolk: "Traumatisk immobilisering repræsenterer dorsal vagal dominans med sympatisk co-activation. Healing kræver først etablering af ventral vagal sikkerhed før traumatisk materiale kan integreres gennem oscillation mellem activation og ro."
-            },
-            'polyvagal-relation': {
-                klient: "Du kan mærke når et andet menneske er i sikker tilstand - det smitter. I terapi bruger vi denne 'smitte' bevidst, så dit nervesystem lærer sikkerhed gennem mit nærvær.",
-                fagfolk: "Social engagement system (ventral vagal) faciliterer co-regulering gennem prosodi, ansigtsudtryk, kropsholdning. Terapeuts autonome tilstand påvirker direkte klientens gennem mirror neurons og interbrain synchronization."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningsmønstre sidder i kroppen - måden du holder vejret, spænder musklerne, lukker ned. Kropsarbejde kan ændre disse mønstre mere effektivt end ord alene.",
-                fagfolk: "Tilknytningsmønstre manifesterer sig somatisk i åndedræt, muskeltonus, fascial densitet. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv og interoceptiv re-patterning."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Dit tidlige tilknytningsmønster formede din biologi - hvordan du producerer stresshormoner, hvor følsom du er for oxytocin (kærlighedshormonet). Men biologien kan omformes gennem nye erfaringer.",
-                fagfolk: "Tidlig tilknytning former HPA-akse respons og oxytocin-receptor sensitivitet. Unsikker tilknytning korrelerer med dysreguleret cortisol og reduceret oxytocin-respons. Earned secure attachment kan modificere disse biologiske mønstre gennem gentagen korrigerende erfaring."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytningsrelationer skaber ofte desorganiseret tilknytning - hvor relationer både er det farlige og det sikre. Det kræver særlig forsigtighed at arbejde med.",
-                fagfolk: "Developmental trauma inden for tilknytningssystem resulterer ofte i desorganiseret tilknytning - simultant activation af attachment og defense systems. Kræver specifik opmærksomhed på terapeutens egen regulering og langsom etablering af relational safety."
-            },
-            'tilknytning-relation': {
-                klient: "Terapeutisk relation kan være det sted hvor du lærer tryg tilknytning for første gang - eller genoplever den. Gennem vores relation omskrives dine indre modeller af hvad relationer kan være.",
-                fagfolk: "Earned secure attachment gennem terapeutisk relation som korrigerende emotionel erfaring. Terapeuts konsistente tilgængelighed og afstemning modificerer indre arbejdsmodeller og faciliterer shift fra unsikre til sikre tilknytningsmønstre gennem relational reconsolidation."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Kroppen og biologien taler samme sprog. Når du arbejder med åndedræt og fascia, påvirker du direkte hormoner og neurotransmittere - kroppen er indgangen til at ændre kemien.",
-                fagfolk: "Fascial release og åndedrætsarbejde påvirker direkte vagal afferent signalering, hvilket modulerer brainstem nuclei og dermed neurotransmitter-frigivelse. Mekanisk stimulation af fascia påvirker interoceptive processing og autonome outputs."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer sidder lagret i kroppen som spændinger, begrænsede åndedræt og følelsesløshed. Gennem forsigtigt kropsarbejde kan det frosne begynde at tø, og kroppen husker hvordan den føles hel.",
-                fagfolk: "Somatic experiencing principper: traumer manifesterer sig som incomplete motoriske sekvenser og fasicial restrictions. Behandling faciliterer completion gennem titreret proprioceptiv og interoceptiv activation, resolverende defensive immobilization states gennem gradvis mobilisering."
-            },
-            'kropsterapi-relation': {
-                klient: "At blive behandlet med respekt og nærvær lærer din krop at relationer kan være sikre. Berøring i terapien er ikke bare fysisk - det er også relationel healing.",
-                fagfolk: "Terapeutisk touch som relationel intervention. Affektiv C-fibre stimulation kombineret med terapeutens ventral vagale tilstedeværelse faciliterer simultant somatisk og relationel reconsolidation. Embodied co-regulering gennem hands-on work."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrer din biologi - du producerer mere stresshormon, mindre glædeshormon. Men biologien kan normaliseres igen når traumerne bearbejdes og nervesystemet kommer i balance.",
-                fagfolk: "PTSD og developmental trauma modificerer permanent HPA-akse reactivity, cortisol rytmer og inflammatoriske profiler. Traumebehandling gennem nervesystemsregulering kan normalisere disse biologiske markører gennem restoration af autonomic flexibility."
-            },
-            'psykobiologi-relation': {
-                klient: "Gode relationer er biologi-medicin - de øger oxytocin, sænker cortisol, styrker immunforsvaret. Terapeutisk relation har målbar biologisk effekt på din krop.",
-                fagfolk: "Secure therapeutic relationship øger endogent oxytocin, reducerer cortisol og pro-inflammatoriske cytokiner. Social connection aktiverer belønningssystemer (dopaminerg) og bufferer HPA-akse respons. Relationel intervention er direkte biologisk intervention."
-            },
-            'traumer-relation': {
-                klient: "At arbejde med traumer kræver dyb sikkerhed i relationen. Uden et trygt fundament vil traumebearbejdning føles overvældende. Relationen kommer først, traumearbejdet bagefter.",
-                fagfolk: "Traumebehandling forudsætter etableret therapeutic alliance og terapeutens robuste autonome regulering. Uden relational safety risikeres re-traumatisering gennem overwhelm. Co-regulering er forudsætning for sikker activation af traumatisk materiale."
-            }
-        }
-    },
-    angst: {
-        name: "Angst",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemsregulering ved Angst",
-                    text: "Angst er nervesystemets alarm der kører konstant. Jeg hjælper dig med at regulere ned fra den kroniske alarmtilstand, så dit nervesystem kan lære at det faktisk er sikkert. Når systemet roer sig, forsvinder angsten naturligt."
-                },
-                fagfolk: {
-                    title: "Nervesystemsregulering ved Angstlidelser",
-                    text: "Angst manifesterer sig som kronisk sympatisk activation med nedsat vagal tone. Arbejder med gradvis down-regulation gennem bottom-up interventioner der genopbygger ventral vagal kapacitet og udvider window of tolerance."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Angst",
-                    text: "Angst er når dit nervesystem sidder fast i gul zone - konstant alarm. Jeg lærer dig at genkende signalerne og finde veje tilbage til grøn sikker tilstand gennem konkrete teknikker."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Angst",
-                    text: "Angstlidelser repræsenterer fastholdelse i sympatisk mobilisering uden adgang til ventral vagal regulering. Neuroception fejltolker sikre situationer som farlige. Terapeutisk mål er genskabelse af polyvagal fleksibilitet."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Angst",
-                    text: "Meget angst har rødder i utryg tilknytning - hvor verden føltes upålidelig tidligt i livet. Vi arbejder med at skabe nye oplevelser af sikkerhed så angsten kan slippe sit greb."
-                },
-                fagfolk: {
-                    title: "Tilknytningsmønstre ved Angst",
-                    text: "Ambivalent og desorganiseret tilknytning korrelerer stærkt med angstlidelser. Hyperactivation af attachment system og konstant scanning for fare. Earned secure attachment reducerer angst-symptomer gennem reguleret autonomt nervesystem."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropsarbejde ved Angst",
-                    text: "Angst sidder i spændte skuldre, kort åndedræt og sammentrukket krop. Gennem blid behandling og åndedrætsarbejde lærer kroppen at slippe alarmen og finde ro igen."
-                },
-                fagfolk: {
-                    title: "Somatisk Intervention ved Angst",
-                    text: "Angst manifesteres somatisk som muskulær hypertonus, shallow breathing og fasicial restrictions. Direkte fascial release og respiratorisk intervention modulerer autonome outputs mere effektivt end top-down kognitive tilgange alene."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Biologien bag Angst",
-                    text: "Ved angst producerer kroppen for meget stresshormon og for lidt rolighedshormon. Ved at regulere nervesystemet normaliserer vi biologien - og angsten falder."
-                },
-                fagfolk: {
-                    title: "Neurobiologi ved Angstlidelser",
-                    text: "Dysreguleret HPA-akse med forhøjet baseline cortisol, reduceret GABA og serotonin. Autonomt nervesystem-regulering normaliserer neurotransmitter-balance og reducerer inflammatoriske markører associeret med kronisk angst."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Angst",
-                    text: "Angst er ofte resultatet af gamle traumer hvor nervesystemet aldrig slap alarmen. Vi arbejder forsigtigt med at fuldføre det ufærdige, så systemet kan slappe af."
-                },
-                fagfolk: {
-                    title: "Traumatisk Oprindelse af Angst",
-                    text: "Generaliseret angst ofte rodfæstet i uløste traumatiske incomplete defensive responses. Persistent hyperarousal som følge af manglende completion. Intervention gennem titreret trauma-processing reducerer angst-symptomer."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Healing af Angst",
-                    text: "I vores trygge relation lærer dit nervesystem at verden kan være sikker. Min ro smitter til dit system - det kaldes co-regulering, og det er fundamentet for at angsten kan forsvinde."
-                },
-                fagfolk: {
-                    title: "Relationel Neurobiologi ved Angst",
-                    text: "Terapeutens ventral vagale tilstedeværelse co-regulerer klientens hyperaroused autonome system. Gentagen erfaring af relational safety rekalibrerer neuroception og reducerer baseline angst gennem interpersonal neurobiological synchrony."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Ved angst sidder nervesystemet fast i alarm-tilstand. Polyvagal forståelse giver dig nøglen til at skifte gear tilbage til sikkerhed.",
-                fagfolk: "Angst er kronisk sympatisk dominans uden ventral vagal adgang. Polyvagal-intervention genetablerer hierarkisk fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Angstens nervesystem-mønstre blev ofte skabt i utryg tilknytning. Ved at heale tilknytningen heales angsten.",
-                fagfolk: "Angst-relaterede autonome mønstre har ofte oprindelse i unsikker tilknytning. Earned secure attachment modificerer disse mønstre."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Angst holder kroppen i konstant spænding. Kropsarbejde frigiver spændingerne og lader nervesystemet regulere ned.",
-                fagfolk: "Angst-relateret somatisk hypertonus opretholdes autonome stress-responses. Fascial release bryder denne cyklus."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Angstens biologi - høj cortisol, lav serotonin - normaliseres når nervesystemet finder ro.",
-                fagfolk: "Nervesystemsregulering ved angst normaliserer HPA-akse og neurotransmitter-profiler."
-            },
-            'nervesystem-traumer': {
-                klient: "Angst er ofte frosne traumer i nervesystemet. Ved at løsne det frosne forsvinder angsten.",
-                fagfolk: "Angst som persisterende incomplete defensive response. Completion gennem titrering reducerer symptomer."
-            },
-            'nervesystem-relation': {
-                klient: "Dit angstfyldte nervesystem lærer ro gennem vores relation - det er kernen i healing.",
-                fagfolk: "Co-regulering i terapeutisk alliance er primær vej til modification af angst-relaterede autonome mønstre."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et nervesystem der lever i gul alarm. Vi lærer det grøn sikkerhed.",
-                fagfolk: "Ambivalent tilknytning manifesteres som rigid sympatisk activation ved angst. Ventral vagal adgang er terapeutisk mål."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Når kroppen behandles og lærer ro, sender det direkte beskeder til den gule alarm-zone om at det er sikkert.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways og bryder sympatisk dominans ved angst."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Den grønne sikre tilstand skaber den rette biologi - lav cortisol, høj serotonin. Angst forsvinder.",
-                fagfolk: "Ventral vagal aktivering optimerer neurotransmitter-balance og HPA-akse funktion ved angst."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer låste systemet i gul alarm. At finde grøn sikkerhed først er nøglen til at heale traumet og angsten.",
-                fagfolk: "Etablering af ventral vagal sikkerhed er forudsætning for trauma-processing ved angst."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne ro smitter til dit gule angst-system gennem vores relation. Det er hvordan healing sker.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer sympatisk hyperarousal gennem social engagement system."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Utryg tilknytning skabte en anspændt krop. Kropsarbejde lærer både krop og tilknytning ny sikkerhed.",
-                fagfolk: "Tilknytningsmønstre ved angst er embodied. Somatisk intervention modificerer implicitte skemaer."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede en biologi klar til angst. Ny sikker tilknytning omformer biologien.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse sensitivitet ved angst. Earned secure attachment normaliserer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytninger skabte angst som livslangt mønster. Healing kræver ekstra forsigtighed.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning og angst. Kræver langsom relational safety-etablering."
-            },
-            'tilknytning-relation': {
-                klient: "Vores trygge relation bliver det sted hvor du oplever sikker tilknytning - og angsten kan slippe.",
-                fagfolk: "Terapeutisk relation som korrigerende tilknytningserfaring modificerer autonome angst-mønstre."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen slipper angstens spændinger, følger biologien med - hormoner og neurotransmittere balanceres.",
-                fagfolk: "Fascial release ved angst påvirker direkte vagal afferenter og neurotransmitter-frigivelse."
-            },
-            'kropsterapi-traumer': {
-                klient: "Angst-traumer sidder frosset i kroppen. Meget forsigtigt kropsarbejde låser det frosne op.",
-                fagfolk: "Angst-relaterede traumer manifesteres somatisk. Titreret proprioceptiv activation faciliterer integration."
-            },
-            'kropsterapi-relation': {
-                klient: "At modtage tryg berøring i vores relation lærer din angstfyldte krop at verden kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer angst-relaterede somatiske mønstre."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrede din biologi til angst-tilstand. Healing af traumet normaliserer biologien.",
-                fagfolk: "Traumatisk modification af HPA-akse skaber angst. Trauma-processing normaliserer biologiske markører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin - den sænker cortisol og øger rolighedshormon, angsten falder.",
-                fagfolk: "Secure alliance øger oxytocin og reducerer cortisol ved angst gennem neurobiologiske mekanismer."
-            },
-            'traumer-relation': {
-                klient: "Angst-traumerne kan kun heales i dyb relationel sikkerhed. Vores relation er fundamentet.",
-                fagfolk: "Trauma-baseret angst kræver robust alliance før processing. Co-regulering er absolut forudsætning."
-            }
-        }
-    },
-   
-   tilknytning: {
-        name: "Tilknytning",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet og Tilknytning",
-                    text: "Dit tilknytningsmønster er kodet ind i nervesystemets reaktioner. Når vi regulerer nervesystemet, åbner vi muligheden for at skabe nye, sundere tilknytningsmønstre gennem faktiske oplevelser af sikkerhed."
-                },
-                fagfolk: {
-                    title: "Autonomt Nervesystem og Tilknytning",
-                    text: "Tilknytningsmønstre er fundamentalt autonome mønstre. Nervesystemsregulering er forudsætning for earned secure attachment. Arbejder med vagal tone som basis for relationel kapacitet og affektregulering."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal og Tilknytning",
-                    text: "Hvert tilknytningsmønster har sin nervesystem-signatur. Tryg tilknytning lever i grøn zone, mens utryg tilknytning sidder fast i gul eller rød. Vi lærer dit system at finde den grønne sikkerhed."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Tilknytning",
-                    text: "Sikker tilknytning korrelerer med ventral vagal dominans og polyvagal fleksibilitet. Unsikre mønstre viser rigid sympatisk (ambivalent) eller dorsal (undvigende) activation. Social engagement system er neurologisk substrat for attachment."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Forstå Dit Tilknytningsmønster",
-                    text: "Vi udforsker sammen dit tilknytningsmønster - ikke for at dømme det, men for at forstå det. Når du ser mønstret kan du begynde at skabe nye måder at være i relationer på."
-                },
-                fagfolk: {
-                    title: "Tilknytningsteori i Praksis",
-                    text: "Adult Attachment Interview-inspireret udforskning af indre arbejdsmodeller. Fokus på reflective functioning og mentalization som veje til earned secure attachment. Integration af tilknytningsteori med neurobiologisk forståelse."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Tilknytning i Kroppen",
-                    text: "Tilknytningsmønstre sidder i hvordan du holder vejret, spænder kroppen, lukker ned. Gennem kropsarbejde kan vi skabe nye fysiske oplevelser af sikkerhed der ændrer mønstret."
-                },
-                fagfolk: {
-                    title: "Embodied Tilknytning",
-                    text: "Tilknytningsmønstre manifesteres somatisk i åndedræt, tonus, fasicial densitet. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv re-patterning."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Tilknytningens Biologi",
-                    text: "Dit tilknytningsmønster formede din biologis reaktioner på stress og nærhed. Men biologien er ikke fastlåst - gennem nye oplevelser kan vi omforme den."
-                },
-                fagfolk: {
-                    title: "Neurobiologi af Tilknytning",
-                    text: "Tidlig tilknytning former HPA-akse sensitivitet og oxytocin-receptor udtryk. Unsikker tilknytning korrelerer med dysreguleret cortisol og reduceret belønningsrespons. Earned secure attachment kan modificere disse biologiske signatures."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer i Tilknytning",
-                    text: "Traumer i tidlige relationer skaber desorganiseret tilknytning - hvor relationer er både farlige og det eneste sikre. Det kræver ekstra forsigtighed og tålmodighed at arbejde med."
-                },
-                fagfolk: {
-                    title: "Developmental Trauma og Tilknytning",
-                    text: "Developmental trauma inden for attachment system resulterer i desorganiseret tilknytning med simultane modsatrettede attachment og defense responses. Kræver langsom etablering af relational safety før tilknytningsarbejde kan påbegyndes."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Nye Tilknytningsoplevelser",
-                    text: "Vores terapeutiske relation bliver stedet hvor du kan opleve tryg tilknytning - måske for første gang. Det er gennem denne oplevelse at gamle mønstre kan ændres."
-                },
-                fagfolk: {
-                    title: "Earned Secure Attachment",
-                    text: "Terapeutisk relation som korrigerende emotionel erfaring. Konsistent tilgængelighed og afstemning modificerer indre arbejdsmodeller. Earned secure attachment faciliteres gennem gentagen erfaring af secure base og safe haven."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Tilknytningsmønstre er kodet som nervesystem-reaktioner. Polyvagal forståelse viser hvordan tryg tilknytning lever i grøn sikker tilstand.",
-                fagfolk: "Tilknytningsmønstre manifesteres som specifikke polyvagale profiler. Sikker tilknytning korrelerer med ventral vagal fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Når vi arbejder med nervesystemet, arbejder vi direkte med tilknytningsmønstre - de er det samme.",
-                fagfolk: "Tilknytningsintervention er nervesystemsintervention. Earned secure attachment kræver autonome modifications."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Tilknytningsmønstre sidder i kroppen. Kropsarbejde ændrer både nervesystem og tilknytning samtidigt.",
-                fagfolk: "Tilknytningsmønstre er embodied. Somatisk intervention modificerer både autonome mønstre og relationelle skemaer."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Tilknytningsmønstre formede din biologi. Ved at arbejde med nervesystemet omformer vi biologien.",
-                fagfolk: "Tilknytning præger neurobiologi. Nervesystemsregulering kan modificere HPA-akse og oxytocin-systemer formet af early attachment."
-            },
-            'nervesystem-traumer': {
-                klient: "Tilknytningstraumer sidder dybt i nervesystemet. Healing kræver særlig forsigtighed og langsom opbygning af sikkerhed.",
-                fagfolk: "Developmental trauma skaber desorganiseret tilknytning med komplekse autonome mønstre. Kræver robuste interventionsteknikker."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer nye tilknytningsmønstre gennem vores trygge relation.",
-                fagfolk: "Terapeutisk relation faciliterer earned secure attachment gennem co-regulering og autonome modifications."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Hvert tilknytningsmønster har sin polyvagale signatur. Tryg er grøn, utryg er gul eller rød.",
-                fagfolk: "Tilknytningsmønstre korrelerer med specifikke polyvagale profiler og autonome response-patterns."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne sikre tilstand som er fundamentet for tryg tilknytning.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways nødvendige for secure attachment capacity."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Den grønne sikre tilstand skaber den biologi der muliggør tryg tilknytning.",
-                fagfolk: "Ventral vagal dominans optimerer neurobiologiske systemer der understøtter secure attachment."
-            },
-            'polyvagal-traumer': {
-                klient: "Tilknytningstraumer låste systemet i usikre tilstande. Grøn sikkerhed er vejen til healing.",
-                fagfolk: "Developmental trauma dysregulerer polyvagale responses. Ventral vagal etablering er forudsætning for tilknytningsarbejde."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne ro lærer dit system tryg tilknytning gennem vores relation.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og faciliterer secure attachment learning."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningsmønstre lever i kroppen. Kropsarbejde skaber nye oplevelser af sikkerhed.",
-                fagfolk: "Embodied tilknytningsmønstre modificeres gennem proprioceptiv og interoceptiv re-patterning."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Tidlig tilknytning formede din biologi. Ny sikker tilknytning kan omforme den.",
-                fagfolk: "Tilknytningsmønstre præger HPA-akse og oxytocin-systemer. Earned secure attachment modificerer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tidlige tilknytninger kræver ekstra forsigtighed - både farligt og eneste sikkerhed.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning med modsatrettede impulser. Langsom safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation bliver det sted hvor du oplever tryg tilknytning for første gang eller igen.",
-                fagfolk: "Terapeutisk relation som korrigerende erfaring modificerer indre arbejdsmodeller gennem konsistent tilgængelighed."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Kropsarbejde skaber nye tilknytningsoplevelser der ændrer biologien.",
-                fagfolk: "Somatisk intervention påvirker neurobiologiske systemer der understøtter attachment capacity."
-            },
-            'kropsterapi-traumer': {
-                klient: "Tilknytningstraumer sidder i kroppen. Forsigtigt kropsarbejde integrerer det splittet.",
-                fagfolk: "Developmental trauma manifesteres somatisk. Titreret intervention faciliterer integration."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer kroppen at tilknytning kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer embodied tilknytningsmønstre."
-            },
-            'psykobiologi-traumer': {
-                klient: "Tilknytningstraumer ændrede din biologi. Healing normaliserer den.",
-                fagfolk: "Developmental trauma modificerer neurobiologi. Tilknytningsarbejde kan normalisere biologiske signatures."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin der skaber tilknytningssikkerhed.",
-                fagfolk: "Secure alliance modificerer oxytocin og cortisol-systemer og faciliterer biologisk grundlag for attachment."
-            },
-            'traumer-relation': {
-                klient: "Tilknytningstraumer kan kun heales i dyb relationel sikkerhed.",
-                fagfolk: "Developmental trauma kræver robust alliance før processing. Relational safety er absolut forudsætning."
-            }
-        }
-    },
-    stress: {
-        name: "Stress",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet under Stress",
-                    text: "Stress er når nervesystemet kører i overtid uden at få pause. Vi arbejder med at lære dit system at skifte gear - at kunne mobilisere energi når nødvendigt, men også finde dyb hvile."
-                },
-                fagfolk: {
-                    title: "Stressregulering via ANS",
-                    text: "Kronisk stress repræsenterer manglende polyvagal fleksibilitet med fastholdelse i sympatisk activation. Terapeutisk fokus på genopbygning af vagal brake-funktion og restoration af naturlig autonome oscillation mellem activation og restoration."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Stress",
-                    text: "Stress er gul zone uden vej tilbage til grøn. Vi finder sammen de konkrete triggere der sender dig i stress og lærer dig veje tilbage til den sikre grønne tilstand."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori ved Stress",
-                    text: "Kronisk stress er vedvarende sympatisk dominans uden ventral vagal recovery. Nedsat vagal brake function. Intervention gennem aktivering af social engagement system og respiratory sinus arrhythmia restoration."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Stress",
-                    text: "Hvis du voksede op uden pålidelig hjælp til at regulere stress, har dit system aldrig lært det. Vi skaber den manglende co-regulering nu, så dit system lærer at stresse ned."
-                },
-                fagfolk: {
-                    title: "Tilknytning og Stressregulering",
-                    text: "Manglende early co-regulation resulterer i deficits i selvregulering af stress. Unsikker tilknytning korrelerer med dysreguleret HPA-akse og øget stress-vulnerabilitet. Terapeutisk co-regulation lærer systemet ny stress-respons."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Stress i Kroppen",
-                    text: "Stress manifesterer sig som spændinger, hovedpine, dårlig søvn. Gennem behandling og åndedrætsarbejde hjælper vi kroppen med fysisk at slippe stress-mønstrene."
-                },
-                fagfolk: {
-                    title: "Somatisk Stressintervention",
-                    text: "Stress-relateret muskulær hypertonus og fasicial restrictions opretholdes autonome stress-responses. Direkte somatisk intervention via fascial release og vagus-aktivering gennem åndedræt modulerer HPA-akse reactivity."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Stress-biologien",
-                    text: "Ved kronisk stress producerer kroppen konstant cortisol hvilket nedslider systemet. Vi arbejder med at normalisere din biologi så kroppen kan hele og restituere sig."
-                },
-                fagfolk: {
-                    title: "Neurobiologi ved Kronisk Stress",
-                    text: "Kronisk stress dysregulerer HPA-akse med fladt cortisol-døgnrytme, reduceret DHEA, øget inflammatoriske cytokiner. Autonomt nervesystem-regulering kan normalisere disse biomarkører gennem restoration af vagal tone."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Stress",
-                    text: "Meget kronisk stress har rod i gamle traumer hvor systemet lærte at verden er farlig. Vi arbejder forsigtigt med at heale traumerne så stress-responsen kan normaliseres."
-                },
-                fagfolk: {
-                    title: "Traumatisk Stress",
-                    text: "PTSD og developmental trauma skaber persisterende baseline hyperarousal. Incomplete fight/flight responses opretholdes som kronisk stress. Trauma-processing gennem somatic experiencing reducerer stress-symptomer."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Ro ved Stress",
-                    text: "I vores trygge relation lærer dit nervesystem at det er okay at slippe kontrollen. Min ro bliver din ro - det er sådan stress-mønstre kan ændres fundamentalt."
-                },
-                fagfolk: {
-                    title: "Co-regulering af Stress",
-                    text: "Terapeutens ventral vagale tilstand fungerer som ekstern regulator af klientens stress-response. Gentagen co-regulation opbygger intern kapacitet til selvregulering gennem neuroplasticitet i autonome circuits."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Stress er nervesystemet i gul alarm uden ro. Polyvagal forståelse viser vejen tilbage til grøn.",
-                fagfolk: "Kronisk stress er sympatisk dominans uden ventral vagal recovery. Polyvagal intervention restaurerer fleksibilitet."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Stress-mønstre blev ofte skabt i utryg tilknytning uden co-regulering. Vi skaber den manglende regulering nu.",
-                fagfolk: "Manglende early co-regulation skaber stress-vulnerabilitet. Terapeutisk co-regulation modificerer autonome mønstre."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Stress sidder som spændinger i kroppen. Kropsarbejde frigiver spændinger og regulerer nervesystemet.",
-                fagfolk: "Stress-relateret somatisk hypertonus opretholdes stress-responses. Fascial release bryder cyklus."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Stress-biologien med høj cortisol normaliseres når nervesystemet finder ro.",
-                fagfolk: "Nervesystemsregulering ved stress normaliserer HPA-akse dysregulation."
-            },
-            'nervesystem-traumer': {
-                klient: "Kronisk stress har ofte rod i gamle traumer. Healing af traumer normaliserer stress-respons.",
-                fagfolk: "PTSD skaber persisterende hyperarousal. Trauma-processing reducerer baseline stress."
-            },
-            'nervesystem-relation': {
-                klient: "Dit stress-system lærer ro gennem vores trygge relation - det er vejen til varig ændring.",
-                fagfolk: "Co-regulering i alliance modificerer stress-relaterede autonome mønstre gennem neuroplasticitet."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et system der stresser let. Vi lærer det ny sikkerhed.",
-                fagfolk: "Unsikker tilknytning korrelerer med stress-vulnerabilitet. Earned secure attachment reducerer sympatisk reactivity."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne ro-tilstand som modvægt til gul stress.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways og modulerer stress-responses."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber optimal biologi - stress-hormonerne normaliseres.",
-                fagfolk: "Ventral vagal aktivering optimerer HPA-akse funktion og reducerer stress-biomarkører."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i stress. Grøn sikkerhed først, så kan traumet heales.",
-                fagfolk: "Traumatisk hyperarousal kræver ventral vagal etablering før trauma-processing."
-            },
-            'polyvagal-relation': {
-                klient: "Min ro smitter til dit stress-system gennem vores relation.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer sympatisk hyperarousal ved stress."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Manglende early co-regulering skabte stress i kroppen. Kropsarbejde lærer ny regulering.",
-                fagfolk: "Stress-vulnerabilitet er embodied. Somatisk intervention modificerer stress-relaterede somatiske mønstre."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede en stress-følsom biologi. Ny sikkerhed omformer den.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse sensitivitet. Earned secure attachment modificerer stress-biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Tilknytningstraumer skabte kronisk stress. Healing kræver tryg relation først.",
-                fagfolk: "Developmental trauma resulterer i dysreguleret stress-respons. Langsom safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation lærer dit system at stress kan reguleres i trygge relationer.",
-                fagfolk: "Terapeutisk co-regulation modificerer stress-vulnerabilitet gennem earned secure attachment."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen slipper stress-spændinger, normaliseres hormoner og neurotransmittere.",
-                fagfolk: "Fascial release ved stress påvirker vagal afferenter og HPA-akse funktion."
-            },
-            'kropsterapi-traumer': {
-                klient: "Stress-traumer sidder frosset i kroppen. Forsigtigt kropsarbejde frigiver dem.",
-                fagfolk: "Traumatisk stress manifesteres somatisk. Titreret intervention faciliterer completion."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer kroppen at stress kan reguleres.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety modificerer stress-responses."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrede stress-biologien. Healing normaliserer cortisol og andre hormoner.",
-                fagfolk: "Traumatisk modification af HPA-akse. Trauma-processing kan normalisere stress-biomarkører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er stress-medicin - sænker cortisol, øger ro-hormoner.",
-                fagfolk: "Secure alliance modificerer HPA-akse og oxytocin-systemer ved kronisk stress."
-            },
-            'traumer-relation': {
-                klient: "Stress-traumer kan kun heales i dyb sikkerhed. Vores relation er fundamentet.",
-                fagfolk: "Trauma-baseret stress kræver robust alliance før processing. Co-regulering absolut påkrævet."
-            }
-        }
-    },
-    traumer: {
-        name: "Traumer",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Nervesystemet efter Traume",
-                    text: "Traumer fryser nervesystemet i forsvarstilstande. Vi arbejder forsigtigt med at optø det frosne så systemet kan finde tilbage til naturlig fleksibilitet og sikkerhed."
-                },
-                fagfolk: {
-                    title: "ANS-regulering ved Traume",
-                    text: "Traumatisk materiale lagret som autonome forsvarstilstande (freeze, collapse, fight/flight). Terapeutisk fokus på titreret activation inden for window of tolerance for at facilitere completion af incomplete defensive responses."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal Forståelse af Traume",
-                    text: "Traumer sender systemet i rød nedluknings-zone eller gul alarm. Vi finder veje til gradvis at aktivere den grønne sikre zone som fundament for at traumet kan integreres."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori ved Traume",
-                    text: "Traumatisk immobilisering repræsenterer dorsal vagal dominans med sympatisk co-activation. Healing kræver først etablering af ventral vagal sikkerhed før traumemateriale kan aktiveres gennem oscillation mellem states."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytningstraumer",
-                    text: "Traumer i tidlige tilknytningsrelationer er de sværeste fordi de skete hvor du skulle være mest sikker. Vi arbejder med ekstra omsorg for at skabe ny sikkerhed."
-                },
-                fagfolk: {
-                    title: "Developmental Trauma",
-                    text: "Developmental trauma inden for attachment system skaber desorganiseret tilknytning og kompleks PTSD. Kræver langvarig etablering af therapeutic alliance før traumemateriale kan adresseres. Fokus på relationel sikkerhed som forudsætning."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Traumer i Kroppen",
-                    text: "Traumer sidder som frosne mønstre i kroppen - spændinger, følelsesløshed, fragmentering. Gennem meget forsigtigt kropsarbejde kan det frosne begynde at optø i eget tempo."
-                },
-                fagfolk: {
-                    title: "Somatic Experiencing",
-                    text: "Traumatisk materiale manifesteres som incomplete motoriske sekvenser, fasicial immobility, reduced interoception. Intervention gennem titreret proprioceptiv og interoceptiv activation faciliterer completion og restoration af embodied wholeness."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Traumets Biologi",
-                    text: "Traumer ændrer kroppens biologi dybtgående - hormoner, immunsystem, søvn. Ved at heale traumet normaliserer biologien sig gradvist og kroppen kan restituere."
-                },
-                fagfolk: {
-                    title: "Neurobiologi efter Traume",
-                    text: "PTSD modificerer permanent HPA-akse med fladt cortisol-døgnrytme, øget inflammatoriske cytokiner, altered hippocampal volume. Trauma-processing kan normalisere disse biomarkører gennem restoration af autonomic flexibility."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "At Heale Traumer",
-                    text: "Traumer heales ikke ved at tale om dem, men ved forsigtigt at fuldføre det der blev afbrudt. Vi arbejder med kroppen og nervesystemet for at integrere det splittet."
-                },
-                fagfolk: {
-                    title: "Traumebearbejdning",
-                    text: "Peter Levines Somatic Experiencing og van der Kolks forskning som fundament. Fokus på completion af incomplete defensive responses gennem titrering og pendulering. Dissociation kræver specifik opmærksomhed på window of tolerance."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Relationel Sikkerhed ved Traume",
-                    text: "At arbejde med traumer kræver dyb tillid. Vores relation bliver det sikre fundament hvorfra du kan se på det svære uden at blive overvældet."
-                },
-                fagfolk: {
-                    title: "Terapeutisk Alliance ved Traume",
-                    text: "Traumebehandling forudsætter robust therapeutic alliance og terapeutens egen autonome regulering. Uden relational safety risikeres re-traumatisering. Co-regulering er absolut forudsætning for sikker activation af traumatisk materiale."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Traumer fryser nervesystemet i rød eller gul. Polyvagal forståelse viser vejen til grøn sikkerhed først.",
-                fagfolk: "Traumatisk immobilisering er dorsal/sympatisk co-activation. Ventral vagal etablering er forudsætning for processing."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Tilknytningstraumer påvirker nervesystemet dybest fordi de skete hvor du skulle være sikrest.",
-                fagfolk: "Developmental trauma skaber komplekse autonome mønstre. Earned secure attachment gennem terapeutisk relation er central."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Traumer sidder frosset i nervesystem og krop. Forsigtigt kropsarbejde optør begge dele.",
-                fagfolk: "Traumatisk materiale manifesteres somatisk og autonomt. Titreret somatisk intervention faciliterer completion."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Traumer ændrer nervesystem og biologi. Ved at heale det ene, heales det andet.",
-                fagfolk: "PTSD modificerer både autonomt nervesystem og neurobiologi. Regulering normaliserer begge."
-            },
-            'nervesystem-traumer': {
-                klient: "At arbejde med traumer ER at arbejde med nervesystemet - de er ét og samme.",
-                fagfolk: "Traumatisk materiale ER autonome forsvarstilstande. Trauma-processing ER nervesystemsregulering."
-            },
-            'nervesystem-relation': {
-                klient: "Dit traumatiserede nervesystem lærer sikkerhed gennem vores trygge relation.",
-                fagfolk: "Co-regulering i robust alliance faciliterer sikker trauma-processing gennem autonome modifications."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Tilknytningstraumer skabte usikre polyvagale mønstre. Vi lærer systemet grøn sikkerhed.",
-                fagfolk: "Developmental trauma dysregulerer polyvagale responses. Earned secure attachment restaurerer fleksibilitet."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer grøn sikkerhed som fundament for at traumet kan integreres.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways nødvendige for sikker trauma-processing."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber den biologi der muliggør trauma-healing.",
-                fagfolk: "Ventral vagal aktivering optimerer neurobiologi for trauma-processing og integration."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i rød/gul. Grøn sikkerhed er nøglen til at låse det op.",
-                fagfolk: "Traumatisk immobilisering kræver ventral vagal etablering før materiale kan aktiveres sikkert."
-            },
-            'polyvagal-relation': {
-                klient: "Min grønne sikkerhed lærer dit traumatiserede system at det kan være sikkert.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og skaber sikker base for trauma-arbejde."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Tilknytningstraumer er embodied. Forsigtigt kropsarbejde integrerer det splittet.",
-                fagfolk: "Developmental trauma manifesteres somatisk. Titreret somatisk intervention faciliterer reconsolidation."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Tilknytningstraumer formede biologien. Healing af traumer normaliserer den.",
-                fagfolk: "Developmental trauma modificerer neurobiologi. Tilknytningsarbejde kan normalisere biologiske signatures."
-            },
-            'tilknytning-traumer': {
-                klient: "Traumer i tilknytning er de dybeste - både farligt og eneste sikkerhed på samme tid.",
-                fagfolk: "Developmental trauma resulterer i desorganiseret tilknytning med modsatrettede impulser. Ekstra forsigtighed påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores relation bliver det sikre sted hvor tilknytningstraumer kan heales.",
-                fagfolk: "Terapeutisk relation som korrigerende erfaring er central for developmental trauma healing."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen integrerer traumet, følger biologien med - hormoner normaliseres.",
-                fagfolk: "Somatisk trauma-processing påvirker neurobiologi og normaliserer HPA-akse dysregulation."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer sidder i kroppen som ufærdige forsvar. Kropsarbejde fuldfører dem.",
-                fagfolk: "Incomplete defensive responses manifesteres somatisk. Titreret intervention faciliterer completion."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring i vores relation lærer traumatiseret krop at verden kan være sikker.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety faciliterer somatisk trauma-integration."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ændrer biologien dybtgående. Healing normaliserer hormoner og immunsystem.",
-                fagfolk: "PTSD modificerer HPA-akse og inflammatoriske profiler. Trauma-processing normaliserer biomarkører."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er biologi-medicin der gør trauma-healing mulig.",
-                fagfolk: "Secure alliance modificerer neurobiologi og skaber optimal kontekst for trauma-processing."
-            },
-            'traumer-relation': {
-                klient: "Traumer kan kun heales i dyb sikkerhed. Vores relation ER healing.",
-                fagfolk: "Traumebehandling forudsætter robust alliance. Uden relational safety risikeres re-traumatisering."
-            }
-        }
-    },
-    sovn: {
-        name: "Søvn",
-        circles: {
-            nervesystem: {
-                klient: {
-                    title: "Søvn og Nervesystemet",
-                    text: "Søvn kræver at nervesystemet kan slippe kontrollen og falde til ro. Ved søvnproblemer lærer vi dit system at det er sikkert at slappe helt af og overlade sig til søvnen."
-                },
-                fagfolk: {
-                    title: "Søvnregulering via ANS",
-                    text: "Søvn kræver ventral vagal dominans og parasympatisk activation. Søvnforstyrrelser ofte resultat af manglende down-regulation capability. Intervention gennem vagal tone-opbygning og circadian rhythm restoration."
-                }
-            },
-            polyvagal: {
-                klient: {
-                    title: "Polyvagal og Søvn",
-                    text: "Søvn er kun mulig i den grønne sikre zone. Hvis dit system sidder fast i gul alarm kan du ikke sove. Vi finder veje til den dybe grønne ro som er forudsætning for søvn."
-                },
-                fagfolk: {
-                    title: "Polyvagal Teori og Søvn",
-                    text: "Søvn kræver ventral vagal sikkerhed. Insomni ofte udtryk for sympatisk hyperarousal eller dorsal shutdown uden ventral vagal adgang. Terapeutisk mål er etablering af polyvagal fleksibilitet for circadian oscillation."
-                }
-            },
-            tilknytning: {
-                klient: {
-                    title: "Tilknytning og Søvn",
-                    text: "Hvis du aldrig lærte at verden var sikker nok til at lukke øjnene i, har dit system svært ved at sove. Vi arbejder med at skabe den manglende grundsikkerhed."
-                },
-                fagfolk: {
-                    title: "Attachment og Søvnregulering",
-                    text: "Desorganiseret og unsikker tilknytning korrelerer med søvnforstyrrelser. Manglende early co-regulation af arousal påvirker søvnkapacitet livslangt. Earned secure attachment kan restaurere naturlig søvnregulering."
-                }
-            },
-            kropsterapi: {
-                klient: {
-                    title: "Kropslig Søvnforbedring",
-                    text: "Spændinger i kroppen holder dig vågen. Gennem behandling og særligt åndedrætsarbejde lærer kroppen at slippe og finde den dybe ro der inviterer søvn."
-                },
-                fagfolk: {
-                    title: "Somatisk Søvnintervention",
-                    text: "Muskulær hypertonus og fasicial restrictions inhiberer parasympatisk activation nødvendig for søvn. Fascial release og vagus-aktivering gennem diaphragmatisk åndedræt faciliterer transition til søvn-permissive state."
-                }
-            },
-            psykobiologi: {
-                klient: {
-                    title: "Søvnens Biologi",
-                    text: "Din søvn-væk rytme styres af hormoner og nervesystemet. Vi arbejder med at normalisere biologien så din naturlige døgnrytme kan genetableres."
-                },
-                fagfolk: {
-                    title: "Søvn-Neurobiologi",
-                    text: "Søvnforstyrrelser involverer dysreguleret HPA-akse med forhøjet natcortisol, reduceret melatonin, altered circadian rhythm. Autonomt nervesystem-regulering kan normalisere disse patterns gennem vagal tone restoration."
-                }
-            },
-            traumer: {
-                klient: {
-                    title: "Traumer og Søvn",
-                    text: "Traumer skaber hyper-vågenhed hvor systemet ikke tør slippe kontrollen nok til at sove. Ved at heale traumerne kan den naturlige søvnevne returnere."
-                },
-                fagfolk: {
-                    title: "Traumatisk Hypervigilance",
-                    text: "PTSD-relateret hypervigilance inhiberer søvn gennem persistent sympatisk activation. Traumebearbejdning reducerer baseline arousal og restaurerer capacity for circadian down-regulation nødvendig for søvn."
-                }
-            },
-            relation: {
-                klient: {
-                    title: "Tryg nok til at Sove",
-                    text: "Vores arbejde sammen skaber en dyb sikkerhed som dit system kan tage med sig. Når systemet lærer at verden er sikker nok, kommer søvnen naturligt."
-                },
-                fagfolk: {
-                    title: "Relationel Søvnregulering",
-                    text: "Terapeutisk co-regulation opbygger intern kapacitet til self-soothing nødvendig for søvn. Gentagen erfaring af ventral vagal sikkerhed i relation generaliserer til capacity for autonomous down-regulation ved sengetid."
-                }
-            }
-        },
-        connections: {
-            'nervesystem-polyvagal': {
-                klient: "Søvn kræver at nervesystemet er i grøn ro. Polyvagal forståelse viser vejen dertil.",
-                fagfolk: "Søvn kræver ventral vagal dominans. Polyvagal intervention faciliterer transition til søvn-permissive state."
-            },
-            'nervesystem-tilknytning': {
-                klient: "Søvnproblemer har ofte rod i utryg tilknytning uden co-regulering. Vi skaber den manglende sikkerhed.",
-                fagfolk: "Manglende early co-regulation af arousal påvirker søvn. Earned secure attachment restaurerer søvnregulering."
-            },
-            'nervesystem-kropsterapi': {
-                klient: "Kroppen kan ikke sove når den er anspændt. Kropsarbejde lærer den at slippe.",
-                fagfolk: "Somatisk hypertonus inhiberer søvn. Fascial release faciliterer parasympatisk activation nødvendig for søvn."
-            },
-            'nervesystem-psykobiologi': {
-                klient: "Når nervesystemet roer sig, normaliseres søvn-biologien - melatonin stiger, cortisol falder.",
-                fagfolk: "Nervesystemsregulering normaliserer circadian rhythm og søvn-relaterede hormoner."
-            },
-            'nervesystem-traumer': {
-                klient: "Traumer skaber vågenhed der forhindrer søvn. Healing af traumer genopretter søvnevne.",
-                fagfolk: "PTSD-relateret hypervigilance inhiberer søvn. Trauma-processing reducerer baseline arousal."
-            },
-            'nervesystem-relation': {
-                klient: "Dit nervesystem lærer dyb ro gennem vores relation - ro nok til søvn.",
-                fagfolk: "Terapeutisk co-regulation opbygger intern kapacitet til down-regulation nødvendig for søvn."
-            },
-            'polyvagal-tilknytning': {
-                klient: "Utryg tilknytning skabte et system der ikke kan slappe af til søvn. Vi lærer det sikkerhed.",
-                fagfolk: "Unsikker tilknytning korrelerer med søvnforstyrrelser. Earned secure attachment faciliterer søvn."
-            },
-            'polyvagal-kropsterapi': {
-                klient: "Kropsarbejde aktiverer den grønne ro der gør søvn mulig.",
-                fagfolk: "Somatisk intervention aktiverer ventral vagale pathways for søvn-transition."
-            },
-            'polyvagal-psykobiologi': {
-                klient: "Grøn sikker tilstand skaber den rette søvn-biologi - melatonin, lav cortisol.",
-                fagfolk: "Ventral vagal aktivering optimerer circadian hormoner og faciliterer søvn."
-            },
-            'polyvagal-traumer': {
-                klient: "Traumer fastlåste systemet i vågenhed. Grøn sikkerhed er vejen til søvn igen.",
-                fagfolk: "Traumatisk hyperarousal inhiberer ventral vagal access. Sikkerhed-etablering er forudsætning."
-            },
-            'polyvagal-relation': {
-                klient: "Min ro lærer dit system den dybe sikkerhed der muliggør søvn.",
-                fagfolk: "Terapeuts ventral vagale tilstand co-regulerer og lærer systemet down-regulation for søvn."
-            },
-            'tilknytning-kropsterapi': {
-                klient: "Manglende sikkerhed skabte en kropp der ikke kan slappe af til søvn. Kropsarbejde lærer ro.",
-                fagfolk: "Søvnproblemer er ofte embodied tilknytningsproblemer. Somatisk intervention modificerer mønstre."
-            },
-            'tilknytning-psykobiologi': {
-                klient: "Utryg tilknytning formede søvn-biologi. Ny sikkerhed normaliserer den.",
-                fagfolk: "Unsikker tilknytning præger HPA-akse og søvn-hormoner. Earned secure attachment modificerer biologi."
-            },
-            'tilknytning-traumer': {
-                klient: "Tilknytningstraumer skabte vågenhed og søvnløshed. Healing kræver dyb sikkerhed.",
-                fagfolk: "Developmental trauma resulterer i søvnforstyrrelser. Langsom relational safety-etablering påkrævet."
-            },
-            'tilknytning-relation': {
-                klient: "Vores trygge relation lærer dit system at det er sikkert nok til at sove.",
-                fagfolk: "Terapeutisk relation som sikker base faciliterer internalisering af self-soothing for søvn."
-            },
-            'kropsterapi-psykobiologi': {
-                klient: "Når kroppen lærer ro, følger søvn-biologien med - hormoner normaliseres.",
-                fagfolk: "Somatisk ro-aktivering påvirker HPA-akse og circadian hormoner for søvn."
-            },
-            'kropsterapi-traumer': {
-                klient: "Traumer holder kroppen vågen. Forsigtigt kropsarbejde frigiver den til søvn.",
-                fagfolk: "Traumatisk somatisk hyperarousal inhiberer søvn. Titreret intervention reducerer activation."
-            },
-            'kropsterapi-relation': {
-                klient: "Tryg berøring lærer kroppen at den kan slappe af nok til søvn.",
-                fagfolk: "Terapeutisk touch kombineret med relational safety faciliterer somatisk down-regulation."
-            },
-            'psykobiologi-traumer': {
-                klient: "Traumer ødelagde søvn-biologien. Healing normaliserer hormoner og søvnrytme.",
-                fagfolk: "PTSD modificerer circadian rhythm og HPA-akse. Trauma-processing kan normalisere søvn-biologi."
-            },
-            'psykobiologi-relation': {
-                klient: "Vores trygge relation er søvn-medicin - normaliserer hormoner og skaber ro.",
-                fagfolk: "Secure alliance modificerer HPA-akse og faciliterer biologisk grundlag for søvn."
-            },
-            'traumer-relation': {
-                klient: "Traumer kan kun heales i dyb sikkerhed - og så kommer søvnen tilbage.",
-                fagfolk: "Traumebehandling kræver robust alliance. Relational safety faciliterer resolution af hypervigilance."
-            }
-        }
-    }
-   
+    general: {
+    name: "Nervesystemsregulering",
+    circles: {
+        nervesystem: {
+            klient: {
+                title: "Nervesystemsregulering",
+                text: "Dit nervesystem styrer alt i din krop og dit sind - fra hvordan du sover og fordøjer mad, til hvordan du håndterer stress, mærker følelser og føler dig tilpas i din egen krop. Et nervesystem i god balance giver dig både en dyb indre ro og samtidig den nødvendige energi til at leve livet fuldt ud. Gennem vores arbejde sammen hjælper jeg dig med at forstå og aktivt regulere dit nervesystem, så du gradvist kan finde tilbage til en tilstand af naturlig balance, trivsel og velvære i hverdagen."
+            },
+            fagfolk: {
+                title: "Nervesystemsregulering - Klinisk Perspektiv",
+                text: "Polyvagal-informeret tilgang til autonomt nervesystem-regulering udgør det centrale fundament for både mental og fysisk sundhed i denne terapeutiske metode. Der arbejdes systematisk med ventral vagal aktivering, neuroception og co-regulering som primære interventionsstrategier. Tilgangen integrerer Stephen Porges' banebrydende forskning i praktisk terapeutisk anvendelse med særligt fokus på bottom-up processer. Metoden anerkender nervesystemets hierarkiske organisering og anvender denne forståelse til at skabe varige forandringer i klientens autonome reguleringskapacitet gennem relationelle og somatiske interventioner."
+            }
+        },
+        polyvagal: {
+            klient: {
+                title: "Polyvagal Teori",
+                text: "Dit nervesystem har tre fundamentalt forskellige tilstande som konstant skifter: Sikkerhed og forbindelse, som vi kalder den grønne tilstand, alarm og mobilisering som er den gule tilstand, og nedlukning som er den røde tilstand. Når du lærer at genkende hvilken tilstand du befinder dig i lige nu, kan du aktivt begynde at regulere dig selv tilbage til den grønne sikre tilstand. Det er netop i denne trygge tilstand at ægte healing, vækst og personlig trivsel kan finde sted i dit liv."
+            },
+            fagfolk: {
+                title: "Polyvagal Teori - Klinisk Anvendelse",
+                text: "Stephen Porges' hierarkiske model af det autonome nervesystem beskriver tre distinkte tilstande: ventral vagal komplekset som understøtter social engagement, det sympatiske system der muliggør mobilisering, og dorsal vagal komplekset der medierer immobilisering. Neuroception fungerer som central underbevidst mekanisme for autonome shifts mellem disse tilstande. Det terapeutiske fokus rettes mod opbygning af ventral vagal tone som afgørende forudsætning for effektiv regulering, healing og udvidelse af klientens kapacitet til at navigere mellem autonome tilstande med fleksibilitet."
+            }
+        },
+        tilknytning: {
+            klient: {
+                title: "Tilknytningsmønstre",
+                text: "Måden du knytter dig til andre mennesker på blev grundlagt meget tidligt i dit liv, allerede fra de første levemåneder. De fire tilknytningsmønstre - tryg, undvigende, ambivalent og desorganiseret - påvirker dybt hvordan du fungerer i relationer og hvordan du forholder dig til dig selv. At forstå dit eget mønster er det vigtige første skridt på vejen til at skabe nye og sundere måder at være sammen med andre på. Forandring er mulig, og nye erfaringer kan omforme gamle mønstre."
+            },
+            fagfolk: {
+                title: "Tilknytningsmønstre - Teoretisk Ramme",
+                text: "Bowlby og Ainsworths tilknytningstypologi identificerer fire primære mønstre: sikker, undvigende, ambivalent og desorganiseret tilknytning. Indre arbejdsmodeller fungerer som implicitte relationelle skemaer der organiserer interpersonel adfærd og affektregulering. Earned secure attachment opnås gennem den terapeutiske relation som korrigerende erfaring. Der lægges særligt fokus på hvordan tidlige tilknytningsmønstre manifesterer sig direkte i autonome nervesystem-responser, påvirker affektregulering og former klientens kapacitet for interpersonel nærvær og emotionel tolerance i voksenlivet."
+            }
+        },
+        kropsterapi: {
+            klient: {
+                title: "Kropsterapi & Behandling",
+                text: "Din krop husker alt hvad du har oplevet - både de gode og de svære erfaringer lagres som mønstre i kroppen. Gennem blid og respektfuld behandling på briks, målrettet arbejde med åndedræt og fascia, hjælper jeg din krop med gradvist at slippe gamle mønstre og dybtliggende spændinger. Kroppen besidder en iboende visdom om hvordan den skal hele sig selv. Den har bare brug for de rette betingelser, tilstrækkelig tryghed og den nødvendige tid til at processen kan udfolde sig naturligt og i dit eget tempo."
+            },
+            fagfolk: {
+                title: "Kropsterapi - Somatisk Tilgang",
+                text: "Afspændingspædagogisk behandling på briks kombineres med fascial release teknikker og struktureret åndedrætsarbejde. Tilgangen integrerer principper fra sensorimotorisk psykoterapi og somatic experiencing i en sammenhængende behandlingsramme. Bottom-up regulering opnås gennem direkte kropslig intervention der adresserer somatiske manifestationer af dysregulering. Der arbejdes med fokus på udvikling af proprioceptiv og interoceptiv awareness som primær vej til autonomt nervesystem-regulering, hvilket giver klienten varige redskaber til selvregulering gennem kropslig bevidsthed og sensorisk integration."
+            }
+        },
+        psykobiologi: {
+            klient: {
+                title: "Psykobiologi",
+                text: "Dine følelser, tanker og personlige oplevelser er dybt og uløseligt forbundet med din krops biologi - med hormoner, neurotransmittere og nervesystemets aktuelle tilstand. Disse systemer arbejder sammen hele tiden og påvirker hinanden konstant. Når biologien kommer i bedre balance, bliver det naturligt lettere at tænke klart, føle stabilt og handle fornuftigt i hverdagens mange situationer. I vores arbejde sammen adresserer jeg både den psykologiske og den biologiske dimension, fordi ægte og varig forandring kræver at begge sider integreres i behandlingen."
+            },
+            fagfolk: {
+                title: "Psykobiologi - Neurobiologisk Integration",
+                text: "Integrativ forståelse af HPA-aksens funktion, neurotransmitter-systemer herunder serotonin, dopamin og GABA, samt hormonelle processer som cortisol og oxytocin, analyseres i direkte relation til psykisk regulering og emotionel stabilitet. Det autonome nervesystem fungerer som central moderator der forbinder disse biologiske systemer med psykologisk funktion. En evidensbaseret tilgang anvendes til at forstå og klinisk udnytte hvordan målrettede kropslige interventioner kan påvirke og optimere neurobiologiske systemer, hvilket skaber fundamentet for varig terapeutisk forandring."
+            }
+        },
+        traumer: {
+            klient: {
+                title: "Traumer & Dissociation",
+                text: "Traumer sidder fast i nervesystemet som kropslige mønstre, ikke kun i dine bevidste minder og erindringer. Når noget overvældende sker, kan dele af dig automatisk koble fra - det kaldes dissociation - som en beskyttelsesmekanisme der holder dig i live. Denne frakoblings evne var nødvendig dengang, men kan blive et problem i dag. Jeg hjælper dig med forsigtigt og i dit eget tempo at integrere det frakoblede materiale, så du igen kan føle dig hel, tilstede og forbundet med dig selv og dit liv."
+            },
+            fagfolk: {
+                title: "Traumer & Dissociation - Traumebearbejdning",
+                text: "Peter Levines Somatic Experiencing og Bessel van der Kolks banebrydende traumeforskning danner det teoretiske fundament for denne tilgang. Fokus rettes mod incomplete defensive responses og fryseresponser der forbliver lagret som aktiverede mønstre i nervesystemet. Behandlingen anvender gradvis titrering og pendulering mellem activation og ro for at undgå overvældelse. Dissociation forstås som en adaptiv overlevelsesmekanisme der kræver specifik terapeutisk opmærksomhed på klientens window of tolerance og kapacitet for interoceptiv kontakt med kropslige fornemmelser."
+            }
+        },
+        relation: {
+            klient: {
+                title: "Terapeutisk Relation",
+                text: "Healing sker først og fremmest i relationer, ikke i isolation fra andre mennesker. I vores terapeutiske arbejde sammen skaber vi et trygt og nærende rum hvor dit nervesystem kan slappe af og åbne sig. Min rolige tilstedeværelse og stabile regulering hjælper aktivt dit nervesystem med gradvist at finde sin egen indre ro og balance. Den terapeutiske relation er ikke bare en ydre ramme for behandlingen - den er i sig selv den vigtigste medicin og det mest kraftfulde redskab til varig forandring og personlig heling."
+            },
+            fagfolk: {
+                title: "Terapeutisk Relation - Neurobiologisk Grundlag",
+                text: "Relationel neurobiologi udgør den overordnede teoretiske ramme for forståelsen af terapeutisk forandring. Co-regulering faciliteres gennem terapeutens stabile ventral vagale tilstand som aktivt påvirker klientens autonome system. Mirror neurons og interbrain synchrony fungerer som de underliggende fysiologiske mekanismer for denne interpersonelle resonans. Earned secure attachment udvikles gennem gentagne korrigerende emotionelle erfaringer i den terapeutiske relation. Den terapeutiske alliance betragtes som den afgørende forudsætning for effektivt autonomt nervesystem-arbejde og varig neurobiologisk forandring hos klienten."
+            }
+        }
+    },
+    connections: {
+        'nervesystem-polyvagal': {
+            klient: "Nervesystemsregulering bygger direkte på den polyvagale teori som sit videnskabelige fundament. Når du forstår dine tre grundlæggende nervesystem-tilstande - sikkerhed, alarm og nedlukning - får du et konkret kort over din indre verden. Med denne forståelse kan du lære at genkende hvor du befinder dig, og aktivt regulere dig selv tilbage til den grønne sikre tilstand. Denne viden gør regulering til noget håndgribeligt og praktisk, frem for noget abstrakt og uforståeligt, og giver dig redskaber til daglig selvregulering.",
+            fagfolk: "Polyvagal teori udgør det centrale teoretiske fundament for al nervesystemsregulering i denne tilgang. Den hierarkiske forståelse af autonome tilstande - ventral vagal, sympatisk og dorsal vagal - danner basis for systematisk terapeutisk intervention. Klinisk anvendelse fokuserer på at facilitere ventral vagal aktivering som primær reguleringsmekanisme. Forståelsen af neuroception som underbevidst sikkerhedsvurdering informerer den terapeutiske tilrettelæggelse og hjælper terapeuten med at skabe optimale betingelser for klientens autonome regulering og udvidelse af tolerancevinduet."
+        },
+        'nervesystem-tilknytning': {
+            klient: "Dit tidlige tilknytningsmønster har dybt formet hvordan dit nervesystem automatisk reagerer i relationer med andre mennesker. Hvis du voksede op med utryghed, kan dit nervesystem stadig reagere med alarm eller nedlukning i nære relationer. Ved at arbejde direkte med nervesystemets regulering kan vi hjælpe med at ændre disse gamle automatiske tilknytningsmønstre. Gennem nye gentagede oplevelser af sikkerhed og tryghed i den terapeutiske relation kan nervesystemet lære nye og sundere måder at være i kontakt med andre mennesker.",
+            fagfolk: "Tilknytningsmønstre manifesterer sig primært som karakteristiske autonome nervesystem-mønstre der aktiveres i relationelle kontekster. Unsikker tilknytning korrelerer med specifik autonom dysregulering, herunder sympatisk hyperaktivering ved ambivalent tilknytning og dorsal shutdown ved undvigende mønstre. Nervesystemsregulering faciliterer processen mod earned secure attachment gennem somatisk korrigering af dybtliggende implicitte relationelle skemaer. Denne tilgang adresserer tilknytningsmønstre på det fysiologiske niveau hvor de oprindeligt blev encodet, hvilket muliggør mere fundamental forandring end kognitive interventioner."
+        },
+        'nervesystem-kropsterapi': {
+            klient: "Kroppen og nervesystemet udgør en uadskillelig helhed - du kan simpelthen ikke regulere nervesystemet uden aktivt at involvere kroppen i processen. Behandling på briks, bevidst åndedrætsarbejde og målrettet bevægelse er konkrete og effektive måder at hjælpe nervesystemet tilbage i balance. Gennem kroppen får du direkte adgang til at påvirke dit nervesystems tilstand, ofte hurtigere og mere effektivt end gennem samtale alene. Kroppen er den mest direkte vej til at skabe varige forandringer i nervesystemets grundlæggende reguleringsmønstre og kapacitet.",
+            fagfolk: "Somatisk intervention udgør direkte nervesystemsregulering gennem kropslig adgang til det autonome system. Bottom-up processer gennem fascial work, åndedrætsinterventioner og behandling på briks modulerer vagal tone og autonome tilstande betydeligt mere effektivt end top-down kognitive interventioner anvendt isoleret. Kropslig intervention adresserer autonome mønstre på det fysiologiske niveau hvor dysregulering er encodet. Denne tilgang er særligt effektiv fordi somatiske interventioner kan nå subsymboliske niveauer af nervesystem-regulering der ikke er tilgængelige gennem verbal bearbejdning alene."
+        },
+        'nervesystem-psykobiologi': {
+            klient: "Når dit nervesystem gradvist kommer i bedre balance, følger hormonerne og neurotransmitterne naturligt med i den positive retning. Bedre og dybere søvn, mere effektiv fordøjelse, stabilere humør og øget energi er alle direkte og mærkbare resultater af et mere reguleret nervesystem. Din krop fungerer som et sammenhængende system hvor nervesystemet spiller rollen som dirigent. Når dirigenten finder sin rytme, begynder hele orkestret at spille harmonisk sammen, og du mærker forbedringen på mange forskellige niveauer i din dagligdag.",
+            fagfolk: "Det autonome nervesystem fungerer som master regulator for HPA-aksens aktivitet og de centrale neurotransmitter-systemer. Ventral vagal aktivering faciliterer direkte hormonel balance gennem cortisol-reduktion og øget oxytocin-frigivelse, samt understøtter optimal neurotransmitter-funktion. Denne kaskadeeffekt forklarer hvorfor nervesystemsregulering har vidtrækkende psykobiologiske konsekvenser. Klinisk betyder dette at interventioner rettet mod autonom regulering samtidigt adresserer multiple biologiske systemer, hvilket giver en mere omfattende terapeutisk effekt end isolerede farmakologiske interventioner der kun målretter enkelte neurotransmitter-pathways."
+        },
+        'nervesystem-traumer': {
+            klient: "Traumer sidder fast som frosne og fastlåste tilstande dybt i dit nervesystem. Kroppen holder stadig på den energi der aldrig blev udløst under den oprindelige overvældende oplevelse. Ved at arbejde forsigtigt, gradvist og respektfuldt med nervesystemets naturlige reguleringsmekanismer kan det traumatiske materiale langsomt integreres uden at overvælde dig. Processen handler om at skabe tilstrækkelig sikkerhed til at nervesystemet tør åbne op for det frosne. Tempoet er afgørende - vi arbejder altid i det tempo der føles trygt og håndterbart for dig.",
+            fagfolk: "Traumatisk materiale er primært lagret som autonome forsvarstilstande, herunder freeze og collapse responser der repræsenterer ufuldstændige defensive handlinger. Nervesystemsregulering gennem kontrolleret titrering og systematisk pendulering mellem activation og ro faciliterer completion af incomplete defensive responses uden risiko for re-traumatisering. Denne proces respekterer nervesystemets hierarkiske organisering og arbejder inden for klientens aktuelle window of tolerance. Terapeutisk succes afhænger af præcis dosering af traumatisk activation kombineret med tilstrækkelig ventral vagal ressource til at integrere materialet."
+        },
+        'nervesystem-relation': {
+            klient: "Dit nervesystem lærer regulering primært gennem relationer med andre regulerede nervesystemer. I den terapeutiske proces låner dit nervesystem ro og stabilitet fra mit, indtil det selv gradvist udvikler kapaciteten til at finde og fastholde sin egen indre ro. Denne proces kaldes co-regulering og er en helt grundlæggende biologisk mekanisme. Ligesom et barn lærer at regulere sig selv gennem kontakt med en rolig forælder, kan voksne også lære ny regulering gennem en tryg og stabil terapeutisk relation med en reguleret terapeut.",
+            fagfolk: "Den terapeutiske relation udgør den primære vej til effektiv nervesystemsregulering i denne behandlingsmodel. Terapeutens stabile ventral vagale tilstand co-regulerer aktivt klientens autonome system gennem interpersonal neurobiological synchrony og direkte activation af social engagement-systemet. Denne mekanisme er understøttet af forskning i interbrain coupling og fysiologisk synkronisering mellem terapeut og klient. Terapeutens egen autonome reguleringskapacitet er derfor afgørende for behandlingseffekt, hvilket understreger vigtigheden af terapeutens personlige reguleringsarbejde og supervision med fokus på somatisk selvbevidsthed."
+        },
+        'polyvagal-tilknytning': {
+            klient: "Hvert tilknytningsmønster har sin helt egen karakteristiske nervesystem-signatur som kan genkendes i kroppen. Tryg tilknytning lever naturligt i den grønne sikre tilstand med fleksibel regulering, mens utryg tilknytning ofte sidder fast i enten alarm eller nedlukning. Når du forstår denne sammenhæng, giver dine reaktioner i relationer pludselig mening på en helt ny og befriende måde. Dit nervesystems automatiske reaktioner er ikke tilfældige - de afspejler præcist det tilknytningsmønster du udviklede tidligt i livet.",
+            fagfolk: "Tilknytningsmønstre er embodied som specifikke og genkendelige autonome profiler der aktiveres i relationelle kontekster. Sikker tilknytning korrelerer konsistent med ventral vagal fleksibilitet og bred autonom variabilitet, mens unsikre mønstre typisk viser enten rigid sympatisk hyperarousal ved ambivalent tilknytning eller dominerende dorsal hypoarousal ved undvigende tilknytning. Desorganiseret tilknytning viser karakteristisk oscillation mellem modstridende autonome tilstande. Denne polyvagale forståelse af tilknytningstypologi informerer den kliniske vurdering og muliggør målrettede interventioner baseret på klientens specifikke autonome profil."
+        },
+        'polyvagal-kropsterapi': {
+            klient: "Når din krop behandles med ægte nærvær, omsorg og respekt, sender det kraftige sikkerhedssignaler direkte til dit nervesystem. Blid og opmærksom berøring sammen med roligt åndedrætsarbejde aktiverer den grønne sikre tilstand i din krop. Dit nervesystem aflæser konstant om omgivelserne er sikre, og terapeutisk berøring givet med den rette kvalitet kommunikerer dyb sikkerhed. Denne form for kropsarbejde er derfor ikke kun fysisk behandling men en direkte samtale med dit nervesystem på det sprog det forstår allerbedst.",
+            fagfolk: "Somatisk intervention via kvalificeret berøring og struktureret åndedrætsarbejde aktiverer ventral vagale pathways gennem stimulering af C-fibre afferenter, som medierer affektiv touch, samt gennem modulering af respiratorisk sinus arrhythmia. Denne tilgang muliggør direkte bottom-up modulering af polyvagal tone uden krav om kognitiv bearbejdning. Fascial release teknikker påvirker desuden interoceptive afferenter der signalerer til nucleus tractus solitarius og dermed direkte modulerer autonom balance. Kombinationen af berøring og åndedræt skaber synergistisk effekt på ventral vagal kapacitet."
+        },
+        'polyvagal-psykobiologi': {
+            klient: "Når du befinder dig i den grønne sikre tilstand, fungerer hele din biologi optimalt - du oplever god og dyb søvn, et stærkt og aktivt immunforsvar, samt effektiv og behagelig fordøjelse. Din krop producerer de rigtige hormoner i den rette mængde og dine neurotransmittere er i balance. Når du derimod er fanget i alarm eller nedlukning, går alle disse biologiske systemer i ubalance. Dit nervesystems tilstand er altså direkte afgørende for hele din krops biologiske funktion og dit overordnede helbred.",
+            fagfolk: "Ventral vagal tilstand optimerer alle centrale fysiologiske systemer simultant: HPA-akse regulering normaliseres med passende cortisol diurnale rytmer, immunfunktion styrkes, og fordøjelsesprocesser effektiviseres. Sympatisk eller dorsal vagal dominans dysregulerer derimod hormoner, øger inflammatoriske markører og forstyrrer metaboliske processer. Denne polyvagale forståelse af psykobiologisk funktion forklarer den udbredte komorbiditet mellem autonom dysregulering og somatiske symptomer. Klinisk understreger det vigtigheden af at adressere det autonome nervesystems tilstand som primær intervention for at opnå bred psykobiologisk forbedring."
+        },
+        'polyvagal-traumer': {
+            klient: "Traumer fryser nervesystemet fast i enten alarm eller nedlukning, ofte i en kombination af begge tilstande samtidig. At finde gradvist tilbage til den grønne sikre tilstand er det afgørende første skridt i al traumehealing. Først når nervesystemet oplever tilstrækkelig sikkerhed, kan det frosne traumatiske materiale langsomt begynde at tø op og blive bearbejdet. Uden denne grundlæggende sikkerhed vil kroppen forståeligt nok holde fast i sine forsvarsmekanismer, fordi den stadig oplever verden som farlig og uforudsigelig.",
+            fagfolk: "Traumatisk immobilisering repræsenterer dorsal vagal dominans ofte med simultant sympatisk co-activation, hvilket skaber den karakteristiske freeze respons med høj intern arousal kombineret med ydre immobilitet. Healing kræver først systematisk etablering af ventral vagal sikkerhed som stabil ressource, før traumatisk materiale kan tilgås og integreres sikkert. Processen involverer kontrolleret oscillation mellem traumatisk activation og ventral vagal ro, kaldet pendulering. Terapeutens evne til at monitorere klientens autonome tilstand og dosere activation præcist er afgørende for vellykket traumebehandling."
+        },
+        'polyvagal-relation': {
+            klient: "Du kan instinktivt mærke når et andet menneske befinder sig i en sikker og rolig tilstand - den tryghed smitter direkte over på dit eget nervesystem. I den terapeutiske proces bruger vi denne naturlige smitteeffekt helt bevidst og målrettet, så dit nervesystem lærer at genkende og fastholde sikkerhed gennem mit stabile nærvær. Din krop aflæser ubevidst min stemme, mit ansigtsudtryk og min kropsholdning, og når disse signaler kommunikerer ro og tryghed, begynder dit eget nervesystem automatisk at regulere sig i samme retning.",
+            fagfolk: "Social engagement systemet, medieret af ventral vagal komplekset, faciliterer co-regulering gennem prosodiske kvaliteter i stemmen, ansigtsudtryk og kropsholdning. Terapeutens autonome tilstand påvirker direkte klientens fysiologiske regulering gennem mirror neuron systemer og interbrain synchronization. Denne mekanisme opererer primært på subkortikalt niveau og kræver ikke bevidst kognitiv bearbejdning. Forskning i interpersonel neurobiologi dokumenterer at fysiologisk synkronisering mellem terapeut og klient er en pålidelig prædiktor for terapeutisk outcome, hvilket understreger den relationelle dimensions fundamentale betydning."
+        },
+        'tilknytning-kropsterapi': {
+            klient: "Dine tilknytningsmønstre sidder dybt forankret i kroppen - i måden du ubevidst holder vejret, spænder bestemte muskelgrupper eller lukker følelsesmæssigt ned. Disse kropslige mønstre blev skabt i dine tidligste relationer og gentager sig automatisk. Kropsarbejde kan ændre og omforme disse dybtliggende mønstre ofte mere effektivt end samtale og ord alene, fordi det adresserer mønstrene direkte der hvor de sidder. Gennem kroppen kan vi nå lag af erfaring som den bevidste hukommelse ikke har adgang til men som stadig påvirker dit liv.",
+            fagfolk: "Tilknytningsmønstre manifesterer sig somatisk som karakteristiske mønstre i åndedræt, muskeltonus og fascial densitet der afspejler det specifikke tilknytningsmønsters autonome profil. Somatisk intervention bypasser effektivt verbale forsvarsmekanismer og intellektualisering, og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv og interoceptiv re-patterning. Denne bottom-up tilgang adresserer tilknytningsmønstre på det subsymboliske niveau hvor de oprindeligt blev encodet i den præverbale periode. Kropslig intervention er derfor særligt velegnet til arbejde med tidlige tilknytningsmønstre der ikke er tilgængelige for narrativ bearbejdning."
+        },
+        'tilknytning-psykobiologi': {
+            klient: "Dit tidlige tilknytningsmønster har konkret formet din biologi helt ned på celleniveau - det påvirker hvordan din krop producerer stresshormoner, og hvor følsom du er for oxytocin, det såkaldte kærlighedshormon. Disse biologiske mønstre blev grundlagt i dine allerførste leveår. Men her er den gode nyhed: biologien kan omformes og justeres gennem nye korrigerende erfaringer. Når du oplever tryg tilknytning i den terapeutiske relation, begynder din krop gradvist at ændre sine hormonelle og neurobiologiske reaktionsmønstre i en sundere og mere fleksibel retning.",
+            fagfolk: "Tidlig tilknytning former fundamentalt HPA-akse responsmønstre og oxytocin-receptor sensitivitet med vidtrækkende konsekvenser for livslang stressregulering. Unsikker tilknytning korrelerer konsistent med dysregulerede cortisol diurnale rytmer og signifikant reduceret oxytocin-respons ved social kontakt. Desorganiseret tilknytning viser den mest udtalte neurobiologiske dysregulering med aberrant HPA-akse funktion. Earned secure attachment kan modificere disse tidligt etablerede biologiske mønstre gennem gentagen korrigerende interpersonel erfaring, hvilket demonstrerer neuroplasticitetens potentiale selv for dybt encodede psykobiologiske tilknytningsmønstre."
+        },
+        'tilknytning-traumer': {
+            klient: "Traumer der opstår i tidlige tilknytningsrelationer skaber ofte det mest komplekse mønster kaldet desorganiseret tilknytning. Her bliver relationer på paradoksal vis både kilden til fare og det eneste sted du kan søge tryghed. Barnet kan ikke flygte fra den person det er afhængigt af. Denne indre konflikt kræver særlig forsigtighed og tålmodighed i det terapeutiske arbejde, fordi nærhed både er det der heler og det der aktiverer frygten. Tempoet må være langsomt og respektfuldt for at undgå overvældelse.",
+            fagfolk: "Developmental trauma inden for tilknytningssystemet resulterer ofte i desorganiseret tilknytning karakteriseret ved simultant activation af attachment og defense systems, hvilket skaber fundamentalt modstridende autonome impulser. Denne tilstand repræsenterer en særlig klinisk udfordring, da den terapeutiske relation selv kan aktivere traumatiske mønstre. Behandlingen kræver specifik opmærksomhed på terapeutens egen autonome regulering og kapacitet for affektiv tolerance, samt langsom og systematisk etablering af relational safety. Terapeutisk arbejde med desorganiseret tilknytning forudsætter udvidet tidshorisont og konsistent terapeutisk tilgængelighed."
+        },
+        'tilknytning-relation': {
+            klient: "Den terapeutiske relation kan blive det helt særlige sted hvor du for første gang i dit liv erfarer hvad tryg tilknytning virkelig føles som, eller genoplever en tryghed du måske kun har haft glimt af tidligere. Gennem vores vedvarende og stabile relation begynder dine indre modeller af hvad relationer kan være gradvist at blive omskrevet. Du opdager at nærhed ikke behøver at være farligt, at dine behov er gyldige, og at et andet menneske kan være til stede for dig på en pålidelig og konsistent måde.",
+            fagfolk: "Earned secure attachment udvikles gennem den terapeutiske relation som gentagen korrigerende emotionel erfaring over tid. Terapeutens konsistente tilgængelighed, præcise affektive afstemning og robuste autonome regulering modificerer gradvist klientens indre arbejdsmodeller. Denne process faciliterer et fundamentalt shift fra unsikre til sikre tilknytningsmønstre gennem det der betegnes relational reconsolidation. Forskning dokumenterer at terapeutisk opnået tryg tilknytning viser sammenlignelige neurobiologiske karakteristika med oprindelig sikker tilknytning, herunder normaliseret oxytocin-respons og forbedret HPA-akse regulering."
+        },
+        'kropsterapi-psykobiologi': {
+            klient: "Kroppen og din biologi taler præcis det samme sprog og påvirker hinanden direkte og umiddelbart. Når du arbejder målrettet med åndedræt og fascia i den terapeutiske behandling, påvirker du direkte produktionen af hormoner og neurotransmittere i hele din krop. Kroppen er den mest effektive indgang til at ændre den indre kemi på en naturlig og holdbar måde. Dybe vejrtrækninger aktiverer eksempelvis vagusnerven, som sænker stresshormonet cortisol og øger produktionen af beroligende neurotransmittere, hvilket du kan mærke som øget ro og klarhed.",
+            fagfolk: "Fascial release og struktureret åndedrætsarbejde påvirker direkte vagal afferent signalering fra periferien til hjernestammen, hvilket modulerer aktiviteten i brainstem nuclei og dermed neurotransmitter-frigivelse til højere hjernecentre. Mekanisk stimulation af fascia påvirker interoceptive processing pathways og autonome outputs gennem ændringer i vævsspænding og proprioceptiv input. Denne bottom-up mekanisme forklarer den klinisk observerede effekt af kropslige interventioner på stemningsleje, angst og kognition. Forskning i fascial neurobiologi dokumenterer den tætte innervation af fasciale strukturer og deres betydning for autonom regulering."
+        },
+        'kropsterapi-traumer': {
+            klient: "Traumer sidder lagret i din krop som kroniske spændinger, begrænset og overfladisk åndedræt, områder af følelsesløshed og nedsat kropslig fornemmelse. Disse kropslige mønstre er dit nervesystems måde at holde det overvældende materiale på afstand. Gennem forsigtigt og respektfuldt kropsarbejde i et trygt tempo kan det frosne traumatiske materiale langsomt begynde at tø op. Kroppen begynder at huske hvordan det føles at være hel, levende og tilstede. Processen kræver tålmodighed, men kroppen har en bemærkelsesværdig evne til at hele sig selv.",
+            fagfolk: "Somatic experiencing principper danner grundlag for kropslig traumebehandling: traumer manifesterer sig som incomplete motoriske sekvenser og karakteristiske fasciale restrictions der repræsenterer fastfrosne defensive responser. Behandling faciliterer completion af disse ufuldstændige forsvarshandlinger gennem titreret proprioceptiv og interoceptiv activation der gradvist mobiliserer det immobiliserede materiale. Processen resolverer defensive immobilization states gennem kontrolleret gradvis mobilisering indenfor klientens tolerancevindue. Terapeuten monitorerer løbende autonome markører for at sikre at activation forbliver indenfor et integrerbart niveau."
+        },
+        'kropsterapi-relation': {
+            klient: "At blive behandlet med ægte respekt, varme og fuldt nærvær lærer din krop på et dybt niveau at relationer faktisk kan være sikre og nærende. Terapeutisk berøring er ikke bare en fysisk intervention der løsner spændinger - det er samtidig en kraftfuld form for relationel healing. Hver gang du modtager opmærksom og respektfuld berøring, får dit nervesystem en ny erfaring af at en anden persons nærhed kan føles tryg og godt. Denne dobbelte virkning gør kropslig behandling til et særligt effektivt redskab i den terapeutiske proces.",
+            fagfolk: "Terapeutisk touch fungerer som en integreret relationel intervention der simultant adresserer somatiske og relationelle dimensioner af dysregulering. Affektiv C-fibre stimulation gennem kvalificeret berøring kombineret med terapeutens ventral vagale tilstedeværelse faciliterer simultant somatisk og relationel reconsolidation af tidlige erfaringer. Embodied co-regulering gennem hands-on work skaber en unik terapeutisk kontekst hvor kropslig intervention og relationel reparation sker parallelt. Denne integration af somatisk og relationel dimension gør kropslig behandling særligt effektiv ved tilknytningsrelateret problematik og developmental trauma."
+        },
+        'psykobiologi-traumer': {
+            klient: "Traumer ændrer konkret din biologi på dybtgående vis - din krop begynder at producere mere stresshormon og mindre af de hormoner der skaber glæde, ro og forbindelse. Din biologiske baseline forskydes i retning af konstant alarmberedskab. Men denne biologiske forandring er ikke permanent eller irreversibel. Biologien kan gradvist normaliseres igen når traumerne forsigtigt bearbejdes og nervesystemet finder tilbage til en mere reguleret og fleksibel tilstand. Kroppen har en iboende kapacitet til at genoprette balance, når de rette betingelser skabes.",
+            fagfolk: "PTSD og developmental trauma modificerer HPA-akse reactivity, cortisol diurnale rytmer og inflammatoriske profiler på måder der kan vedvare i årtier uden intervention. Kronisk traumerelateret dysregulering resulterer i forhøjede pro-inflammatoriske markører, dysreguleret cortisol awakening response og reduceret vagal tone. Traumebehandling gennem målrettet nervesystemsregulering kan normalisere disse biologiske markører gennem systematisk restoration af autonomic flexibility. Forskning dokumenterer at vellykket traumebehandling korrelerer med målbare forbedringer i neuroendokrine og inflammatoriske biomarkører, hvilket validerer den psykobiologiske tilgang til traumeterapi."
+        },
+        'psykobiologi-relation': {
+            klient: "Gode og trygge relationer fungerer som ægte biologisk medicin for din krop - de øger produktionen af oxytocin, sænker niveauet af stresshormonet cortisol og styrker dit immunforsvar mærkbart. Den terapeutiske relation har en direkte og målbar biologisk effekt på din krop, ikke kun på dine tanker og følelser. Hver gang du oplever ægte forbindelse og tryghed i vores terapeutiske rum, responderer din biologi positivt. Relationen er derfor ikke blot en psykologisk intervention men en reel biologisk behandling der påvirker din krop på celleniveau.",
+            fagfolk: "En sikker terapeutisk relation øger dokumenteret endogent oxytocin, reducerer cortisol og pro-inflammatoriske cytokiner som IL-6 og TNF-alpha. Social connection aktiverer dopaminerge belønningssystemer og bufferer HPA-akse respons ved stresseksponering. Relationel intervention er dermed direkte biologisk intervention med målbare effekter på neuroendokrine og immunologiske parametre. Forskning i social neurobiologi dokumenterer at kvaliteten af den terapeutiske alliance korrelerer signifikant med biologiske outcome-markører, hvilket understreger at relationel kvalitet ikke blot er en nonspecifik faktor men en aktiv behandlingsmekanisme."
+        },
+        'traumer-relation': {
+            klient: "At arbejde med traumer kræver en dyb og solid oplevelse af sikkerhed i den terapeutiske relation som det absolutte fundament. Uden dette trygge relationelle grundlag vil al traumebearbejdning uundgåeligt føles overvældende og potentielt retraumatiserende. Relationen kommer altid først, og traumearbejdet følger naturligt bagefter, når fundamentet er tilstrækkeligt stærkt og stabilt. Det kan tage tid at opbygge denne dybe tillid, og den tid er aldrig spildt. Jo stærkere det relationelle fundament er, desto mere effektivt og sikkert kan det efterfølgende traumearbejde foregå.",
+            fagfolk: "Effektiv traumebehandling forudsætter en veletableret therapeutic alliance og terapeutens robuste og stabile autonome regulering som ufravigelig forudsætning. Uden tilstrækkelig relational safety risikeres re-traumatisering gennem ureguleret overwhelm og destabilisering af klientens autonome system. Co-regulering gennem terapeutens ventral vagale stabilitet er den afgørende forudsætning for sikker activation og integration af traumatisk materiale. Forskning i traumebehandling dokumenterer konsistent at kvaliteten af den terapeutiske alliance er den stærkeste prædiktor for behandlingsoutcome, vigtigere end den specifikke terapeutiske metode der anvendes."
+        }
+    }
+},
+    angst: {
+    name: "Angst",
+    circles: {
+        nervesystem: {
+            klient: {
+                title: "Nervesystemsregulering ved Angst",
+                text: "Angst er nervesystemets alarmklokke der ringer uden pause, dag og nat. Dit system er blevet overbevist om at faren er konstant, og det kører i højeste beredskab hele tiden. Jeg hjælper dig med forsigtigt og gradvist at regulere ned fra denne kroniske alarmtilstand, så dit nervesystem langsomt kan lære at det faktisk er sikkert at være her. Når systemet begynder at finde ro og opdager at verden ikke er så farlig som det troede, begynder angsten helt naturligt at forsvinde af sig selv. Det kræver tålmodighed, men forandringen er varig."
+            },
+            fagfolk: {
+                title: "Nervesystemsregulering ved Angstlidelser",
+                text: "Angst manifesterer sig som kronisk sympatisk activation med vedvarende nedsat vagal tone og kompromitteret autonom fleksibilitet. Det terapeutiske arbejde fokuserer på gradvis down-regulation af det overaktiverede sympatiske system gennem målrettede bottom-up interventioner. Disse interventioner genopbygger systematisk ventral vagal kapacitet og udvider klientens window of tolerance. Ved at styrke den ventrale vagale bremse genskabes evnen til at vende tilbage til homeostase efter arousal. Målet er ikke blot symptomreduktion men fundamental reorganisering af det autonome nervesystems baseline-tilstand, hvilket muliggør varig bedring af angstlidelsen."
+            }
+        },
+        polyvagal: {
+            klient: {
+                title: "Polyvagal Forståelse af Angst",
+                text: "Angst er når dit nervesystem sidder fast i den gule alarmzone og ikke kan finde vejen ud. Du lever i konstant beredskab hvor kroppen hele tiden forbereder sig på fare der ikke kommer. Jeg lærer dig at genkende de tidlige signaler på at systemet skifter til alarm, og sammen finder vi konkrete og praktiske veje tilbage til den grønne sikre tilstand. Med tiden bliver disse teknikker til naturlige vaner, og dit system lærer at det har en vej tilbage til tryghed og ro når angsten melder sig."
+            },
+            fagfolk: {
+                title: "Polyvagal Teori og Angst",
+                text: "Angstlidelser repræsenterer en vedvarende fastholdelse i sympatisk mobilisering uden tilstrækkelig adgang til ventral vagal regulering og social engagement. Neuroception fejltolker konsistent sikre situationer som potentielt farlige, hvilket opretholder den autonome dysregulering. Det primære terapeutiske mål er genskabelse af polyvagal fleksibilitet, så klienten kan bevæge sig frit mellem autonome tilstande efter situationens krav. Dette indebærer systematisk styrkelse af den ventrale vagale pathway gennem både relationelle og somatiske interventioner der gradvist rekalibrerer det neuroceptive system mod mere præcis vurdering af sikkerhed og fare."
+            }
+        },
+        tilknytning: {
+            klient: {
+                title: "Tilknytning og Angst",
+                text: "Meget angst har sine dybeste rødder i utryg tilknytning fra de tidlige leveår, hvor verden føltes upålidelig og de voksne omkring dig ikke altid var til stede på den måde du havde brug for. Dit nervesystem lærte dengang at være på vagt hele tiden. I terapien arbejder vi sammen med at skabe nye, gentagende oplevelser af ægte sikkerhed og pålidelighed i vores relation. Gennem disse nye erfaringer kan angsten langsomt begynde at slippe sit greb, fordi systemet opdager at tilknytning også kan være tryg."
+            },
+            fagfolk: {
+                title: "Tilknytningsmønstre ved Angst",
+                text: "Ambivalent og desorganiseret tilknytning korrelerer stærkt med udvikling af angstlidelser gennem livsforløbet. Hyperactivation af attachment systemet medfører konstant scanning for potentiel fare og afvisning i relationelle kontekster. Denne vedvarende vagtsomhed opretholder sympatisk arousal og underminerer kapaciteten for selvregulering. Klinisk erfaring viser at earned secure attachment gennem terapeutisk relation signifikant reducerer angst-symptomer ved at etablere et reguleret autonomt nervesystem som ny baseline. Processen kræver konsistent terapeutisk tilgængelighed og afstemning over tid for at modificere dybt indlejrede tilknytningsstrategier."
+            }
+        },
+        kropsterapi: {
+            klient: {
+                title: "Kropsarbejde ved Angst",
+                text: "Angst sidder ikke kun i tankerne men helt konkret i kroppen som spændte skuldre, kort og overfladisk åndedræt, sammentrukken mave og en krop der aldrig rigtig slipper spændingen. Kroppen holder sig i konstant beredskab som om faren er lige om hjørnet. Gennem blid og respektfuld behandling kombineret med bevidst åndedrætsarbejde lærer din krop gradvist at slippe denne dybe alarm og finde en ro den måske ikke har kendt længe. Når kroppen slapper af, følger sindet naturligt med og angsten letter."
+            },
+            fagfolk: {
+                title: "Somatisk Intervention ved Angst",
+                text: "Angst manifesteres somatisk som vedvarende muskulær hypertonus, shallow breathing patterns, fasicial restrictions og reduceret interoceptiv awareness. Disse somatiske manifestationer er ikke blot symptomer men aktive opretholdere af den autonome dysregulering. Direkte fascial release kombineret med målrettet respiratorisk intervention modulerer autonome outputs gennem afferente vagale pathways betydeligt mere effektivt end top-down kognitive tilgange alene. Den somatiske tilgang adresserer angstens kropslige forankring direkte og faciliterer en bottom-up regulering der skaber varige ændringer i det autonome nervesystems baseline-tonus og reaktionsmønstre."
+            }
+        },
+        psykobiologi: {
+            klient: {
+                title: "Biologien bag Angst",
+                text: "Ved angst producerer din krop konstant for meget af stresshormonet cortisol og for lidt af de hormoner og signalstoffer der skaber ro og velvære i krop og sind. Denne ubalance holder dig fanget i en tilstand af uro og bekymring som føles umulig at slippe. Ved at arbejde direkte med at regulere nervesystemet gennem kropslige og relationelle tilgange normaliserer vi gradvist den underliggende biologi. Når balancen mellem stress og ro genoprettes, falder angsten mærkbart fordi kroppen ikke længere sender konstante faresignaler til hjernen."
+            },
+            fagfolk: {
+                title: "Neurobiologi ved Angstlidelser",
+                text: "Kronisk angst karakteriseres ved dysreguleret HPA-akse med forhøjet baseline cortisol, reduceret GABAerg inhibition og nedsat serotonerg transmission. Denne neurobiologiske profil opretholder en selvforstærkende cyklus af hyperarousal og anxiogenese. Autonomt nervesystem-regulering gennem somatiske og relationelle interventioner normaliserer progressivt neurotransmitter-balance og genopretter HPA-aksens negative feedback-mekanisme. Samtidig reduceres de inflammatoriske markører som er konsistent associeret med kronisk angst, herunder forhøjet IL-6 og TNF-alpha. Denne tilgang adresserer angstens biologiske substrat direkte fremfor udelukkende at fokusere på kognitive manifestationer."
+            }
+        },
+        traumer: {
+            klient: {
+                title: "Traumer og Angst",
+                text: "Angst er ofte det direkte resultat af gamle traumer hvor dit nervesystem blev sat i alarmberedskab og aldrig fik chancen for at slippe det igen. Noget skete dengang som var overvældende, og kroppen holder stadig fast i den oplevelse uden at vide at faren er ovre. I terapien arbejder vi meget forsigtigt og i dit tempo med at fuldføre det der blev afbrudt og forblev ufærdigt i nervesystemet. Når disse gamle reaktioner får lov at afsluttes trygt, kan systemet endelig slappe af og angsten letter."
+            },
+            fagfolk: {
+                title: "Traumatisk Oprindelse af Angst",
+                text: "Generaliseret angst er ofte rodfæstet i uløste traumatiske oplevelser med incomplete defensive responses der aldrig nåede completion. Nervesystemet fastholder en persistent hyperarousal som direkte følge af den manglende completion af orienterings- og forsvarsresponser. Denne kroniske aktivering generaliseres over tid til en diffus angstlidelse. Intervention gennem omhyggeligt titreret trauma-processing med fokus på somatisk experiencing og pendulering mellem ressource og aktivering reducerer angst-symptomer ved at facilitere den fysiologiske completion som nervesystemet har ventet på, ofte i årevis eller årtier."
+            }
+        },
+        relation: {
+            klient: {
+                title: "Relationel Healing af Angst",
+                text: "I vores trygge terapeutiske relation får dit nervesystem en helt ny erfaring der viser at verden faktisk kan være sikker og at andre mennesker kan være til at stole på. Min ro og tilstedeværelse smitter gradvist til dit system gennem det vi kalder co-regulering, hvor mit rolige nervesystem hjælper dit urolige system med at finde balancen. Denne dybe relationelle oplevelse af sikkerhed er selve fundamentet for at angsten kan begynde at forsvinde. Hver gang vi mødes, styrkes dit systems evne til at finde ro på egen hånd."
+            },
+            fagfolk: {
+                title: "Relationel Neurobiologi ved Angst",
+                text: "Terapeutens stabile ventral vagale tilstedeværelse co-regulerer aktivt klientens hyperaroused autonome system gennem interpersonal neurobiologisk resonans. Gentagen erfaring af autentisk relational safety inden for den terapeutiske ramme rekalibrerer gradvist klientens neuroceptive system og reducerer den forhøjede baseline angst. Denne proces medieres gennem interpersonal neurobiological synchrony hvor terapeutens autonome regulering fungerer som ekstern regulator for klientens dysregulerede system. Over tid internaliseres denne reguleringskapacitet, hvilket resulterer i øget autonom fleksibilitet og reduceret angst-symptomatologi også uden for den terapeutiske kontekst."
+            }
+        }
+    },
+    connections: {
+        'nervesystem-polyvagal': {
+            klient: "Ved angst sidder nervesystemet fast i en vedvarende alarm-tilstand hvor kroppen konstant forbereder sig på fare. Den polyvagale forståelse giver dig en konkret og brugbar nøgle til at forstå hvad der sker i dit system, og vigtigst af alt, hvordan du aktivt kan skifte gear og bevæge dig tilbage mod en tilstand af sikkerhed og ro. Når du forstår mekanismen bag din angst, bliver det lettere at arbejde med den og finde vejen til den trygge grønne zone.",
+            fagfolk: "Angst repræsenterer kronisk sympatisk dominans uden tilstrækkelig ventral vagal adgang, hvilket resulterer i tab af autonom fleksibilitet. Polyvagal-informeret intervention fokuserer på at genetablere den hierarkiske fleksibilitet i det autonome nervesystem, så klienten kan bevæge sig flydende mellem tilstande. Gennem målrettet styrkelse af den ventrale vagale pathway genskabes kapaciteten for at vende tilbage til homeostase efter aktivering. Dette indebærer systematisk arbejde med neuroceptive processer der gradvist rekalibrerer systemets vurdering af sikkerhed og fare i hverdagens situationer."
+        },
+        'nervesystem-tilknytning': {
+            klient: "Angstens karakteristiske nervesystem-mønstre med konstant alarmberedskab blev ofte grundlagt og formet i tidlige utryg tilknytningsrelationer, hvor du som barn ikke oplevede tilstrækkelig tryghed og forudsigelighed. Dit nervesystem lærte at verden var usikker og reagerer stadig efter dette gamle mønster. I terapien arbejder vi med at heale tilknytningen gennem nye relationelle erfaringer, og når tilknytningen heles, heles angsten også, fordi nervesystemet opdager at det er muligt at føle sig tryg sammen med et andet menneske.",
+            fagfolk: "Angst-relaterede autonome mønstre har ofte deres primære oprindelse i usikker tilknytning i de tidlige udviklingsfaser. Tilknytningsstrategier formes som autonome response-patterns der persisterer gennem livsforløbet og manifesteres som angstlidelser. Earned secure attachment gennem terapeutisk relation modificerer disse dybt indlejrede mønstre ved at tilbyde gentagne korrigerende erfaringer. Processen involverer gradvis restrukturering af indre arbejdsmodeller og deres tilhørende autonome signaturer, hvilket resulterer i fundamental ændring af nervesystemets baseline-tilstand fra kronisk hypervigilans mod øget kapacitet for regulering og tryghed."
+        },
+        'nervesystem-kropsterapi': {
+            klient: "Angst holder din krop fanget i en tilstand af konstant spænding og beredskab, hvor musklerne aldrig rigtig slipper og åndedrættet forbliver overfladisk og kort. Denne kropslige spænding er ikke bare et symptom på angsten men en aktiv del af det der holder den kørende. Målrettet kropsarbejde frigiver de dybtliggende spændinger direkte og sender dermed klare signaler til nervesystemet om at regulere ned fra alarmtilstanden. Når kroppen finder ro, følger nervesystemet med, og angsten begynder at lette mærkbart.",
+            fagfolk: "Angst-relateret somatisk hypertonus opretholdes af og opretholder samtidig de autonome stress-responses i en selvforstærkende feedbackloop. Muskulær spænding, fasicial restriction og respiratorisk dysregulering fungerer som vedvarende afferente signaler der opretholder sympatisk dominans. Målrettet fascial release og somatisk intervention bryder denne cyklus ved direkte at modulere afferent vagal input. Når de somatiske opretholdere af angst-tilstanden adresseres, reduceres den autonome hyperarousal, og nervesystemet kan begynde at genetablere en mere reguleret baseline med øget kapacitet for ventral vagal aktivering."
+        },
+        'nervesystem-psykobiologi': {
+            klient: "Angstens biologi er kendetegnet ved forhøjet cortisol og reduceret serotonin, en ubalance der holder dig fanget i uro og bekymring dag efter dag. Denne biologiske ubalance er ikke en fejl i dig men en naturlig konsekvens af et nervesystem i kronisk alarmberedskab. Når vi arbejder med at hjælpe nervesystemet til at finde genuin ro og regulering, normaliseres den underliggende biologi gradvist af sig selv. Hormonerne finder balance, signalstofferne genoprettes, og angsten falder mærkbart som et direkte resultat af den biologiske normalisering.",
+            fagfolk: "Nervesystemsregulering ved angst adresserer direkte de neurobiologiske dysfunktioner der opretholder lidelsen. Gennem autonome interventioner normaliseres progressivt HPA-aksens dysregulerede cortisol-produktion og den kompromitterede negative feedback-mekanisme. Parallelt genoprettes neurotransmitter-profilerne med øget GABAerg inhibition og forbedret serotonerg transmission. Denne bottom-up tilgang til biologisk normalisering er ofte mere effektiv end farmakologisk intervention alene, da den adresserer den autonome dysregulering som er den primære driver af de neurobiologiske forandringer. Resultatet er en varig ændring af den biologiske baseline."
+        },
+        'nervesystem-traumer': {
+            klient: "Angst er ofte udtryk for frosne traumer der stadig lever aktivt i nervesystemet mange år efter den oprindelige hændelse. Din krop og dit nervesystem husker det der skete, selvom din bevidste hukommelse måske har glemt det eller skubbet det væk. Ved forsigtigt og respektfuldt at løsne det frosne materiale og lade de ufærdige kropslige reaktioner komme til afslutning, kan nervesystemet endelig slippe alarmtilstanden. Når traumet frigives fra kroppen, forsvinder angsten som en naturlig konsekvens af nervesystemets nye frihed.",
+            fagfolk: "Angst konceptualiseres her som en persisterende incomplete defensive response, hvor nervesystemet fastholder mobiliseringsenergi fra uafsluttede traumatiske oplevelser. Denne energi manifesteres som kronisk hyperarousal og generaliseret angst. Completion af disse defensive responses gennem omhyggeligt titreret somatisk experiencing faciliterer fysiologisk afslutning og reducerer dermed angst-symptomer signifikant. Titreringen er afgørende for at undgå retraumatisering og sikre at processen forbliver inden for klientens window of tolerance. Gradvis completion resulterer i varig reduktion af autonom hyperarousal og genoprettet reguleringskapacitet."
+        },
+        'nervesystem-relation': {
+            klient: "Dit angstfyldte nervesystem har brug for at lære ro og sikkerhed på et helt grundlæggende kropsligt niveau, og denne læring sker mest effektivt gennem vores terapeutiske relation. Når du gentagne gange oplever ægte tryghed og accept i mødet med mig, begynder dit system langsomt at justere sin opfattelse af verden. Co-regulering betyder at min ro og mit stabile nervesystem direkte påvirker dit system mod større balance. Denne relationelle erfaring er selve kernen i healingen af angst og skaber varige forandringer i dit nervesystems grundtilstand.",
+            fagfolk: "Co-regulering inden for den terapeutiske alliance udgør den primære vej til modification af angst-relaterede autonome mønstre. Terapeutens stabile ventral vagale tilstand fungerer som ekstern regulator for klientens dysregulerede system gennem interpersonal neurobiologisk resonans. Gentagen eksponering for autentisk relational safety inden for den terapeutiske ramme modificerer gradvist de neuroceptive processer der opretholder angsten. Denne tilgang er særligt effektiv fordi den adresserer angstens relationelle dimension direkte og faciliterer internalisering af reguleringskapacitet som klienten over tid kan anvende autonomt."
+        },
+        'polyvagal-tilknytning': {
+            klient: "Utryg tilknytning i de tidlige leveår skabte et nervesystem der har lært at leve permanent i den gule alarmzone, altid parat til fare og aldrig rigtig tryg. Dit system fik aldrig chancen for at lære hvad grøn sikkerhed virkelig føles som i kroppen. I terapien arbejder vi sammen om at give dit nervesystem helt nye oplevelser af den grønne trygge tilstand gennem vores relation og konkrete øvelser. Langsomt lærer systemet at sikkerhed er mulig, og angstens greb løsner sig naturligt.",
+            fagfolk: "Ambivalent tilknytning manifesteres som rigid sympatisk activation ved angstlidelser, hvor det autonome system er fastlåst i mobiliseringsmodus uden adgang til ventral vagal regulering. Tilknytningsstrategien har formet et nervesystem der konstant scanner for fare og afvisning. Det primære terapeutiske mål er at etablere ventral vagal adgang gennem korrigerende relationelle erfaringer der gradvist modificerer de tilknytningsbaserede autonome mønstre. Dette arbejde kræver konsistent terapeutisk tilgængelighed og afstemning over tid for at facilitere overgangen fra usikker til earned secure attachment."
+        },
+        'polyvagal-kropsterapi': {
+            klient: "Når din krop modtager behandling og langsomt lærer at slippe spændingerne og finde dyb ro, sender det kraftfulde og direkte beskeder gennem nervesystemet til den gule alarm-zone om at det faktisk er sikkert nu. Kroppen taler et sprog som nervesystemet forstår bedre end ord og tanker. Hver gang kroppen oplever ægte afslapning og sikkerhed, styrkes forbindelsen til den grønne trygge zone, og dit system får nye erfaringer der viser at ro er mulig og at alarmen kan slukkes.",
+            fagfolk: "Somatisk intervention ved angst aktiverer ventral vagale pathways direkte gennem afferent stimulering og bryder dermed den sympatiske dominans der kendetegner angstlidelser. Fascial release, respiratorisk intervention og proprioceptiv stimulering modulerer autonome outputs via vagale afferenter, hvilket faciliterer et skifte fra sympatisk mobilisering mod ventral vagal engagement. Denne bottom-up tilgang er særligt effektiv ved angst fordi den omgår de kognitive processer der ofte opretholder bekymringscykler. Den somatiske pathway tilbyder en direkte vej til autonome ændring som supplerer og ofte accelererer relationelle interventioner."
+        },
+        'polyvagal-psykobiologi': {
+            klient: "Den grønne sikre tilstand er ikke bare en følelse af ro men skaber helt konkret den rette biologi i din krop med lavt cortisol, godt niveau af serotonin og andre signalstoffer der fremmer velvære og indre balance. Når dit nervesystem finder og lærer at blive i den grønne zone, normaliseres biologien automatisk, og angsten begynder at forsvinde fordi kroppen ikke længere producerer de kemiske signaler der holder den i gang. Det er derfor det polyvagale arbejde er så vigtigt for varig healing.",
+            fagfolk: "Ventral vagal aktivering ved angstbehandling optimerer direkte neurotransmitter-balance og HPA-akse funktion gennem autonome-endokrine koblinger. Når det ventrale vagale system styrkes, øges parasympatisk modulation af stressresponsen med resulterende normalisering af cortisol-produktion og forbedret serotonerg og GABAerg transmission. Denne polyvagal-biologiske kobling forklarer hvorfor autonome interventioner har dokumenteret effekt på de neurobiologiske markører der er associeret med angstlidelser. Klinisk indebærer dette at polyvagal-orienteret terapi adresserer angstens biologiske substrat gennem regulering af det autonome nervesystem."
+        },
+        'polyvagal-traumer': {
+            klient: "Traumer i din fortid låste dit nervesystem fast i den gule alarmzone, og siden har systemet ikke kunnet finde vej tilbage til sikkerhed af sig selv. At arbejde med traumerne direkte uden først at have etableret solid adgang til den grønne sikre zone kan være overvældende og utilrådeligt. Derfor er det første skridt altid at hjælpe dit nervesystem med at finde og forankre sig i grøn sikkerhed. Når det fundament er på plads, kan vi forsigtigt begynde at heale traumet, og angsten letter.",
+            fagfolk: "Etablering af solid ventral vagal sikkerhed er en ufravigelig forudsætning for effektiv trauma-processing ved angstlidelser. Uden tilstrækkelig ventral vagal kapacitet risikerer trauma-intervention at retraumatisere klienten ved at aktivere materiale uden tilgængelige reguleringsressourcer. Den polyvagale tilgang til traumebaseret angst prioriterer derfor systematisk opbygning af den ventrale vagale pathway før egentlig trauma-processing påbegyndes. Denne sekvensering sikrer at klienten har intern reguleringskapacitet til at tolerere den aktivering der uundgåeligt opstår under traumearbejde, og muliggør dermed integration frem for fragmentering."
+        },
+        'polyvagal-relation': {
+            klient: "Min grønne rolige tilstand smitter direkte over til dit gule angstfyldte system hver gang vi mødes, og det sker helt naturligt gennem vores terapeutiske relation. Det er ikke noget du behøver at anstrenge dig for at opnå. Dit nervesystem opfanger automatisk signaler om sikkerhed fra mit regulerede system, og langsomt begynder det at justere sin egen tilstand. Denne co-regulering er selve fundamentet for hvordan healing sker i nervesystemsterapi. Med tiden internaliserer du evnen til at finde ro på egen hånd.",
+            fagfolk: "Terapeutens stabile ventral vagale tilstand co-regulerer klientens sympatiske hyperarousal aktivt gennem det sociale engagement system og interpersonal neurobiologisk synkronisering. Denne co-regulering medieres primært via ansigtsudtryk, prosodi og tilstedeværelseskvalitet som aktiverer klientens ventrale vagale system. Ved angstbehandling er denne mekanisme særligt vigtig fordi den tilbyder en direkte autonom pathway til regulering der omgår de kognitive bekymringsprocesser. Gentagen eksponering for terapeutens regulerede tilstand faciliterer gradvis internalisering af reguleringskapacitet og udvidelse af klientens autonome fleksibilitet og window of tolerance."
+        },
+        'tilknytning-kropsterapi': {
+            klient: "Utryg tilknytning fra dine tidlige år skabte en krop der holder sig konstant anspændt og på vagt, som om fare altid er lige rundt om hjørnet. Disse spændingsmønstre i muskler og bindevæv er kroppens måde at beskytte sig selv på baseret på gamle erfaringer. Gennem trygt og respektfuldt kropsarbejde lærer både din krop og dit tilknytningssystem en helt ny oplevelse af sikkerhed. Når kroppen slipper sine gamle forsvarsmønstre, åbner det samtidig for nye måder at være i relationer på med mindre angst.",
+            fagfolk: "Tilknytningsmønstre ved angst er fundamentalt embodied og manifesteres som specifikke somatiske signaturer i muskeltonus, åndedræt og fascial organisation. Disse kropslige mønstre opretholder den autonome dysregulering der driver angsten. Somatisk intervention modificerer direkte de implicitte relationelle skemaer der er lagret i kroppen ved at tilbyde nye proprioceptive og interoceptive erfaringer. Denne tilgang er særligt effektiv fordi den adresserer tilknytningsmønstrene på det procedurale niveau hvor de primært opererer, fremfor udelukkende at arbejde med eksplicitte narrative repræsentationer af tilknytningshistorien."
+        },
+        'tilknytning-psykobiologi': {
+            klient: "Utryg tilknytning i dine første leveår formede helt konkret en biologi der er konstant klar til angst og alarm. Dit stresssystem blev indstillet til høj følsomhed, og de beroligende signalstoffer fik ikke optimale betingelser for udvikling. Men denne biologi er ikke hugget i sten. Gennem nye oplevelser af sikker og pålidelig tilknytning i terapien kan vi gradvist omforme den biologiske programmering, så kroppen producerer mindre stresshormon og mere af de stoffer der skaber ro og tryghed.",
+            fagfolk: "Usikker tilknytning i de tidlige udviklingsperioder præger HPA-aksens sensitivitet og reaktivitet markant, hvilket skaber en biologisk sårbarhed for angstlidelser gennem livsforløbet. Specifikt resulterer utryg tilknytning i forhøjet cortisol-reaktivitet, reduceret oxytocin-receptor densitet og kompromitteret GABAerg modulation. Earned secure attachment opnået gennem konsistent terapeutisk relation demonstrerer kapacitet til at normalisere disse biologiske parametre. Processen involverer gradvis neuroendokrin restrukturering faciliteret af gentagne erfaringer af relationel sikkerhed der modificerer de epigenetiske markører associeret med tidlig tilknytningsstress."
+        },
+        'tilknytning-traumer': {
+            klient: "Traumer der fandt sted inden for dine tidlige tilknytningsrelationer, altså i forholdet til dine primære omsorgspersoner, skabte en særlig dyb form for angst der blev til et livslangt mønster i dit nervesystem. Denne type traumer er ekstra kompleks fordi de mennesker der skulle have været din sikkerhed også var kilden til smerten. Healing af denne angst kræver derfor ekstra forsigtighed, tålmodighed og meget langsom opbygning af tillid i vores terapeutiske relation, så dit system tør åbne sig igen.",
+            fagfolk: "Developmental trauma inden for det primære tilknytningssystem resulterer i desorganiseret tilknytning med simultane og modstridende attachment og defense responses, hvilket danner grundlag for kompleks angstproblematik. Denne angstform er særligt behandlingsresistent fordi den relationelle kontekst der skulle facilitere healing samtidig trigger de traumatiske mønstre. Klinisk kræver dette en langsommere og mere gradueret tilgang med fokus på etablering af relational safety som absolut førsteprioritet. Terapeutens evne til at tolerere klientens ambivalens og tilbyde konsistent tilgængelighed er afgørende for at muliggøre gradvis modification af de desorganiserede mønstre."
+        },
+        'tilknytning-relation': {
+            klient: "Vores trygge terapeutiske relation bliver det helt centrale sted hvor du får mulighed for at opleve hvad sikker tilknytning virkelig føles som, måske for allerførste gang i dit liv. Hver gang du mærker at du kan være dig selv uden at blive afvist eller svigtet, svækkes angstens greb en lille smule mere. Over tid skaber disse gentagende oplevelser af pålidelighed og accept nye mønstre i dit nervesystem der erstatter de gamle angstfyldte tilknytningsmønstre. Angsten kan langsomt slippe fordi dit system lærer at relationer kan være trygge.",
+            fagfolk: "Den terapeutiske relation fungerer som korrigerende tilknytningserfaring der direkte modificerer de autonome angst-mønstre der er rodfæstet i usikker tilknytningshistorie. Gennem konsistent terapeutisk tilgængelighed, sensitiv afstemning og reparation af uundgåelige brud i alliancen transformeres klientens indre arbejdsmodeller gradvist. Denne proces faciliterer overgangen fra usikre tilknytningsstrategier med tilhørende autonom dysregulering mod earned secure attachment med forbedret reguleringskapacitet. Den relationelle intervention er særligt potent ved tilknytningsbaseret angst fordi den adresserer problemets kerne direkte i den kontekst hvor forandring er mulig."
+        },
+        'kropsterapi-psykobiologi': {
+            klient: "Når kroppen gennem behandling langsomt slipper de dybe spændinger som angsten har skabt og vedligeholdt i muskler og bindevæv, følger biologien automatisk med i en positiv retning. Hormoner og neurotransmittere begynder at finde en sundere balance når kroppen ikke længere sender konstante alarmsignaler til hjernen. Cortisol falder, serotonin og andre rolighedsfremmende stoffer stiger, og kroppens inflammationsniveau reduceres. Denne biologiske normalisering sker naturligt som konsekvens af det kropslige arbejde og bidrager markant til den varige reduktion af angst.",
+            fagfolk: "Fascial release og somatisk intervention ved angst påvirker direkte vagale afferenter og modulerer derigennem neurotransmitter-frigivelse og neuroendokrin funktion. Den mekaniske frigørelse af fasciale restriktioner ændrer det afferente input til nucleus tractus solitarius, hvilket påvirker autonom regulering og downstream neurobiologiske processer. Specifikt resulterer somatisk intervention i reduceret cortisol-output, øget GABAerg transmission og forbedret serotonerg funktion. Denne direkte kobling mellem somatisk intervention og neurobiologisk forandring understreger vigtigheden af at inkludere kropsbaserede tilgange i behandlingen af angstlidelser."
+        },
+        'kropsterapi-traumer': {
+            klient: "Angst-traumer sidder bogstaveligt frosset fast i din krop som spændinger, fastlåste bevægelsesmønstre og et nervesystem der aldrig slapper af. Kroppen husker det traumatiske som skete, selv når tanken har glemt det. Gennem meget forsigtigt og respektfuldt kropsarbejde i et tempo der føles trygt for dig, begynder vi langsomt at låse det frosne op. Vi lader kroppen fuldføre de reaktioner der blev afbrudt under traumet, og gradvist frigives den fastholdte energi så angsten kan lette.",
+            fagfolk: "Angst-relaterede traumer manifesteres primært somatisk som fasciale restriktioner, muskulær hypertonus og incomplete motoriske sekvenser der fastholder autonomt hyperarousal. Disse somatiske manifestationer repræsenterer ufuldstændige defensive responses der opretholder angst-symptomatologien. Titreret proprioceptiv activation faciliterer gradvis integration af det traumatiske materiale ved at tillade kroppen at fuldføre afbrudte motoriske sekvenser inden for klientens window of tolerance. Denne somatiske tilgang til traumebehandling er særligt relevant ved angstlidelser hvor den kropslige komponent ofte er den primære opretholder af den kroniske hyperarousal."
+        },
+        'kropsterapi-relation': {
+            klient: "At modtage tryg og omsorgsfuld berøring inden for rammerne af vores sikre terapeutiske relation giver din angstfyldte krop en dybtgående ny erfaring der viser at verden og andre mennesker faktisk kan være sikre. Mange med angst har en krop der har lært at trække sig fra berøring eller spænde op ved kontakt. Når du oplever at berøring kan være blid, respektfuld og forudsigelig i vores trygge relation, begynder kroppen at omskrive sine gamle angstfyldte programmer og åbne sig mod en ny oplevelse af sikkerhed.",
+            fagfolk: "Terapeutisk touch kombineret med solid relational safety udgør en potent intervention der modificerer angst-relaterede somatiske mønstre på multiple niveauer simultant. Den trygge berøring inden for den terapeutiske relation aktiverer oxytocin-medierede beroligelseskredsløb mens den samtidig tilbyder korrigerende somatiske erfaringer der modvirker de kropslige manifestationer af angst. Denne dobbelte mekanisme, hvor relationel sikkerhed og somatisk intervention virker synergistisk, faciliterer dybere og mere varig forandring end enten relationel eller somatisk intervention alene kan opnå ved behandling af angstlidelser."
+        },
+        'psykobiologi-traumer': {
+            klient: "Traumer ændrede helt konkret din krops biologi til en permanent angst-tilstand, hvor stresssystemet blev skruet op og rolighedssystemet blev skruet ned. Disse biologiske ændringer er ikke din skyld men en naturlig reaktion på overvældende oplevelser som dit nervesystem ikke kunne håndtere dengang. Gennem forsigtigt og titreret arbejde med healing af de underliggende traumer normaliseres biologien gradvist igen. Når traumet frigives fra kroppen, genopretter stresshormoner og signalstoffer deres naturlige balance, og angsten reduceres markant som direkte konsekvens.",
+            fagfolk: "Traumatisk modification af HPA-aksen skaber en biologisk sårbarhed der manifesteres som kronisk angst med forhøjet baseline cortisol, øget cortisol-reaktivitet og kompromitteret negativ feedback-regulering. Disse neurobiologiske forandringer opretholder en selvforstærkende cyklus af hyperarousal og anxiogenese. Målrettet trauma-processing normaliserer progressivt de biologiske markører ved at adressere den autonome dysregulering der driver de endokrine forandringer. Klinisk observeres reduktion i cortisol-niveauer, normalisering af inflammatoriske markører og forbedret neurotransmitter-balance som konsekvens af vellykket traumebehandling hos klienter med angstlidelser."
+        },
+        'psykobiologi-relation': {
+            klient: "Vores trygge terapeutiske relation virker som den mest naturlige medicin for din biologi, fordi den direkte påvirker de kemiske processer i din krop. Hver gang du oplever ægte sikkerhed og forbindelse i vores møde, sænkes dit cortisol-niveau og produktionen af oxytocin og andre rolighedsfremmende hormoner øges mærkbart. Denne biologiske forandring sker helt automatisk når nervesystemet registrerer sikkerhed i relationen. Over tid akkumuleres disse positive biologiske erfaringer, og angsten falder som en naturlig konsekvens af kroppens ændrede kemiske balance.",
+            fagfolk: "Den sikre terapeutiske alliance faciliterer direkte neurobiologiske forandringer ved angst gennem veldokumenterede mekanismer. Specifikt øger den trygge relation oxytocin-frigivelse som modulerer amygdala-reaktivitet og reducerer cortisol-produktion gennem påvirkning af HPA-aksens negative feedback. Disse neurobiologiske forandringer er ikke blot symptomatiske men repræsenterer fundamental restrukturering af de biologiske systemer der opretholder angsten. Forskning dokumenterer at kvaliteten af den terapeutiske alliance korrelerer direkte med neurobiologiske outcome-markører, hvilket understreger relationens centrale betydning som aktiv ingredient i behandling af angstlidelser."
+        },
+        'traumer-relation': {
+            klient: "Angst-traumerne der lever i dit nervesystem kan kun heales i en kontekst af dyb og gennemgribende relationel sikkerhed, hvor dit system tør slippe sine forsvar og åbne sig for forandring. Vores terapeutiske relation skaber præcis denne sikkerhed som fundamentet for hele healingsprocessen. Uden denne trygge base ville traumearbejdet være for overvældende for dit nervesystem. Fordi traumerne ofte blev skabt i relationer, er det også i en relation de mest effektivt kan heles, og det er netop det vores samarbejde tilbyder dig.",
+            fagfolk: "Trauma-baseret angst kræver etablering af en robust terapeutisk alliance som absolut forudsætning før egentlig trauma-processing kan påbegyndes sikkert og effektivt. Co-regulering inden for alliancen er den primære mekanisme der muliggør klientens engagement med traumatisk materiale uden retraumatisering. Den terapeutiske relation fungerer som en sikker container der holder den aktivering som traumearbejdet uundgåeligt genererer. Uden tilstrækkelig relational safety vil traumebehandling ved angst risikere at destabilisere klienten yderligere. Den investering der lægges i alliance-opbygning betaler sig gennem markant mere effektiv og varig traumebehandling."
+        }
+    }
+},
+   
+   tilknytning: {
+    name: "Tilknytning",
+    circles: {
+        nervesystem: {
+            klient: {
+                title: "Nervesystemet og Tilknytning",
+                text: "Dit tilknytningsmønster er kodet dybt ind i nervesystemets automatiske reaktioner og påvirker hvordan du møder andre mennesker. Når vi regulerer nervesystemet gennem målrettede øvelser og terapeutisk arbejde, åbner vi muligheden for at skabe nye, sundere tilknytningsmønstre gennem faktiske oplevelser af sikkerhed i relationer. Dit system har brug for gentagne oplevelser af tryghed for gradvist at ændre de gamle mønstre. Denne proces kræver tålmodighed, men forandringen er dyb og varig fordi den sker på det mest grundlæggende neurologiske niveau."
+            },
+            fagfolk: {
+                title: "Autonomt Nervesystem og Tilknytning",
+                text: "Tilknytningsmønstre er fundamentalt autonome mønstre indlejret i nervesystemets basale reguleringsmekanismer. Nervesystemsregulering er en afgørende forudsætning for udvikling af earned secure attachment. Det terapeutiske arbejde fokuserer på vagal tone som basis for relationel kapacitet og affektregulering. Gennem systematisk opbygning af autonome reguleringsressourcer styrkes klientens evne til at tolerere relationel nærhed og håndtere separationsangst. Interventioner rettes mod at øge det autonome nervesystems fleksibilitet, så skift mellem tilstande af social engagement og fysiologisk ro sker mere flydende og adaptivt."
+            }
+        },
+        polyvagal: {
+            klient: {
+                title: "Polyvagal og Tilknytning",
+                text: "Hvert tilknytningsmønster har sin egen nervesystem-signatur, som vi kan lære at genkende sammen. Tryg tilknytning lever i den grønne zone med ro og åbenhed, mens utryg tilknytning sidder fast i gul alarmberedskab eller rød nedlukning. Vi lærer dit system at finde den grønne sikkerhed, som er fundamentet for trygge relationer. Gennem øvelser der aktiverer dit sociale engagementsystem, kan vi gradvist udvide din kapacitet til at forblive i den trygge grønne tilstand, selv når relationer bliver udfordrende eller uforudsigelige."
+            },
+            fagfolk: {
+                title: "Polyvagal Teori og Tilknytning",
+                text: "Sikker tilknytning korrelerer konsistent med ventral vagal dominans og polyvagal fleksibilitet, der muliggør adaptiv social engagement. Usikre tilknytningsmønstre viser rigid sympatisk activation ved ambivalent tilknytning eller dorsal vagal shutdown ved undvigende tilknytning. Det sociale engagementsystem udgør det neurologiske substrat for attachment-adfærd. Klinisk intervention fokuserer på at øge polyvagal fleksibilitet gennem neuroception af sikkerhed i den terapeutiske relation. Målet er at facilitere skift fra defensive autonome strategier til ventral vagal engagement som basis for earned secure attachment og relationel kapacitet."
+            }
+        },
+        tilknytning: {
+            klient: {
+                title: "Forstå Dit Tilknytningsmønster",
+                text: "Vi udforsker sammen dit tilknytningsmønster med nysgerrighed og respekt, ikke for at dømme det, men for at forstå det som en naturlig reaktion på dine tidlige erfaringer. Når du begynder at se mønstret tydeligt, åbner der sig nye muligheder for at skabe andre måder at være i relationer på. Dit mønster var engang den bedste strategi dit system kunne finde, og det fortjener anerkendelse. Gennem terapien udvikler vi sammen nye relationelle erfaringer, som giver dit nervesystem mulighed for at lære tryggere måder at forbinde med andre mennesker."
+            },
+            fagfolk: {
+                title: "Tilknytningsteori i Praksis",
+                text: "Adult Attachment Interview-inspireret udforskning af indre arbejdsmodeller danner grundlag for terapeutisk intervention. Fokus rettes mod reflective functioning og mentalization som primære veje til udvikling af earned secure attachment. Integration af tilknytningsteori med neurobiologisk forståelse muliggør multilevel intervention. Terapeuten vurderer klientens tilknytningsklassifikation og tilrettelægger interventioner der adresserer specifikke tilknytningsrelaterede deficit. Ved ambivalent tilknytning arbejdes med affektregulering, ved undvigende med affekttolerering og ved desorganiseret tilknytning med etablering af basal relationel sikkerhed før dybere tilknytningsarbejde påbegyndes."
+            }
+        },
+        kropsterapi: {
+            klient: {
+                title: "Tilknytning i Kroppen",
+                text: "Tilknytningsmønstre sidder i hvordan du holder vejret, spænder kroppen og lukker ned, når nærhed bliver overvældende. Kroppen bærer hele historien om dine tidlige relationer. Gennem kropsarbejde kan vi skabe nye fysiske oplevelser af sikkerhed, der gradvist ændrer de gamle mønstre indefra. Når kroppen lærer at slappe af i nærvær af en anden person, ændres tilknytningsmønstret på det dybeste niveau. Vi arbejder langsomt og respektfuldt med de kropslige signaler, så dit system aldrig bliver presset ud over dets grænser."
+            },
+            fagfolk: {
+                title: "Embodied Tilknytning",
+                text: "Tilknytningsmønstre manifesteres somatisk i karakteristiske mønstre af åndedræt, muskulær tonus og fascial densitet, der afspejler tidlige relationelle erfaringer. Somatisk intervention bypasser verbale forsvarsmekanismer og faciliterer reconsolidation af implicitte relationelle skemaer gennem proprioceptiv og interoceptiv re-patterning. Kropslig intervention muliggør direkte adgang til procedurale tilknytningsmønstre, som ikke er tilgængelige gennem verbal terapi alene. Fascial release i kombination med relationel sikkerhed i den terapeutiske kontekst skaber betingelser for neuroplastiske ændringer i de autonome kredsløb, der understøtter tilknytningsadfærd og relationel kapacitet."
+            }
+        },
+        psykobiologi: {
+            klient: {
+                title: "Tilknytningens Biologi",
+                text: "Dit tilknytningsmønster formede din biologis reaktioner på både stress og nærhed fra de allertidligste leveår. De biokemiske systemer der styrer tryghed og tilknytning blev indstillet af dine tidlige erfaringer med omsorgspersoner. Men biologien er ikke fastlåst, og det er den gode nyhed. Gennem nye gentagne oplevelser af sikkerhed og nærhed i terapien kan vi gradvist omforme de biologiske reaktionsmønstre. Din krop kan lære at producere mere af de hormoner der skaber ro og forbindelse, og mindre af dem der holder dig i alarmberedskab."
+            },
+            fagfolk: {
+                title: "Neurobiologi af Tilknytning",
+                text: "Tidlig tilknytning former HPA-akse sensitivitet, oxytocin-receptor densitet og vasopressin-system udtryk gennem epigenetiske mekanismer. Usikker tilknytning korrelerer med dysreguleret cortisol-døgnrytme, reduceret belønningsrespons i nucleus accumbens og nedsat prefrontal reguleringskapacitet. Earned secure attachment kan modificere disse biologiske signatures gennem neuroplasticitet og epigenetisk re-programmering. Terapeutisk intervention fokuserer på at genopbygge oxytocin-systemets funktion gennem gentagen relationel sikkerhed, hvorved de biologiske markører for tilknytningstryg gradvist normaliseres og klientens kapacitet for nærhed og stressregulering forbedres."
+            }
+        },
+        traumer: {
+            klient: {
+                title: "Traumer i Tilknytning",
+                text: "Traumer i tidlige relationer skaber en særlig form for desorganiseret tilknytning, hvor relationer opleves som både farlige og det eneste sikre sted. Det betyder at du kan svinge mellem intens længsel efter nærhed og dyb frygt for den. Det kræver ekstra forsigtighed og tålmodighed at arbejde med dette mønster, fordi tillid er det sværeste tema. I terapien bygger vi meget langsomt op, respekterer dit systems tempo, og skaber gradvist nye erfaringer af relationer, hvor sikkerhed og nærhed kan eksistere sammen."
+            },
+            fagfolk: {
+                title: "Developmental Trauma og Tilknytning",
+                text: "Developmental trauma inden for tilknytningssystemet resulterer i desorganiseret tilknytning karakteriseret ved simultane og modsatrettede attachment og defense responses. Klienten udviser paradoksal adfærd med tilnærmelse og undgåelse aktiveret samtidigt. Dette kræver langsom og systematisk etablering af relational safety før egentligt tilknytningsarbejde kan påbegyndes. Terapeuten skal navigere komplekse overføringsmønstre og opretholde konsistent tilgængelighed trods klientens modstand. Interventionsteknikker inkluderer titreret eksponering for relationel nærhed, somatisk ressourceopbygning og gradvis udvidelse af window of tolerance for tilknytningsrelaterede affekter og kropslige fornemmelser."
+            }
+        },
+        relation: {
+            klient: {
+                title: "Nye Tilknytningsoplevelser",
+                text: "Vores terapeutiske relation bliver det sikre sted, hvor du kan opleve tryg tilknytning, måske for første gang i dit liv. Her er det tilladt at have behov, at være sårbar, og at blive mødt med varme og forståelse. Det er netop gennem denne levende oplevelse af en anden form for relation, at gamle tilknytningsmønstre gradvist kan ændres indefra. Din hjerne og dit nervesystem har brug for faktiske oplevelser af tryghed, ikke kun forståelse. Vores relation giver dit system den erfaring det manglede."
+            },
+            fagfolk: {
+                title: "Earned Secure Attachment",
+                text: "Den terapeutiske relation fungerer som korrigerende emotionel erfaring, der direkte adresserer indre arbejdsmodeller for tilknytning. Konsistent tilgængelighed, emotionel afstemning og reparation af brud modificerer gradvist klientens forventninger til relationer. Earned secure attachment faciliteres gennem gentagen erfaring af terapeuten som secure base og safe haven. Terapeuten opretholder en konsistent og reguleret tilstedeværelse, der muliggør klientens udforskning af nye relationelle erfaringer inden for en tryg ramme. Denne proces kræver vedvarende terapeutisk engagement over tid for at konsolidere neuroplastiske ændringer i tilknytningssystemet."
+            }
+        }
+    },
+    connections: {
+        'nervesystem-polyvagal': {
+            klient: "Tilknytningsmønstre er kodet som automatiske nervesystem-reaktioner, der aktiveres i relationer til andre mennesker. Polyvagal forståelse viser os, hvordan tryg tilknytning lever i den grønne sikre tilstand med ro og åbenhed. Når vi forstår denne forbindelse, kan vi arbejde målrettet med at hjælpe dit nervesystem til at finde den grønne zone oftere, især i nære relationer. Vi bruger konkrete øvelser, der styrker din evne til at forblive tryg og forbundet, selv når relationer udfordrer dig.",
+            fagfolk: "Tilknytningsmønstre manifesteres som specifikke polyvagale profiler med karakteristiske autonome reaktionsmønstre. Sikker tilknytning korrelerer konsistent med ventral vagal fleksibilitet og evne til social engagement under moderate udfordringer. Usikre mønstre afspejler rigid autonome strategier, hvor sympatisk hyperactivation kendetegner ambivalent tilknytning og dorsal vagal dominans karakteriserer undvigende tilknytning. Klinisk intervention fokuserer på at genopbygge polyvagal fleksibilitet som neurologisk forudsætning for relationel kapacitet og tilknytningssikkerhed. Dette indebærer systematisk vagal toning og neuroceptiv kalibrering."
+        },
+        'nervesystem-tilknytning': {
+            klient: "Når vi arbejder med nervesystemet, arbejder vi direkte med dine tilknytningsmønstre, fordi de i bund og grund er det samme. Dit nervesystem lærte at reagere på bestemte måder i dine tidligste relationer, og disse reaktioner gentager sig automatisk i voksne relationer. Ved at regulere nervesystemet skaber vi nye muligheder for, hvordan du kan være i kontakt med andre. Gradvist lærer dit system, at nærhed kan være sikker, og at du kan bevare din ro, selv når du er tæt forbundet med et andet menneske.",
+            fagfolk: "Tilknytningsintervention er fundamentalt nervesystemsintervention, idet tilknytningsmønstre er lagret som autonome reaktionsmønstre. Earned secure attachment kræver autonome modifikationer på det procedurale niveau, som ikke kan opnås gennem kognitiv indsigt alene. Effektiv intervention kombinerer top-down og bottom-up strategier for at adressere de autonome tilknytningsskemaer. Nervesystemsregulering etablerer den fysiologiske kapacitet, der er nødvendig for at tolerere relationel nærhed og separationsangst. Denne forståelse integrerer neurobiologisk viden med tilknytningsteori og danner grundlag for somatisk orienteret tilknytningsarbejde."
+        },
+        'nervesystem-kropsterapi': {
+            klient: "Tilknytningsmønstre sidder dybt i kroppen som fysiske spændingsmønstre og åndedrætsrestriktioner. Kropsarbejde ændrer derfor både nervesystem og tilknytning samtidigt, fordi det adresserer mønstrene direkte der, hvor de lever. Når vi arbejder med kroppen i en tryg terapeutisk relation, lærer dit system helt nye måder at reagere på i nærheden af andre. De fysiske forandringer er med til at åbne for emotionel fleksibilitet og større kapacitet til at være til stede i relationer med både tryghed og åbenhed.",
+            fagfolk: "Tilknytningsmønstre er embodied i karakteristiske somatiske konfigurationer, der opretholder autonome reaktionsmønstre. Somatisk intervention modificerer både autonome mønstre og relationelle skemaer simultant, da disse er neurobiologisk integrerede. Fascial release og proprioceptiv re-patterning adresserer de procedurale tilknytningsmønstre direkte i det somatiske felt. Denne tilgang er særligt effektiv, fordi verbale interventioner sjældent når de implicitte lag, hvor tilknytningsstrategier er lagret. Kropslig intervention i kombination med relationel sikkerhed skaber optimale betingelser for reconsolidation af tilknytningsrelaterede neurale netværk."
+        },
+        'nervesystem-psykobiologi': {
+            klient: "Tilknytningsmønstre formede din biologi allerede fra de tidligste leveår og påvirkede, hvordan din krop håndterer stress og nærhed. Ved at arbejde med nervesystemet omformer vi gradvist biologien, så de kemiske processer der styrer tryghed og forbindelse kan normaliseres. Din krop lærer at producere mere af de hormoner der skaber ro og tilknytning, når den gentagne gange oplever sikkerhed i relationer. Denne biologiske forandring er dyb og varig, fordi den sker på det mest grundlæggende niveau i dit system og påvirker alt.",
+            fagfolk: "Tilknytning præger neurobiologi gennem epigenetiske mekanismer og erfaring-afhængig neural udvikling fra de tidligste leveår. Nervesystemsregulering kan modificere HPA-akse sensitivitet og oxytocin-systemer, der blev formet af early attachment erfaringer. Gennem systematisk autonome reguleringsintervention normaliseres cortisol-døgnrytme og oxytocin-receptor udtryk gradvist. Denne neurobiologiske modifikation understøtter øget kapacitet for relationel nærhed og stressregulering i tilknytningskontekster. Forskning dokumenterer at earned secure attachment medfører målbare ændringer i disse biologiske systemer, der nærmer sig profilen for primær sikker tilknytning."
+        },
+        'nervesystem-traumer': {
+            klient: "Tilknytningstraumer sidder dybt i nervesystemet som automatiske forsvarsreaktioner, der blev dannet i dine tidligste og vigtigste relationer. Healing kræver derfor særlig forsigtighed og en langsom, respektfuld opbygning af sikkerhed i vores terapeutiske relation. Vi presser aldrig på, men følger dit systems tempo og kapacitet. Gradvist lærer dit nervesystem at skelne mellem fortid og nutid, og at nærhed kan være sikker. Denne proces kræver tålmodighed, men de forandringer der sker, er dybt forankrede og varige, fordi de sker på det autonome niveau.",
+            fagfolk: "Developmental trauma skaber desorganiseret tilknytning med komplekse autonome mønstre, hvor attachment-søgning og defense-responses aktiveres simultant. Dette kræver robuste interventionsteknikker, der kan adressere paradoksale autonome tilstande. Terapeuten må navigere kompleks overføring og opretholde reguleret tilstedeværelse trods klientens modsatrettede signaler. Intervention fokuserer på at etablere basal autonome stabilitet og gradvis udvidelse af window of tolerance for tilknytningsrelaterede affekter. Somatisk ressourceopbygning kombineret med titreret relationel eksponering skaber forudsætninger for at integrere fragmenterede tilknytningserfaringer og udvikle sammenhængende narrativ."
+        },
+        'nervesystem-relation': {
+            klient: "Dit nervesystem lærer nye tilknytningsmønstre gennem vores trygge terapeutiske relation, fordi det er i samspillet mellem to mennesker, at tilknytning formes. Når du gentagne gange oplever at blive mødt med ro, afstemning og tilgængelighed, begynder dit system at justere sine forventninger til, hvad relationer kan være. Denne læring sker automatisk på det autonome niveau og kræver ikke kognitiv indsats. Min opgave er at tilbyde en konsistent og tryg tilstedeværelse, som dit nervesystem gradvist kan internalisere som en ny model for sikker tilknytning.",
+            fagfolk: "Den terapeutiske relation faciliterer earned secure attachment gennem konsistent co-regulering og autonome modifikationer, der opstår i det intersubjektive felt. Terapeutens ventral vagale tilstand fungerer som neural skabelon for klientens autonome reorganisering. Gentagen erfaring af emotionel afstemning og reparation modificerer indre arbejdsmodeller på det procedurale niveau. Neuroplasticitet i autonome kredsløb muliggør gradvis internalisering af nye relationelle forventninger. Denne proces kræver vedvarende terapeutisk engagement over tid for at konsolidere ændringer i tilknytningssystemets neurale arkitektur og opbygge robust kapacitet for relationel nærhed."
+        },
+        'polyvagal-tilknytning': {
+            klient: "Hvert tilknytningsmønster har sin egen polyvagale signatur, der bestemmer hvordan dit nervesystem reagerer i relationer. Tryg tilknytning lever i den grønne zone med åbenhed og ro, mens utryg tilknytning holder systemet fast i gul alarmberedskab eller rød nedlukning. Ved at forstå denne sammenhæng kan vi arbejde målrettet med at udvide din grønne zone i relationer. Gennem øvelser og den terapeutiske relation lærer dit system gradvist, at det er sikkert at forblive i den åbne, forbundne tilstand, selv når relationer bliver intense.",
+            fagfolk: "Tilknytningsmønstre korrelerer med specifikke polyvagale profiler og autonome response-patterns, der er empirisk dokumenterede. Sikker tilknytning afspejler ventral vagal dominans med fleksibel autonome oscillation. Ambivalent tilknytning viser sympatisk hyperactivation med nedsat vagal brake funktion, mens undvigende tilknytning karakteriseres af dorsal vagal engagement med begrænset social engagement kapacitet. Desorganiseret tilknytning udviser kaotisk skift mellem alle tre autonome tilstande. Klinisk intervention tilrettelægges specifikt efter den polyvagale profil for at adressere de autonome mekanismer, der opretholder det usikre tilknytningsmønster."
+        },
+        'polyvagal-kropsterapi': {
+            klient: "Kropsarbejde aktiverer den grønne sikre tilstand, som er det helt grundlæggende fundament for at opleve tryg tilknytning. Når kroppen finder ro og åbenhed gennem berøring og åndedrætsøvelser, skabes der et fysiologisk grundlag for at kunne være nærværende i relationer. Dit system lærer at nærhed er forbundet med sikkerhed frem for fare. Vi arbejder med konkrete teknikker, der styrker din krops evne til at forblive i den grønne zone, så du gradvist kan tåle mere intimitet og forbindelse med andre mennesker uden at gå i forsvar.",
+            fagfolk: "Somatisk intervention aktiverer ventral vagale pathways, der er nødvendige for secure attachment kapacitet og social engagement. Fascial release reducerer den kroniske muskulære hypertonus, der opretholder sympatiske eller dorsale autonome mønstre. Åndedrætsinterventioner styrker respiratory sinus arrhythmia og vagal brake funktion. Proprioceptiv stimulation via kropsarbejde øger interoceptiv bevidsthed og faciliterer neuroception af sikkerhed i relationel kontekst. Denne kombination af somatiske interventioner genopbygger den fysiologiske kapacitet for ventral vagal engagement, som er det neurologiske fundament for tilknytningsadfærd og relationel tilgængelighed."
+        },
+        'polyvagal-psykobiologi': {
+            klient: "Den grønne sikre tilstand skaber den optimale biologi, der muliggør tryg tilknytning og dybe forbindelser med andre mennesker. Når dit nervesystem er i grøn zone, producerer kroppen naturligt de hormoner der fremmer tryghed, nærhed og tillid. Stresshormonerne falder, og dit system kan fokusere sin energi på forbindelse frem for forsvar. Denne biologiske tilstand er fundamentet for at kunne danne og vedligeholde sunde relationer. Vi arbejder målrettet med at hjælpe dit system til at opholde sig i denne tilstand oftere og længere.",
+            fagfolk: "Ventral vagal dominans optimerer de neurobiologiske systemer, der understøtter secure attachment og relationel kapacitet. Ventral vagal aktivering fremmer oxytocin-frigivelse, reducerer cortisol-reaktivitet og styrker dopaminerge belønningskredsløb forbundet med social forbindelse. Denne polyvagale tilstand muliggør optimal funktion af det sociale engagementsystem og dets neurobiologiske substrater. Gennem systematisk intervention, der øger ventral vagal tone, kan de biologiske forudsætninger for tilknytningssikkerhed gradvist genopbygges. Forskning viser at vedvarende ventral vagal dominans medfører epigenetiske ændringer, der konsoliderer biologisk kapacitet for relationel nærhed."
+        },
+        'polyvagal-traumer': {
+            klient: "Tilknytningstraumer låste dit system fast i usikre tilstande, hvor enten gul alarm eller rød nedlukning blev din konstante følgesvend i relationer. Grøn sikkerhed er vejen til healing, fordi det kun er fra denne trygge base, at traumerne forsigtigt kan bearbejdes. Vi bygger langsomt op og respekterer dit systems tempo, så du aldrig bliver overvældet. Først når den grønne zone er robust nok, begynder vi forsigtigt at berøre de smertefulde tilknytningserfaringer, altid med mulighed for at vende tilbage til sikkerhed.",
+            fagfolk: "Developmental trauma dysregulerer polyvagale responses og skaber kaotiske autonome mønstre med utilstrækkelig ventral vagal kapacitet. Ventral vagal etablering er en absolut forudsætning for tilknytningsarbejde ved traumatiserede klienter. Uden tilstrækkelig ventral vagal ressource vil aktivering af tilknytningsrelateret materiale medføre retraumatisering. Klinisk protokol prioriterer systematisk opbygning af vagal tone gennem somatiske interventioner og co-regulering, før traumeprocessering påbegyndes. Titreret oscillation mellem ventral vagal sikkerhed og kontrolleret aktivering af tilknytningsmateriale faciliterer gradvis integration uden at overvælde det autonome system."
+        },
+        'polyvagal-relation': {
+            klient: "Min grønne ro og trygge tilstedeværelse lærer dit system, hvad tryg tilknytning føles som, gennem vores terapeutiske relation. Når du sidder sammen med et menneske, der er i den grønne zone, begynder dit eget nervesystem automatisk at spejle denne tilstand. Denne co-regulering er en dyb biologisk proces, der ikke kræver ord eller forklaring. Over tid internaliserer dit system denne oplevelse af ro og sikkerhed, så den bliver en del af din egen kapacitet til at finde tryghed i relationer til andre mennesker.",
+            fagfolk: "Terapeutens ventral vagale tilstand co-regulerer klientens autonome system og faciliterer secure attachment learning gennem interpersonel neurobiologisk synkronisering. Terapeutens regulerede tilstedeværelse aktiverer klientens social engagement system og neuroception af sikkerhed. Denne co-regulering modellerer den tidlige omsorgsgiver-barn interaktion og tilbyder en korrigerende neurobiologisk erfaring. Gennem gentagen eksponering for terapeutens ventral vagale tilstand opbygger klienten intern kapacitet for autonome selvregulering i tilknytningskontekster. Processen faciliterer neuroplastiske ændringer i autonome kredsløb, der understøtter vedvarende forbedring af relationel kapacitet."
+        },
+        'tilknytning-kropsterapi': {
+            klient: "Tilknytningsmønstre lever i kroppen som fysiske spændinger, åndedrætsrestriktioner og automatiske reaktioner på nærhed. Kropsarbejde skaber nye, direkte oplevelser af sikkerhed på det fysiske plan, som dit nervesystem kan integrere. Når kroppen lærer at slappe af i nærvær af en anden, ændres tilknytningsmønstret indefra. Vi arbejder langsomt og opmærksomt med de kropslige signaler, der fortæller om gamle tilknytningsmønstre. Gennem berøring og bevægelse i en tryg ramme opstår der nye erfaringer, som gradvist erstatter de gamle mønstre med mere fleksible reaktioner.",
+            fagfolk: "Embodied tilknytningsmønstre modificeres effektivt gennem proprioceptiv og interoceptiv re-patterning, der adresserer de procedurale lag hvor tilknytningsstrategier er lagret. Somatisk intervention tilbyder direkte adgang til implicitte relationelle skemaer, som ikke er tilgængelige via verbal terapi. Fascial release kombineret med relationel sikkerhed faciliterer reconsolidation af tilknytningsrelaterede somatiske mønstre. Kropslig intervention er særligt indiceret ved undvigende tilknytning, hvor kroppen er den primære kanal for at nå de afspaltet tilknytningsbehov. Proprioceptiv stimulation styrker interoceptiv bevidsthed og øger klientens kapacitet for somatisk ressourcering."
+        },
+        'tilknytning-psykobiologi': {
+            klient: "Tidlig tilknytning formede din biologi på grundlæggende måder, der stadig påvirker, hvordan du reagerer på nærhed og stress i relationer. Men ny, sikker tilknytning kan omforme den biologi, der blev skabt af usikre tidlige erfaringer. Når du gentagne gange oplever tryghed i vores terapeutiske relation, begynder din krop at producere mere af de hormoner, der fremmer ro og forbindelse. Denne biologiske forandring sker gradvist, men den er ægte og varig, og den betyder at relationer langsomt begynder at føles mere sikre og behagelige.",
+            fagfolk: "Tilknytningsmønstre præger HPA-akse sensitivitet, oxytocin-receptor densitet og cortisol-reaktivitet gennem epigenetiske mekanismer etableret i tidlig udvikling. Earned secure attachment kan modificere disse biologiske signatures, som dokumenteret i longitudinelle studier. Terapeutisk intervention rettet mod tilknytningssikkerhed medfører målbare ændringer i neurobiologiske markører over tid. Normalisering af oxytocin-system funktion og HPA-akse regulering understøtter øget kapacitet for relationel nærhed og stresshåndtering i tilknytningskontekster. Denne biologiske modifikation konsoliderer de psykologiske ændringer opnået gennem tilknytningsfokuseret terapi og sikrer varig forandring."
+        },
+        'tilknytning-traumer': {
+            klient: "Traumer i tidlige tilknytningsrelationer skaber en særlig smertefuld situation, hvor den person der burde være sikkerhed samtidig var kilden til fare. Det kræver ekstra forsigtighed at arbejde med dette, fordi det at have brug for et andet menneske kan føles livsfarligt. I terapien respekterer vi denne kompleksitet og arbejder i dit tempo. Vi bygger langsomt en ny erfaring af, at relationer kan rumme både nærhed og sikkerhed. Denne proces kræver tålmodighed, men den skaber dyb og varig forandring.",
+            fagfolk: "Developmental trauma inden for tilknytningssystemet resulterer i desorganiseret tilknytning med simultane modsatrettede impulser, hvor attachment-søgning og defense-responses aktiveres samtidigt. Langsom og systematisk safety-etablering er absolut påkrævet før egentligt tilknytningsarbejde kan påbegyndes. Terapeuten navigerer komplekse overføringsmønstre og opretholder konsistent tilgængelighed trods klientens modstand og push-pull dynamik. Titreret eksponering for relationel nærhed kombineret med somatisk ressourceopbygning skaber gradvist udvidet window of tolerance for tilknytningsrelaterede affekter. Behandlingsforløbet kræver typisk længere varighed end andre tilknytningsmønstre."
+        },
+        'tilknytning-relation': {
+            klient: "Vores terapeutiske relation bliver det trygge sted, hvor du kan opleve sikker tilknytning, måske for første gang eller igen efter lang tid. Her er der plads til at udforske, hvad det vil sige at være i en relation, hvor du bliver mødt med konsistent varme og tilgængelighed. Gamle tilknytningsmønstre vil naturligt dukke op i vores relation, og det er netop det der gør det muligt at arbejde med dem. Hver gang vi sammen navigerer en udfordring i relationen, skabes der en ny erfaring, som langsomt omformer dine forventninger.",
+            fagfolk: "Den terapeutiske relation fungerer som korrigerende emotionel erfaring, der direkte modificerer indre arbejdsmodeller gennem konsistent tilgængelighed, emotionel afstemning og reparation af brud. Terapeuten tilbyder sig som secure base og safe haven, og den gentagne erfaring af dette relationsformat muliggør gradvis internalisering af nye tilknytningsforventninger. Earned secure attachment faciliteres gennem vedvarende terapeutisk engagement, hvor klienten eksponeres for en konsistent relationel kontekst, der adskiller sig kvalitativt fra tidlige tilknytningserfaringer. Reparation af relationelle brud er særligt terapeutisk, da det modificerer forventningen om permanent relationelt tab."
+        },
+        'kropsterapi-psykobiologi': {
+            klient: "Kropsarbejde skaber nye tilknytningsoplevelser på det fysiske plan, som direkte ændrer biologien i en positiv retning. Når kroppen oplever sikkerhed og ro i nærvær af et andet menneske, frigives hormoner der fremmer tilknytning og tryghed. Stresshormoner reduceres, og systemet begynder at fungere mere optimalt. Denne biologiske forandring understøtter din evne til at være i relationer med større åbenhed og mindre forsvar. Over tid akkumulerer disse erfaringer sig og skaber varige forandringer i den biologi, der styrer dine tilknytningsreaktioner i hverdagen.",
+            fagfolk: "Somatisk intervention påvirker direkte de neurobiologiske systemer, der understøtter attachment kapacitet og relationel funktion. Fascial release og vagus-aktivering modulerer oxytocin-frigivelse og cortisol-reaktivitet. Proprioceptiv re-patterning påvirker afferente vagale pathways, der modulerer HPA-akse funktion og neurobiologisk stress-reaktivitet. Denne somatisk-biologiske kaskade faciliterer genopbygning af de neurobiologiske forudsætninger for sikker tilknytning. Kropslig intervention er særligt effektiv, fordi den adresserer tilknytningsmønstre på det procedurale niveau, hvor biologisk modifikation kan ske direkte uden kognitivt mellemled."
+        },
+        'kropsterapi-traumer': {
+            klient: "Tilknytningstraumer sidder frosset i kroppen som fysiske spændinger, nedlukning og automatiske forsvarsreaktioner. Forsigtigt kropsarbejde kan hjælpe med at integrere det, der blev splittet af traumatiske tilknytningserfaringer. Vi arbejder langsomt og i dit tempo, så kroppen aldrig bliver presset ud over sin grænse. Når kroppen gradvist lærer at slippe de gamle forsvarsmønstre, åbner der sig nye muligheder for at opleve nærhed som trygt. Denne fysiske integration er en vigtig del af helingsprocessen, fordi tilknytningstraumer primært er lagret i kroppen.",
+            fagfolk: "Developmental trauma manifesteres somatisk i karakteristiske spændingsmønstre, fasciale restriktioner og autonome dysreguleringsmønstre. Titreret somatisk intervention faciliterer integration af fragmenterede tilknytningsrelaterede somatiske erfaringer uden at overvælde systemet. Terapeuten modulerer intensiteten af kropslig intervention baseret på klientens autonome tilstand og window of tolerance. Fascial release kombineret med relationel sikkerhed muliggør completion af frosne forsvarsresponser. Denne somatiske tilgang er særligt indiceret ved developmental trauma, hvor de traumatiske erfaringer er prælinguistisk og derfor primært tilgængelige gennem det somatiske felt."
+        },
+        'kropsterapi-relation': {
+            klient: "Tryg berøring i vores terapeutiske relation lærer din krop, at tilknytning kan være sikker og behagelig. For mange mennesker med utryg tilknytning er kroppen det sted, hvor forandringen begynder, fordi den fysiske oplevelse af sikkerhed er mere overbevisende end ord alene. Når du mærker ro og tryghed i kroppen, mens du er i kontakt med et andet menneske, skabes der en dyb, ny erfaring. Denne kropslige læring integrerer sig med de emotionelle og relationelle forandringer og skaber et solidt fundament for tryggere tilknytning.",
+            fagfolk: "Terapeutisk touch kombineret med relational safety skaber optimale betingelser for modifikation af embodied tilknytningsmønstre. Den somatiske intervention inden for en sikker relationel ramme adresserer simultant de kropslige, autonome og relationelle dimensioner af tilknytning. Tryg berøring aktiverer oxytocin-systemet og faciliterer neuroception af sikkerhed, mens den relationelle kontekst muliggør reconsolidation af implicitte tilknytningsforventninger. Denne kombination er klinisk potent, fordi den tilbyder en korrigerende erfaring på det procedurale niveau, hvor tilknytningsmønstre originalt blev etableret gennem tidlig berøring og omsorg."
+        },
+        'psykobiologi-traumer': {
+            klient: "Tilknytningstraumer ændrede din biologi grundlæggende og skabte en krop, der konstant er på vagt i relationer. Healing af disse traumer normaliserer gradvist de biologiske systemer, der styrer tryghed og forbindelse. Når dit nervesystem lærer, at relationer kan være sikre, begynder kroppen at producere mere af de hormoner, der fremmer ro og tilknytning. Stresshormoner falder, og systemet finder en ny balance, der understøtter din evne til at være i nære relationer uden konstant alarmberedskab. Denne biologiske normalisering er en central del af healing.",
+            fagfolk: "Developmental trauma modificerer neurobiologi grundlæggende med dysreguleret HPA-akse, reduceret oxytocin-receptor densitet og øget inflammatorisk aktivitet. Tilknytningsarbejde kan gradvist normalisere disse biologiske signatures gennem neuroplasticitet og epigenetisk re-programmering. Systematisk intervention rettet mod at genopbygge tilknytningssikkerhed medfører målbare ændringer i cortisol-reaktivitet, oxytocin-niveau og inflammatoriske markører over tid. Denne biologiske normalisering understøtter og konsoliderer de psykologiske forandringer opnået i terapi. Forskning dokumenterer at earned secure attachment efter developmental trauma medfører biologiske profiler der nærmer sig normal variation."
+        },
+        'psykobiologi-relation': {
+            klient: "Vores trygge terapeutiske relation er biologisk medicin, der aktivt skaber tilknytningssikkerhed i din krop. Hver gang du oplever ro og tryghed i vores samvær, frigives hormoner, der fremmer forbindelse og reducerer stress. Over tid akkumulerer disse biologiske forandringer sig og skaber et nyt fundament for, hvordan din krop reagerer i relationer. Det er som om din biologi langsomt kalibrerer sig til en ny virkelighed, hvor nærhed er forbundet med sikkerhed og velvære. Denne biologiske forandring er dyb, varig og understøtter alle andre aspekter af din udvikling.",
+            fagfolk: "Den terapeutiske alliance modificerer direkte oxytocin og cortisol-systemer og faciliterer det biologiske grundlag for secure attachment. Gentagen co-regulering i den terapeutiske relation stimulerer oxytocin-frigivelse og reducerer HPA-akse reaktivitet. Disse neurobiologiske ændringer understøtter øget kapacitet for relationel nærhed og stresshåndtering i tilknytningskontekster. Forskning dokumenterer at kvaliteten af den terapeutiske alliance korrelerer med biologiske markører for tilknytningssikkerhed over tid. Denne evidens understøtter den kliniske prioritering af allianceopbygning som primær intervention ved tilknytningsrelaterede problematikker og biologisk dysregulering."
+        },
+        'traumer-relation': {
+            klient: "Tilknytningstraumer kan kun heales i dyb relationel sikkerhed, fordi det netop var i relationer, at skaden opstod. Vores terapeutiske relation bliver det helende rum, hvor nye erfaringer af tilknytning kan finde sted. Vi bygger langsomt op og respekterer dit systems behov for kontrol og distance. Gradvist udvider vi sammen det rum, hvor du kan være sårbar og forbundet. Denne proces kræver stor tålmodighed fra os begge, men den skaber forandringer på det dybeste niveau, fordi den adresserer selve kernen i tilknytningstraumet.",
+            fagfolk: "Developmental trauma kræver en robust terapeutisk alliance, der er etableret før processing af tilknytningsrelateret traumemateriale kan påbegyndes. Relational safety er den absolutte forudsætning for ethvert tilknytningsarbejde ved developmental trauma. Terapeuten må konsistent demonstrere tilgængelighed, afstemning og reparation for gradvist at modificere klientens forventninger om relationel fare. Allianceopbygning ved desorganiseret tilknytning er en langvarig proces, der kræver terapeutens tolerance for paradoksal adfærd og modoverføring. Den terapeutiske relation fungerer simultant som interventionskontekst og primær korrigerende erfaring ved tilknytningstraumer."
+        }
+    }
+},
+    stress: {
+    name: "Stress",
+    circles: {
+        nervesystem: {
+            klient: {
+                title: "Nervesystemet under Stress",
+                text: "Stress er når nervesystemet kører i overtid uden at få de nødvendige pauser til restitution og genopladning. Dit system er fanget i en konstant alarmberedskabstilstand, der langsomt slider kroppen ned. Vi arbejder med at lære dit system at skifte gear, så du kan mobilisere energi, når det virkelig er nødvendigt, men også finde dyb hvile bagefter. Gennem konkrete øvelser og terapeutisk arbejde genopbygger vi den naturlige balance mellem aktivitet og ro, som er afgørende for dit helbred og velvære."
+            },
+            fagfolk: {
+                title: "Stressregulering via ANS",
+                text: "Kronisk stress repræsenterer manglende polyvagal fleksibilitet med vedvarende fastholdelse i sympatisk activation uden tilstrækkelig ventral vagal recovery. Det terapeutiske fokus rettes mod genopbygning af vagal brake-funktion og restoration af den naturlige autonome oscillation mellem activation og restoration. Interventioner inkluderer systematisk vagal toning gennem åndedrætsøvelser, somatisk intervention og co-regulering i den terapeutiske relation. Målet er at genopbygge det autonome nervesystems fleksibilitet, så klienten kan mobilisere energi adaptivt under udfordringer og returnere til fysiologisk ro efterfølgende."
+            }
+        },
+        polyvagal: {
+            klient: {
+                title: "Polyvagal Forståelse af Stress",
+                text: "Stress er at sidde fast i den gule alarmzone uden at finde vej tilbage til den grønne sikre tilstand med ro og balance. Dit nervesystem er konstant på vagt og bruger enorm energi på at opretholde denne tilstand. Vi finder sammen de konkrete triggere, der sender dig i stress, og lærer dig effektive veje tilbage til den sikre grønne tilstand. Gennem øvelser, der aktiverer dit sociale engagementsystem og styrker din vagale bremse, genopbygger vi din evne til at pendulere naturligt mellem aktivering og dybere afslapning."
+            },
+            fagfolk: {
+                title: "Polyvagal Teori ved Stress",
+                text: "Kronisk stress er karakteriseret ved vedvarende sympatisk dominans uden tilstrækkelig ventral vagal recovery og markant nedsat vagal brake funktion. Den autonome fleksibilitet, der muliggør adaptiv oscillation mellem activation og restoration, er kompromitteret. Intervention fokuserer på aktivering af det sociale engagementsystem og restoration af respiratory sinus arrhythmia som markør for vagal tone. Kliniske teknikker inkluderer prosodisk stimulation, åndedrætsøvelser med forlænget udånding og co-regulering i den terapeutiske relation. Systematisk genopbygning af ventral vagal kapacitet er fundamentet for varig stressreduktion og autonome fleksibilitet."
+            }
+        },
+        tilknytning: {
+            klient: {
+                title: "Tilknytning og Stress",
+                text: "Hvis du voksede op uden pålidelig hjælp til at regulere stress, har dit system aldrig rigtig lært, hvordan det gøres. Den tidlige co-regulering med omsorgspersoner er fundamentet for vores evne til at håndtere stress som voksne. Vi skaber den manglende co-regulering nu i vores terapeutiske relation, så dit system gradvist lærer at stresse ned og finde ro. Gennem gentagne oplevelser af at blive hjulpet med at finde balance, opbygger dit nervesystem nye veje til selvregulering, som bliver stærkere over tid og giver varig forandring."
+            },
+            fagfolk: {
+                title: "Tilknytning og Stressregulering",
+                text: "Manglende early co-regulation resulterer i vedvarende deficits i kapaciteten for selvregulering af stress gennem hele livsforløbet. Usikker tilknytning korrelerer konsistent med dysreguleret HPA-akse, øget stress-vulnerabilitet og reduceret stressresiliens. Terapeutisk co-regulation tilbyder en korrigerende relationel erfaring, der gradvist lærer systemet nye stress-respons mønstre. Gennem gentagen erfaring af reguleret tilstedeværelse i den terapeutiske relation opbygger klienten internaliserede reguleringsressourcer. Denne proces bygger på neuroplasticitet i autonome kredsløb og muliggør gradvis modifikation af de stress-reaktionsmønstre, der blev etableret i tidlige tilknytningsrelationer."
+            }
+        },
+        kropsterapi: {
+            klient: {
+                title: "Stress i Kroppen",
+                text: "Stress manifesterer sig som spændinger i nakke og skuldre, hovedpine, dårlig søvn, fordøjelsesproblemer og generel uro i kroppen. Disse fysiske symptomer er kroppen signal om, at nervesystemet er overbelastet. Gennem målrettet behandling og åndedrætsarbejde hjælper vi kroppen med fysisk at slippe de fastlåste stress-mønstre. Når musklerne slipper deres spænding og åndedrættet bliver dybere og friere, sender kroppen signaler til hjernen om, at det er sikkert at slappe af. Denne kropslige vej til stressreduktion er dyb og effektiv."
+            },
+            fagfolk: {
+                title: "Somatisk Stressintervention",
+                text: "Stress-relateret muskulær hypertonus og fasciale restriktioner opretholder autonome stress-responses gennem afferente feedback-loops, der fastholder sympatisk dominans. Direkte somatisk intervention via fascial release og vagus-aktivering gennem diafragmatisk åndedræt modulerer HPA-akse reaktivitet og reducerer cortisol-produktion. Behandling af specifikke somatiske stress-markører som cervical hypertonus, thorakal restriktion og diafragmatisk spænding adresserer de kropslige mekanismer, der opretholder kronisk stress. Somatisk intervention kombineret med co-regulering i den terapeutiske relation skaber optimale betingelser for genopbygning af autonome fleksibilitet og varig stressreduktion."
+            }
+        },
+        psykobiologi: {
+            klient: {
+                title: "Stress-biologien",
+                text: "Ved kronisk stress producerer kroppen konstant cortisol og andre stresshormoner, hvilket gradvist nedslider hele systemet og påvirker immunforsvar, fordøjelse, søvn og kognition. Din krop er i konstant alarmberedskab, og det tærer på alle organsystemer over tid. Vi arbejder målrettet med at normalisere din biologi, så kroppen kan hele og restituere sig igen. Gennem nervesystemsregulering, åndedrætsøvelser og den trygge terapeutiske relation kan de biologiske stress-markører gradvist vende tilbage til normale niveauer, og din krop genfinder sin naturlige balance."
+            },
+            fagfolk: {
+                title: "Neurobiologi ved Kronisk Stress",
+                text: "Kronisk stress dysregulerer HPA-aksen med afladning af cortisol-døgnrytme, reduceret DHEA-produktion, øgede inflammatoriske cytokiner og kompromitteret immunfunktion. Vedvarende sympatisk dominans medfører kardiovaskulær belastning og metabolisk dysregulering. Autonomt nervesystem-regulering kan normalisere disse biomarkører gennem systematisk restoration af vagal tone og genopbygning af den parasympatiske modvægt til kronisk sympatisk activation. Interventioner rettet mod respiratory sinus arrhythmia og barorefleks-sensitivitet har dokumenteret effekt på normalisering af HPA-akse funktion. Biologisk monitorering kan anvendes til at evaluere behandlingsrespons."
+            }
+        },
+        traumer: {
+            klient: {
+                title: "Traumer og Stress",
+                text: "Meget kronisk stress har rødder i gamle traumer, hvor dit system lærte, at verden er et farligt sted, og alarmberedskabet aldrig rigtig blev slukket. De traumatiske oplevelser programmerede dit nervesystem til konstant vagtsomhed, som nu opleves som vedvarende stress. Vi arbejder forsigtigt med at heale de underliggende traumer, så stress-responsen gradvist kan normaliseres og dit system kan finde den ro det fortjener. Denne tilgang adresserer årsagen til stressen frem for kun symptomerne og skaber derfor dybere og mere varig forandring i din hverdag."
+            },
+            fagfolk: {
+                title: "Traumatisk Stress",
+                text: "PTSD og developmental trauma skaber persisterende baseline hyperarousal med forhøjet sympatisk tonus og nedsat vagal brake funktion. Incomplete fight og flight responses opretholdes som kronisk stress i form af fastfrosne defensive mønstre i det autonome nervesystem. Trauma-processing gennem somatic experiencing faciliterer completion af disse ufuldstændige forsvarsresponser og reducerer derved stress-symptomer. Interventionen fokuserer på titreret aktivering inden for window of tolerance, hvilket muliggør gradvis aflading af traumatisk energi. Somatisk orienteret traumebearbejdning adresserer de autonome mekanismer, der opretholder kronisk stress."
+            }
+        },
+        relation: {
+            klient: {
+                title: "Relationel Ro ved Stress",
+                text: "I vores trygge terapeutiske relation lærer dit nervesystem, at det er okay at slippe kontrollen og give slip på den konstante vagtsomhed. Min ro og regulerede tilstedeværelse bliver en model for dit eget system. Når du gentagne gange oplever at være i nærvær af et roligt nervesystem, begynder dit eget system at spejle denne tilstand. Det er sådan stress-mønstre kan ændres fundamentalt fra bunden. Denne relationelle co-regulering opbygger gradvist din egen kapacitet til at finde ro, også uden for terapirummet og i hverdagens udfordringer."
+            },
+            fagfolk: {
+                title: "Co-regulering af Stress",
+                text: "Terapeutens ventral vagale tilstand fungerer som ekstern regulator af klientens stress-response gennem interpersonel neurobiologisk synkronisering. Gentagen co-regulation i den terapeutiske relation opbygger gradvist intern kapacitet til selvregulering gennem neuroplasticitet i autonome kredsløb. Terapeutens konsistente regulerede tilstedeværelse tilbyder en neural skabelon for klientens autonome reorganisering. Denne proces rekapitulerer den tidlige omsorgsgiver-barn co-regulering og tilbyder en korrigerende erfaring for klienter med utilstrækkelig tidlig regulering. Effekten konsolideres over tid og generaliserer til klientens øvrige relationer og stresshåndtering."
+            }
+        }
+    },
+    connections: {
+        'nervesystem-polyvagal': {
+            klient: "Stress er nervesystemet fanget i gul alarm uden mulighed for at finde ro og restitution. Polyvagal forståelse giver os et konkret landkort, der viser vejen tilbage til den grønne sikre tilstand. Når vi forstår præcis, hvilke mekanismer der holder dig fast i stress-tilstanden, kan vi arbejde målrettet med at aktivere de systemer, der bringer dig tilbage til ro. Øvelser der styrker din vagale bremse og aktiverer dit sociale engagementsystem er nøglen til at genoprette den naturlige balance mellem aktivering og afslapning.",
+            fagfolk: "Kronisk stress repræsenterer sympatisk dominans uden tilstrækkelig ventral vagal recovery og kompromitteret autonome fleksibilitet. Polyvagal intervention restaurerer denne fleksibilitet gennem målrettet aktivering af ventral vagale pathways. Kliniske teknikker fokuserer på at styrke vagal brake funktion og genopbygge respiratory sinus arrhythmia som markør for autonome reguleringskapacitet. Social engagement system aktivering gennem prosodisk stimulation og relationel co-regulering understøtter denne proces. Systematisk polyvagal intervention adresserer de specifikke autonome mekanismer, der opretholder kronisk stress og danner grundlag for varig symptomreduktion."
+        },
+        'nervesystem-tilknytning': {
+            klient: "Stress-mønstre blev ofte skabt i utryg tilknytning, hvor du som barn ikke fik tilstrækkelig hjælp til at regulere dine følelser og dit nervesystem. Uden denne tidlige co-regulering lærte dit system aldrig fuldt ud at stresse ned og finde ro. Vi skaber den manglende regulering nu i vores terapeutiske relation, hvor du kan opleve, hvordan det føles at blive hjulpet med at finde balance. Denne erfaring opbygger gradvist nye neurale veje til selvregulering, som styrker din kapacitet til at håndtere stress i hverdagen.",
+            fagfolk: "Manglende early co-regulation i tilknytningsrelationer skaber vedvarende stress-vulnerabilitet med deficits i autonome selvregulering. Terapeutisk co-regulation modificerer disse autonome mønstre gennem gentagen erfaring af ekstern regulering i den terapeutiske alliance. Neuroplasticitet i autonome kredsløb muliggør gradvis internalisering af reguleringskapacitet. Earned secure attachment korrelerer med forbedret HPA-akse regulering og reduceret stress-reaktivitet. Denne forståelse integrerer tilknytningsteori med neurobiologisk stressforskning og danner grundlag for relationelt orienterede stressinterventioner, der adresserer de interpersonelle rødder til kronisk stress."
+        },
+        'nervesystem-kropsterapi': {
+            klient: "Stress sidder som spændinger i nakke, skuldre, kæbe og ryg, og disse fysiske spændinger holder nervesystemet fast i alarm. Kropsarbejde frigiver spændingerne direkte og sender dermed et kraftigt signal til nervesystemet om, at det er sikkert at slappe af. Når musklerne slipper og åndedrættet bliver dybere, begynder hele systemet at finde ro. Denne kropslige tilgang til stressreduktion er særligt effektiv, fordi den arbejder direkte med de fysiske mekanismer, der opretholder stress-tilstanden, i stedet for kun at adressere tankemønstre.",
+            fagfolk: "Stress-relateret somatisk hypertonus opretholder autonome stress-responses gennem afferente feedback-loops, der fastholder sympatisk dominans og forhindrer ventral vagal recovery. Fascial release bryder denne selvforstærkende cyklus ved at reducere den perifere sensoriske input, der signalerer fare til centralnervesystemet. Diafragmatisk mobilisering og cervical fascial release har særlig effekt på vagal tone gennem direkte påvirkning af vagus-nervens forløb. Somatisk intervention kombineret med åndedrætsarbejde og co-regulering skaber optimale betingelser for genopbygning af den autonome fleksibilitet, der er kompromitteret ved kronisk stress."
+        },
+        'nervesystem-psykobiologi': {
+            klient: "Stress-biologien med konstant høj cortisol og andre stresshormoner normaliseres gradvist, når nervesystemet finder vej tilbage til ro og balance. Det handler om at genoprette den naturlige rytme, hvor kroppen kan veksle mellem aktivering og dyb afslapning. Når nervesystemet reguleres, begynder hele den biologiske kaskade at vende, og hormonniveauer, immunfunktion og søvnkvalitet forbedres. Denne normalisering sker ikke fra den ene dag til den anden, men gennem vedvarende arbejde med nervesystemet kan vi gradvist genoprette den biologiske balance, der er fundamentet for dit helbred.",
+            fagfolk: "Nervesystemsregulering ved kronisk stress normaliserer HPA-akse dysregulation gennem genopbygning af vagal modulation af cortisol-produktion. Restoration af vagal tone reducerer sympatisk drive og genopretter baroreflex-sensitivitet, hvilket medfører normalisering af cortisol-døgnrytme og reduktion af inflammatoriske markører. Systematisk intervention rettet mod autonome fleksibilitet har dokumenteret effekt på biologiske stress-markører. Denne neurobiologiske normalisering understøtter forbedret immunfunktion, søvnarkitektur og metabolisk regulation. Monitorering af biologiske markører som cortisol-awakening response og heart rate variability kan anvendes klinisk til at evaluere behandlingseffekt."
+        },
+        'nervesystem-traumer': {
+            klient: "Kronisk stress har ofte sine rødder i gamle traumer, der programmerede dit nervesystem til konstant vagtsomhed og alarmberedskab. Selv når den ydre fare for længst er ovre, fortsætter systemet med at reagere, som om faren stadig er til stede. Healing af de underliggende traumer er nøglen til at normalisere stress-responsen varigt. Vi arbejder forsigtigt og i dit tempo med at bearbejde de traumatiske oplevelser, så dit nervesystem gradvist kan slippe alarmberedskabet og finde den ro, der har været utilgængelig så længe.",
+            fagfolk: "PTSD og developmental trauma skaber persisterende hyperarousal med forhøjet baseline sympatisk tonus, der opleves som kronisk stress. Incomplete fight og flight responses opretholdes i det autonome nervesystem og forhindrer tilbagevenden til fysiologisk homeostase. Trauma-processing gennem somatisk orienterede metoder reducerer baseline stress ved at facilitere completion af disse ufuldstændige defensive responses. Titreret aktivering inden for window of tolerance muliggør gradvis aflading af traumatisk energi. Denne tilgang adresserer de autonome mekanismer, der opretholder kronisk stress, og skaber forudsætning for varig normalisering af stress-reaktivitet."
+        },
+        'nervesystem-relation': {
+            klient: "Dit stress-system lærer ro og balance gennem vores trygge terapeutiske relation, og det er vejen til varig ændring af dine stress-mønstre. Når du gentagne gange oplever at sidde sammen med et nervesystem i ro, begynder dit eget system at spejle denne tilstand. Denne co-regulering er en dyb biologisk proces, der gradvist opbygger din egen kapacitet til at finde ro, også i udfordrende situationer uden for terapirummet. Over tid bliver den ro du oplever i terapien til en ressource, du kan trække på i hverdagens stressende momenter.",
+            fagfolk: "Co-regulering i den terapeutiske alliance modificerer stress-relaterede autonome mønstre gennem neuroplasticitet i autonome kredsløb. Terapeutens ventral vagale tilstand fungerer som neural skabelon for klientens autonome reorganisering. Gentagen erfaring af reguleret tilstedeværelse opbygger gradvist internaliseret kapacitet for stresshåndtering. Denne interpersonelle neurobiologiske proces rekapitulerer den tidlige omsorgsgiver-barn co-regulering og tilbyder en korrigerende erfaring for klienter med deficits i selvregulering af stress. Effekten konsolideres over tid og generaliserer til klientens øvrige relationer."
+        },
+        'polyvagal-tilknytning': {
+            klient: "Utryg tilknytning i barndommen skabte et nervesystem, der stresser lettere og har sværere ved at finde ro igen. Dit system lærte aldrig fuldt ud den reguleringskapacitet, som tryg tilknytning giver. Vi lærer dit system ny sikkerhed gennem vores terapeutiske relation, hvor du kan opleve den co-regulering, der manglede i barndommen. Gradvist opbygger dit nervesystem stærkere veje til den grønne ro-tilstand, og din stress-tærskel hæves. Denne forandring er dyb, fordi den adresserer selve fundamentet for din stress-sårbarhed i de tidlige tilknytningsmønstre.",
+            fagfolk: "Usikker tilknytning korrelerer konsistent med øget stress-vulnerabilitet og nedsat autonome reguleringskapacitet. Earned secure attachment reducerer sympatisk reaktivitet og styrker ventral vagal recovery-kapacitet. Den terapeutiske relation tilbyder en kontekst for genopbygning af de reguleringsressourcer, der ikke blev tilstrækkeligt udviklet i tidlige tilknytningsrelationer. Intervention fokuserer på at etablere terapeutisk co-regulering som basis for gradvis opbygning af internaliseret selvregulering. Polyvagal teori og tilknytningsteori integreres klinisk for at adressere de relationelle rødder til kronisk stress."
+        },
+        'polyvagal-kropsterapi': {
+            klient: "Kropsarbejde aktiverer den grønne ro-tilstand direkte og skaber en kraftig modvægt til den gule stresszone, som dit system har været fanget i. Når kroppen oplever dyb afslapning gennem berøring og åndedrætsøvelser, sender den et stærkt signal til nervesystemet om sikkerhed. Denne fysiske vej til den grønne zone er ofte mere effektiv end forsøg på at tænke sig til ro. Vi bruger konkrete kropslige teknikker, der aktiverer den parasympatiske del af nervesystemet og hjælper dit system med at huske, hvordan ro føles.",
+            fagfolk: "Somatisk intervention aktiverer ventral vagale pathways og modulerer sympatiske stress-responses gennem direkte påvirkning af autonome reguleringsmekanismer. Diafragmatisk åndedræt med forlænget udånding styrker vagal brake funktion og reducerer sympatisk tonus. Fascial release i cervikale og thorakale regioner påvirker vagus-nervens afferente forløb og faciliterer ventral vagal aktivering. Proprioceptiv stimulation øger interoceptiv bevidsthed og styrker klientens evne til at registrere autonome tilstandsskift. Denne kombination af somatiske interventioner genopbygger systematisk den polyvagale fleksibilitet, der er kompromitteret ved kronisk stress."
+        },
+        'polyvagal-psykobiologi': {
+            klient: "Den grønne sikre tilstand skaber den optimale biologi, hvor stresshormoner normaliseres, og kroppens helende processer aktiveres. Når dit nervesystem finder den grønne zone, falder cortisol, immunforsvaret styrkes, og din søvn forbedres. Denne biologiske forandring sker automatisk, når systemet finder ro, og den understøtter din krop i at hele efter lang tids stress. Vi arbejder med at hjælpe dit nervesystem til at opholde sig i den grønne zone oftere og længere, så de biologiske fordele kan akkumulere og skabe varig forbedring af dit helbred.",
+            fagfolk: "Ventral vagal aktivering optimerer HPA-akse funktion og reducerer stress-biomarkører gennem parasympatisk modulation af cortisol-produktion og inflammatoriske processer. Restoration af vagal tone medfører normalisering af cortisol-døgnrytme, øget DHEA-produktion og reduktion af proinflammatoriske cytokiner. Denne polyvagale-biologiske kaskade er veldokumenteret og danner grundlag for somatisk orienterede stressinterventioner. Systematisk intervention rettet mod ventral vagal kapacitet har målbar effekt på biologiske stress-markører. Heart rate variability som markør for vagal tone kan anvendes klinisk til monitorering af behandlingsrespons."
+        },
+        'polyvagal-traumer': {
+            klient: "Traumer fastlåste dit system i kronisk stress, fordi de programmerede nervesystemet til konstant vagtsomhed og alarmberedskab. Grøn sikkerhed skal etableres først som et solidt fundament, før traumerne forsigtigt kan bearbejdes. Uden denne trygge base risikerer vi at overvælde systemet og forstærke stressmønstret. Vi bygger langsomt op og respekterer dit systems tempo, så den grønne zone gradvist bliver robust nok til at rumme arbejdet med de gamle traumer. Denne tilgang sikrer varig forandring frem for kortvarig lindring.",
+            fagfolk: "Traumatisk hyperarousal med persisterende sympatisk dominans kræver solid ventral vagal etablering før trauma-processing kan påbegyndes sikkert. Uden tilstrækkelig ventral vagal kapacitet vil aktivering af traumemateriale medføre retraumatisering og forværring af stress-symptomer. Klinisk protokol prioriterer systematisk opbygning af polyvagal fleksibilitet og autonome reguleringsressourcer som forudsætning for traumebearbejdning. Titreret oscillation mellem ventral vagal sikkerhed og kontrolleret aktivering af traumerelateret materiale faciliterer gradvis integration. Denne sekventielle tilgang sikrer varig reduktion af traumatisk stress."
+        },
+        'polyvagal-relation': {
+            klient: "Min ro og trygge tilstedeværelse smitter direkte til dit stress-belastede system gennem vores terapeutiske relation. Når to nervesystemer er i kontakt, påvirker de hinanden automatisk, og min grønne tilstand inviterer dit system til at finde samme ro. Denne co-regulering er en biologisk proces, der sker uden ord, og den er en af de mest kraftfulde veje til stressreduktion. Over tid internaliserer dit nervesystem denne oplevelse af ro, så den bliver en del af din egen kapacitet til at regulere stress i hverdagen.",
+            fagfolk: "Terapeutens ventral vagale tilstand co-regulerer klientens sympatiske hyperarousal ved kronisk stress gennem interpersonel neurobiologisk synkronisering. Den terapeutiske relations regulerende funktion rekapitulerer den tidlige omsorgsgiver-barn co-regulering og tilbyder en korrigerende neurobiologisk erfaring. Terapeutens konsistente regulerede tilstedeværelse faciliterer neuroception af sikkerhed og aktiverer klientens sociale engagementsystem. Gentagen co-regulering opbygger gradvist internaliseret kapacitet for selvregulering af stress. Denne proces er dokumenteret gennem forskning i interpersonel neurobiologi og danner grundlag for relationelt orienterede stressinterventioner."
+        },
+        'tilknytning-kropsterapi': {
+            klient: "Manglende tidlig co-regulering i tilknytningsrelationer skabte stress, der nu sidder fast i kroppen som kroniske spændinger og åndedrætsrestriktioner. Kropsarbejde lærer dit system ny regulering ved at adressere disse fysiske stress-mønstre direkte. Når kroppen oplever afslapning og sikkerhed i nærvær af en anden person, begynder hele systemet at lære nye måder at regulere stress på. Denne kombination af kropslig intervention og relationel tryghed er særligt effektiv, fordi den adresserer stress-mønstrene på det niveau, hvor de oprindeligt blev skabt.",
+            fagfolk: "Stress-vulnerabilitet forankret i utilstrækkelig tidlig co-regulering er embodied i karakteristiske somatiske konfigurationer med kronisk hypertonus og fasciale restriktioner. Somatisk intervention modificerer disse stress-relaterede somatiske mønstre og adresserer derved de kropslige mekanismer, der opretholder øget stress-reaktivitet. Fascial release kombineret med relationel sikkerhed faciliterer reconsolidation af procedurale stress-mønstre etableret i tidlig tilknytning. Proprioceptiv re-patterning og interoceptiv træning styrker klientens kapacitet for kropslig stress-regulering. Denne somatiske tilgang komplementerer relationelle interventioner ved at adressere de embodied dimensioner af stress-vulnerabilitet."
+        },
+        'tilknytning-psykobiologi': {
+            klient: "Utryg tilknytning i barndommen formede en biologi, der er mere følsom over for stress end normalt. Dit system blev indstillet til højere alarmberedskab, fordi de tidlige relationer ikke gav tilstrækkelig tryghed. Men ny sikkerhed i relationer kan omforme denne biologi, så stresshormonerne normaliseres, og kroppen genfinder sin balance. Gennem vores terapeutiske relation oplever dit system gentagne gange den tryghed, det manglede, og gradvist kalibrerer biologien sig til et nyt og sundere niveau med mere ro og mindre stress.",
+            fagfolk: "Usikker tilknytning præger HPA-akse sensitivitet og cortisol-reaktivitet gennem epigenetiske mekanismer etableret i tidlig udvikling. Earned secure attachment kan modificere denne stress-biologi, som dokumenteret i longitudinelle studier. Terapeutisk intervention rettet mod tilknytningssikkerhed medfører målbare ændringer i biologiske stress-markører over tid. Normalisering af HPA-akse funktion og cortisol-døgnrytme understøtter reduceret stress-vulnerabilitet og øget resiliens. Denne biologiske modifikation konsoliderer de psykologiske ændringer opnået gennem tilknytningsfokuseret terapi og sikrer varig reduktion af stress-sårbarhed."
+        },
+        'tilknytning-traumer': {
+            klient: "Tilknytningstraumer i de tidligste relationer skabte kronisk stress, fordi dit system lærte, at verden og mennesker er uforudsigelige og potentielt farlige. Healing af denne dybe stress kræver, at vi først etablerer en tryg relation, hvor dit nervesystem kan erfare sikkerhed. Vi presser aldrig på med at bearbejde traumerne, før fundamentet af relationel tryghed er solidt nok. Gradvist bygger vi denne sikkerhed op, og når dit system er klar, kan vi forsigtigt begynde at adressere de traumatiske oplevelser, der holder dig fast i stress.",
+            fagfolk: "Developmental trauma inden for tilknytningssystemet resulterer i dysreguleret stress-respons med persisterende hyperarousal og kompromitteret autonome fleksibilitet. Langsom og systematisk safety-etablering i den terapeutiske relation er absolut påkrævet før traumeprocessering. Terapeuten opretholder konsistent tilgængelighed og reguleret tilstedeværelse trods klientens ambivalens og modstand. Allianceopbygning er den primære intervention i den indledende fase, og prematur traumeprocessering risikerer retraumatisering og forværring. Den terapeutiske relation fungerer som kontekst for gradvis neuroplastisk modifikation af stress-relaterede autonome kredsløb."
+        },
+        'tilknytning-relation': {
+            klient: "Vores terapeutiske relation lærer dit system, at stress kan reguleres i trygge relationer med andre mennesker. Måske har du altid håndteret stress alene, fordi tidlige erfaringer lærte dig, at andre ikke er pålidelige. I vores relation får du mulighed for at opleve noget andet, at det er muligt at finde ro sammen med et andet menneske. Denne erfaring ændrer gradvist dit nervesystems forventninger til relationer og opbygger nye veje til stressregulering, der involverer forbindelse frem for isolation. Det er en dyb og transformativ forandring.",
+            fagfolk: "Terapeutisk co-regulation modificerer stress-vulnerabilitet gennem gradvis opbygning af earned secure attachment i den kliniske kontekst. Konsistent relationel tilgængelighed og emotionel afstemning tilbyder en korrigerende erfaring, der adresserer de tilknytningsrelaterede rødder til kronisk stress. Gentagen co-regulering opbygger internaliseret kapacitet for selvregulering og reducerer afhængighed af maladaptive stressmestringsstrategier. Denne tilgang integrerer tilknytningsteori med polyvagal teori og neurobiologisk stressforskning. Terapeutisk alliance er den primære virkningsmekanisme ved tilknytningsrelateret stress-vulnerabilitet og danner grundlag for varig forandring."
+        },
+        'kropsterapi-psykobiologi': {
+            klient: "Når kroppen slipper sine stress-spændinger gennem kropsarbejde og åndedrætsøvelser, begynder hormoner og neurotransmittere at normalisere sig automatisk. Cortisol falder, immunforsvaret styrkes, og søvnkvaliteten forbedres mærkbart. Denne biologiske forandring sker, fordi kroppen og hjernen er forbundet i et konstant feedback-loop, hvor kropslig afslapning direkte påvirker hjernens kemiske balance. Regelmæssigt kropsarbejde akkumulerer disse biologiske fordele over tid og skaber et stærkere og mere modstandsdygtigt system, der bedre kan håndtere hverdagens udfordringer uden at gå i stress.",
+            fagfolk: "Fascial release ved kronisk stress påvirker vagale afferenter og modulerer HPA-akse funktion gennem somatisk-autonome feedback-mekanismer. Reduktion af perifert sensorisk input fra kronisk hypertoniske muskler og fasciale restriktioner normaliserer central stress-processing. Diafragmatisk mobilisering styrker respiratory sinus arrhythmia og vagal brake funktion med dokumenteret effekt på cortisol-døgnrytme og inflammatoriske markører. Denne somatisk-biologiske kaskade danner grundlag for evidensbaseret kropslig stressintervention. Systematisk somatisk intervention kan monitoreres biologisk gennem heart rate variability og salivary cortisol som behandlingsrespons-markører."
+        },
+        'kropsterapi-traumer': {
+            klient: "Stress-traumer sidder frosset i kroppen som fastlåste spændingsmønstre, der holder nervesystemet i konstant alarm. Forsigtigt kropsarbejde kan frigive disse frosne mønstre og hjælpe din krop med at fuldende de forsvarsreaktioner, der aldrig blev afsluttet. Vi arbejder langsomt og i dit tempo, så du aldrig bliver overvældet. Når kroppen gradvist slipper de gamle forsvarsmønstre, oplever du en dybere ro og frihed, som har været utilgængelig så længe traumerne holdt dit system i spænd. Denne kropslige frigørelse er en vigtig del af helingsprocessen.",
+            fagfolk: "Traumatisk stress manifesteres somatisk i karakteristiske mønstre af muskulær hypertonus, fasciale restriktioner og autonome dysregulering. Titreret somatisk intervention faciliterer completion af ufuldstændige defensive responses, der opretholdes som kronisk stress i det autonome nervesystem. Terapeuten modulerer intensiteten af kropslig intervention baseret på klientens autonome tilstand og window of tolerance. Fascial release kombineret med relationel sikkerhed muliggør gradvis aflading af traumatisk energi. Denne somatiske tilgang er særligt indiceret ved traumatisk stress, hvor de defensive mønstre er primært lagret i det somatiske felt."
+        },
+        'kropsterapi-relation': {
+            klient: "Tryg berøring i vores terapeutiske relation lærer din krop, at stress kan reguleres i kontakt med et andet menneske. For mange stressramte er kroppen det sted, hvor forandringen begynder, fordi den fysiske oplevelse af ro er mere overbevisende end ord. Når du mærker afslapning og tryghed i kroppen, mens du er i kontakt med et andet menneske, skabes en dyb ny erfaring. Denne kropslige læring integrerer sig med de emotionelle og relationelle forandringer og skaber et solidt fundament for varig stressreduktion.",
+            fagfolk: "Terapeutisk berøring kombineret med relational safety skaber optimale betingelser for modifikation af stress-relaterede somatiske og autonome mønstre. Den somatiske intervention inden for en sikker relationel ramme adresserer simultant de kropslige, autonome og relationelle dimensioner af kronisk stress. Tryg berøring aktiverer oxytocin-systemet og faciliterer neuroception af sikkerhed, mens den relationelle kontekst muliggør reconsolidation af stress-relaterede procedurale mønstre. Denne kombination er klinisk potent, fordi den tilbyder en korrigerende erfaring på det somatiske niveau, hvor stress-mønstre ofte er mest resistent."
+        },
+        'psykobiologi-traumer': {
+            klient: "Traumer ændrede din stress-biologi grundlæggende og skabte et system, der konstant producerer for mange stresshormoner. Healing af traumerne normaliserer gradvist cortisol og andre hormoner, så din krop kan genfinde sin naturlige balance. Når de traumatiske oplevelser bearbejdes, og dit nervesystem lærer, at faren er ovre, begynder hele den biologiske kaskade at vende. Immunforsvaret styrkes, søvnen forbedres, og din krop får mulighed for at hele og restituere sig efter lang tids overbelastning. Denne biologiske normalisering er en central del af recovery.",
+            fagfolk: "Traumatisk modifikation af HPA-aksen med dysreguleret cortisol-produktion, reduceret DHEA og øget inflammatorisk aktivitet opretholder biologisk stress-tilstand. Trauma-processing kan normalisere disse stress-biomarkører gennem genopbygning af autonome reguleringskapacitet og resolution af fastfrosne forsvarsresponser. Systematisk traumebearbejdning medfører målbare ændringer i cortisol-døgnrytme, inflammatoriske markører og heart rate variability over tid. Denne biologiske normalisering understøtter og konsoliderer de psykologiske forandringer opnået i terapi. Monitorering af biologiske stress-markører kan anvendes klinisk til at evaluere behandlingsrespons og guide interventionsplanlægning."
+        },
+        'psykobiologi-relation': {
+            klient: "Vores trygge terapeutiske relation er stress-medicin, der aktivt sænker cortisol og øger de hormoner der skaber ro og forbindelse i din krop. Hver gang du sidder i vores trygge rum og oplever regulering og nærvær, sker der biologiske forandringer, der styrker dit systems evne til at håndtere stress. Over tid akkumulerer disse små biologiske forbedringer sig og skaber et nyt fundament for, hvordan din krop reagerer på udfordringer. Det er som om din biologi langsomt kalibrerer sig til et nyt normalniveau med mere ro og resiliens.",
+            fagfolk: "Den terapeutiske alliance modificerer direkte HPA-akse funktion og oxytocin-systemer ved kronisk stress gennem interpersonel neurobiologisk regulering. Gentagen co-regulering i den terapeutiske relation stimulerer oxytocin-frigivelse og reducerer cortisol-reaktivitet. Disse neurobiologiske ændringer konsoliderer sig over tid og understøtter varig reduktion af stress-vulnerabilitet. Forskning dokumenterer at kvaliteten af den terapeutiske alliance korrelerer med biologiske stress-markører og behandlingsrespons. Denne evidens understøtter den kliniske prioritering af allianceopbygning som primær intervention ved biologisk stress-dysregulering."
+        },
+        'traumer-relation': {
+            klient: "Stress-traumer kan kun heales i dyb relationel sikkerhed, fordi dit nervesystem har brug for at erfare, at det er sikkert at slippe vagtsomheden. Vores terapeutiske relation er det fundamentale grundlag for denne healing. Her kan du langsomt og gradvist lære, at det er muligt at slappe af i nærvær af et andet menneske, og at du ikke behøver at være på vagt hele tiden. Denne relationelle erfaring ændrer dit systems grundlæggende forventninger og skaber varig forandring i, hvordan du oplever og håndterer stress.",
+            fagfolk: "Trauma-baseret kronisk stress kræver en robust terapeutisk alliance etableret som absolut forudsætning før traumeprocessering kan påbegyndes sikkert. Co-regulering i den terapeutiske relation er afgørende for at opbygge den autonome kapacitet, der er nødvendig for at rumme traumemateriale. Terapeuten opretholder konsistent reguleret tilstedeværelse og fungerer som ekstern regulator af klientens stress-response under traumebearbejdning. Alliancekvalitet er den stærkeste prædiktor for behandlingsrespons ved traumatisk stress. Relationel sikkerhed muliggør titreret eksponering for traumemateriale inden for window of tolerance og faciliterer varig resolution."
+        }
+    }
+},
+    traumer: {
+        name: "Traumer",
+        circles: {
+            nervesystem: {
+                klient: {
+                    title: "Nervesystemet efter Traume",
+                    text: "Traumer fryser nervesystemet i forsvarstilstande som kan føles helt overvældende og uforståelige. Kroppen reagerer som om faren stadig er til stede, selvom den i virkeligheden er ovre. Vi arbejder forsigtigt og respektfuldt med at optø det frosne, lag for lag, i et tempo der føles sikkert for dig. Målet er at nervesystemet gradvist kan finde tilbage til sin naturlige fleksibilitet og evne til at skelne mellem fortid og nutid. Denne proces kræver tålmodighed og tillid, men systemet har en medfødt kapacitet for at heale når betingelserne er rigtige."
+                },
+                fagfolk: {
+                    title: "ANS-regulering ved Traume",
+                    text: "Traumatisk materiale lagres som autonome forsvarstilstande, herunder freeze, collapse, fight og flight, der persisterer som incomplete defensive responses i nervesystemet. Disse tilstande opretholder en kronisk dysregulering af det autonome nervesystem med vedvarende hyperarousal eller hypoarousal. Terapeutisk fokus rettes mod titreret activation inden for klientens window of tolerance for at facilitere completion af de afbrudte forsvarsresponser. Denne proces kræver præcis dosering og konstant monitorering af autonome markører. Gennem systematisk pendulering mellem activation og ressource kan nervesystemet gradvist genforhandle traumatisk materiale og restaurere autonom fleksibilitet og adaptiv kapacitet."
+                }
+            },
+            polyvagal: {
+                klient: {
+                    title: "Polyvagal Forståelse af Traume",
+                    text: "Traumer sender nervesystemet ned i rød nedluknings-zone hvor alt føles fjernt og uvirkeligt, eller op i gul alarm hvor alt føles farligt og truende. Begge tilstande er kroppens forsøg på at beskytte dig mod overvældende oplevelser. Sammen finder vi trygge veje til gradvist at aktivere den grønne sikre zone, skridt for skridt, med stor respekt for dit tempo. Når den grønne zone styrkes som et stabilt fundament, bliver det muligt for traumet langsomt at integreres uden at du føler dig overvældet eller fortabt i smerten."
+                },
+                fagfolk: {
+                    title: "Polyvagal Teori ved Traume",
+                    text: "Traumatisk immobilisering repræsenterer dorsal vagal dominans med sympatisk co-activation, en tilstand af høj arousal kombineret med immobilitet der opleves som frygtelammelse. Denne paradoksale tilstand reflekterer nervesystemets mest primitive forsvarsstrategi. Healing kræver først etablering af ventral vagal sikkerhed som stabil platform før traumemateriale kan aktiveres terapeutisk. Gennem kontrolleret oscillation mellem autonome states, fra ventral vagal sikkerhed til forsigtig kontakt med traumatisk materiale og tilbage igen, opbygges gradvist tolerance og integrationskapacitet. Terapeutens egen ventrale vagale regulering er afgørende som co-regulerende ressource gennem hele denne proces."
+                }
+            },
+            tilknytning: {
+                klient: {
+                    title: "Tilknytningstraumer",
+                    text: "Traumer i tidlige tilknytningsrelationer er de sværeste at hele, fordi de skete netop der hvor du skulle være mest sikker og beskyttet. Når den person der skulle give tryghed også var kilden til frygt, skaber det en dyb forvirring i nervesystemet der kan påvirke alle senere relationer. Vi arbejder med ekstra omsorg og tålmodighed for at skabe en ny erfaring af ægte sikkerhed i vores relation. Langsomt kan dit system lære at tillid er mulig, og at nærhed ikke nødvendigvis betyder fare eller smerte."
+                },
+                fagfolk: {
+                    title: "Developmental Trauma",
+                    text: "Developmental trauma inden for attachment systemet skaber desorganiseret tilknytning og kompleks PTSD med pervasive påvirkning af affektregulering, selvoplevelse og relationel kapacitet. Den desorganiserede tilknytningsstrategi reflekterer et uløseligt dilemma hvor tilknytningsfiguren simultant er kilde til trøst og frygt. Behandling kræver langvarig og tålmodig etablering af en robust therapeutic alliance med konsistent responsivitet før traumemateriale kan adresseres direkte. Fokus på relationel sikkerhed som absolut forudsætning for enhver traumeintervention. Terapeutens kapacitet for at rumme modsatrettede affekter og tilknytningsbehov er central for behandlingens effektivitet."
+                }
+            },
+            kropsterapi: {
+                klient: {
+                    title: "Traumer i Kroppen",
+                    text: "Traumer sidder som frosne mønstre i kroppen i form af kroniske spændinger, områder af følelsesløshed og en oplevelse af fragmentering hvor kroppen ikke føles hel. Disse mønstre er kroppens måde at holde det overvældende materiale på afstand. Gennem meget forsigtigt og respektfuldt kropsarbejde, altid i dit eget tempo, kan det frosne begynde at optø gradvist. Vi lytter nøje til kroppens signaler og respekterer dens visdom. Når kroppen langsomt åbner sig, kan de fastlåste forsvarsresponser endelig fuldføres og energien frigøres på en sikker måde."
+                },
+                fagfolk: {
+                    title: "Somatic Experiencing",
+                    text: "Traumatisk materiale manifesteres somatisk som incomplete motoriske sekvenser, fascial immobility, reduceret interoception og fragmenteret kropsoplevelse. Disse somatiske manifestationer repræsenterer nervesystemets forsøg på at indkapsle overvældende materiale gennem muskulær og fascial binding. Intervention sker gennem titreret proprioceptiv og interoceptiv activation der faciliterer completion af afbrudte forsvarsresponser og gradvis restoration af embodied wholeness. Terapeutens somatiske afstemning og evne til at aflæse subtile autonome markører er afgørende for sikker dosering af interventionen. Målet er at genintegrere dissocierede kropsområder og restaurere den interoceptive kapacitet som er fundamental for selvregulering."
+                }
+            },
+            psykobiologi: {
+                klient: {
+                    title: "Traumets Biologi",
+                    text: "Traumer ændrer kroppens biologi dybtgående og påvirker hormoner, immunsystem, søvnmønstre og fordøjelse på måder der kan føles uforklarlige og udmattende. Stresshormonerne kan være konstant forhøjede eller flade, immunforsvaret svækkes, og kroppen har svært ved at finde hvile og restituere sig ordentligt. Den gode nyhed er at biologien ikke er permanent fastlåst. Ved at heale traumet og genoprette nervesystemets balance normaliserer biologien sig gradvist. Kroppen har en bemærkelsesværdig evne til at restituere sig selv når den rette støtte og de rigtige betingelser er til stede."
+                },
+                fagfolk: {
+                    title: "Neurobiologi efter Traume",
+                    text: "PTSD modificerer permanent HPA-aksen med fladt cortisol-døgnrytme og dysreguleret stressrespons, forhøjede inflammatoriske cytokiner der bidrager til systemisk inflammation, samt altered hippocampal og prefrontal cortex volume med konsekvenser for hukommelseskonsolidering og eksekutive funktioner. Disse neurobiologiske ændringer opretholder en vedvarende tilstand af biologisk stress uafhængigt af aktuel kontekst. Effektiv trauma-processing kan dokumenterbart normalisere disse biomarkører gennem restoration af autonomic flexibility og rebalancering af det neuroendokrine system. Longitudinelle studier viser at succesfuld behandling medfører normalisering af cortisolprofiler, reduktion af inflammatoriske markører og øget hippocampal neurogenese."
+                }
+            },
+            traumer: {
+                klient: {
+                    title: "At Heale Traumer",
+                    text: "Traumer heales ikke ved at tale om dem igen og igen, men ved forsigtigt at fuldføre det som blev afbrudt dengang det skete. Kroppen husker det nervesystemet ikke kunne færdiggøre, og dette ufærdige holdes fastlåst som spænding, følelsesløshed eller uro. Vi arbejder respektfuldt med kroppen og nervesystemet for at integrere det der blev splittet og adskilt. I små doser og i trygge rammer kan de ufærdige forsvarsresponser endelig afsluttes. Denne fuldførelse bringer en dyb lettelse og en følelse af at komme hjem til dig selv igen."
+                },
+                fagfolk: {
+                    title: "Traumebearbejdning",
+                    text: "Peter Levines Somatic Experiencing og Bessel van der Kolks forskning udgør det teoretiske og kliniske fundament for denne tilgang til traumebehandling. Fokus rettes mod completion af incomplete defensive responses gennem systematisk titrering og pendulering mellem traumatisk activation og ressourcetilstande. Dissociative processer kræver specifik klinisk opmærksomhed med nøje monitorering af klientens window of tolerance og tilpasning af interventionens intensitet i realtid. Terapeutens kapacitet for at spore subtile autonome skift, herunder vasomotoriske ændringer, respirationsændringer og muskeltonus, er afgørende for sikker og effektiv traumebehandling der undgår retraumatisering."
+                }
+            },
+            relation: {
+                klient: {
+                    title: "Relationel Sikkerhed ved Traume",
+                    text: "At arbejde med traumer kræver dyb tillid fordi du skal turde åbne for noget der engang var overvældende og farligt. Vores relation bliver det sikre fundament, det trygge sted hvorfra du kan begynde at se på det svære uden at blive overvældet af det. Min opgave er at være en stabil og pålidelig tilstedeværelse der kan rumme det hele. Sammen skaber vi en erfaring af at smerte kan deles og bæres i fællesskab. Denne nye relationelle erfaring er i sig selv en dybt helende kraft for dit traumatiserede nervesystem."
+                },
+                fagfolk: {
+                    title: "Terapeutisk Alliance ved Traume",
+                    text: "Traumebehandling forudsætter en robust therapeutic alliance og terapeutens egen autonome regulering som stabil co-regulerende ressource. Uden etableret relational safety risikeres retraumatisering, idet aktivering af traumatisk materiale uden tilstrækkelig relationel containment kan overvælde klientens reguleringskapacitet. Terapeutens evne til at opretholde ventral vagal regulering under eksponering for klientens traumatiske materiale er afgørende for behandlingens sikkerhed og effektivitet. Co-regulering gennem den terapeutiske relation er den absolutte forudsætning for sikker aktivering og integration af traumatisk materiale. Terapeutens egen traumebearbejdning og supervisionsdeltagelse understøtter denne kapacitet."
+                }
+            },
+        },
+        connections: {
+            'nervesystem-polyvagal': {
+                klient: "Traumer fryser nervesystemet i røde og gule alarmtilstande hvor kroppen konstant forbereder sig på fare eller lukker helt ned. Polyvagal forståelse giver os et præcist landkort over disse tilstande og viser vejen til den grønne sikre zone som det første og vigtigste skridt. Vi arbejder ikke direkte med traumet i starten, men fokuserer på at styrke din kapacitet for grøn sikkerhed. Når denne zone er etableret som et stabilt fundament, har nervesystemet den nødvendige ressource til gradvist at integrere det traumatiske materiale uden overvældelse.",
+                fagfolk: "Traumatisk immobilisering repræsenterer en kompleks autonom tilstand af dorsal vagal dominans med sympatisk co-activation, hvor høj arousal kombineres med fysiologisk shutdown. Denne paradoksale tilstand er karakteristisk for uløst traumatisk materiale i nervesystemet. Ventral vagal etablering er den absolutte forudsætning for sikker trauma-processing, idet ventral vagal kapacitet muliggør kontrolleret oscillation mellem traumatisk activation og sikkerhedstilstand. Uden tilstrækkelig ventral vagal ressource risikeres destabilisering og retraumatisering. Terapeutisk intervention fokuserer derfor primært på opbygning af autonome ressourcer før traumemateriale adresseres direkte."
+            },
+            'nervesystem-tilknytning': {
+                klient: "Tilknytningstraumer påvirker nervesystemet allerdybest fordi de skete i de relationer hvor du skulle være allermest sikker og beskyttet. Når den person der skulle give tryghed også skabte frygt, lærer nervesystemet at nærhed er farligt og at det aldrig rigtig kan slappe af. Denne dybe forvirring præger hele kroppens måde at møde verden på. I terapien arbejder vi med at give nervesystemet nye erfaringer af sikker tilknytning, så systemet gradvist kan lære at relationer også kan være et sted for tryghed og hvile.",
+                fagfolk: "Developmental trauma inden for tilknytningssystemet skaber komplekse autonome mønstre karakteriseret ved simultane og modsatrettede behov for nærhed og afstand. Disse desorganiserede autonome strategier reflekterer tilknytningsfigurens dobbeltrolle som kilde til både trøst og fare, hvilket forhindrer dannelsen af en kohærent reguleringstrategi. Earned secure attachment gennem den terapeutiske relation er central for behandlingen, idet konsistent terapeutisk responsivitet gradvist reorganiserer klientens autonome tilknytningsmønstre. Denne proces kræver langvarig terapeutisk forpligtelse og terapeutens kapacitet for at tolerere klientens oscillation mellem tilknytningssøgen og tilknytningsundgåelse."
+            },
+            'nervesystem-kropsterapi': {
+                klient: "Traumer sidder frosset i både nervesystem og krop som uadskillelige lag af fastlåst energi og spænding. Nervesystemet holder kroppen i alarm, og kroppen holder nervesystemet låst i forsvarstilstand. De to opretholder hinanden i en cirkel der kan føles umulig at bryde. Forsigtigt kropsarbejde kan optø begge dele samtidig ved at give kroppen nye oplevelser af sikkerhed og bevægelse. Når kroppen begynder at slippe sine spændinger, får nervesystemet signal om at faren er ovre, og begge systemer kan finde tilbage til balance.",
+                fagfolk: "Traumatisk materiale manifesteres simultant somatisk og autonomt som incomplete motoriske sekvenser, fascial binding, reduceret interoception og kronisk autonom dysregulering. Disse parallelle manifestationer opretholder hinanden i selvforstærkende feedback loops der persisterer traumatilstanden. Titreret somatisk intervention faciliterer completion af afbrudte forsvarsresponser ved at adressere begge dimensioner simultant. Proprioceptiv og interoceptiv activation inden for window of tolerance muliggør gradvis frigørelse af somatisk bundne forsvarsresponser med samtidig normalisering af autonome parametre. Denne dobbelte integration er afgørende for varig traumeresolution og restaurering af funktionel kapacitet."
+            },
+            'nervesystem-psykobiologi': {
+                klient: "Traumer ændrer både nervesystem og biologi på dybe og sammenvævede måder, så hormoner kommer i ubalance, immunforsvaret påvirkes og søvnen forstyrres. Det ene påvirker det andet i en cirkel der kan føles uendelig. Men den gode nyhed er at det også virker den anden vej: ved at heale nervesystemet begynder biologien at normalisere sig, og når biologien forbedres, understøtter det nervesystemets healing. Vi arbejder med begge niveauer for at skabe den positive spiral hvor krop og nervesystem gradvist finder tilbage til balance sammen.",
+                fagfolk: "PTSD modificerer både det autonome nervesystem og den underliggende neurobiologi i gensidigt forstærkende feedback loops. Kronisk autonom dysregulering driver neurobiologiske ændringer herunder HPA-akse dysregulering, forhøjede inflammatoriske markører og altered hjernevolumen, som igen opretholder den autonome dysregulering. Effektiv intervention adresserer begge niveauer simultant. Regulering af det autonome nervesystem normaliserer gradvist neurobiologiske parametre, mens forbedret neurobiologisk funktion understøtter autonom fleksibilitet. Denne bidirektionelle healingsproces dokumenteres gennem normalisering af cortisolprofiler, reduktion af inflammatoriske biomarkører og restaurering af adaptiv autonom responsivitet over behandlingsforløbet."
+            },
+            'nervesystem-traumer': {
+                klient: "At arbejde med traumer er i sin essens det samme som at arbejde med nervesystemet, for de er uløseligt forbundne. Traumet er ikke bare en smertefuld erindring der bor i hovedet, men en tilstand der lever i nervesystemets reaktioner og kroppens forsvarsmønstre. Når vi hjælper nervesystemet med at finde sikkerhed og balance, bearbejder vi samtidig traumet. Og når traumet gradvist integreres, finder nervesystemet tilbage til sin naturlige fleksibilitet. Der er ikke to separate processer, men én samlet helingsrejse der udfolder sig i krop og nervesystem sammen.",
+                fagfolk: "Traumatisk materiale eksisterer fundamentalt som autonome forsvarstilstande der persisterer i nervesystemet som incomplete defensive responses. Der er ikke en meningsfuld distinktion mellem traumatisk materiale og den autonome dysregulering det skaber, idet de udgør to aspekter af samme fænomen. Trauma-processing er derfor i sit fundament nervesystemsregulering, og nervesystemsregulering er den primære vej til traumeresolution. Denne forståelse informerer den kliniske tilgang hvor fokus rettes mod autonome processer frem for kognitiv narrativ bearbejdning. Titreret autonom regulering faciliterer naturlig completion og integration af traumatisk materiale uden behov for eksplicit reeksponering."
+            },
+            'nervesystem-relation': {
+                klient: "Dit traumatiserede nervesystem lærte engang at verden og andre mennesker er farlige, og det bærer stadig denne lærdom i sine automatiske reaktioner. I vores trygge terapeutiske relation får dit nervesystem mulighed for at gøre nye erfaringer, hvor det langsomt lærer at nærhed også kan betyde sikkerhed og ro. Min rolige tilstedeværelse sender konstante signaler til dit system om at det er trygt at slappe af og åbne sig. Denne nye læring sker ikke gennem ord, men gennem den direkte nervesystem-til-nervesystem forbindelse i vores relation.",
+                fagfolk: "Co-regulering inden for en robust terapeutisk alliance faciliterer sikker trauma-processing gennem direkte autonome modifikationer i klientens nervesystem. Terapeutens ventrale vagale regulering fungerer som ekstern reguleringsressource der gradvist internaliseres af klientens autonome system. Denne proces muliggør aktivering af traumatisk materiale inden for et relationelt sikkerhedsnet der forebygger retraumatisering og destabilisering. Den neurobiologiske mekanisme involverer spejlneuroner, prosodisk afstemning og autonome feedback loops mellem terapeut og klient. Konsistent co-regulering over tid reorganiserer klientens autonome baseline og udvider window of tolerance for traumerelateret activation."
+            },
+            'polyvagal-tilknytning': {
+                klient: "Tilknytningstraumer i barndommen skabte usikre polyvagale mønstre i dit nervesystem, hvor systemet lærte at skifte mellem alarm og nedlukning i stedet for at hvile trygt i den grønne zone. Disse mønstre blev din normale måde at være i verden på og påvirker stadig dine relationer og dit velbefindende. I terapien arbejder vi systematisk med at lære dit nervesystem en ny erfaring af grøn sikkerhed, gradvist og respektfuldt. Når den grønne zone styrkes, bliver det muligt at nærme sig andre mennesker uden automatisk at gå i alarm.",
+                fagfolk: "Developmental trauma inden for tilknytningssystemet dysregulerer polyvagale responses fundamentalt og skaber maladaptive autonome strategier der persisterer som karakterologiske mønstre. Det desorganiserede tilknytningsmønster reflekterer en polyvagal tilstand af simultant aktiverede men inkompatible autonome strategier. Earned secure attachment gennem den terapeutiske relation restaurerer polyvagal fleksibilitet ved at etablere ventral vagal kapacitet som stabil platform for relationel engagement. Denne proces kræver konsistent terapeutisk co-regulering over tid, hvor terapeutens egen ventrale vagale regulering gradvist internaliseres og muliggør mere fleksible autonome skift mellem tilstande i relationelle kontekster."
+            },
+            'polyvagal-kropsterapi': {
+                klient: "Kropsarbejde er en af de mest direkte veje til at aktivere den grønne sikre zone i nervesystemet, som er fundamentet for al trauma-healing. Når kroppen oplever sikker berøring, rolig bevægelse og tryg kontakt, sender den kraftige signaler til nervesystemet om at det er sikkert at slappe af. Denne kropslige erfaring af grøn sikkerhed er langt stærkere end ord alene kan skabe. Med den grønne zone som stabilt fundament bliver det muligt for traumatisk materiale gradvist at integreres uden at nervesystemet overvældes af røde eller gule alarmtilstande.",
+                fagfolk: "Somatisk intervention aktiverer ventrale vagale pathways der er nødvendige for sikker trauma-processing og integration af traumatisk materiale. Proprioceptiv stimulation, reguleret respiration og titreret interoceptiv opmærksomhed engagerer specifikt den ventrale vagale kompleks og styrker kapaciteten for social engagement og sikkerhedssignalering. Denne somatisk faciliterede ventrale vagale aktivering skaber det autonome fundament der muliggør kontrolleret oscillation mellem traumatisk activation og ressourcetilstande. Uden tilstrækkelig ventral vagal kapacitet risikerer trauma-processing at destabilisere klienten i dorsal vagal shutdown eller ukontrolleret sympatisk arousal. Kropsbaseret intervention er derfor central for etablering af autonome forudsætninger for traumebehandling."
+            },
+            'polyvagal-psykobiologi': {
+                klient: "Den grønne sikre tilstand i nervesystemet skaber præcis den biologi som gør trauma-healing mulig. Når du er i den grønne zone, producerer kroppen hormoner der fremmer healing, immunforsvaret fungerer optimalt, og hjernen har kapacitet til at bearbejde og integrere svære oplevelser. I de røde og gule alarmzoner bruger kroppen al sin energi på overlevelse, og der er ingen ressourcer til healing. Derfor er vores første opgave altid at styrke din grønne zone, fordi den bogstaveligt talt skaber den biologiske kontekst hvor traumet kan heales.",
+                fagfolk: "Ventral vagal aktivering optimerer den neurobiologiske kontekst for trauma-processing og integration gennem multiple parallelle mekanismer. Ventral vagal dominans normaliserer HPA-akse funktion, reducerer inflammatoriske cytokiner, øger BDNF-produktion og faciliterer hippocampal neurogenese, alle faktorer der er afgørende for succesfuld traumebearbejdning og hukommelsesrekonsolidering. Omvendt opretholder sympatisk og dorsal vagal dominans de neurobiologiske ændringer der karakteriserer PTSD. Den polyvagale tilstands direkte indflydelse på neurobiologisk funktion understreger vigtigheden af at etablere autonom sikkerhed som forudsætning for traumeintervention frem for at fokusere primært på kognitiv reprocessering."
+            },
+            'polyvagal-traumer': {
+                klient: "Traumer fastlåste dit nervesystem i røde og gule alarmtilstande, hvor kroppen konstant forbereder sig på fare eller lukker helt ned for at overleve. Nøglen til at låse dette op er ikke at tale om traumet, men at finde vejen til den grønne sikre zone. Når nervesystemet har en stabil oplevelse af grøn sikkerhed, kan det traumatiske materiale gradvist begynde at bevæge sig og integreres. Uden denne grønne base vil ethvert forsøg på at arbejde med traumet risikere at overvælde systemet og forstærke de fastlåste mønstre.",
+                fagfolk: "Traumatisk immobilisering, karakteriseret ved dorsal vagal dominans med sympatisk co-activation, repræsenterer nervesystemets mest primitive forsvarsstrategi og kræver ventral vagal etablering som absolut forudsætning før traumemateriale kan aktiveres sikkert i terapeutisk kontekst. Uden tilstrækkelig ventral vagal kapacitet vil aktivering af traumatisk materiale resultere i enten ukontrolleret sympatisk arousal eller dorsal vagal shutdown, begge potentielt retraumatiserende. Terapeutisk intervention prioriterer derfor systematisk opbygning af ventral vagale ressourcer gennem co-regulering, somatisk stabilisering og gradueret eksponering for sikkerhedssignaler. Denne sekvens er fundamental for ethvert traumebehandlingsforløb."
+            },
+            'polyvagal-relation': {
+                klient: "Min rolige og sikre grønne tilstand sender konstante signaler til dit traumatiserede nervesystem om at det kan være trygt og sikkert her. Dit system aflæser automatisk min krop, min stemme og min tilstedeværelse for tegn på fare eller sikkerhed. Når det gentagne gange erfarer grøn sikkerhed i vores relation, begynder det langsomt at stole på at verden også kan rumme tryghed. Denne nervesystem-til-nervesystem kommunikation er langt kraftigere end ord alene, og den er selve fundamentet for at traumet kan heales i vores fælles rum.",
+                fagfolk: "Terapeutens ventrale vagale tilstand fungerer som primær co-regulerende ressource der via neuroception direkte påvirker klientens autonome tilstand og skaber en sikker base for traumebearbejdning. Prosodisk afstemning, facial engagement og autonom resonans mellem terapeut og klient aktiverer klientens sociale engagementsystem og faciliterer gradvis ventral vagal kapacitetsopbygning. Denne co-reguleringsproces er afgørende for traumebehandling idet den etablerer det autonome sikkerhedsnet der muliggør kontrolleret aktivering af traumatisk materiale. Terapeutens kapacitet for at opretholde ventral vagal regulering under eksponering for klientens traumatiske materiale er en kernekompetence der kræver kontinuerlig supervision og egenomsorg."
+            },
+            'tilknytning-kropsterapi': {
+                klient: "Tilknytningstraumer er dybt forankrede i kroppen fordi de blev indlært i en tid hvor din krop var din primære måde at opleve verden på. Spædbarnet forstår ikke med ord, men med krop og berøring. Derfor er forsigtigt kropsarbejde en særlig kraftfuld vej til at nå de tidligste tilknytningsmønstre og gradvist integrere det der blev splittet. Når kroppen erfarer sikker og opmærksom berøring i terapien, skaber det nye somatiske erfaringer der kan supplere og gradvist erstatte de gamle mønstre af utryghed og forsvar.",
+                fagfolk: "Developmental trauma manifesteres primært somatisk idet præverbale tilknytningserfaringer kodes som implicitte kropslige procedurer frem for eksplicitte narrative erindringer. Disse somatiske tilknytningsmønstre inkluderer kronisk muskulær holding, respiratoriske restriktioner og reduceret kapacitet for interoceptiv awareness. Titreret somatisk intervention faciliterer memory reconsolidation ved at adressere traumatisk materiale i det somatiske format det oprindeligt blev encodet. Proprioceptiv og taktil stimulation inden for en sikker terapeutisk relation aktiverer implicitte tilknytningsminder og muliggør gradvis reorganisering af somatisk bundne tilknytningsmønstre. Denne proces kræver langvarig terapeutisk forpligtelse og præcis somatisk afstemning."
+            },
+            'tilknytning-psykobiologi': {
+                klient: "Tilknytningstraumer i de tidlige leveår formede din biologi på et tidspunkt hvor krop og hjerne var mest sårbare og formbare. Stresshormoner, immunsystem og hjernens udvikling blev alle påvirket af den manglende tryghed, og disse biologiske forandringer kan stadig mærkes i dag som træthed, sygdom eller følelsesmæssig ustabilitet. Men biologien er ikke fastlåst for altid. Healing af tilknytningstraumer gennem trygge relationer og terapeutisk arbejde kan gradvist normalisere de biologiske mønstre og give kroppen mulighed for at finde den balance den aldrig fik chancen for at etablere.",
+                fagfolk: "Developmental trauma modificerer neurobiologi fundamentalt i kritiske udviklingsperioder og påvirker HPA-akse kalibrering, synaptisk pruning, myelinisering og epigenetisk programmering med langvarige konsekvenser for stressrespons og reguleringskapacitet. Disse neurobiologiske ændringer reflekterer tilpasning til et utrygt tilknytningsmiljø og persisterer som biologiske signatures af tidlig adversity. Terapeutisk tilknytningsarbejde inden for en konsistent og responsiv terapeutisk relation kan gradvist normalisere disse biologiske signatures gennem neuroplasticitetsmekanismer. Longitudinelle studier dokumenterer at earned secure attachment associeres med normalisering af cortisoldøgnrytme, reduktion af inflammatoriske markører og øget prefrontal cortex aktivitet under emotionel regulering."
+            },
+            'tilknytning-traumer': {
+                klient: "Traumer i tilknytning er de dybeste og mest forvirrende af alle traumer, fordi den person der skulle beskytte dig også var kilden til faren. Dit nervesystem lærte at nærhed er både livsnødvendig og farlig på samme tid, en umulig situation for et barn. Denne doble binding skaber en indre splittelse der kan påvirke alle dine relationer som voksen. I terapien arbejder vi med ekstra forsigtighed og tålmodighed, fordi vi ved at tillid både er det du mest har brug for og det sværeste for dig at give.",
+                fagfolk: "Developmental trauma inden for tilknytningssystemet resulterer i desorganiseret tilknytning karakteriseret ved modsatrettede impulser af tilknytningssøgen og tilknytningsflugt, hvor tilknytningsfiguren simultant aktiverer tilknytnings- og frygtresponser. Denne paradoksale tilstand skaber kompleks PTSD med pervasive vanskeligheder med affektregulering, selvoplevelse og relationel funktion. Terapeutisk intervention kræver ekstra forsigtighed og specifik opmærksomhed på overførings- og modoverføringsdynamikker der aktiveres i behandlingen. Terapeutens evne til at forblive konsistent og responsiv trods klientens oscillation mellem idealisering og devaluering er afgørende for gradvis reorganisering af tilknytningsrepræsentationer."
+            },
+            'tilknytning-relation': {
+                klient: "Vores terapeutiske relation bliver det sikre og trygge sted hvor dine tilknytningstraumer gradvist kan heales og transformeres. Her får du mulighed for at gøre nye erfaringer med nærhed, erfaringer der er fundamentalt anderledes end dem du voksede op med. Min konsistente og pålidelige tilstedeværelse viser dit nervesystem at relationer også kan være et sted for tryghed og ro. Langsomt kan det tillidsfulde bånd mellem os blive en bro til nye måder at være i relation med andre mennesker på. Denne helende kraft i relationen er uerstattelig.",
+                fagfolk: "Den terapeutiske relation fungerer som primær korrigerende emotionel erfaring for klienter med developmental trauma og er central for reorganisering af indre arbejdsmodeller for tilknytning. Konsistent terapeutisk responsivitet over tid etablerer earned secure attachment der gradvist modificerer klientens tilknytningsmønstre og autonome reguleringsstrategier. Denne proces kræver langvarig terapeutisk forpligtelse og terapeutens kapacitet for at rumme de intense overføringsdynamikker der karakteriserer arbejdet med tilknytningstraumatiserede klienter. Terapeutens egen tilknytningssikkerhed og supervisionsdeltagelse er afgørende forudsætninger for at opretholde den relationelle kvalitet der muliggør dyb tilknytningsheling."
+            },
+            'kropsterapi-psykobiologi': {
+                klient: "Når kroppen gennem forsigtigt terapeutisk arbejde begynder at integrere det traumatiske materiale der har været frosset og fastlåst, følger biologien med i helingsprocessen. Stresshormoner normaliseres gradvist, immunforsvaret styrkes, søvnkvaliteten forbedres, og inflammationstilstande aftager. Kroppen kender vejen til sin egen balance, og kropsarbejdet hjælper med at fjerne de forhindringer der har stået i vejen. Denne biologiske normalisering er ikke bare en sidegevinst, men en central del af healingen der skaber fundamentet for varig bedring og øget livskvalitet i hverdagen.",
+                fagfolk: "Somatisk trauma-processing påvirker den underliggende neurobiologi direkte og kan dokumenterbart normalisere HPA-akse dysregulering der karakteriserer kronisk traumatisering. Completion af incomplete somatiske forsvarsresponser reducerer den toniske sympatiske aktivering der driver forhøjet cortisolproduktion og inflammatorisk cytokinudskillelse. Denne normalisering af det neuroendokrine stressresponssystem har kaskadeeffekter på immunfunktion, søvnarkitektur og neuroplasticitet. Longitudinelle studier af kropsbaserede traumeinterventioner viser signifikant reduktion i inflammatoriske biomarkører og normalisering af cortisoldøgnrytme. Den somatiske tilgangs direkte engagement med autonome processer forklarer dens effektivitet i at modificere de biologiske konsekvenser af traumatisering."
+            },
+            'kropsterapi-traumer': {
+                klient: "Traumer sidder i kroppen som ufærdige forsvarsbevægelser der aldrig blev fuldført, fordi situationen var for overvældende. Måske ville du løbe men kunne ikke, eller ville skubbe væk men var for lille. Disse ufærdige handlinger lever stadig som spændinger, rysten eller følelsesløshed i din krop. Forsigtigt kropsarbejde giver disse forsvarsbevægelser mulighed for endelig at blive fuldført i et trygt rum. Når kroppen fuldfører det der blev afbrudt, opleves ofte en dyb lettelse og frigørelse af energi der har været bundet i årevis.",
+                fagfolk: "Incomplete defensive responses, herunder flugt, kamp, orienteringsreaktioner og beskyttende bevægelser, manifesteres somatisk som kronisk muskulær holding, fascial binding og autonome dysreguleringsmønstre der opretholder traumatilstanden. Disse somatiske manifestationer repræsenterer nervesystemets forsøg på at fuldføre afbrudte overlevelseshandlinger. Titreret somatisk intervention faciliterer completion af disse responses gennem gradueret proprioceptiv aktivering inden for window of tolerance. Terapeutisk fokus rettes mod at støtte de naturlige motoriske sekvenser der spontant emergerer når somatisk bundne forsvarsresponser mobiliseres i et sikkert terapeutisk rum med tilstrækkelig relational containment."
+            },
+            'kropsterapi-relation': {
+                klient: "Tryg og opmærksom berøring i vores terapeutiske relation lærer din traumatiserede krop at fysisk kontakt med et andet menneske også kan betyde sikkerhed, omsorg og ro. For mange traumatiserede mennesker har berøring været forbundet med fare, smerte eller grænseoverskridelse, og kroppen bærer denne erfaring som automatisk anspændthed eller tilbagetrækning. Når du gentagne gange oplever respektfuld og tilpasset berøring i et trygt rum, begynder kroppen langsomt at revidere sin grundlæggende forståelse af verden. Denne kropslige erfaring af sikker relation er dybt transformerende.",
+                fagfolk: "Terapeutisk touch kombineret med robust relational safety faciliterer somatisk trauma-integration gennem simultant engagement af tilknytningssystemet og det somatiske processerende system. Den taktile kontakt inden for en sikker terapeutisk relation aktiverer oxytocinproduktion og ventrale vagale pathways der modulerer den autonome stressrespons og skaber optimale betingelser for somatisk reconsolidation af traumatisk materiale. Terapeutens somatiske afstemning, herunder tilpasning af trykintensitet, tempo og placering baseret på kontinuerlig aflæsning af klientens autonome tilstand, er afgørende for at opretholde den somatiske intervention inden for klientens window of tolerance og undgå somatisk retraumatisering."
+            },
+            'psykobiologi-traumer': {
+                klient: "Traumer ændrer kroppens biologi dybtgående og efterlader spor i hormonsystemet, immunforsvaret, hjernens struktur og kroppens inflammationsniveau. Disse biologiske forandringer er ikke tegn på svaghed men på nervesystemets forsøg på at tilpasse sig en overvældende situation. Når traumet heales gennem terapeutisk arbejde, begynder disse biologiske markører gradvist at normalisere sig. Stresshormoner finder en sundere rytme, immunforsvaret styrkes, og inflammationen aftager. Denne biologiske normalisering bekræfter at healing ikke bare sker i sindet, men i hele kroppens fysiologi og cellebiologi.",
+                fagfolk: "PTSD modificerer fundamentalt HPA-aksen med karakteristisk fladt cortisoldøgnrytme og dysreguleret stressrespons, samt forhøjede inflammatoriske profiler med øgede proinflammatoriske cytokiner der bidrager til systemisk inflammation og øget sygdomsrisiko. Effektiv trauma-processing kan dokumenterbart normalisere disse biomarkører gennem restaurering af autonom fleksibilitet og rebalancering af det neuroendokrine system. Longitudinelle behandlingsstudier viser at succesfuld traumebehandling associeres med normalisering af cortisolprofiler, reduktion af inflammatoriske markører herunder CRP og IL-6, samt øget hippocampal volumen. Disse biologiske forandringer korrelerer med klinisk bedring og udgør objektive mål for behandlingseffektivitet."
+            },
+            'psykobiologi-relation': {
+                klient: "Vores trygge terapeutiske relation er bogstaveligt talt en form for biologisk medicin der gør trauma-healing mulig. Når du sidder sammen med et andet menneske der er roligt og trygt til stede, ændrer det din krops kemi i retning af balance og healing. Stresshormoner dæmpes, immunforsvaret styrkes, og hjernen producerer stoffer der fremmer tilknytning og tryghed. Denne biologiske forandring sker automatisk gennem den direkte nervesystem-til-nervesystem forbindelse mellem os. Vores relation skaber altså ikke bare en psykologisk oplevelse af tryghed, men en reel fysiologisk transformation.",
+                fagfolk: "En secure terapeutisk alliance modificerer klientens neurobiologi direkte gennem co-reguleringsmekanismer og skaber den optimale neurobiologiske kontekst for trauma-processing og integration. Oxytocinudskillelse faciliteret af konsistent relationel sikkerhed modulerer HPA-akse aktivitet, reducerer amygdala reaktivitet og øger prefrontal cortex kapacitet for emotionel regulering. Disse neurobiologiske ændringer etablerer forudsætningerne for effektiv traumebearbejdning ved at optimere nervesystemets kapacitet for at tolerere og integrere traumatisk materiale. Den terapeutiske relations direkte neurobiologiske indflydelse understreger at relationen ikke blot er kontekst for behandling, men en aktiv neurobiologisk intervention i sig selv."
+            },
+            'traumer-relation': {
+                klient: "Traumer kan kun heales i en atmosfære af dyb sikkerhed og tillid, og vores terapeutiske relation er selve det helende rum hvor denne transformation kan ske. Alene kan traumet føles uoverskueligt og overvældende, men i vores fælles relation kan smerten deles og bæres. Min stabile tilstedeværelse giver dit nervesystem den trygge base hvorfra det kan begynde at se på det svære uden at gå i stykker. Vores relation er ikke bare rammen for healing, den er i sig selv en dybt helende kraft der transformerer traumets isolation til forbundethed.",
+                fagfolk: "Traumebehandling forudsætter en robust terapeutisk alliance som absolut klinisk nødvendighed, idet aktivering af traumatisk materiale uden tilstrækkelig relationel containment og co-regulering risikerer retraumatisering med potentiel forværring af symptomatologi og autonom dysregulering. Uden etableret relational safety mangler klienten den eksterne reguleringsressource der er nødvendig for at tolerere den autonome aktivering som traumeprocessering uundgåeligt medfører. Terapeutens evne til at opretholde egen regulering, til konsistent at tilbyde co-regulering og til præcist at dosere traumeeksponering inden for klientens aktuelle window of tolerance er afgørende kernekompetencer der skal vedligeholdes gennem kontinuerlig supervision og egenomsorg."
+            },
+        }
+    },
+    sovn: {
+        name: "Søvn",
+        circles: {
+            nervesystem: {
+                klient: {
+                    title: "Søvn og Nervesystemet",
+                    text: "Søvn kræver at nervesystemet kan slippe kontrollen og falde til ro. Når du har søvnproblemer, er det ofte fordi dit nervesystem stadig er i alarmberedskab, selv når du lægger dig. Det føler sig ikke trygt nok til at give slip. I vores arbejde sammen lærer vi dit system, at det er sikkert at slappe helt af og overlade sig til søvnen. Vi bruger beroligende øvelser og teknikker, der gradvist signalerer til dit nervesystem, at det kan hvile nu. Langsomt genopdager kroppen den naturlige evne til at glide ind i dyb, genoprettende søvn."
+                },
+                fagfolk: {
+                    title: "Søvnregulering via ANS",
+                    text: "Søvn kræver ventral vagal dominans og parasympatisk activation med sufficient down-regulation af sympatisk arousal. Søvnforstyrrelser er ofte resultat af manglende down-regulation capability, hvor systemet forbliver i hypervigilant tilstand trods søvnbehov. Den terapeutiske intervention fokuserer på vagal tone-opbygning gennem targeted øvelser der styrker den ventrale vagale bremse. Circadian rhythm restoration understøttes gennem regulering af autonome mønstre og normalisering af arousal-cyklus. Systematisk neuroception-kalibrering muliggør at systemet kan registrere sengetidssituationen som sikker nok til at tillade den nødvendige bevidsthedstransition fra vågen tilstand til søvn."
+                }
+            },
+            polyvagal: {
+                klient: {
+                    title: "Polyvagal og Søvn",
+                    text: "Søvn er kun mulig i den grønne sikre zone, hvor kroppen føler sig tryg og beskyttet. Hvis dit system sidder fast i den gule alarmzone, er du for aktiveret til at falde i søvn - hjertet banker, tankerne kører, og kroppen er parat til handling. Nogle sidder fast i den røde zone og oplever en udmattelse der ikke fører til rigtig søvn. Vi finder sammen veje til den dybe grønne ro, som er den absolutte forudsætning for naturlig, genoprettende søvn. Det handler om at lære dit system vejen tilbage til ægte sikkerhed."
+                },
+                fagfolk: {
+                    title: "Polyvagal Teori og Søvn",
+                    text: "Søvn kræver ventral vagal sikkerhed som fundament for den fysiologiske transition fra vågenhed til søvn. Insomni er ofte udtryk for sympatisk hyperarousal, hvor systemet forbliver i mobiliseringstilstand, eller dorsal shutdown uden ventral vagal adgang, hvilket producerer udslidte men ikke-restorativ søvntilstande. Det terapeutiske mål er etablering af polyvagal fleksibilitet, der muliggør naturlig circadian oscillation mellem activation og deactivation. Interventionen fokuserer på at styrke den ventrale vagale pathway, så systemet kan navigere smidigt ned gennem arousal-niveauerne og opnå den parasympatiske dominans der tillader dyb søvn."
+                }
+            },
+            tilknytning: {
+                klient: {
+                    title: "Tilknytning og Søvn",
+                    text: "Hvis du aldrig lærte at verden var sikker nok til at lukke øjnene i, har dit system svært ved at sove. Som lille havde du måske brug for at være vågen og opmærksom for at holde dig sikker. Den strategi var nødvendig dengang, men nu forstyrrer den din søvn. Vi arbejder med at skabe den manglende grundsikkerhed, som du ikke fik tidligt i livet. Gennem vores trygge relation og målrettede øvelser kan dit nervesystem gradvist lære, at det er sikkert at give slip og hvile dybt - også når du er alene om natten."
+                },
+                fagfolk: {
+                    title: "Attachment og Søvnregulering",
+                    text: "Desorganiseret og usikker tilknytning korrelerer signifikant med søvnforstyrrelser gennem hele livsspannet. Manglende early co-regulation af arousal i tilknytningsrelationen påvirker udviklingen af autonom reguleringskapacitet, herunder søvnkapacitet, livslangt. Børn med utrygge tilknytningsmønstre internaliserer ikke tilstrækkeligt effektive self-soothing strategier, hvilket manifesterer sig som vedvarende søvnproblemer i voksenlivet. Earned secure attachment, opbygget gennem terapeutisk relation, kan restaurere naturlig søvnregulering ved at tilbyde de korrigerende erfaringer af co-regulation og sikkerhed, der muliggør internalisering af kapacitet til autonom down-regulation ved sengetid."
+                }
+            },
+            kropsterapi: {
+                klient: {
+                    title: "Kropslig Søvnforbedring",
+                    text: "Spændinger i kroppen holder dig vågen, selv når du er træt og desperat gerne vil sove. Kæben er spændt, skuldrene sidder oppe ved ørerne, og maven er hård. Din krop er stadig i alarmberedskab. Gennem kropsbehandling og særligt åndedrætsarbejde lærer kroppen langsomt at slippe disse spændinger og finde den dybe ro, der inviterer søvn. Vi arbejder med blid berøring, fasciel udløsning og vejrtrækningsøvelser, der aktiverer dit afslappende nervesystem. Efterhånden husker kroppen, hvordan det føles at være tryg nok til at lade søvnen komme helt naturligt."
+                },
+                fagfolk: {
+                    title: "Somatisk Søvnintervention",
+                    text: "Muskulær hypertonus og fasciale restriktioner inhiberer den parasympatiske activation, der er nødvendig for søvn-transition. Kronisk somatisk spænding, særligt i diaphragma, psoas og cervikale region, fastholder sympatisk arousal og forhindrer den fysiologiske nedregulering som søvn kræver. Fascial release-teknikker kombineret med vagus-aktivering gennem diaphragmatisk åndedræt faciliterer transition til en søvn-permissiv somatisk tilstand. Interventionen adresserer den embodied hypervigilance der manifesterer sig som muskelspænding og overfladisk respiration. Systematisk somatisk arbejde genopretter kroppens kapacitet til at indgå i den dybe parasympatiske tilstand som er forudsætningen for restorativ søvn."
+                }
+            },
+            psykobiologi: {
+                klient: {
+                    title: "Søvnens Biologi",
+                    text: "Din søvn-vågen rytme styres af hormoner og nervesystemet i et fint samspil. Når du er stresset eller urolig, producerer kroppen for meget cortisol om natten, mens søvnhormonet melatonin undertrykkes. Det er derfor du ligger vågen trods træthed. Vi arbejder med at normalisere denne biologi, så din naturlige døgnrytme kan genetableres. Gennem nervesystemsøvelser og reguleringsteknikker hjælper vi kroppen med at genfinde sin naturlige rytme. Når stresshormoner falder og melatonin stiger på de rigtige tidspunkter, vender den gode søvn gradvist tilbage af sig selv."
+                },
+                fagfolk: {
+                    title: "Søvn-Neurobiologi",
+                    text: "Søvnforstyrrelser involverer dysreguleret HPA-akse med forhøjet natkortisol, som modvirker den naturlige søvn-inducerende proces. Reduceret melatoninsyntese og altered circadian rhythm forstyrrer den normale søvn-vågen cyklus yderligere. Den sympatiske dominans opretholder en katabol tilstand, der er inkompatibel med den anabole restorationsproces, som søvn repræsenterer. Autonomt nervesystemregulering kan normalisere disse neuroendokrine mønstre gennem vagal tone restoration, hvilket gradvist genetablerer den fysiologiske oscillation mellem kortisol og melatonin. Terapeutisk intervention sigter mod at restituere den naturlige circadiane rytme gennem systematisk nedregulering af HPA-aksens baseline aktivering."
+                }
+            },
+            traumer: {
+                klient: {
+                    title: "Traumer og Søvn",
+                    text: "Traumer skaber en tilstand af hyper-vågenhed, hvor dit system ikke tør slippe kontrollen nok til at sove. Det er som om din indre vagt aldrig går af vagt - den scanner konstant for fare, selv i dit trygge soveværelse. Denne reaktion gav engang mening som beskyttelse, men nu holder den dig fanget i søvnløshed. Ved at arbejde med traumerne i et trygt tempo kan vi berolige dit alarmsystem. Efterhånden som de uforløste oplevelser bearbejdes og integreres, kan den naturlige søvnevne gradvist returnere, fordi systemet ikke længere behøver konstant vagtsomhed."
+                },
+                fagfolk: {
+                    title: "Traumatisk Hypervigilance",
+                    text: "PTSD-relateret hypervigilance inhiberer søvn gennem persistent sympatisk activation, hvor amygdalas trusselsvurdering forbliver forhøjet uanset kontekstuel sikkerhed. Traumatiske erfaringer konsoliderer neurale mønstre der prioriterer vågenhed over søvn som overlevelsesrespons. Natlige flashbacks og mareridt forstyrrer søvnarkitekturen yderligere og cementerer søvn som en usikker tilstand. Systematisk traumebearbejdning reducerer baseline arousal og restaurerer kapacitet for den circadiane down-regulation, der er nødvendig for søvn. Titreret intervention gennem somatisk og relationel traumeterapi muliggør gradvis rekalibrering af neuroceptionen, så søvnsituationen genetableres som sikker."
+                }
+            },
+            relation: {
+                klient: {
+                    title: "Tryg nok til at Sove",
+                    text: "Vores arbejde sammen skaber en dyb sikkerhed, som dit nervesystem kan tage med sig hjem og ind i natten. Hver gang vi mødes, og du oplever ægte tryghed i vores relation, lagrer dit system en ny erfaring af sikkerhed. Disse erfaringer bygger sig langsomt op og bliver til en indre ro, som du kan trække på, når du lægger dig til at sove. Når nervesystemet har lært gennem gentagne oplevelser, at verden er sikker nok, og at du kan stole på din krop, kommer søvnen mere og mere naturligt tilbage."
+                },
+                fagfolk: {
+                    title: "Relationel Søvnregulering",
+                    text: "Terapeutisk co-regulation opbygger intern kapacitet til self-soothing, som er nødvendig for autonom søvn-transition. Gentagen erfaring af ventral vagal sikkerhed i den terapeutiske relation generaliserer gradvist til kapacitet for autonomous down-regulation ved sengetid. Klienten internaliserer terapeuten som regulerende objekt, hvilket muliggør en indre oplevelse af sikkerhed uden ekstern co-regulering. Denne proces kræver konsistent terapeutisk tilstedeværelse over tid, da hvert møde konsoliderer neurale pathways for selvregulering. Den relationelle erfaring transformerer søvnsituationen fra en potentiel trussel til en kontekst af tilstrækkelig sikkerhed for at tillade bevidsthedstransition."
+                }
+            },
+        },
+        connections: {
+            'nervesystem-polyvagal': {
+                klient: "Søvn kræver at nervesystemet er i den grønne, rolige zone. Polyvagal forståelse viser os præcist, hvorfor dit system ikke kan falde til ro, og hvad der skal til for at komme derhen. Når vi forstår de tre tilstande - grøn sikkerhed, gul alarm og rød nedlukning - kan vi identificere, hvor dit system sidder fast om natten. Med målrettede øvelser hjælper vi dit nervesystem med at finde vej ned i den dybe grønne tilstand, hvor kroppen føler sig tryg nok til at overlade sig helt til søvnen og den naturlige hvile.",
+                fagfolk: "Søvn kræver ventral vagal dominans som fysiologisk fundament for bevidsthedstransitionen fra vågenhed til søvn. Polyvagal teori giver den teoretiske ramme for at forstå, hvorfor søvnforstyrrelser opstår som resultat af autonom dysregulering. Intervention baseret på polyvagal forståelse faciliterer systematisk transition til en søvn-permissiv tilstand gennem målrettet aktivering af ventrale vagale pathways. Dette inkluderer prosodisk stimulation, respiratorisk sinus arrhythmia-træning og neuroception-kalibrering. Den polyvagale tilgang muliggør præcis identifikation af det autonome mønster der opretholder søvnforstyrrelsen og guide den specifikke intervention."
+            },
+            'nervesystem-tilknytning': {
+                klient: "Søvnproblemer har ofte dybe rødder i utryg tilknytning, hvor du som barn ikke fik den co-regulering, der lærte nervesystemet at falde til ro. Når ingen hjalp dig med at berolige dig, lærte dit system aldrig den naturlige vej ind i søvn. Vi skaber den manglende sikkerhed gennem vores terapeutiske relation, så dit nervesystem kan lære det, det ikke lærte dengang. Gradvist opbygger vi en indre følelse af tryghed, der gør det muligt for dit system at slippe kontrollen og hvile dybt, også når du er alene.",
+                fagfolk: "Manglende early co-regulation af arousal i tilknytningsrelationen påvirker udviklingen af søvnkapacitet fundamentalt. Uden tilstrækkelig ekstern regulering i de tidlige år udvikler barnet ikke de interne reguleringsmekanismer, der er nødvendige for autonom søvn-transition. Denne tilknytningsbaserede søvndysfunktion manifesterer sig som vedvarende vanskeligheder med self-soothing ved sengetid. Earned secure attachment, etableret gennem den terapeutiske relation, kan restaurere søvnregulering ved at tilbyde korrigerende co-regulerende erfaringer. Disse erfaringer internaliseres gradvist og opbygger den autonome reguleringskapacitet, som den oprindelige tilknytningsrelation ikke faciliterede tilstrækkeligt."
+            },
+            'nervesystem-kropsterapi': {
+                klient: "Kroppen kan simpelthen ikke sove, når den er anspændt og i alarmberedskab. Spændinger i nakke, skuldre, kæbe og mave holder nervesystemet aktiveret, selv når du er udmattet. Kropsarbejde lærer kroppen at slippe disse dybe spændingsmønstre, lag for lag. Gennem blid berøring, fasciel udløsning og vejrtrækningsøvelser begynder nervesystemet at registrere, at det er trygt at slappe af. Når kroppen finder ro, følger nervesystemet med, og den naturlige vej ind i søvnen åbner sig. Det er en gradvis proces, hvor kroppen genontdækker sin medfødte evne til hvile.",
+                fagfolk: "Somatisk hypertonus inhiberer den parasympatiske activation, der er nødvendig for søvn-transition. Kronisk muskulær spænding, særligt i diaphragma og cervikale fascia, opretholder sympatisk arousal og forhindrer den fysiologiske nedregulering, som søvn kræver. Fascial release-teknikker adresserer de somatiske barrierer for parasympatisk dominans og faciliterer den autonome transition til søvn-permissiv tilstand. Kombinationen af manuel intervention og respiratorisk træning aktiverer vagale pathways, der direkte understøtter søvn-processen. Den somatiske tilgang er særligt effektiv, fordi den omgår kognitive processer og arbejder direkte med det autonome nervesystems fysiologiske grundlag."
+            },
+            'nervesystem-psykobiologi': {
+                klient: "Når nervesystemet roer sig, normaliseres søvnens biologi helt naturligt. Stresshormonet cortisol falder til det niveau, der hører natten til, og søvnhormonet melatonin stiger, som det skal. Det er et fint samspil mellem nervesystemet og hormonerne, og når den ene side kommer i balance, følger den anden med. Vi arbejder med at berolige nervesystemet gennem målrettede øvelser og teknikker, hvilket gradvist genopretter den naturlige døgnrytme. Dit system genfinder sin biologiske visdom om, hvornår det er tid til at være vågen, og hvornår det er tid til søvn.",
+                fagfolk: "Nervesystemsregulering normaliserer den circadiane rytme og søvn-relaterede neuroendokrine processer gennem direkte påvirkning af HPA-aksen. Sympatisk hyperarousal opretholder forhøjet kortisolproduktion, der inhiberer melatoninsyntese og forstyrrer den naturlige søvn-vågen cyklus. Terapeutisk intervention rettet mod autonom regulering reducerer baseline sympatisk tonus og muliggør genetablering af normal kortisol-diurnal rytme. Den resulterende normalisering af HPA-akse funktionen faciliterer appropriate melatoninfrigivelse og restoration af circadian oscillation. Denne neuroendokrine normalisering er et direkte resultat af forbedret vagal tone og parasympatisk kapacitet opnået gennem systematisk nervesystemsarbejde."
+            },
+            'nervesystem-traumer': {
+                klient: "Traumer skaber en konstant vågenhed i nervesystemet, der direkte forhindrer søvn. Dit system lærte, at det var farligt at slippe kontrollen, og den lektie sidder dybt i kroppen. Selv i et trygt soveværelse reagerer nervesystemet, som om fare er nært forestående. Healing af traumer handler om at vise dit nervesystem, at den gamle fare er overstået, og at det nu er sikkert at hvile. Efterhånden som traumerne bearbejdes, falder det autonome arousal-niveau, og nervesystemet genopdager sin naturlige evne til at glide ind i dyb, genoprettende søvn.",
+                fagfolk: "PTSD-relateret hypervigilance inhiberer søvn gennem persistent sympatisk activation, hvor det autonome nervesystem forbliver i en forhøjet alarmberedskabstilstand uanset kontekstuel sikkerhed. Traumatisk arousal konsolideres i neurale netværk, der prioriterer vagtsomhed over hvile. Systematisk trauma-processing reducerer baseline arousal gennem rekalibrering af amygdalas trusselsvurdering og nedregulering af den sympatiske tonus. Somatisk traumebearbejdning er særligt relevant for søvnrestauration, da den direkte adresserer den kropslige hyperaktivering. Gradvis desensitisering af traumerelaterede triggere muliggør, at nervesystemet kan registrere søvnsituationen som tilstrækkeligt sikker til at tillade bevidsthedstransition."
+            },
+            'nervesystem-relation': {
+                klient: "Dit nervesystem lærer dyb ro gennem vores terapeutiske relation - en ro, der er dyb nok til søvn. Hver gang vi mødes, og du oplever at blive mødt med varme og tilstedeværelse, lagrer dit system en ny erfaring af sikkerhed. Disse erfaringer bygger sig langsomt op inde i dig og bliver til en indre ressource, du kan trække på om natten. Nervesystemet lærer gradvist, at det er trygt at give slip, fordi det har erfaret ægte sikkerhed i relationen. Denne indre tryghed er den bro, der fører fra vågenhed til naturlig, dyb søvn.",
+                fagfolk: "Terapeutisk co-regulation opbygger intern kapacitet til den autonome down-regulation, der er nødvendig for søvn-transition. Gennem gentagen erfaring af ventral vagal sikkerhed i den terapeutiske relation udvikler klienten progressivt evnen til selvregulering ved sengetid. Den relationelle erfaring internaliseres som nye neurale pathways for autonomt selvberoligelse, der kan aktiveres uafhængigt af ekstern co-regulering. Denne generalisering fra terapeutisk kontekst til søvnsituation kræver konsistent relationel sikkerhed over tid. Processen transformerer søvn fra en kontekst af potentiel sårbarhed til en situation, hvor systemet kan tillade nedregulering."
+            },
+            'polyvagal-tilknytning': {
+                klient: "Utryg tilknytning skabte et nervesystem, der aldrig rigtig lærte at slappe af til søvn. Fordi du ikke oplevede tilstrækkelig tryghed som lille, blev dit system vant til at være på vagt, selv om natten. Den grønne sikre zone, som søvn kræver, var sjældent tilgængelig. I terapien lærer vi dit system sikkerhed på ny. Gennem trygge, gentagne oplevelser bygger vi den polyvagale fleksibilitet op, der gør det muligt at bevæge sig ned i den dybe grønne ro. Gradvist opdager dit system, at det er sikkert at lukke øjnene og sove.",
+                fagfolk: "Usikker tilknytning korrelerer signifikant med søvnforstyrrelser, medieret gennem det polyvagale systems manglende udvikling af ventral vagal kapacitet. Uden tilstrækkelig co-regulation i tilknytningsrelationen udvikles den autonome fleksibilitet, der er nødvendig for circadian oscillation, ikke optimalt. Det polyvagale system forbliver biased mod defensive tilstande, der er inkompatible med søvn. Earned secure attachment, faciliteret gennem den terapeutiske relation, opbygger den ventrale vagale kapacitet, der muliggør transition til søvn-permissiv tilstand. Denne proces restaurerer den polyvagale fleksibilitet og faciliterer den naturlige autonome nedregulering, som søvn kræver."
+            },
+            'polyvagal-kropsterapi': {
+                klient: "Kropsarbejde er en af de mest direkte veje til at aktivere den grønne ro, der gør søvn mulig. Når vi arbejder med kroppen gennem blid berøring, fasciel udløsning og dybe vejrtrækningsøvelser, sender vi kraftige signaler til nervesystemet om sikkerhed. Kroppen begynder at slippe sine spændinger, og det polyvagale system skifter fra alarm til ro. Denne kropslige erfaring af dyb afslapning lærer dit system vejen ind i den grønne zone, hvor søvnen naturligt kan komme. Efterhånden bliver denne vej lettere og lettere at finde, også på egen hånd.",
+                fagfolk: "Somatisk intervention aktiverer ventrale vagale pathways, der faciliterer den autonome transition nødvendig for søvn. Kropslige teknikker som fascial release, diaphragmatisk åndedræt og afferent vagal stimulation påvirker direkte det polyvagale systems tilstandsregulering. Disse interventioner omgår kognitive processer og arbejder direkte med det autonome nervesystems fysiologiske mekanismer. Den somatiske tilgang er særligt effektiv for søvnproblemer, fordi den adresserer den kropslige komponent af polyvagal dysregulering. Systematisk kropsarbejde opbygger kapacitet for ventral vagal dominans og faciliterer den polyvagale fleksibilitet, der muliggør naturlig søvn-transition."
+            },
+            'polyvagal-psykobiologi': {
+                klient: "Når dit system er i den grønne sikre tilstand, skabes den rette biologi for søvn helt naturligt. Stresshormonet cortisol falder, og søvnhormonet melatonin begynder at stige, præcis som det skal om aftenen. Det er den polyvagale sikkerhed, der giver kroppen tilladelse til at skifte til natmodus. Når systemet derimod er i gul alarm, forbliver cortisol højt og blokerer søvnens biologi. Vi arbejder med at hjælpe dit system til den grønne zone, hvor hormonerne automatisk finder deres naturlige natlige rytme og inviterer søvnen.",
+                fagfolk: "Ventral vagal aktivering optimerer de circadiane hormoner og faciliterer den neuroendokrine profil, der er nødvendig for søvn. Polyvagal sikkerhed muliggør appropriate HPA-akse nedregulering med faldende kortisol og stigende melatoninsyntese i aftentimerne. Sympatisk hyperarousal, karakteristisk for manglende ventral vagal adgang, opretholder forhøjet kortisolproduktion, der direkte inhiberer melatoninfrigivelse. Den polyvagale intervention adresserer denne autonome dysregulering ved at styrke ventral vagal kapacitet, hvilket normaliserer den neuroendokrine oscillation, der understøtter den naturlige circadiane rytme og dermed søvnens biologiske forudsætninger."
+            },
+            'polyvagal-traumer': {
+                klient: "Traumer har fastlåst dit system i en tilstand af konstant vågenhed, hvor den grønne sikkerhed er svær at nå. Dit polyvagale system lærte, at fare var overalt, og den lektie sidder dybt. Selv om natten forbliver systemet i gul alarm eller rød nedlukning, begge tilstande der forhindrer ægte, genoprettende søvn. Vejen tilbage til søvn går gennem genetablering af den grønne polyvagale sikkerhed. Det kræver tid og tålmodighed, men gennem forsigtigt traumearbejde kan dit system gradvist lære, at faren er ovre, og at søvn er sikkert.",
+                fagfolk: "Traumatisk hyperarousal inhiberer ventral vagal adgang og fastholder det polyvagale system i defensive tilstande, der er inkompatible med søvn. Den traumatisk konsoliderede neuroception vurderer søvnsituationens sårbarhed som truende, hvilket opretholder sympatisk mobilisering eller dorsal immobilisering. Genetablering af polyvagal sikkerhed er en nødvendig forudsætning for søvnrestauration. Titreret traumebearbejdning, der respekterer det polyvagale systems kapacitet, muliggør gradvis rekalibrering af neuroceptionen. Denne proces udvider det autonome tolerancevindue og genetablerer kapaciteten for den ventrale vagale dominans, som søvn-transitionen kræver."
+            },
+            'polyvagal-relation': {
+                klient: "Min ro og tilstedeværelse i vores møder lærer dit nervesystem den dybe sikkerhed, der muliggør søvn. Når du sidder overfor et nervesystem i grøn ro, begynder dit eget system at spejle den tilstand. Det er polyvagal teori i praksis - vi regulerer hinanden. Hver session giver dit system en erfaring af, at det er muligt at være i dyb ro sammen med et andet menneske. Disse erfaringer akkumuleres og bliver til en indre kapacitet, som du kan trække på, når du lægger dig om aftenen og har brug for at finde ro.",
+                fagfolk: "Terapeutens ventrale vagale tilstand co-regulerer klientens autonome nervesystem og lærer det kapaciteten for den down-regulation, der er nødvendig for søvn. Denne polyvagale co-regulering sker primært gennem non-verbale kanaler som prosodi, ansigtsudtryk og fysiologisk tilstedeværelse. Gentagen eksponering for terapeutens ventrale vagale tilstand konsoliderer nye neurale pathways for autonom regulering hos klienten. Over tid internaliseres denne co-reguleringserfaring som øget kapacitet for selvregulering, herunder evnen til at facilitere egen down-regulation ved sengetid. Processen illustrerer det polyvagale princip om, at sikkerhed læres gennem relationen."
+            },
+            'tilknytning-kropsterapi': {
+                klient: "Manglende sikkerhed i dine tidlige relationer skabte en krop, der aldrig rigtig lærte at slappe af til søvn. Spændingerne sidder dybt i muskler og væv som et kropsligt minde om, at det ikke var sikkert at give slip. Kropsarbejde adresserer disse dybe mønstre direkte og lærer kroppen en ny erfaring af ro og sikkerhed. Gennem blid behandling og vejrtrækningsøvelser begynder de gamle spændingsmønstre at opløses. Kroppen opdager gradvist, at det er muligt at slappe helt af, og dermed åbnes vejen til naturlig, genoprettende søvn og dyb hvile.",
+                fagfolk: "Søvnproblemer er ofte somatisk manifesterede tilknytningsforstyrrelser, hvor den manglende tidlige co-regulation har konsolideret sig som kronisk muskulær hypertonus og fasciale restriktioner. Disse embodied tilknytningsmønstre opretholder en autonom tilstand, der er inkompatibel med søvn. Somatisk intervention modificerer disse dybe kropslige mønstre direkte gennem fascial release, kropsbevidsthedstræning og respiratorisk regulering. Tilgangen omgår kognitive forsvarsmekanismer og arbejder direkte med det kropslige substrat af tilknytningsusikkerheden. Den somatiske erfaring af sikkerhed og ro kan transformere de tidligt etablerede mønstre og genoprette kapaciteten for autonom søvn-transition."
+            },
+            'tilknytning-psykobiologi': {
+                klient: "Utryg tilknytning tidligt i livet formede din søvnbiologi på en dyb måde. Når du som barn levede med konstant utryghed, tilpassede din krop sig ved at holde stresshormoner høje og søvnhormoner lave. Denne biologiske indstilling kan fortsætte ind i voksenlivet og gøre det svært at sove. Den gode nyhed er, at ny sikkerhed i terapeutiske relationer kan normalisere biologien igen. Når dit system erfarer dyb tryghed, begynder hormonbalancen gradvist at ændre sig - cortisol falder til naturligt natligt niveau, melatonin stiger, og søvnens biologi genetableres.",
+                fagfolk: "Usikker tilknytning præger HPA-aksens udvikling og funktion, med direkte konsekvenser for søvnrelaterede hormoner. Tidlig tilknytningsstress programmerer en forhøjet kortisol-baseline, der persisterer i voksenlivet og inhiberer den circadiane nedregulering, som søvn kræver. Melatoninsyntesen påvirkes negativt af den kronisk forhøjede sympatiske tonus, der følger af usikker tilknytning. Earned secure attachment, udviklet gennem terapeutisk relation, kan modificere denne biologi ved at nedregulere HPA-aksens reaktivitet og normalisere den autonome balance. Denne neurobiologiske modifikation restaurerer de hormonelle forudsætninger for naturlig circadian oscillation og dermed søvnkapacitet."
+            },
+            'tilknytning-traumer': {
+                klient: "Tilknytningstraumer - oplevelser af svigt, uforudsigelighed eller fare i dine nærmeste relationer - skabte en dyb vågenhed og søvnløshed. Dit system lærte, at de mennesker, der skulle beskytte dig, ikke altid var sikre, og den erfaring gør det enormt svært at give slip om natten. Healing af tilknytningstraumer kræver dyb sikkerhed i en terapeutisk relation, hvor du gradvist kan erfare, at det er muligt at stole på et andet menneske. Denne nye erfaring bygger langsomt den indre tryghed op, der er forudsætningen for at kunne lukke øjnene og sove.",
+                fagfolk: "Developmental trauma i tilknytningsrelationen resulterer i pervasive søvnforstyrrelser, der manifesterer sig som kronisk hypervigilance ved sengetid, natlige opvågninger og manglende konsolideret søvn. Tilknytningstraumet kompromitterer udviklingen af autonom reguleringskapacitet og etablerer neurale mønstre, der prioriterer vagtsomhed over hvile. Terapeutisk intervention kræver langsom relational safety-etablering, der respekterer det traumatiserede systems behov for kontrol. Gradvis eksponering for relationel sikkerhed rekalibrerer neuroceptionen og opbygger den interne reguleringskapacitet, der muliggør autonom søvn-transition. Denne proces kræver konsistens og tålmodighed fra terapeutens side."
+            },
+            'tilknytning-relation': {
+                klient: "Vores trygge terapeutiske relation lærer dit nervesystem, at det er sikkert nok til at sove. Hvis dine tidlige tilknytningsrelationer ikke gav dig den grundlæggende følelse af sikkerhed, mangler dit system en vigtig erfaring. I vores arbejde sammen tilbyder vi den erfaring nu. Hver gang vi mødes, og du oplever at blive set, hørt og holdt i tryghed, bygger vi den indre sikkerhed op, som søvn kræver. Din krop og dit nervesystem lærer gradvist, at verden er et sted, hvor det er sikkert at lukke øjnene og hvile dybt.",
+                fagfolk: "Den terapeutiske relation fungerer som sikker base og faciliterer internalisering af self-soothing kapacitet, der er nødvendig for autonom søvn-transition. For klienter med usikker tilknytning tilbyder relationen korrigerende erfaringer af co-regulation, som den oprindelige tilknytning ikke leverede. Terapeutens konsistente tilstedeværelse og responsivitet opbygger earned secure attachment, der transformerer klientens interne arbejdsmodeller. Denne internalisering af relationel sikkerhed generaliserer til søvnsituationen, hvor klienten gradvist udvikler kapacitet til selvregulering og selvberoligelse. Processen illustrerer, hvordan tilknytningserfaringer i den terapeutiske relation direkte faciliterer udvikling af søvnkompetence."
+            },
+            'kropsterapi-psykobiologi': {
+                klient: "Når kroppen lærer at finde ro gennem kropsarbejde, følger søvnbiologien naturligt med. Spændingerne i muskler og væv har holdt dit nervesystem i alarmberedskab, og det har forstyrret din hormonbalance. Når kroppen slipper sine spændinger, falder stresshormonerne, og søvnhormonet melatonin kan stige igen. Det er en smuk kædereaktion - kropslig ro fører til hormonal balance, som fører til bedre søvn. Gennem regelmæssigt kropsarbejde og daglige øvelser genetableres den naturlige biologiske rytme, der styrer din søvn-vågen cyklus og giver dig din søvn tilbage.",
+                fagfolk: "Somatisk ro-aktivering gennem kropslige interventioner påvirker HPA-aksen direkte og faciliterer normalisering af de circadiane hormoner, der er nødvendige for søvn. Fascial release og respiratorisk regulering reducerer den afferente sympatiske signalering, der opretholder forhøjet kortisolproduktion. Den resulterende parasympatiske dominans muliggør appropriate melatoninsyntese og normalisering af den circadiane hormonelle oscillation. Denne somatisk medierede neuroendokrine modifikation illustrerer den direkte pathway fra kropslig intervention til søvnbiologisk normalisering. Regelmæssig somatisk praksis konsoliderer disse ændringer og etablerer nye fysiologiske baseline-mønstre, der understøtter stabil søvnregulering."
+            },
+            'kropsterapi-traumer': {
+                klient: "Traumer holder kroppen i en tilstand af konstant vågenhed, hvor muskler er spændte og vejrtrækningen er overfladisk. Denne kropslige alarmberedskab forhindrer den dybe afslapning, som søvn kræver. Forsigtigt og respektfuldt kropsarbejde hjælper med at frigøre kroppen fra disse traumemønstre. Vi arbejder langsomt og i dit tempo, så dit system aldrig bliver overvældet. Lag for lag slipper kroppen de gamle spændinger, og nervesystemet opdager, at det er sikkert at give slip. Når den traumatiske spænding løsner, åbner vejen til naturlig søvn sig gradvist igen.",
+                fagfolk: "Traumatisk somatisk hyperarousal manifesteret som kronisk muskulær spænding, fasciale restriktioner og dysreguleret respiration inhiberer direkte den parasympatiske activation, der er nødvendig for søvn. Den somatiske komponent af traumeresponsen konsoliderer sig i kroppens væv og opretholder autonom dysregulering uafhængigt af kognitiv processing. Titreret somatisk intervention, der respekterer det traumatiserede systems tolerancevindue, reducerer gradvist den kropslige activation. Denne tilgang er særligt vigtig for søvnrestauration, da den adresserer den direkte fysiologiske barriere for søvn. Forsigtigt kropsarbejde kombineret med relational safety muliggør gradvis somatisk nedregulering."
+            },
+            'kropsterapi-relation': {
+                klient: "Tryg berøring i den terapeutiske relation lærer kroppen, at den kan slappe af nok til at sove. Når du oplever blid, respektfuld behandling i et trygt rum, modtager dit nervesystem et kraftigt signal om sikkerhed. Kroppen begynder at huske, hvordan det føles at være helt afslappet i nærvær af et andet menneske. Denne kropslige erfaring af sikkerhed og ro akkumuleres over tid og bliver til en indre ressource. Gradvist kan kroppen genfinde denne tilstand af dyb afslapning på egen hånd, når du lægger dig til at sove om aftenen.",
+                fagfolk: "Terapeutisk touch kombineret med relational safety faciliterer en unik form for somatisk down-regulation, der er særligt potent for søvnrestauration. Den samtidige erfaring af kropslig intervention og relationel sikkerhed aktiverer både somatiske og tilknytningsbaserede pathways til parasympatisk dominans. Denne dobbelte aktivering konsoliderer dybere neurale mønstre for ro end enten modalitet alene kan opnå. Den kropslige erfaring af sikkerhed i relation internaliseres som øget kapacitet for autonom somatisk selvregulering ved sengetid. Tilgangen adresserer søvnforstyrrelsens somatiske og relationelle dimensioner simultant og faciliterer integreret healing."
+            },
+            'psykobiologi-traumer': {
+                klient: "Traumer ødelagde din søvnbiologi ved at sætte kroppen i permanent alarmberedskab. Stresshormonerne forblev høje, selv om natten, og søvnhormonet melatonin blev undertrykt. Din naturlige døgnrytme blev forstyrret, fordi kroppen prioriterede overlevelse over hvile. Healing af traumerne normaliserer gradvist denne biologi. Efterhånden som dit system bearbejder de traumatiske oplevelser og lærer, at faren er overstået, begynder hormonerne at finde deres naturlige rytme igen. Cortisol falder om aftenen, melatonin stiger, og søvnens biologiske forudsætninger genoprettes langsomt men sikkert.",
+                fagfolk: "PTSD modificerer den circadiane rytme og HPA-aksens funktion fundamentalt, med forhøjet natligt kortisol, reduceret melatoninsyntese og fragmenteret søvnarkitektur. Traumatisk stress konsoliderer neuroendokrine mønstre, der prioriterer hypervigilance over restorativ søvn. Systematisk trauma-processing kan normalisere denne søvnbiologi ved at reducere amygdalas toniske aktivering og nedregulere HPA-aksens reaktivitet. Den resulterende normalisering af den autonome balance faciliterer genetablering af circadian hormonel oscillation. Denne neurobiologiske restauration illustrerer den direkte pathway fra traumeresolution til søvnforbedring og understreger vigtigheden af integreret behandling."
+            },
+            'psykobiologi-relation': {
+                klient: "Vores trygge terapeutiske relation er i sig selv en form for søvnmedicin, der arbejder på det biologiske niveau. Når du er i nærvær af et menneske, der er roligt og trygt, begynder din krop at ændre sin hormonproduktion. Stresshormonet cortisol falder, og kroppen producerer i stedet hormoner forbundet med tryghed og tilknytning. Denne biologiske effekt af relationen akkumuleres over tid og normaliserer gradvist din søvnbiologi. Det er ikke bare psykologi - det er målbar biokemi. Vores relation skaber bogstaveligt de hormonelle betingelser for god, dyb søvn.",
+                fagfolk: "En sikker terapeutisk alliance modificerer HPA-aksens funktion og faciliterer det biologiske grundlag for søvnrestauration. Relational safety aktiverer oxytocin-medierede pathways, der direkte antagoniserer kortisols søvninhiberende effekt. Gentagen erfaring af co-regulation i den terapeutiske relation nedregulerer HPA-aksens reaktivitet og normaliserer den diurnale kortisolkurve. Denne relationelt medierede neuroendokrine modifikation er et målbart biologisk substrat for den terapeutiske effekt på søvn. Over tid internaliseres den relationelle regulering som modificeret autonom baseline, der muliggør independent circadian hormonel normalisering og stabil søvnkvalitet."
+            },
+            'traumer-relation': {
+                klient: "Traumer kan kun heales i dyb sikkerhed - og når de heler, kommer søvnen tilbage. Dit system har brug for at erfare, at det er muligt at være sårbar i nærvær af et andet menneske, uden at det er farligt. Vores terapeutiske relation tilbyder netop det trygge rum, hvor traumerne kan bearbejdes i et tempo, dit system kan håndtere. Hver session bygger mere sikkerhed og tillid op, og gradvist løsner traumernes greb om dit nervesystem. Når hypervigilancen aftager, og kroppen ikke længere er i konstant alarm, genopdager dit system den naturlige søvnrytme.",
+                fagfolk: "Effektiv traumebehandling kræver en robust terapeutisk alliance, der tilbyder tilstrækkelig relational safety til at facilitere resolution af den hypervigilance, der inhiberer søvn. Den terapeutiske relations ventrale vagale sikkerhed skaber det nødvendige fundament for titreret traumeprocessering. Uden denne relationelle sikkerhed risikerer traumebearbejdning retraumatisering snarere end integration. Den gradvise traumeresolution, faciliteret af den sikre relation, reducerer baseline arousal og rekalibrerer neuroceptionen, så søvnsituationen ikke længere aktiverer defensive responser. Denne proces illustrerer den uadskillelige sammenhæng mellem relationel sikkerhed, traumehealing og søvnrestauration i terapeutisk kontekst."
+            },
+        }
+    }
+   
 };
 
 const exercises = [
