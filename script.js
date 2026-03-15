@@ -1688,7 +1688,6 @@ function setupThemeSelector() {
             document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
             
-            document.getElementById('theme-label').textContent = themeNames[currentTheme];
             dropdown.classList.remove('show');
             
             updateCenterCircle();
@@ -1731,8 +1730,6 @@ currentTheme = 'general';
             document.querySelectorAll('.education-option').forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
             
-            const label = educationNames[currentEducation];
-            document.getElementById('education-label').innerHTML = label.replace(' ', '<br>');
             dropdown.classList.remove('show');
             
           updateCenterCircle();
