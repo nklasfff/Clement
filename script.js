@@ -2043,7 +2043,7 @@ function showMenuContent(action) {
         },
         contact: {
             title: 'Kontakt',
-            html: '<p>Har du spørgsmål om behandling, uddannelser eller denne app? Du er velkommen til at kontakte Annemarie Clement.</p><p>Besøg <strong>annemarie-clement.dk</strong> for mere information om behandlinger og uddannelser.</p>'
+            html: '<p>Har du spørgsmål om behandling, uddannelser eller denne app? Du er velkommen til at kontakte Annemarie Clement.</p><p>Besøg <strong>annemarieclement.dk</strong> for mere information om behandlinger og uddannelser.</p>'
         },
         privacy: {
             title: 'Privatlivspolitik',

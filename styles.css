@@ -43,6 +43,7 @@ header {
     padding-top: env(safe-area-inset-top);
     margin-bottom: 30px;
     padding-top: 20px;
+    position: relative;
 }
 
 h1 {
@@ -87,7 +88,7 @@ h1 {
 .top-circle span {
     font-family: 'Georgia', serif;
     color: white;
-    font-size: 0.45rem;
+    font-size: 0.55rem;
     font-weight: 500;
     text-align: center;
     padding: 5px;
@@ -363,7 +364,7 @@ h1 {
 
 .circle-text {
     font-family: 'Georgia', serif;
-    font-size: 15px;
+    font-size: 17px;
     text-anchor: middle;
     pointer-events: none;
     font-weight: 400;
@@ -371,7 +372,7 @@ h1 {
 
 .center-text {
     fill: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -381,47 +382,36 @@ h1 {
 
 /* NAV BUTTONS (hamburger + search) */
 .nav-btn {
-    position: fixed;
-    top: calc(env(safe-area-inset-top, 0px) + 12px);
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: calc(env(safe-area-inset-top, 0px) + 15px);
+    width: 30px;
+    height: 30px;
+    background: none;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
     z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(90, 122, 104, 0.2);
-    transition: all 0.2s ease;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-}
-
-.nav-btn:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 12px rgba(90, 122, 104, 0.3);
+    padding: 0;
 }
 
 .menu-btn {
-    left: 12px;
+    left: 10px;
     flex-direction: column;
     gap: 5px;
-    padding: 10px;
 }
 
 .menu-btn span {
     display: block;
-    width: 20px;
-    height: 2px;
+    width: 22px;
+    height: 1.5px;
     background: #5a7a68;
     border-radius: 1px;
-    transition: all 0.3s ease;
 }
 
 .search-btn {
-    right: 12px;
+    right: 10px;
 }
 
 /* MENU OVERLAY */
@@ -942,15 +932,15 @@ button.back-btn:hover {
     }
 
     .nav-btn {
-        top: calc(env(safe-area-inset-top, 0px) + 8px);
+        top: calc(env(safe-area-inset-top, 0px) + 12px);
     }
 
     .menu-btn {
-        left: 8px;
+        left: 6px;
     }
 
     .search-btn {
-        right: 8px;
+        right: 6px;
     }
 
     header {
@@ -971,7 +961,7 @@ button.back-btn:hover {
     }
     
     .top-circle span {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         line-height: 1.1;
     }
     
