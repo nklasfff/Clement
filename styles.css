@@ -383,7 +383,7 @@ h1 {
 /* NAV BUTTONS (hamburger + search) */
 .nav-btn {
     position: absolute;
-    top: calc(env(safe-area-inset-top, 0px) + 15px);
+    top: calc(env(safe-area-inset-top, 0px) + 4px);
     width: 30px;
     height: 30px;
     background: none;
@@ -932,7 +932,7 @@ button.back-btn:hover {
     }
 
     .nav-btn {
-        top: calc(env(safe-area-inset-top, 0px) + 12px);
+        top: calc(env(safe-area-inset-top, 0px) + 4px);
     }
 
     .menu-btn {
