@@ -1544,6 +1544,10 @@ let currentCircle = null;
 
 window.addEventListener('load', () => {
     resetToWelcome();
+    // Trigger bloom animation on SVG circles
+    requestAnimationFrame(() => {
+        document.getElementById('nervesystem-model').classList.add('bloom-ready');
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
