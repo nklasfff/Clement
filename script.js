@@ -1544,10 +1544,21 @@ let currentCircle = null;
 
 window.addEventListener('load', () => {
     resetToWelcome();
-    // Trigger bloom animation on SVG circles
-    requestAnimationFrame(() => {
-        document.getElementById('nervesystem-model').classList.add('bloom-ready');
-    });
+    // Trigger bloom animation (respects user preference)
+    try {
+        var bloomPref = localStorage.getItem('pref-bloom');
+        if (bloomPref === null || bloomPref === '1') {
+            requestAnimationFrame(function() {
+                document.getElementById('nervesystem-model').classList.add('bloom-ready');
+            });
+        } else {
+            document.getElementById('nervesystem-model').classList.add('bloom-skip');
+        }
+    } catch(e) {
+        requestAnimationFrame(function() {
+            document.getElementById('nervesystem-model').classList.add('bloom-ready');
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1606,12 +1617,13 @@ function resetToWelcome() {
     currentView = 'welcome';
     currentCircle = null;
     currentMode = 'klient';
+    try { if (localStorage.getItem('pref-fagfolk') === '1') currentMode = 'fagfolk'; } catch(e) {}
     currentTheme = 'general';
     currentEducation = null;
     
     document.querySelectorAll('.top-circle[data-mode]').forEach(circle => {
         circle.classList.remove('active');
-        if (circle.dataset.mode === 'klient') {
+        if (circle.dataset.mode === currentMode) {
             circle.classList.add('active');
         }
     });
@@ -1937,6 +1949,8 @@ function showCircleView(circleId) {
     const connectedCircles = getConnectedCircles(circleId);
     
     let accordionItems = '';
+    var autoExpand = '';
+    try { if (localStorage.getItem('pref-auto-expand') === '1') autoExpand = ' open'; } catch(e) {}
     connectedCircles.forEach(targetId => {
         const key1 = `${circleId}-${targetId}`;
         const key2 = `${targetId}-${circleId}`;
@@ -1947,7 +1961,7 @@ function showCircleView(circleId) {
             const dynamikText = connectionData[currentMode];
             
             accordionItems += `
-                <div class="accordion-item" data-target-circle="${targetId}">
+                <div class="accordion-item${autoExpand}" data-target-circle="${targetId}">
                     <div class="accordion-header">
                         <span class="accordion-header-text">${circleNames[circleId]} ↔ ${targetName}</span>
                         <span class="accordion-chevron">▸</span>
@@ -2059,30 +2073,141 @@ function showMenuContent(action) {
     const content = {
         about: {
             title: 'Om Annemarie Clement',
-            html: '<p>Annemarie Clement er uddannet nervesystemsterapeut, afspændingspædagog og kropsterapeut med mange års erfaring i at arbejde med menneskers nervesystemer.</p><p>Hun har specialiseret sig i polyvagal teori, tilknytningsmønstre og traumebearbejdning, og integrerer disse tilgange i en helhedsorienteret behandlingsform.</p><p>Annemarie underviser også kommende terapeuter gennem sine certificeringsuddannelser og specialkurser.</p>'
+            html: `
+                <p class="menu-intro">Bag denne app st\u00e5r et menneske med en dyb passion for at hj\u00e6lpe andre med at finde hjem i deres egen krop.</p>
+                <div class="menu-section">
+                    <h3>Hvem er Annemarie?</h3>
+                    <p>Annemarie Clement er uddannet nervesystemsterapeut, afsp\u00e6ndingsp\u00e6dagog og kropsterapeut med mange \u00e5rs erfaring i at arbejde med menneskers nervesystemer. Hun har viet sit professionelle liv til at forst\u00e5 \u2014 og formidle \u2014 hvordan kroppen og nervesystemet h\u00e6nger uadskillelig sammen.</p>
+                    <p>Hendes rejse begyndte med en nysgerrighed: <em>Hvorfor reagerer vi som vi g\u00f8r?</em> Det sp\u00f8rgsm\u00e5l f\u00f8rte hende gennem uddannelser i polyvagal teori, tilknytningsm\u00f8nstre og traumebearbejdning \u2014 og ind i en helhedsforst\u00e5else der i dag b\u00e6rer hele hendes arbejde.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>En underviser med hjertet f\u00f8rst</h3>
+                    <p>Annemarie underviser ogs\u00e5 kommende terapeuter gennem sine certificeringsuddannelser og specialkurser. Hendes undervisning er kendetegnet ved varme, dybde og en \u00e6gte tro p\u00e5 at forandring sker nedefra og op \u2014 gennem kroppen, ikke kun gennem forstanden.</p>
+                    <p>For hende handler det aldrig bare om teori. Det handler om <strong>at m\u00e6rke det i sin egen krop</strong>.</p>
+                </div>
+            `
         },
         method: {
             title: 'Min metode',
-            html: '<p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Polyvagal teori, Tilknytningsmønstre, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, og Terapeutisk Relation.</p><p>Disse dimensioner arbejder sammen i en integreret helhed, hvor forandring i én dimension påvirker alle de andre. Det er denne helhedsforståelse der gør metoden effektiv.</p><p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>'
+            html: `
+                <p class="menu-intro">Nervesystemsterapi er ikke \u00e9n teknik \u2014 det er en hel m\u00e5de at forst\u00e5 mennesket p\u00e5.</p>
+                <div class="menu-section">
+                    <h3>Cirkelmodellen</h3>
+                    <p>Min tilgang bygger p\u00e5 en dynamisk cirkelmodel med syv dimensioner der alle h\u00e6nger sammen: Nervesystemregulering i centrum, omgivet af Polyvagal teori, Tilknytningsm\u00f8nstre, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, og Terapeutisk Relation.</p>
+                    <p>Disse dimensioner er ikke adskilte skuffer \u2014 de er levende forbindelser. Forandring i \u00e9n dimension sender b\u00f8lger gennem alle de andre. Det er pr\u00e6cis derfor modellen er en <em>cirkel</em> og ikke en liste.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Hvorfor det virker</h3>
+                    <p>De fleste metoder fokuserer p\u00e5 \u00e9t aspekt \u2014 enten kroppen, tankerne eller f\u00f8lelserne. Men dit nervesystem skelner ikke mellem dem. Smerte i kroppen p\u00e5virker dine tanker. Utrygge relationer p\u00e5virker din biologi. Ubearbejdede traumer p\u00e5virker alt.</p>
+                    <p>Ved at arbejde med hele cirklen \u2014 ikke bare et udsnit \u2014 skaber vi forandringer der holder. Forandringer du kan m\u00e6rke. I din krop, i dine relationer, i din hverdag.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Hvad du kan her</h3>
+                    <p>I appen kan du udforske hver dimension \u2014 se hvordan de h\u00e6nger sammen, l\u00e6s om dem fra dit eget perspektiv, og pr\u00f8v \u00f8velser der bringer teorien ned i kroppen. Tryk p\u00e5 en cirkel og begynd din udforskning.</p>
+                </div>
+            `
         },
         contact: {
             title: 'Kontakt',
-            html: '<p>Har du spørgsmål om behandling, uddannelser eller denne app? Du er velkommen til at kontakte Annemarie Clement.</p><p>Besøg <strong>annemarieclement.dk</strong> for mere information om behandlinger og uddannelser.</p>'
+            html: `
+                <p class="menu-intro">Du er altid velkommen til at r\u00e6kke ud \u2014 uanset om du s\u00f8ger behandling, overvejer en uddannelse, eller bare har et sp\u00f8rgsm\u00e5l.</p>
+                <div class="menu-section">
+                    <h3>Find Annemarie</h3>
+                    <p>Bes\u00f8g <strong>annemarieclement.dk</strong> for at l\u00e6se mere om behandlinger, uddannelsesprogrammer og kommende kurser.</p>
+                    <p>P\u00e5 hjemmesiden kan du ogs\u00e5 booke en tid, tilmelde dig nyhedsbrevet eller l\u00e6se artikler om nervesystemarbejde.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Sociale medier</h3>
+                    <p>F\u00f8lg Annemarie p\u00e5 sociale medier for daglig inspiration, \u00f8velser og indblik i nervesystemets verden. Her deler hun b\u00e5de fagligt indhold og personlige refleksioner fra sit arbejde.</p>
+                </div>
+            `
         },
         privacy: {
             title: 'Privatlivspolitik',
-            html: '<p>Denne app indsamler ingen personlige data. Der bruges ingen cookies, ingen tracking og ingen analytics.</p><p>Al indhold vises lokalt i din browser, og der sendes ingen information til eksterne servere.</p><p>Appen fungerer offline efter første indlæsning.</p>'
+            html: `
+                <p class="menu-intro">Din tryghed er vigtig \u2014 ogs\u00e5 digitalt. Denne app er bygget med respekt for dit privatliv.</p>
+                <div class="menu-section">
+                    <h3>Ingen sporing, ingen data</h3>
+                    <p>Denne app indsamler <strong>ingen personlige data</strong>. Der bruges ingen cookies, ingen tracking, ingen analytics og ingen tredjepartstjenester. Intet forlader din enhed.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Alt forbliver hos dig</h3>
+                    <p>Al indhold vises lokalt i din browser. Der sendes ingen information til eksterne servere. Dine valg, dine klik og din udforskning er helt din egen.</p>
+                    <p>Appen fungerer offline efter f\u00f8rste indl\u00e6sning \u2014 ligesom et opslagsv\u00e6rk du altid har ved h\u00e5nden.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Hvorfor det er vigtigt</h3>
+                    <p>N\u00e5r du udforsker emner som traumer, tilknytning og nervesystemregulering, skal du ikke bekymre dig om at nogen kigger med. Det rum vi skaber her er dit eget.</p>
+                </div>
+            `
         },
         settings: {
             title: 'Indstillinger',
-            html: '<p>Indstillinger for appen kommer snart.</p><p>Fremtidige muligheder vil inkludere:</p><ul><li>Valg af foretrukken visningstilstand (klient/fagfolk)</li><li>Tekststørrelse</li><li>Foretrukket tema ved opstart</li></ul>'
+            html: `
+                <div class="menu-section">
+                    <h3>Visning</h3>
+                    <div class="menu-setting">
+                        <div class="setting-info">
+                            <span class="setting-label">Start som fagfolk</span>
+                            <span class="setting-desc">Vis fagligt perspektiv som standard</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-fagfolk">
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                    <div class="menu-setting">
+                        <div class="setting-info">
+                            <span class="setting-label">Vis sammenh\u00e6nge \u00e5bne</span>
+                            <span class="setting-desc">Fold automatisk sammenh\u00e6nge ud ved cirkelklik</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-auto-expand">
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <h3>Oplevelse</h3>
+                    <div class="menu-setting">
+                        <div class="setting-info">
+                            <span class="setting-label">Bloom-animation</span>
+                            <span class="setting-desc">Anim\u00e9r cirkler ved sideindl\u00e6sning</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-bloom" checked>
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                    <div class="menu-setting">
+                        <div class="setting-info">
+                            <span class="setting-label">Vis onboarding igen</span>
+                            <span class="setting-desc">Se introduktionen n\u00e6ste gang du \u00e5bner appen</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-onboarding">
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <h3>Om appen</h3>
+                    <p>Nervesystemsterapi-appen er udviklet som et digitalt opslagsv\u00e6rk og l\u00e6ringsredskab til Annemarie Clements terapeutiske univers.</p>
+                    <p class="setting-version">Version 1.0</p>
+                </div>
+            `
         }
     };
 
     const c = content[action];
     if (!c) return;
 
-    document.getElementById('info-content').innerHTML = '<h2>' + c.title + '</h2>' + c.html + '<div style="margin-top: 30px; text-align: center;"><button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button></div>';
+    document.getElementById('info-content').innerHTML = '<h2>' + c.title + '</h2>' + c.html + '<div style="margin-top: 30px; text-align: center;"><button onclick="resetToWelcome()" class="back-btn">\u2191 Tilbage til toppen</button></div>';
+
+    // Wire up settings toggles if this is the settings view
+    if (action === 'settings') {
+        setupSettingsToggles();
+    }
 
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
@@ -2096,6 +2221,50 @@ function showMenuContent(action) {
             });
         });
     });
+}
+
+function setupSettingsToggles() {
+    // Start som fagfolk
+    const fagfolkToggle = document.getElementById('setting-fagfolk');
+    if (fagfolkToggle) {
+        try { fagfolkToggle.checked = localStorage.getItem('pref-fagfolk') === '1'; } catch(e) {}
+        fagfolkToggle.addEventListener('change', function() {
+            try { localStorage.setItem('pref-fagfolk', this.checked ? '1' : '0'); } catch(e) {}
+        });
+    }
+
+    // Auto-expand sammenhænge
+    const expandToggle = document.getElementById('setting-auto-expand');
+    if (expandToggle) {
+        try { expandToggle.checked = localStorage.getItem('pref-auto-expand') === '1'; } catch(e) {}
+        expandToggle.addEventListener('change', function() {
+            try { localStorage.setItem('pref-auto-expand', this.checked ? '1' : '0'); } catch(e) {}
+        });
+    }
+
+    // Bloom animation
+    const bloomToggle = document.getElementById('setting-bloom');
+    if (bloomToggle) {
+        try {
+            const bloomPref = localStorage.getItem('pref-bloom');
+            bloomToggle.checked = bloomPref === null || bloomPref === '1';
+        } catch(e) {}
+        bloomToggle.addEventListener('change', function() {
+            try { localStorage.setItem('pref-bloom', this.checked ? '1' : '0'); } catch(e) {}
+        });
+    }
+
+    // Vis onboarding igen
+    const onboardingToggle = document.getElementById('setting-onboarding');
+    if (onboardingToggle) {
+        onboardingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                try { localStorage.removeItem('onboarding-seen'); } catch(e) {}
+            } else {
+                try { localStorage.setItem('onboarding-seen', '1'); } catch(e) {}
+            }
+        });
+    }
 }
 
 // ===== SEARCH =====
