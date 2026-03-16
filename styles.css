@@ -311,6 +311,81 @@ h1 {
     border-top: 2px solid #e8f0ec;
 }
 
+/* AKKORDEON — Collapsible forbindelser */
+.accordion-section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #7B9E89;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.accordion-item {
+    border-left: 3px solid #d4e0d8;
+    margin-bottom: 6px;
+    border-radius: 0 10px 10px 0;
+    background: #f8faf9;
+    transition: border-color 0.3s ease;
+}
+
+.accordion-item.open {
+    border-left-color: #7B9E89;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+    background: #eef4f0;
+}
+
+.accordion-header-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.05rem;
+    color: #3a4a3e;
+    font-weight: 500;
+}
+
+.accordion-chevron {
+    font-size: 0.85rem;
+    color: #7B9E89;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.accordion-item.open .accordion-chevron {
+    transform: rotate(90deg);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 18px;
+}
+
+.accordion-item.open .accordion-body {
+    max-height: 800px;
+    padding: 0 18px 18px;
+}
+
+.accordion-body p {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #4a5a4e;
+    margin: 0;
+}
+
 .connection {
     stroke: #d4e0d8;
     stroke-width: 2;

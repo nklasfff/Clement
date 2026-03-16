@@ -1558,6 +1558,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setupOnboarding();
     resetToWelcome();
     updateCenterCircle();
+
+    // Accordion toggle — event delegation on info-content
+    document.getElementById('info-content').addEventListener('click', function(e) {
+        const header = e.target.closest('.accordion-header');
+        if (!header) return;
+        const item = header.parentElement;
+        item.classList.toggle('open');
+    });
 });
 
 function updateCenterCircle() {
@@ -1924,34 +1932,46 @@ function showCircleView(circleId) {
     const data = circleData[currentMode];
     const connectedCircles = getConnectedCircles(circleId);
     
-    let connectionsHTML = '';
+    let accordionItems = '';
     connectedCircles.forEach(targetId => {
         const key1 = `${circleId}-${targetId}`;
         const key2 = `${targetId}-${circleId}`;
         const connectionData = sourceData.connections ? (sourceData.connections[key1] || sourceData.connections[key2]) : null;
-        
+        
         if (connectionData && connectionData[currentMode]) {
             const targetName = circleNames[targetId];
-            const dynamikText = connectionData[currentMode];
-            
-            connectionsHTML += `
-                <div style="margin-top: 30px; padding-top: 25px; border-top: 2px solid #e8f0ec;">
-                    <h3>${circleNames[circleId]} ↔ ${targetName}</h3>
-                    <p>${dynamikText}</p>
-                </div>
-            `;
-        }
-    });
-    
-    document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
-        <p>${data.text}</p>
-        ${connectionsHTML}
-        <div style="margin-top: 30px; text-align: center;">
-            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-        </div>
-    `;
+            const dynamikText = connectionData[currentMode];
+            
+            accordionItems += `
+                <div class="accordion-item" data-target-circle="${targetId}">
+                    <div class="accordion-header">
+                        <span class="accordion-header-text">${circleNames[circleId]} ↔ ${targetName}</span>
+                        <span class="accordion-chevron">▸</span>
+                    </div>
+                    <div class="accordion-body">
+                        <p>${dynamikText}</p>
+                    </div>
+                </div>
+            `;
+        }
+    });
 
-    // Scroll to info panel so the user sees the content
+    const connectionsSection = accordionItems ? `
+        <div class="connection-list">
+            <p class="accordion-section-title">Sammenhænge</p>
+            ${accordionItems}
+        </div>
+    ` : '';
+
+    document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
+        <p>${data.text}</p>
+        ${connectionsSection}
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
+        </div>
+    `;
+
+    // Scroll to info panel so the user sees the content
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
