@@ -1922,7 +1922,7 @@ function createMiniDiagram(coords, options) {
         relation: ['Relation', '']
     };
 
-    var svg = '<svg viewBox="0 0 320 320" class="dynamics-figure">';
+    var svg = '<svg viewBox="-20 -5 360 330" class="dynamics-figure">';
 
     // Connection lines - center to all
     ids.forEach(function(id) {

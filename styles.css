@@ -1211,7 +1211,6 @@ button.back-btn:hover {
 
 .dynamics-figure {
     width: 100%;
-    max-width: 280px;
     display: block;
     margin: 0 auto;
 }
