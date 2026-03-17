@@ -1883,12 +1883,215 @@ function showWelcome() {
         <h2>Min metode</h2>
         <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
         <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
+            <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
+        </div>
     `;
+
+    document.getElementById('dynamics-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        showDynamics();
+    });
 
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
         infoPanel.scrollTop = 0;
         window.scrollTo(0, 0);
+    });
+}
+
+function createMiniDiagram(coords, options) {
+    options = options || {};
+    var stressed = options.stressed || [];
+    var caption = options.caption || '';
+    var centerColor = '#5a7a68';
+    var outerFill = '#e8f0ec';
+    var outerStroke = '#b8c8bf';
+    var stressedFill = '#d6c3b6';
+    var stressedStroke = '#b89e8e';
+
+    var ids = ['polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
+    var labels = {
+        nervesystem: ['Nerve-', 'system'],
+        polyvagal: ['Polyvagal', 'teori'],
+        tilknytning: ['Tilknyt-', 'ning'],
+        kropsterapi: ['Krops-', 'terapi'],
+        psykobiologi: ['Psyko-', 'biologi'],
+        traumer: ['Traumer', ''],
+        relation: ['Relation', '']
+    };
+
+    var svg = '<svg viewBox="0 0 320 320" class="dynamics-figure">';
+
+    // Connection lines - center to all
+    ids.forEach(function(id) {
+        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="#c8d4cc" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>';
+    });
+    // Ring connections
+    for (var i = 0; i < ids.length; i++) {
+        var next = ids[(i + 1) % ids.length];
+        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="#c8d4cc" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>';
+    }
+    // Cross connections
+    var crosses = [['polyvagal','kropsterapi'],['polyvagal','traumer'],['tilknytning','psykobiologi'],['tilknytning','relation'],['kropsterapi','traumer'],['psykobiologi','relation']];
+    crosses.forEach(function(pair) {
+        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="#c8d4cc" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.25"/>';
+    });
+
+    // Center circle
+    svg += '<circle cx="' + coords.nervesystem.cx + '" cy="' + coords.nervesystem.cy + '" r="' + coords.nervesystem.r + '" fill="' + centerColor + '"/>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy - 4) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia">Nerve-</text>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy + 7) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia">system</text>';
+
+    // Outer circles
+    ids.forEach(function(id) {
+        var isStressed = stressed.indexOf(id) !== -1;
+        var fill = isStressed ? stressedFill : outerFill;
+        var stroke = isStressed ? stressedStroke : outerStroke;
+        svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>';
+        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 3) + '" text-anchor="middle" fill="#4a5a4e" font-size="6.5" font-family="Georgia">' + labels[id][0] + '</text>';
+        if (labels[id][1]) {
+            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#4a5a4e" font-size="6.5" font-family="Georgia">' + labels[id][1] + '</text>';
+        }
+    });
+
+    svg += '</svg>';
+    if (caption) {
+        svg += '<p class="dynamics-caption">' + caption + '</p>';
+    }
+    return svg;
+}
+
+function showDynamics() {
+    currentView = 'dynamics';
+    currentCircle = null;
+    clearAllActive();
+
+    var balanced = {
+        nervesystem: { cx: 160, cy: 160, r: 40 },
+        polyvagal: { cx: 160, cy: 46, r: 30 },
+        tilknytning: { cx: 268, cy: 103, r: 30 },
+        kropsterapi: { cx: 268, cy: 217, r: 30 },
+        psykobiologi: { cx: 160, cy: 274, r: 30 },
+        traumer: { cx: 52, cy: 217, r: 30 },
+        relation: { cx: 52, cy: 103, r: 30 }
+    };
+
+    var imbalanced = {
+        nervesystem: { cx: 155, cy: 158, r: 40 },
+        polyvagal: { cx: 168, cy: 36, r: 27 },
+        tilknytning: { cx: 288, cy: 80, r: 33 },
+        kropsterapi: { cx: 282, cy: 240, r: 27 },
+        psykobiologi: { cx: 132, cy: 275, r: 25 },
+        traumer: { cx: 32, cy: 212, r: 34 },
+        relation: { cx: 30, cy: 80, r: 32 }
+    };
+
+    var traumeStressed = {
+        nervesystem: { cx: 152, cy: 162, r: 38 },
+        polyvagal: { cx: 165, cy: 48, r: 26 },
+        tilknytning: { cx: 265, cy: 110, r: 26 },
+        kropsterapi: { cx: 262, cy: 222, r: 26 },
+        psykobiologi: { cx: 148, cy: 278, r: 25 },
+        traumer: { cx: 35, cy: 208, r: 42 },
+        relation: { cx: 45, cy: 95, r: 27 }
+    };
+
+    var multiStressed = {
+        nervesystem: { cx: 155, cy: 168, r: 36 },
+        polyvagal: { cx: 178, cy: 32, r: 24 },
+        tilknytning: { cx: 292, cy: 85, r: 35 },
+        kropsterapi: { cx: 280, cy: 245, r: 25 },
+        psykobiologi: { cx: 135, cy: 285, r: 23 },
+        traumer: { cx: 28, cy: 220, r: 38 },
+        relation: { cx: 32, cy: 88, r: 34 }
+    };
+
+    var html = '<div class="dynamics-page">';
+
+    html += '<h2>Dynamikken bag cirkelmodellen</h2>';
+    html += '<p>Cirkelmodellen er ikke bare en illustration. Den er et spejl af den måde dit nervesystem faktisk fungerer på — som ét sammenhængende system, hvor intet område står alene. Forstår du denne dynamik, forstår du også hvorfor forandring kræver mere end én isoleret indsats.</p>';
+
+    // Figure 1: Balanced
+    html += '<h3>Når alt er i balance</h3>';
+    html += '<div class="dynamics-figure-container">';
+    html += createMiniDiagram(balanced, { caption: 'Systemet i balance — alle områder støtter hinanden' });
+    html += '</div>';
+    html += '<p>Når nervesystemet er i balance, arbejder alle seks dimensioner sammen i en gensidig vekselvirkning. Polyvagal teori beskriver det som den ventrale vagale tilstand — den tilstand hvor du føler dig tryg, forbundet og til stede.</p>';
+    html += '<p>I denne tilstand fungerer kroppen optimalt. Søvnen kommer naturligt. Fordøjelsen arbejder. Relationer føles nærende. Tilknytningsmønstre er fleksible. Kroppen er afspændt men levende. Psykobiologien — alle de biologiske processer der styrer din daglige funktion — kører i et roligt, stabilt gear.</p>';
+    html += '<p>Læg mærke til figuren. Symmetrien. De lige afstande. Forbindelseslinjerne der fordeler sig jævnt. Du kan se det med det samme — her er noget der fungerer. Det er ikke tilfældigt. Symmetrien afspejler et system i harmoni.</p>';
+
+    // Figure 2: General imbalance
+    html += '<h3>Når systemet er under pres</h3>';
+    html += '<div class="dynamics-figure-container">';
+    html += createMiniDiagram(imbalanced, { caption: 'Systemet under pres — symmetrien er brudt' });
+    html += '</div>';
+    html += '<p>Men livet ser ikke altid sådan ud. Stress, traumer, angst, relationelle sår, søvnmangel, kronisk smerte — alt dette trækker systemet ud af balance. Og det sker ikke isoleret. Når ét område belastes, mærker alle de andre det.</p>';
+    html += '<p>Se på figuren. Sammenlign den med den forrige. Symmetrien er brudt. Nogle cirkler er trukket tættere sammen, andre skubbet fra hinanden. Forbindelserne der før bar ligeligt, er nu spændte og ujævne. Proportionerne er forskudt.</p>';
+    html += '<p>Det er præcis sådan det føles. Noget er skævt. Noget sidder fast. Du kan mærke det i kroppen, i dine tanker, i dine relationer — men det er svært at sætte fingeren på hvad det egentlig er. Og det er fordi det ikke er ét enkelt problem. Det er hele systemet der er trukket ud af sin naturlige balance.</p>';
+
+    // Figure 3: Trauma dominance
+    html += '<h3>Når ét område dominerer</h3>';
+    html += '<div class="dynamics-figure-container">';
+    html += createMiniDiagram(traumeStressed, { stressed: ['traumer'], caption: 'Ubearbejdet traume trækker hele systemet mod sig' });
+    html += '</div>';
+    html += '<p>Lad os se nærmere på hvad der sker når ét specifikt område er under pres — for eksempel ubearbejdet traume.</p>';
+    html += '<p>Traume bliver ikke i sin egen cirkel. Det udvider sig. Det fylder mere. Og i takt med at det vokser, trækker det alle andre områder ud af deres naturlige position:</p>';
+    html += '<ul class="dynamics-list">';
+    html += '<li><strong>Polyvagal teori:</strong> Nervesystemet skifter til overlevelsestilstand. Den ventrale vagale bremse slippes, og systemet låser sig i kamp, flugt eller frys.</li>';
+    html += '<li><strong>Tilknytningsmønstre:</strong> Relationer bliver utrygge. Tillid er svær. Du trækker dig eller klamrer dig — begge dele er nervesystemets forsøg på at beskytte dig.</li>';
+    html += '<li><strong>Kropsterapi & Behandling:</strong> Kroppen trækker sig sammen. Musklerne holder. Åndedrættet bliver overfladisk. Kroppen bærer det som sindet ikke kan rumme.</li>';
+    html += '<li><strong>Psykobiologi:</strong> Søvn forstyrres. Fordøjelsen reagerer. Immunforsvaret svækkes. De biologiske processer der normalt kører automatisk, kommer under pres.</li>';
+    html += '<li><strong>Terapeutisk Relation:</strong> Evnen til at tage imod hjælp reduceres. Tillid til andre — også til en terapeut — kræver et nervesystem der føler sig trygt nok.</li>';
+    html += '</ul>';
+    html += '<p>Det er ikke svaghed. Det er nervesystemet der gør præcis det det er designet til — at overleve. Men prisen er at hele systemets balance går tabt.</p>';
+
+    // Figure 4: Multiple areas stressed
+    html += '<h3>Når flere områder belastes samtidig</h3>';
+    html += '<div class="dynamics-figure-container">';
+    html += createMiniDiagram(multiStressed, { stressed: ['traumer', 'tilknytning', 'relation'], caption: 'Flere områder under pres — systemet trækkes i flere retninger' });
+    html += '</div>';
+    html += '<p>I virkeligheden er det sjældent kun ét område der er belastet. Et menneske med relationelt traume har ofte også forstyrrede tilknytningsmønstre OG en krop der holder spænding OG et polyvagalt system der sidder fast i alarmberedskab. Hvert presset område forstærker de andre.</p>';
+    html += '<p>Det er derfor isolerede tilgange ofte rammer et loft. At behandle kun kroppen uden at adressere traume. At arbejde med tilknytning uden at forstå den polyvagale respons. At fokusere på psykologi uden at inkludere kroppen. Hver tilgang kan noget — men ingen af dem alene kan genskabe balancen i et system der trækkes i flere retninger samtidig.</p>';
+
+    // Why holistic approach
+    html += '<h3>Hvorfor helheden er afgørende</h3>';
+    html += '<p>Cirkelmodellen er ikke bare et kort — den er en behandlingsfilosofi. Når vi forstår at alt påvirker alt, ændrer det måden vi arbejder med regulering på. Vi behandler ikke symptomer. Vi adresserer systemet.</p>';
+    html += '<p>Det er derfor nervesystemsterapi arbejder på alle niveauer samtidig. Ikke fordi kompleksitet er målet, men fordi nervesystemet selv er en integreret helhed. Balance vender tilbage når vi møder det på dets egne præmisser — med tålmodighed, med nærvær, og med forståelse for at forandring i én dimension sender bølger gennem alle de andre.</p>';
+
+    // For clients
+    html += '<h3>For dig som klient</h3>';
+    html += '<p>Når du ser den skæve figur, genkender du måske dig selv. Den trækken. Den fornemmelse af at alt er lidt forskudt. Vid at det ikke er permanent. Dit nervesystem har kapaciteten til balance — det har bare brug for de rette betingelser for at finde tilbage. Det er det vi arbejder med sammen.</p>';
+
+    // For professionals
+    html += '<h3>For dig som fagperson</h3>';
+    html += '<p>Modellen giver dig en ramme for at forstå hvorfor enkeltstående metoder ofte når et loft. Når du kan se hele systemet — ikke bare det symptom klienten kommer med — kan du identificere hvilke forbindelser der er belastet og hvor reguleringen har brug for støtte. Det er fundamentet i Annemaries metode og i de uddannelser hun tilbyder.</p>';
+
+    // Back link
+    html += '<div style="text-align: center; margin-top: 45px; margin-bottom: 10px;">';
+    html += '<a href="#" id="dynamics-back" class="dynamics-link">‹ tilbage til forsiden</a>';
+    html += '</div>';
+
+    html += '</div>';
+
+    document.getElementById('info-content').innerHTML = html;
+
+    document.getElementById('dynamics-back').addEventListener('click', function(e) {
+        e.preventDefault();
+        resetToWelcome();
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var rect = infoPanel.getBoundingClientRect();
+            window.scrollTo({
+                top: window.pageYOffset + rect.top - 80,
+                behavior: 'smooth'
+            });
+        });
     });
 }
 

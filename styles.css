@@ -1181,6 +1181,78 @@ button.back-btn:hover {
     color: #648a74;
 }
 
+/* Dynamics page */
+.dynamics-link {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #5a7a68;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.dynamics-link:hover {
+    color: #7B9E89;
+}
+
+.dynamics-page h3 {
+    font-family: 'Georgia', serif;
+    color: #3a4a3e;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 12px;
+}
+
+.dynamics-figure-container {
+    margin: 20px 0 25px 0;
+    text-align: center;
+}
+
+.dynamics-figure {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+}
+
+.dynamics-caption {
+    font-family: 'Georgia', serif;
+    font-size: 0.82rem;
+    color: #8a9a8e;
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.dynamics-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.dynamics-list li {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #4a5a4e;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.dynamics-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b8c8bf;
+}
+
 @media (max-width: 1024px) {
     .main-content {
         grid-template-columns: 1fr;
