@@ -1864,8 +1864,35 @@ function showWelcome() {
     currentView = 'welcome';
     currentCircle = null;
     clearAllActive();
-    
-    document.getElementById('info-content').innerHTML = `
+
+    var welcomeHTML = '';
+
+    if (currentMode === 'fagfolk') {
+        welcomeHTML = `
+        <h2>Velkommen, kollega</h2>
+        <p>Jeg hedder Annemarie Clement. Jeg er nervesystemsterapeut, afspændingspædagog, psykoterapeut MPF og biologisk traumeterapeut — og jeg har viet mit faglige liv til at forstå det system der ligger under alt det vi behandler.</p>
+
+        <h2>Du kender frustrationen</h2>
+        <p>Som behandler har du sikkert oplevet det: kurser der lover dybde men leverer overflade. Uddannelser der giver teori uden krop. Metoder der virker i isolation men ikke fanger helheden. Du ved at dine klienter bærer på noget der kræver mere end én tilgang — men det er svært at finde en ramme der samler det hele.</p>
+        <p>Måske arbejder du allerede med kroppen, med relationen, med traumet. Men du mærker at der mangler noget. At de enkelte redskaber ikke helt rækker. At forandringen hos dine klienter rammer et loft.</p>
+
+        <h2>Nervesystemet som fælles fundament</h2>
+        <p>I min tilgang er nervesystemet det der binder det hele sammen. Polyvagal teori, tilknytningsmønstre, traumebearbejdning, psykobiologi, kropsterapi og den terapeutiske relation — det er ikke seks adskilte discipliner. Det er seks dimensioner af ét og samme system. Og det er først når vi forstår dem som en helhed, at vi kan arbejde med den dybde vores klienter har brug for.</p>
+        <p>Det er også her de fleste enkeltstående metoder rammer deres begrænsning. De adresserer én dimension uden at se hvordan den påvirker — og påvirkes af — alle de andre.</p>
+
+        <h2>Hvad denne app giver dig</h2>
+        <p>Her kan du udforske cirkelmodellen — den dynamiske helhedsmodel der bærer hele min metode. For hvert af de seks områder finder du fagligt indhold med klinisk dybde, videnskabelig forankring og konkret relevans for dit behandlingsarbejde.</p>
+        <p>Du kan filtrere efter temaer som angst, stress, traumer, tilknytning og søvn for at se hvordan hvert tema påvirker systemet på tværs. Og du kan udforske de tre uddannelsesspor der bygger på denne model.</p>
+
+        <h2>En invitation</h2>
+        <p>Tryk på en cirkel for at begynde. Skift mellem temaer for at se systemet fra forskellige vinkler. Denne app er bygget til at du kan bruge den som et fagligt opslagsværk — et redskab du vender tilbage til når du har brug for at forstå sammenhængene dybere.</p>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
+            <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
+        </div>
+    `;
+    } else {
+        welcomeHTML = `
         <h2>Velkommen til min verden</h2>
         <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
@@ -1888,6 +1915,9 @@ function showWelcome() {
             <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
         </div>
     `;
+    }
+
+    document.getElementById('info-content').innerHTML = welcomeHTML;
 
     document.getElementById('dynamics-link').addEventListener('click', function(e) {
         e.preventDefault();
