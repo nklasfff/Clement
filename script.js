@@ -1542,6 +1542,221 @@ let currentEducation = null;
 let currentView = 'welcome';
 let currentCircle = null;
 
+function getBookmarks() {
+    try { return JSON.parse(localStorage.getItem('bookmarks') || '[]'); } catch(e) { return []; }
+}
+
+function getBookmarkId() {
+    if (currentView === 'exercises') return 'exercises';
+    if (currentView === 'dynamics') return 'dynamics';
+    return currentCircle + '-' + currentTheme + '-' + currentMode + '-' + (currentEducation || 'none');
+}
+
+function isBookmarked(id) {
+    return getBookmarks().some(function(b) { return b.id === id; });
+}
+
+function toggleBookmark() {
+    var id = getBookmarkId();
+    var bookmarks = getBookmarks();
+    var existing = bookmarks.findIndex(function(b) { return b.id === id; });
+
+    if (existing !== -1) {
+        bookmarks.splice(existing, 1);
+        try { localStorage.setItem('bookmarks', JSON.stringify(bookmarks)); } catch(e) {}
+        return false;
+    }
+
+    var label = '';
+    if (currentView === 'exercises') {
+        label = 'Prøv øvelserne';
+    } else if (currentView === 'dynamics') {
+        label = 'Dynamikken bag cirkelmodellen';
+    } else if (currentCircle) {
+        label = circleNames[currentCircle] || currentCircle;
+        var themeName = themeNames[currentTheme] || currentTheme;
+        if (currentEducation) {
+            var eduNames = { nervesystemsterapeut: 'Nervesystemsterapeut', teachertraining: 'Teacher Training', tilknytningsspeciale: 'Tilknytningsspeciale' };
+            label += ' — ' + (eduNames[currentEducation] || currentEducation);
+        } else if (currentTheme !== 'general') {
+            label += ' — ' + themeName;
+        }
+        label += ' (' + (currentMode === 'fagfolk' ? 'fagfolk' : 'klient') + ')';
+    }
+
+    bookmarks.push({
+        id: id,
+        circleId: currentCircle,
+        theme: currentTheme,
+        mode: currentMode,
+        education: currentEducation,
+        view: currentView,
+        label: label,
+        timestamp: Date.now()
+    });
+    try { localStorage.setItem('bookmarks', JSON.stringify(bookmarks)); } catch(e) {}
+    return true;
+}
+
+function navigateToBookmark(bookmark) {
+    currentTheme = bookmark.theme || 'general';
+    currentMode = bookmark.mode || 'klient';
+    currentEducation = bookmark.education || null;
+
+    // Update UI to reflect mode
+    document.querySelectorAll('.top-circle[data-mode]').forEach(function(c) { c.classList.remove('active'); });
+    var modeCircle = document.querySelector('.top-circle[data-mode="' + currentMode + '"]');
+    if (modeCircle) modeCircle.classList.add('active');
+
+    updateCenterCircle();
+
+    if (bookmark.view === 'exercises') {
+        showExercises();
+    } else if (bookmark.view === 'dynamics') {
+        showDynamics();
+    } else if (bookmark.circleId) {
+        showCircleView(bookmark.circleId);
+    }
+}
+
+function showBookmarks() {
+    var bookmarks = getBookmarks();
+    var html = '<h2>Gemte sider</h2>';
+
+    if (bookmarks.length === 0) {
+        html += '<p class="bookmarks-empty">Du har ikke gemt nogen sider endnu.<br><br>Når du læser om en cirkel, en øvelse eller dynamikken bag modellen, kan du trykke på bogmærke-ikonet for at gemme siden her.</p>';
+    } else {
+        html += '<p class="menu-intro">Dine gemte sider — tryk for at gå direkte til indholdet.</p>';
+        bookmarks.sort(function(a, b) { return b.timestamp - a.timestamp; });
+        for (var i = 0; i < bookmarks.length; i++) {
+            html += '<div class="bookmark-item" data-bookmark-index="' + i + '">' +
+                '<span class="bookmark-label">' + bookmarks[i].label + '</span>' +
+                '<button class="bookmark-remove" data-bookmark-id="' + bookmarks[i].id + '" aria-label="Fjern">&times;</button>' +
+                '</div>';
+        }
+    }
+
+    html += '<div style="margin-top: 30px; text-align: center;"><button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button></div>';
+
+    document.getElementById('info-content').innerHTML = html;
+
+    // Close menu overlay
+    document.getElementById('menu-overlay').classList.remove('active');
+    document.body.classList.remove('menu-open');
+
+    // Wire up click handlers
+    document.querySelectorAll('.bookmark-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            if (e.target.classList.contains('bookmark-remove')) return;
+            var idx = parseInt(item.getAttribute('data-bookmark-index'));
+            var bm = bookmarks[idx];
+            if (bm) navigateToBookmark(bm);
+        });
+    });
+
+    document.querySelectorAll('.bookmark-remove').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var id = btn.getAttribute('data-bookmark-id');
+            var stored = getBookmarks();
+            stored = stored.filter(function(b) { return b.id !== id; });
+            try { localStorage.setItem('bookmarks', JSON.stringify(stored)); } catch(ex) {}
+            showBookmarks();
+        });
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var rect = infoPanel.getBoundingClientRect();
+            window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+        });
+    });
+}
+
+function buildActionBar() {
+    var bookmarkClass = isBookmarked(getBookmarkId()) ? ' bookmarked' : '';
+    return '<div class="content-actions">' +
+        '<button class="action-btn" id="action-copy" aria-label="Kopiér" title="Kopiér tekst">' +
+            '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+        '</button>' +
+        '<button class="action-btn" id="action-share" aria-label="Del" title="Del">' +
+            '<svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>' +
+        '</button>' +
+        '<button class="action-btn' + bookmarkClass + '" id="action-bookmark" aria-label="Gem" title="Gem side">' +
+            '<svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>' +
+        '</button>' +
+    '</div>' +
+    '<div style="margin-top: 15px; text-align: center;">' +
+        '<button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>' +
+    '</div>';
+}
+
+function setupActionButtons() {
+    var copyBtn = document.getElementById('action-copy');
+    var shareBtn = document.getElementById('action-share');
+    var bookmarkBtn = document.getElementById('action-bookmark');
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            var text = document.getElementById('info-content').innerText;
+            try {
+                navigator.clipboard.writeText(text).then(function() {
+                    copyBtn.classList.add('copied');
+                    copyBtn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+                    setTimeout(function() {
+                        copyBtn.classList.remove('copied');
+                        copyBtn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+                    }, 1500);
+                });
+            } catch(e) {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.classList.add('copied');
+                setTimeout(function() { copyBtn.classList.remove('copied'); }, 1500);
+            }
+        });
+    }
+
+    if (shareBtn) {
+        shareBtn.addEventListener('click', function() {
+            var text = document.getElementById('info-content').innerText;
+            var title = document.querySelector('#info-content h2');
+            title = title ? title.textContent : 'Nervesystemsterapi';
+
+            if (navigator.share) {
+                try {
+                    navigator.share({ title: title, text: text });
+                } catch(e) {}
+            } else {
+                try {
+                    navigator.clipboard.writeText(text);
+                    shareBtn.classList.add('copied');
+                    setTimeout(function() { shareBtn.classList.remove('copied'); }, 1500);
+                } catch(e) {}
+            }
+        });
+    }
+
+    if (bookmarkBtn) {
+        bookmarkBtn.addEventListener('click', function() {
+            var saved = toggleBookmark();
+            if (saved) {
+                bookmarkBtn.classList.add('bookmarked');
+            } else {
+                bookmarkBtn.classList.remove('bookmarked');
+            }
+        });
+    }
+}
+
 window.addEventListener('load', () => {
     resetToWelcome();
     // Trigger bloom animation (respects user preference)
@@ -1840,10 +2055,10 @@ function showExercises() {
         <h2>Prøv øvelserne</h2>
         <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
         ${exercisesHTML}
-        <div style="margin-top: 30px; text-align: center;">
-            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-        </div>
+        ${buildActionBar()}
     `;
+
+    setupActionButtons();
 
     // Scroll to info panel so the user sees the exercises content
     const infoPanel = document.getElementById('info-panel');
@@ -2098,19 +2313,14 @@ function showDynamics() {
     html += '<h3>For dig som fagperson</h3>';
     html += '<p>Modellen giver dig en ramme for at forstå hvorfor enkeltstående metoder ofte når et loft. Når du kan se hele systemet — ikke bare det symptom klienten kommer med — kan du identificere hvilke forbindelser der er belastet og hvor reguleringen har brug for støtte. Det er fundamentet i Annemaries metode og i de uddannelser hun tilbyder.</p>';
 
-    // Back link
-    html += '<div style="text-align: center; margin-top: 45px; margin-bottom: 10px;">';
-    html += '<a href="#" id="dynamics-back" class="dynamics-link">‹ tilbage til forsiden</a>';
-    html += '</div>';
+    // Action bar and back link
+    html += buildActionBar().replace('resetToWelcome()', 'resetToWelcome()');
 
     html += '</div>';
 
     document.getElementById('info-content').innerHTML = html;
 
-    document.getElementById('dynamics-back').addEventListener('click', function(e) {
-        e.preventDefault();
-        resetToWelcome();
-    });
+    setupActionButtons();
 
     var infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(function() {
@@ -2160,10 +2370,9 @@ function showCircleView(circleId) {
         document.getElementById('info-content').innerHTML = `
             <h2>Indhold kommer snart</h2>
             <p>Dette tema er under udvikling. Prøv "Angst" temaet for at se fuldt indhold.</p>
-            <div style="margin-top: 30px; text-align: center;">
-                <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-            </div>
+            ${buildActionBar()}
         `;
+        setupActionButtons();
         // Scroll to info panel
         const infoPanel = document.getElementById('info-panel');
         infoPanel.scrollTop = 0;
@@ -2217,10 +2426,10 @@ function showCircleView(circleId) {
     document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
         <p>${data.text}</p>
         ${connectionsSection}
-        <div style="margin-top: 30px; text-align: center;">
-            <button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>
-        </div>
+        ${buildActionBar()}
     `;
+
+    setupActionButtons();
 
     // Scroll to info panel so the user sees the content
     const infoPanel = document.getElementById('info-panel');
@@ -2431,6 +2640,11 @@ function showMenuContent(action) {
             `
         }
     };
+
+    if (action === 'bookmarks') {
+        showBookmarks();
+        return;
+    }
 
     const c = content[action];
     if (!c) return;
