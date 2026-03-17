@@ -2167,21 +2167,29 @@ function createMiniDiagram(coords, options) {
         relation: ['Relation', '']
     };
 
+    var lineColor = '#5a7a68';
+
     var svg = '<svg viewBox="-20 -5 360 330" class="dynamics-figure">';
 
     // Connection lines - center to all
     ids.forEach(function(id) {
-        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="#c8d4cc" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>';
+        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="' + lineColor + '" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>';
     });
     // Ring connections
     for (var i = 0; i < ids.length; i++) {
         var next = ids[(i + 1) % ids.length];
-        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="#c8d4cc" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>';
+        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="' + lineColor + '" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>';
     }
     // Cross connections
     var crosses = [['polyvagal','kropsterapi'],['polyvagal','traumer'],['tilknytning','psykobiologi'],['tilknytning','relation'],['kropsterapi','traumer'],['psykobiologi','relation']];
     crosses.forEach(function(pair) {
-        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="#c8d4cc" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.25"/>';
+        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="' + lineColor + '" stroke-width="1" stroke-dasharray="4 4" opacity="0.35"/>';
+    });
+
+    // White mask circles behind colored circles so lines don't show through
+    svg += '<circle cx="' + coords.nervesystem.cx + '" cy="' + coords.nervesystem.cy + '" r="' + coords.nervesystem.r + '" fill="white"/>';
+    ids.forEach(function(id) {
+        svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="white"/>';
     });
 
     // Center circle
