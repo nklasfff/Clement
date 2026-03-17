@@ -1536,133 +1536,6 @@ const themeNames = {
     traumer: 'Traumer',
     sovn: 'Søvn'
 };
-const diagramStates = {
-    balanced: {
-        nervesystem: { cx: 350, cy: 350, r: 77 },
-        polyvagal: { cx: 350, cy: 100, r: 65 },
-        tilknytning: { cx: 580, cy: 200, r: 65 },
-        kropsterapi: { cx: 580, cy: 500, r: 65 },
-        psykobiologi: { cx: 350, cy: 600, r: 65 },
-        traumer: { cx: 120, cy: 500, r: 65 },
-        relation: { cx: 120, cy: 200, r: 65 }
-    },
-    imbalanced: {
-        nervesystem: { cx: 345, cy: 345, r: 77 },
-        polyvagal: { cx: 365, cy: 75, r: 60 },
-        tilknytning: { cx: 630, cy: 165, r: 70 },
-        kropsterapi: { cx: 620, cy: 545, r: 60 },
-        psykobiologi: { cx: 290, cy: 590, r: 57 },
-        traumer: { cx: 75, cy: 460, r: 73 },
-        relation: { cx: 65, cy: 165, r: 69 }
-    }
-};
-
-let currentDiagramState = 'balanced';
-let hasSeenWelcomeTransition = false;
-
-function setDiagramState(stateName) {
-    const state = diagramStates[stateName];
-    if (!state) return;
-    currentDiagramState = stateName;
-
-    const circleIds = ['nervesystem', 'polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
-
-    circleIds.forEach(id => {
-        const el = document.querySelector('circle[data-id="' + id + '"]');
-        if (!el) return;
-        el.setAttribute('cx', state[id].cx);
-        el.setAttribute('cy', state[id].cy);
-        el.setAttribute('r', state[id].r);
-
-        if (id === 'nervesystem') {
-            const textEls = document.querySelectorAll('.center-text');
-            if (textEls[0]) { textEls[0].setAttribute('x', state[id].cx); textEls[0].setAttribute('y', state[id].cy - 5); }
-            if (textEls[1]) { textEls[1].setAttribute('x', state[id].cx); textEls[1].setAttribute('y', state[id].cy + 15); }
-        } else {
-            const textEls = document.querySelectorAll('text[data-circle="' + id + '"]');
-            if (textEls[0]) { textEls[0].setAttribute('x', state[id].cx); textEls[0].setAttribute('y', state[id].cy - 5); }
-            if (textEls[1]) { textEls[1].setAttribute('x', state[id].cx); textEls[1].setAttribute('y', state[id].cy + 13); }
-        }
-    });
-
-    document.querySelectorAll('.connection').forEach(line => {
-        const from = line.dataset.from;
-        const to = line.dataset.to;
-        line.setAttribute('x1', state[from].cx);
-        line.setAttribute('y1', state[from].cy);
-        line.setAttribute('x2', state[to].cx);
-        line.setAttribute('y2', state[to].cy);
-    });
-}
-
-function animateDiagram(targetState, duration) {
-    duration = duration || 1500;
-    const target = diagramStates[targetState];
-    if (!target) return;
-
-    const circleIds = ['nervesystem', 'polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
-
-    var start = {};
-    circleIds.forEach(id => {
-        const el = document.querySelector('circle[data-id="' + id + '"]');
-        start[id] = {
-            cx: parseFloat(el.getAttribute('cx')),
-            cy: parseFloat(el.getAttribute('cy')),
-            r: parseFloat(el.getAttribute('r'))
-        };
-    });
-
-    const startTime = performance.now();
-
-    function ease(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function tick(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const t = ease(progress);
-
-        circleIds.forEach(id => {
-            const cx = start[id].cx + (target[id].cx - start[id].cx) * t;
-            const cy = start[id].cy + (target[id].cy - start[id].cy) * t;
-            const r = start[id].r + (target[id].r - start[id].r) * t;
-
-            const el = document.querySelector('circle[data-id="' + id + '"]');
-            el.setAttribute('cx', cx);
-            el.setAttribute('cy', cy);
-            el.setAttribute('r', r);
-
-            if (id === 'nervesystem') {
-                const textEls = document.querySelectorAll('.center-text');
-                if (textEls[0]) { textEls[0].setAttribute('x', cx); textEls[0].setAttribute('y', cy - 5); }
-                if (textEls[1]) { textEls[1].setAttribute('x', cx); textEls[1].setAttribute('y', cy + 15); }
-            } else {
-                const textEls = document.querySelectorAll('text[data-circle="' + id + '"]');
-                if (textEls[0]) { textEls[0].setAttribute('x', cx); textEls[0].setAttribute('y', cy - 5); }
-                if (textEls[1]) { textEls[1].setAttribute('x', cx); textEls[1].setAttribute('y', cy + 13); }
-            }
-        });
-
-        document.querySelectorAll('.connection').forEach(line => {
-            const from = line.dataset.from;
-            const to = line.dataset.to;
-            line.setAttribute('x1', start[from].cx + (target[from].cx - start[from].cx) * t);
-            line.setAttribute('y1', start[from].cy + (target[from].cy - start[from].cy) * t);
-            line.setAttribute('x2', start[to].cx + (target[to].cx - start[to].cx) * t);
-            line.setAttribute('y2', start[to].cy + (target[to].cy - start[to].cy) * t);
-        });
-
-        if (progress < 1) {
-            requestAnimationFrame(tick);
-        } else {
-            currentDiagramState = targetState;
-        }
-    }
-
-    requestAnimationFrame(tick);
-}
-
 let currentMode = 'klient';
 let currentTheme = 'general';
 let currentEducation = null;
@@ -1991,57 +1864,26 @@ function showWelcome() {
     currentView = 'welcome';
     currentCircle = null;
     clearAllActive();
+    
+    document.getElementById('info-content').innerHTML = `
+        <h2>Velkommen til min verden</h2>
+        <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
 
-    if (!hasSeenWelcomeTransition) {
-        setDiagramState('imbalanced');
+        <h2>Du kender følelsen</h2>
+        <p>Vi kender den alle sammen. At sidde fast. At have ondt – i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
+        <p>Og som behandler kender du frustrationen ved at søge den rette videreuddannelse – kurser der lover guld og grønne skove, men som ikke helt rammer det du mangler. Som ikke matcher din måde at arbejde på. Som ikke går dybt nok. Du længes efter viden der virkelig løfter din faglighed.</p>
 
-        document.getElementById('info-content').innerHTML = `
-            <h2>Du kender følelsen</h2>
-            <p>At noget er ude af balance. Kroppen holder fast. Angsten slipper ikke. Søvnen svigter. Relationer der engang bar dig, tynger nu.</p>
-            <p>Når ét område i nervesystemet er presset, trækkes hele systemet med. Intet står alene. Alt påvirker alt.</p>
-            <p>Som behandler genkender du det i dine klienter. Du ved at isolerede metoder sjældent rækker — at ægte forandring kræver helhedsforståelse.</p>
-            <div style="text-align: center; margin-top: 35px;">
-                <button class="welcome-btn" id="welcome-balance-btn">Se hvad balance kan betyde</button>
-            </div>
-        `;
+        <h2>Hvad ligger bag?</h2>
+        <p>Bag både smerten og frustrationen ligger ofte nervesystemet. Når vi overser sammenhængen – at alt hænger sammen med alt – udebliver resultaterne. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser. Det er fundamentet. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
+        <p>For dig som behandler kan det være overvældende at finde den uddannelse der netop giver dig de redskaber du kan bruge. Hvor teori møder praksis. Hvor du selv kommer i proces. Hvor det bliver kropsligt og konkret.</p>
 
-        document.getElementById('welcome-balance-btn').addEventListener('click', function() {
-            hasSeenWelcomeTransition = true;
-            animateDiagram('balanced', 1500);
+        <h2>Hvordan kan det vendes?</h2>
+        <p>Transformation sker gennem forståelse. Når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder helbredelsen.</p>
 
-            var infoContent = document.getElementById('info-content');
-            infoContent.style.opacity = '0';
-
-            setTimeout(function() {
-                infoContent.innerHTML = `
-                    <h2>Balance er mulig</h2>
-                    <p>Når nervesystemet finder ro, støtter hvert område de andre. Forbindelserne bærer i stedet for at belaste. Det er ikke et ideal — det er en tilstand din krop kender og kan finde tilbage til.</p>
-
-                    <h2>Velkommen til min verden</h2>
-                    <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode — uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
-
-                    <h2>Udforsk modellen</h2>
-                    <p>Tryk på en cirkel for at udforske en dimension. Vælg et tema som angst, stress eller traumer for at se systemet gennem en bestemt linse. Skift mellem klient- og fagfolksperspektiv for at vælge dit dybdeniveau.</p>
-                    <p>Alt hænger sammen med alt — og det er netop det der gør forandring mulig.</p>
-                `;
-                infoContent.style.opacity = '1';
-            }, 500);
-        });
-    } else {
-        setDiagramState('balanced');
-
-        document.getElementById('info-content').innerHTML = `
-            <h2>Balance er mulig</h2>
-            <p>Når nervesystemet finder ro, støtter hvert område de andre. Forbindelserne bærer i stedet for at belaste. Det er ikke et ideal — det er en tilstand din krop kender og kan finde tilbage til.</p>
-
-            <h2>Velkommen til min verden</h2>
-            <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode — uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
-
-            <h2>Udforsk modellen</h2>
-            <p>Tryk på en cirkel for at udforske en dimension. Vælg et tema som angst, stress eller traumer for at se systemet gennem en bestemt linse. Skift mellem klient- og fagfolksperspektiv for at vælge dit dybdeniveau.</p>
-            <p>Alt hænger sammen med alt — og det er netop det der gør forandring mulig.</p>
-        `;
-    }
+        <h2>Min metode</h2>
+        <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
+        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
+    `;
 
     const infoPanel = document.getElementById('info-panel');
     requestAnimationFrame(() => {
