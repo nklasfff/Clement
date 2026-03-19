@@ -1893,6 +1893,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupConnectionClicks();
     setupMenu();
     setupNewsletter();
+    setupNotifications();
     setupSearch();
     setupOnboarding();
     resetToWelcome();
@@ -3519,6 +3520,93 @@ function setupNewsletter() {
             showGaveEssay();
         });
     }
+}
+
+// ===== NOTIFIKATIONER =====
+function setupNotifications() {
+    var checkbox = document.getElementById('notif-checkbox');
+    var container = document.getElementById('menu-notifications');
+    if (!checkbox || !container) return;
+
+    // Restore saved state
+    var isEnabled = false;
+    try { isEnabled = localStorage.getItem('notif-enabled') === '1'; } catch(e) {}
+    checkbox.checked = isEnabled;
+    if (isEnabled) {
+        showNotifStatus(container, 'Notifikationer er slået til');
+    }
+
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            // Request notification permission
+            if ('Notification' in window) {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        try { localStorage.setItem('notif-enabled', '1'); } catch(e) {}
+                        showNotifStatus(container, 'Notifikationer er slået til');
+                        registerNotificationCheck();
+                    } else {
+                        checkbox.checked = false;
+                        showNotifStatus(container, 'Browseren tillader ikke notifikationer. Tjek dine indstillinger.');
+                    }
+                });
+            } else {
+                checkbox.checked = false;
+                showNotifStatus(container, 'Din browser understøtter ikke notifikationer.');
+            }
+        } else {
+            try { localStorage.setItem('notif-enabled', '0'); } catch(e) {}
+            removeNotifStatus(container);
+        }
+    });
+
+    // If already enabled, start periodic check
+    if (isEnabled && 'Notification' in window && Notification.permission === 'granted') {
+        registerNotificationCheck();
+    }
+}
+
+function showNotifStatus(container, text) {
+    removeNotifStatus(container);
+    var p = document.createElement('p');
+    p.className = 'menu-notifications-status';
+    p.textContent = text;
+    container.appendChild(p);
+}
+
+function removeNotifStatus(container) {
+    var existing = container.querySelector('.menu-notifications-status');
+    if (existing) existing.remove();
+}
+
+function registerNotificationCheck() {
+    // Check for new notifications on load and periodically
+    checkForNewNotifications();
+    // Check every 30 minutes while app is open
+    setInterval(checkForNewNotifications, 30 * 60 * 1000);
+}
+
+function checkForNewNotifications() {
+    var lastSeen = '';
+    try { lastSeen = localStorage.getItem('notif-last-seen') || ''; } catch(e) {}
+
+    fetch('notifications.json?t=' + Date.now())
+        .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function(data) {
+            if (!data.notifications || !data.notifications.length) return;
+            var latest = data.notifications[0];
+            if (latest.id && latest.id !== lastSeen) {
+                try { localStorage.setItem('notif-last-seen', latest.id); } catch(e) {}
+                if ('Notification' in window && Notification.permission === 'granted') {
+                    new Notification(latest.title || 'Nyt fra Annemarie', {
+                        body: latest.body || '',
+                        icon: 'hero.PNG',
+                        tag: 'clement-' + latest.id
+                    });
+                }
+            }
+        })
+        .catch(function() { /* notifications.json not available yet — silent */ });
 }
 
 function showGaveEssay() {

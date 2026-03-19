@@ -1,0 +1,10 @@
+{
+    "notifications": [
+        {
+            "id": "2026-03-19-welcome",
+            "title": "Velkommen til Nervesystemsterapi",
+            "body": "Tak fordi du har slået notifikationer til. Du vil modtage besked når der tilføjes nyt indhold.",
+            "date": "2026-03-19"
+        }
+    ]
+}
