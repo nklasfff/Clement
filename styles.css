@@ -75,6 +75,10 @@ body {
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 
+.hero-text {
+    text-align: center;
+}
+
 .hero-text h1 {
     font-family: 'Georgia', serif;
     font-size: 1.9rem;
