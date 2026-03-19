@@ -1431,6 +1431,201 @@ body.scrolled-past-hero .search-btn svg {
     margin: 4px 24px;
 }
 
+/* ═══ MENU NEWSLETTER ═══ */
+.menu-newsletter {
+    margin: 8px 24px 16px;
+    padding: 18px;
+    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    border-radius: 14px;
+    text-align: center;
+}
+.menu-newsletter-label {
+    font-family: Georgia, serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+.menu-newsletter-text {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+.menu-newsletter-form {
+    display: flex;
+    gap: 8px;
+}
+.menu-newsletter-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    background: white;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+.menu-newsletter-input:focus {
+    border-color: var(--primary);
+}
+.menu-newsletter-btn {
+    padding: 10px 18px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+.menu-newsletter-btn:active {
+    opacity: 0.8;
+}
+.menu-newsletter-done {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-style: italic;
+}
+.menu-item-gave {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+/* ═══ ESSAY / GAVE PAGE ═══ */
+.gave-page {
+    padding: 0;
+}
+.gave-hero {
+    text-align: center;
+    padding: 40px 20px 30px;
+    background: linear-gradient(180deg, #5a7a68 0%, #4a6656 100%);
+    color: white;
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 32px;
+}
+.gave-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(184, 149, 106, 0.7);
+    border-radius: 20px;
+    font-family: Georgia, serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: white;
+    margin-bottom: 16px;
+}
+.gave-hero h2 {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+.gave-hero .gave-byline {
+    font-family: Georgia, serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+}
+.gave-hero .gave-epigraph {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+}
+.gave-body {
+    padding: 0 24px;
+}
+.gave-body .gave-greeting {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+.gave-body p {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+.gave-body em {
+    color: var(--text-light);
+}
+.gave-section-title {
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 36px 0 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+.gave-illustration {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+}
+.gave-illustration svg {
+    width: 200px;
+    height: 140px;
+}
+.gave-closing {
+    margin-top: 32px;
+    padding: 24px;
+    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    border-radius: 14px;
+    text-align: center;
+}
+.gave-closing p {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    font-style: italic;
+}
+.gave-closing .gave-sign {
+    font-style: italic;
+    color: var(--primary);
+    margin-top: 12px;
+    font-weight: 600;
+}
+.gave-closing .gave-sign-title {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: normal;
+    font-weight: 400;
+}
+.gave-back-btn {
+    display: block;
+    margin: 24px auto;
+    padding: 10px 20px;
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.gave-back-btn:active {
+    background: var(--border);
+}
+
 /* ═══ SEARCH OVERLAY ═══ */
 .search-overlay {
     position: fixed;

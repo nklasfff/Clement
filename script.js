@@ -1892,6 +1892,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupCircleClicks();
     setupConnectionClicks();
     setupMenu();
+    setupNewsletter();
     setupSearch();
     setupOnboarding();
     resetToWelcome();
@@ -3422,6 +3423,10 @@ function showMenuContent(action) {
         showBookmarks();
         return;
     }
+    if (action === 'gave') {
+        showGaveEssay();
+        return;
+    }
 
     const c = content[action];
     if (!c) return;
@@ -3489,6 +3494,128 @@ function setupSettingsToggles() {
             }
         });
     }
+}
+
+// ===== NEWSLETTER & GAVE =====
+function setupNewsletter() {
+    var form = document.getElementById('newsletter-form');
+    var gaveItem = document.getElementById('menu-gave-item');
+    var newsletterBox = document.getElementById('menu-newsletter');
+    // Show gave menu item if already subscribed
+    try {
+        if (localStorage.getItem('newsletter-subscribed') === '1') {
+            if (gaveItem) gaveItem.style.display = '';
+            if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Du er tilmeldt nyhedsbrevet.</p>';
+        }
+    } catch(e) {}
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('newsletter-email').value;
+            if (!email) return;
+            try { localStorage.setItem('newsletter-subscribed', '1'); localStorage.setItem('newsletter-email', email); } catch(e) {}
+            if (gaveItem) gaveItem.style.display = '';
+            if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Tak for din tilmelding!</p>';
+            // Close menu and show essay
+            document.getElementById('menu-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+            showGaveEssay();
+        });
+    }
+}
+
+function showGaveEssay() {
+    currentView = 'gave';
+    clearAllActive();
+    updateBottomNavActive('');
+
+    var ill1 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><circle cx="100" cy="60" r="30" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.6"/><circle cx="100" cy="60" r="18" fill="none" stroke="#5a7a68" stroke-width="1" opacity="0.4"/><circle cx="100" cy="60" r="6" fill="#5a7a68" opacity="0.3"/><path d="M60 105 C80 85, 120 85, 140 105" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.5"/></svg></div>';
+
+    var ill2 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><line x1="40" y1="110" x2="160" y2="110" stroke="#5a7a68" stroke-width="1" opacity="0.3"/><path d="M40 110 Q60 40, 100 70 Q140 100, 160 50" fill="none" stroke="#5a7a68" stroke-width="1.8" opacity="0.5"/><circle cx="100" cy="70" r="3" fill="#b8956a" opacity="0.6"/></svg></div>';
+
+    var ill3 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><ellipse cx="80" cy="70" rx="25" ry="25" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><ellipse cx="120" cy="70" rx="25" ry="25" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><path d="M95 55 Q100 50, 105 55" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/><path d="M95 85 Q100 90, 105 85" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/></svg></div>';
+
+    var ill4 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><path d="M50 100 L50 50 Q50 35, 65 35 L75 35" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><path d="M75 35 Q90 35, 95 50 L100 70 Q105 85, 115 85 L135 85" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><circle cx="50" cy="100" r="4" fill="#b8956a" opacity="0.5"/><circle cx="135" cy="85" r="4" fill="#5a7a68" opacity="0.5"/><path d="M135 85 L135 50 Q135 40, 150 40 L160 40" fill="none" stroke="#5a7a68" stroke-width="1" stroke-dasharray="3 3" opacity="0.3"/></svg></div>';
+
+    var ill5 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><circle cx="100" cy="70" r="40" fill="none" stroke="#5a7a68" stroke-width="1" opacity="0.2"/><circle cx="100" cy="70" r="28" fill="none" stroke="#5a7a68" stroke-width="1.2" opacity="0.3"/><circle cx="100" cy="70" r="16" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><circle cx="100" cy="70" r="5" fill="#5a7a68" opacity="0.4"/><path d="M55 110 Q100 95, 145 110" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.4"/></svg></div>';
+
+    var html = '<div class="gave-page">';
+    html += '<div class="gave-hero">';
+    html += '<div class="gave-badge">Din gave</div>';
+    html += '<h2>Kroppen husker det hele</h2>';
+    html += '<p class="gave-byline">En personlig fort\u00e6lling af Annemarie Clement</p>';
+    html += '<p class="gave-epigraph">Om h\u00e6nderne der l\u00e6rte mig at lytte.<br>Om de stille \u00f8jeblikke hvor alt vendte.</p>';
+    html += '</div>';
+
+    html += '<div class="gave-body">';
+    html += '<p class="gave-greeting"><em>K\u00e6re dig.</em></p>';
+
+    html += '<p>Jeg ved ikke, hvem du er. M\u00e5ske er du en der ligger v\u00e5gen om natten og m\u00e6rker, at noget i kroppen ikke vil falde til ro. M\u00e5ske er du en behandler, der b\u00e6rer andres tunge historier med hjem. Eller m\u00e5ske er du bare et menneske, der leder efter noget, der giver mening.</p>';
+
+    html += '<p>Jeg vil gerne fort\u00e6lle dig noget. Ikke en teori. Ikke en metode. Men en historie \u2014 min historie \u2014 og de fem ting, den l\u00e6rte mig om at m\u00f8de mennesker.</p>';
+
+    html += '<p>Den begynder med en plante.</p>';
+
+    html += ill1;
+
+    html += '<h3 class="gave-section-title">Planten p\u00e5 vindueskarmen</h3>';
+    html += '<p>For mange \u00e5r siden stod der en plante p\u00e5 min vindueskarm. Den s\u00e5 kedelig ud \u2014 lidt trist, lidt halvvisnet. Jeg glemte den tit. Gav den vand n\u00e5r jeg huskede det. Flyttede den aldrig. Den overlevede, men den trivedes ikke.</p>';
+    html += '<p>En dag flyttede jeg den hen i lyset. Begyndte at vande den regelm\u00e6ssigt. Ikke for meget. Ikke for lidt. Bare n\u00e5r den havde brug for det. Inden for et par uger stod den med nye skud. Blade jeg ikke vidste den havde i sig.</p>';
+    html += '<p>Mange \u00e5r senere, da jeg begyndte at arbejde med nervesystemer, t\u00e6nkte jeg p\u00e5 den plante. For det er pr\u00e6cis s\u00e5dan nervesystemet er. Det har brug for lys, for vand, for n\u00e6ring \u2014 men det har ogs\u00e5 brug for at nogen <em>l\u00e6gger m\u00e6rke til det</em>. At nogen ser det, f\u00f8r det er helt visnet.</p>';
+    html += '<p>Det var det f\u00f8rste, kroppen l\u00e6rte mig: <em>At n\u00e6rv\u00e6r er n\u00e6ring.</em></p>';
+
+    html += ill2;
+
+    html += '<h3 class="gave-section-title">Den stille viden</h3>';
+    html += '<p>Jeg uddannede mig som afsp\u00e6ndingsp\u00e6dagog \u2014 psykomotorisk terapeut, som det hedder i dag. Jeg l\u00e6rte om muskler, om sp\u00e6ndingsm\u00f8nstre, om \u00e5ndedr\u00e6t. Men det der virkelig forandrede mig, var det jeg l\u00e6rte med h\u00e6nderne.</p>';
+    html += '<p>N\u00e5r du l\u00e6gger h\u00e6nderne p\u00e5 et andet menneskes krop, sker der noget. Du m\u00e6rker, hvad ord ikke kan sige. Skuldrene der aldrig helt slipper. Maven der knuger sig sammen n\u00e5r stemmen bliver en anelse for h\u00f8j. \u00c5ndedr\u00e6ttet der bliver fladt og hurtigt n\u00e5r vi n\u00e6rmer os det sv\u00e6re.</p>';
+    html += '<p>I over tolv \u00e5r studerede jeg under Ulla Rung Weeke \u2014 psykolog og traumespecialist, forfatter til <em>At danse med nervesystemet</em>. Hun l\u00e6rte mig, at det jeg m\u00e6rkede med h\u00e6nderne ikke bare var sp\u00e6ndinger. Det var nervesystemets sprog. Et sprog der er \u00e6ldre end ord. Mere ærligt end tanker.</p>';
+    html += '<p>Det var det andet, kroppen l\u00e6rte mig: <em>At lytte med h\u00e6nderne er at lytte til sandheden.</em></p>';
+
+    html += ill3;
+
+    html += '<h3 class="gave-section-title">Det f\u00f8rste m\u00f8de</h3>';
+    html += '<p>Tidligt i min karriere arbejdede jeg p\u00e5 en klinik for spiseforstyrrelser p\u00e5 Gentofte Hospital. Jeg m\u00f8dte unge mennesker, der havde mistet forbindelsen til deres egen krop. Som ikke kunne m\u00e6rke sult. Ikke kunne m\u00e6rke gr\u00e6nser. Ikke vidste hvorn\u00e5r nok var nok \u2014 hverken af mad eller af smerte.</p>';
+    html += '<p>Jeg s\u00e5 det samme m\u00f8nster hos stressramte ledere, da jeg senere blev coach hos Unilever. Mennesker der havde l\u00e6rt at k\u00f8re i femte gear s\u00e5 l\u00e6nge, at de havde glemt, at der fandtes et nul. Deres krop r\u00e5bte \u2014 med hovedpine, med s\u00f8vnl\u00f8shed, med en rastl\u00f8shed der aldrig h\u00f8rte op \u2014 men de havde l\u00e6rt at overhøre den.</p>';
+    html += '<p>I begge tilf\u00e6lde var grundproblemet det samme: en afbrydelse mellem mennesket og dets nervesystem. Ikke fordi de var svage. Men fordi ingen nogensinde havde vist dem, <em>hvordan man lytter til sin egen krop</em>.</p>';
+    html += '<p>Det var det tredje, kroppen l\u00e6rte mig: <em>At vi ikke er g\u00e5et i stykker. Vi har bare glemt at lytte.</em></p>';
+
+    html += ill4;
+
+    html += '<h3 class="gave-section-title">Det ordl\u00f8se sprog</h3>';
+    html += '<p>Noget af det der ligger mig allerdybest p\u00e5 sinde, er det ordl\u00f8se samspil mellem mor og barn i de allerf\u00f8rste leve\u00e5r. Det \u00f8jeblik hvor et sp\u00e6dbarn m\u00f8der sin mors \u00f8jne og finder \u2014 eller ikke finder \u2014 tryghed.</p>';
+    html += '<p>Det er i de \u00f8jeblikke, vores nervesystem formes. F\u00f8r vi har ord for det. F\u00f8r vi kan fort\u00e6lle nogen, hvad vi f\u00f8ler. I de f\u00f8rste tre \u00e5r er hjernen som bl\u00f8d modellervoks \u2014 og de m\u00f8nstre der dannes, b\u00e6rer vi med os hele livet.</p>';
+    html += '<p>Men her er det vidunderlige: de m\u00f8nstre kan \u00e6ndres. Ikke ved at t\u00e6nke sig ud af dem. Men ved at skabe nye erfaringer i kroppen. Ved co-regulering \u2014 ved at et andet nervesystem siger til dit: <em>du er tryg her. Du kan slippe.</em></p>';
+    html += '<p>Det er pr\u00e6cis det, der sker p\u00e5 min briks i Hellerup. N\u00e5r jeg l\u00e6gger h\u00e6nderne p\u00e5 din krop, bruger jeg mit eget regulerede nervesystem som et anker. Ikke fordi jeg har en teknik. Men fordi <em>ro smitter</em>. Tryghed er en biologisk tilstand \u2014 og den kan overf\u00f8res fra \u00e9t nervesystem til et andet.</p>';
+    html += '<p>Det var det fjerde, kroppen l\u00e6rte mig: <em>At vi hele livet kan skabe nye begyndelser.</em></p>';
+
+    html += ill5;
+
+    html += '<h3 class="gave-section-title">Cirklen</h3>';
+    html += '<p>I dag, tyve \u00e5r inde i dette arbejde, ved jeg \u00e9n ting med sikkerhed: alt h\u00e6nger sammen med alt. Nervesystemet binder det hele sammen \u2014 kroppen og psyken, traumet og relationen, biologien og tilknytningen. Det er derfor min metode er en cirkel og ikke en liste. Fordi forandring i \u00e9n dimension sender b\u00f8lger gennem alle de andre.</p>';
+    html += '<p>Og det er derfor, jeg stadig g\u00e5r til mit arbejde med begejstring hver eneste dag. Fordi jeg aldrig har m\u00f8dt to ens nervesystemer. Fordi hvert menneske, der l\u00e6gger sig p\u00e5 min briks, b\u00e6rer p\u00e5 en helt unik historie. Og fordi den historie fortjener at blive lyttet til \u2014 ikke kun med \u00f8rerne, men med h\u00e6nderne, med kroppen, med hele mit n\u00e6rv\u00e6r.</p>';
+    html += '<p>Det var det femte, kroppen l\u00e6rte mig: <em>At n\u00e6rv\u00e6r, livsgl\u00e6de, begejstring og nysgerrighed ikke er noget man finder. Det er noget man d\u00e6rker. Hver dag. Som en plante man vander.</em></p>';
+
+    html += '<div class="gave-closing">';
+    html += '<p>Selv n\u00e5r livet er sv\u00e6rt, har vi et valg.<br>Vi kan v\u00e6lge at lytte. At m\u00e6rke. At v\u00e6re til stede.<br>Og derfra begynder alt.</p>';
+    html += '<p>Pas p\u00e5 dit nervesystem \u2014 det passer p\u00e5 dig.</p>';
+    html += '<p class="gave-sign">Med varme fra klinikken i Hellerup,<br><strong>Annemarie Clement</strong></p>';
+    html += '<p class="gave-sign-title">Nervesystemsterapeut, Supervisor, Psykoterapeut MPF</p>';
+    html += '</div>';
+
+    html += '<button class="gave-back-btn" onclick="resetToWelcome()">\u2190 Tilbage til forsiden</button>';
+
+    html += '</div>'; // gave-body
+    html += '</div>'; // gave-page
+
+    document.getElementById('info-content').innerHTML = html;
+
+    var infoPanel = document.getElementById('info-panel');
+    infoPanel.scrollTop = 0;
+    setTimeout(function() {
+        var hero = document.querySelector('.gave-hero');
+        if (hero) hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 // ===== SEARCH =====
