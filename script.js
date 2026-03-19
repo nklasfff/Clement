@@ -2819,17 +2819,17 @@ function createMiniDiagram(coords, options) {
 
     // Connection lines - center to all
     ids.forEach(function(id) {
-        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.15"/>';
+        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.35"/>';
     });
     // Ring connections
     for (var i = 0; i < ids.length; i++) {
         var next = ids[(i + 1) % ids.length];
-        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.15"/>';
+        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.35"/>';
     }
     // Cross connections
     var crosses = [['polyvagal','kropsterapi'],['polyvagal','traumer'],['tilknytning','psykobiologi'],['tilknytning','relation'],['kropsterapi','traumer'],['psykobiologi','relation']];
     crosses.forEach(function(pair) {
-        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="' + lineColor + '" stroke-width="0.6" stroke-dasharray="5 5" opacity="0.15"/>';
+        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="' + lineColor + '" stroke-width="0.6" stroke-dasharray="5 5" opacity="0.35"/>';
     });
 
     // White mask circles behind colored circles so lines don't show through

@@ -242,7 +242,7 @@ body.scrolled-past-hero .search-btn svg {
     margin: 0 16px;
     box-shadow: var(--shadow);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     transition: box-shadow var(--transition);
 }
@@ -261,7 +261,7 @@ body.scrolled-past-hero .search-btn svg {
     color: var(--text-muted);
     font-size: 0.82rem;
     font-style: italic;
-    margin: -4px 0 0;
+    margin: 4px 0 0;
     padding: 0 24px;
 }
 
