@@ -1040,6 +1040,78 @@ const exercises = [
             "Når du når hovedet, mærk hele kroppen på én gang i 1-2 minutter."
         ],
         refleksion: "Hvor holdt du spænding uden at vide det? Bare det at opdage det er begyndelsen på forandring. Kroppen løsner når den bliver set."
+    },
+    {
+        title: "Grounding — land i nuet",
+        kategori: "regulering",
+        tid: "2-3 min",
+        intro: "Når tankerne løber og nervesystemet er i alarm, har du brug for at lande. Grounding forbinder dig til din krop og til nuet — det simpleste og mest effektive første skridt.",
+        steps: [
+            "Mærk dine fødder mod gulvet. Pres dem let ned.",
+            "Navngiv 5 ting du kan se omkring dig.",
+            "Navngiv 4 ting du kan røre ved eller mærke.",
+            "Navngiv 3 lyde du kan høre.",
+            "Tag én dyb indånding og én lang udånding.",
+            "Mærk: du er her. Du er til stede."
+        ],
+        refleksion: "Hvad ændrede sig i kroppen da du begyndte at navngive? Grounding virker fordi det skifter nervesystemet fra indre alarm til ydre opmærksomhed."
+    },
+    {
+        title: "Beroligende berøring",
+        kategori: "krop",
+        tid: "3 min",
+        intro: "Berøring aktiverer oxytocin og sender sikkerhedssignaler direkte til nervesystemet. Du kan give dig selv den berøring der regulerer — også når du er alene.",
+        steps: [
+            "Læg begge hænder på dit bryst. Mærk varmen.",
+            "Pust langsomt ind og ud. Mærk brystkassen hæve og sænke sig under hænderne.",
+            "Bevæg én hånd til siden af halsen. Mærk pulsen.",
+            "Giv dig selv et let tryk — som en hånd der siger: du er okay.",
+            "Bliv her i 1-2 minutter. Mærk hvad der sker i kroppen."
+        ],
+        refleksion: "Var det uvant at røre dig selv sådan? Mange af os er frakoblet selvberøring. Men kroppen genkender det — den husker at berøring betyder tryghed."
+    },
+    {
+        title: "Orienteringsrespons",
+        kategori: "regulering",
+        tid: "2 min",
+        intro: "Orienteringsresponsen er nervesystemets måde at scanne for sikkerhed. Denne øvelse bruger den bevidst til at signalere til dit system at der ikke er fare.",
+        steps: [
+            "Sid eller stå stille et øjeblik.",
+            "Drej langsomt hovedet til højre. Lad øjnene følge med.",
+            "Kig på noget specifikt. Mærk det. Tag dig tid.",
+            "Drej langsomt hovedet til venstre. Gør det samme.",
+            "Drej til midten. Tag en dyb udånding.",
+            "Gentag 2-3 gange. Mærk om skuldrene falder."
+        ],
+        refleksion: "Denne øvelse er særligt kraftfuld efter en belastende oplevelse. Nervesystemet har brug for at bekræfte at faren er ovre — og øjnene er døren ind."
+    },
+    {
+        title: "Summe-åndedræt (Bhramari)",
+        kategori: "aandedraet",
+        tid: "3-4 min",
+        intro: "Vibration fra summen stimulerer vagusnerven dybt og effektivt. Denne urgamle teknik skaber en direkte kropslig vej til ro.",
+        steps: [
+            "Sid med lukket mund og afslappet kæbe.",
+            "Pust ind gennem næsen i 4 tællinger.",
+            "Pust ud mens du summer — en lang, rolig mmmm-lyd.",
+            "Mærk vibrationen i brystet, halsen og ansigtet.",
+            "Gentag 8-10 gange. Lad summen blive roligere for hvert åndedræt."
+        ],
+        refleksion: "Hvor mærkede du vibrationen tydeligst? Vibration er kroppens eget reguleringssprog — tænk på hvordan en mors nynnen beroliger et barn."
+    },
+    {
+        title: "Penduløvelse — mellem spænding og ro",
+        kategori: "krop",
+        tid: "4-5 min",
+        intro: "Nervesystemet healer ikke ved at fryse i én tilstand, men ved at pendle mellem aktivering og ro. Denne øvelse træner netop den fleksibilitet.",
+        steps: [
+            "Mærk et sted i kroppen der føles neutralt eller behageligt. Bliv her et øjeblik.",
+            "Flyt nu opmærksomheden til et sted med spænding eller ubehag. Vær kort.",
+            "Vend tilbage til det behagelige sted. Mærk forskellen.",
+            "Pendlér langsomt mellem de to — 3-4 gange.",
+            "Afslut altid på det behagelige sted. Lad kroppen hvile der."
+        ],
+        refleksion: "Blev det lettere at vende tilbage til det behagelige? Denne pendulering er præcis hvad nervesystemet gør når det healer — det lærer at bevægelsen er sikker."
     }
 ];
 // Merge fordybelse data into themes
@@ -2075,59 +2147,169 @@ function setupExercisesButton() {
     });
 }
 
+
+// ── Refleksioner for nervesystemsterapi ──
+var refleksioner = [
+    {
+        id: "lytte",
+        titel: "At lytte indad",
+        ikon: "◎",
+        farve: "primary",
+        spoergsmaal: "Hvornår lyttede du sidst til din krop før den råbte? Hvad fortalte den dig — og lyttede du?",
+        uddybning: "Kroppen kommunikerer konstant. Spændinger, træthed, uro — det er ikke støj. Det er nervesystemets forsvar på at føre en samtale med dig. Når du lærer at lytte før symptomerne eskalerer, begynder healing at ske naturligt."
+    },
+    {
+        id: "tryghed",
+        titel: "Tryghed",
+        ikon: "◈",
+        farve: "sage",
+        spoergsmaal: "Hvornår føler du dig mest tryg — og hvad er det ved den situation der skaber trygheden? Er det et sted, en person, en fornemmelse?",
+        uddybning: "Tryghed er ikke fravær af fare. Det er nervesystemets aktive signal om at du er beskyttet nok til at være åben. At kende dine tryghedskilder er at kende vejen hjem til dig selv."
+    },
+    {
+        id: "moenstre",
+        titel: "Mønstre",
+        ikon: "◇",
+        farve: "amber",
+        spoergsmaal: "Hvilket mønster gentager sig i dit liv — i relationer, i stress, i den måde du møder verden? Hvad tror du mønsteret oprindeligt beskyttede dig mod?",
+        uddybning: "Mønstre er nervesystemets autopilot. De opstod for at beskytte dig i en tid hvor du havde brug for dem. At se dem med nåde i stedet for dom er første skridt. De løsner ikke når du kæmper mod dem — de løsner når de bliver set."
+    },
+    {
+        id: "graenser",
+        titel: "Grænser",
+        ikon: "◆",
+        farve: "rose",
+        spoergsmaal: "Hvor i dit liv siger du ja når din krop siger nej? Hvad ville der ske hvis du lyttede til kroppen?",
+        uddybning: "Grænser er neurobiologisk nødvendige. Hver gang du overskrider dine egne grænser, sender du et signal til nervesystemet om at dine behov ikke tæller. Over tid fører det til udmattelse og afkobling fra dig selv."
+    },
+    {
+        id: "forandring",
+        titel: "Forandring",
+        ikon: "◉",
+        farve: "primary",
+        spoergsmaal: "Hvis dit liv kunne føles anderledes om seks måneder — ikke omstændighederne, men fornemmelsen i kroppen — hvordan ville det føles?",
+        uddybning: "Forandring starter ikke med en plan men med en fornemmelse. Når du kan mærke den tilstand du ønsker dig hen imod, giver du dit nervesystem et mål at orientere sig efter. Det er ikke drømmeri — det er regulering gennem retning."
+    }
+];
+
+// ── Proces-tracking (localStorage) ──
+function getProces() {
+    try { return JSON.parse(localStorage.getItem('nst_proces') || '{"oevelser":[],"refleksioner":[],"journal":[]}'); }
+    catch(e) { return { oevelser: [], refleksioner: [], journal: [] }; }
+}
+function saveProces(p) { localStorage.setItem('nst_proces', JSON.stringify(p)); }
+
+function markerOevelseGennemfoert(titel) {
+    var p = getProces();
+    p.oevelser.push({ titel: titel, dato: new Date().toISOString().slice(0,10), tid: new Date().toLocaleTimeString('da-DK', {hour:'2-digit',minute:'2-digit'}) });
+    saveProces(p);
+}
+
+function gemRefleksionSvar(id, titel, svar) {
+    var p = getProces();
+    p.refleksioner.push({ id: id, titel: titel, svar: svar, dato: new Date().toISOString().slice(0,10) });
+    saveProces(p);
+}
+
+function gemJournalNotat(tekst) {
+    var p = getProces();
+    p.journal.push({ tekst: tekst, dato: new Date().toISOString().slice(0,10), tid: new Date().toLocaleTimeString('da-DK', {hour:'2-digit',minute:'2-digit'}) });
+    saveProces(p);
+}
+
 function showExercises() {
     currentView = 'exercises';
     clearAllActive();
 
-    var filterHTML = '<div class="oevelser-filter">';
-    filterHTML += '<button class="oevelser-filter-btn active" data-filter="alle">Alle</button>';
-    filterHTML += '<button class="oevelser-filter-btn" data-filter="regulering">Regulering</button>';
-    filterHTML += '<button class="oevelser-filter-btn" data-filter="aandedraet">\u00c5ndedr\u00e6t</button>';
-    filterHTML += '<button class="oevelser-filter-btn" data-filter="krop">Krop</button>';
-    filterHTML += '</div>';
+    var html = '<h2>Øvelser & refleksioner</h2>';
+    html += '<p>Konkrete redskaber og stille rum til eftertanke. Her finder du både øvelser der regulerer dit nervesystem, refleksionsspørgsmål der hjælper dig med at se dybere — og en oversigt over din proces.</p>';
 
-    var exercisesHTML = '';
+    // ── Del 1: Øvelser ──
+    html += '<div class="oevelser-section-label"><span class="oevelser-section-icon">◎</span><span>Øvelser</span></div>';
+
+    html += '<div class="oevelser-filter">';
+    html += '<button class="oevelser-filter-btn active" data-filter="alle">Alle</button>';
+    html += '<button class="oevelser-filter-btn" data-filter="regulering">Regulering</button>';
+    html += '<button class="oevelser-filter-btn" data-filter="aandedraet">Åndedræt</button>';
+    html += '<button class="oevelser-filter-btn" data-filter="krop">Krop</button>';
+    html += '</div>';
+
+    html += '<div class="oevelser-grid">';
     exercises.forEach(function(exercise, index) {
-        exercisesHTML += '<div class="exercise-card" data-index="' + index + '" data-kategori="' + exercise.kategori + '">';
-        exercisesHTML += '<div class="exercise-card-inner">';
-        exercisesHTML += '<div class="exercise-card-top">';
-        exercisesHTML += '<h3>' + exercise.title + '</h3>';
-        exercisesHTML += '<span class="exercise-tid-badge">' + exercise.tid + '</span>';
-        exercisesHTML += '</div>';
-        exercisesHTML += '<p class="exercise-intro">' + exercise.intro + '</p>';
-        exercisesHTML += '<ol class="exercise-steps" data-total="' + exercise.steps.length + '">';
+        html += '<div class="exercise-card" data-index="' + index + '" data-kategori="' + exercise.kategori + '">';
+        html += '<div class="exercise-card-inner">';
+        html += '<div class="exercise-card-top">';
+        html += '<h3>' + exercise.title + '</h3>';
+        html += '<span class="exercise-tid-badge">' + exercise.tid + '</span>';
+        html += '</div>';
+        html += '<p class="exercise-intro">' + exercise.intro + '</p>';
+        html += '<ol class="exercise-steps" data-total="' + exercise.steps.length + '">';
         exercise.steps.forEach(function(step, i) {
-            exercisesHTML += '<li data-step="' + (i + 1) + '">' + step + '</li>';
+            html += '<li data-step="' + (i + 1) + '">' + step + '</li>';
         });
-        exercisesHTML += '</ol>';
-
+        html += '</ol>';
         if (exercise.refleksion) {
-            exercisesHTML += '<div class="exercise-refleksion">';
-            exercisesHTML += '<div class="exercise-refleksion-header">Refleksion efter \u00f8velsen</div>';
-            exercisesHTML += '<p class="exercise-refleksion-tekst">' + exercise.refleksion + '</p>';
-            exercisesHTML += '</div>';
+            html += '<div class="exercise-refleksion">';
+            html += '<div class="exercise-refleksion-header">Refleksion efter øvelsen</div>';
+            html += '<p class="exercise-refleksion-tekst">' + exercise.refleksion + '</p>';
+            html += '</div>';
         }
-
-        exercisesHTML += '<div class="exercise-guide-controls">';
-        exercisesHTML += '<button class="exercise-guide-btn exercise-guide-start">Start \u00f8velse</button>';
-        exercisesHTML += '<div class="exercise-guide-progress"><div class="exercise-guide-progress-bar"></div></div>';
-        exercisesHTML += '<button class="exercise-guide-btn exercise-guide-next" style="display:none;">N\u00e6ste trin</button>';
-        exercisesHTML += '</div>';
-
-        exercisesHTML += '<button class="exercise-toggle">Se \u00f8velse</button>';
-        exercisesHTML += '</div>';
-        exercisesHTML += '</div>';
+        html += '<div class="exercise-guide-controls">';
+        html += '<button class="exercise-guide-btn exercise-guide-start">Start øvelse</button>';
+        html += '<div class="exercise-guide-progress"><div class="exercise-guide-progress-bar"></div></div>';
+        html += '<button class="exercise-guide-btn exercise-guide-next" style="display:none;">Næste trin</button>';
+        html += '</div>';
+        html += '<button class="exercise-toggle">Se øvelse</button>';
+        html += '</div></div>';
     });
+    html += '</div>';
 
-    document.getElementById('info-content').innerHTML =
-        '<h2>Pr\u00f8v \u00f8velserne</h2>' +
-        '<p>Konkrete redskaber til at m\u00e6rke hvordan nervesystemsregulering virker i praksis. Tryk p\u00e5 en \u00f8velse for at \u00e5bne den.</p>' +
-        filterHTML +
-        '<div class="oevelser-grid">' + exercisesHTML + '</div>' +
-        buildActionBar();
+    // ── Del 2: Refleksioner ──
+    html += '<div class="oevelser-divider"></div>';
+    html += '<div class="oevelser-section-label"><span class="oevelser-section-icon">◈</span><span>Refleksioner</span></div>';
+    html += '<p class="oevelser-section-intro">Refleksioner kræver ikke handling — kun ærlighed. Sæt dig et stille sted, læs spørgsmålet, og lad svaret komme. Der er ingen rigtige svar. Der er kun dine.</p>';
 
+    html += '<div class="refleksioner-grid">';
+    refleksioner.forEach(function(r) {
+        html += '<div class="refleksion-card refleksion-card-' + r.farve + '" data-ref-id="' + r.id + '">';
+        html += '<div class="refleksion-card-header">';
+        html += '<span class="refleksion-card-ikon">' + r.ikon + '</span>';
+        html += '<h3 class="refleksion-card-titel">' + r.titel + '</h3>';
+        html += '</div>';
+        html += '<p class="refleksion-card-spoergsmaal">' + r.spoergsmaal + '</p>';
+        html += '<div class="refleksion-card-body">';
+        html += '<p class="refleksion-card-uddybning">' + r.uddybning + '</p>';
+        html += '<textarea class="refleksion-card-input" placeholder="Skriv din refleksion her..." rows="3"></textarea>';
+        html += '<div class="refleksion-card-actions">';
+        html += '<button class="refleksion-gem-btn" data-ref-id="' + r.id + '" data-ref-titel="' + r.titel + '">Gem refleksion</button>';
+        html += '</div></div></div>';
+    });
+    html += '</div>';
+
+    // ── Del 3: Din proces ──
+    html += '<div class="oevelser-divider"></div>';
+    html += '<div class="oevelser-section-label"><span class="oevelser-section-icon">◉</span><span>Din proces</span></div>';
+    html += '<p class="oevelser-section-intro">Hold øje med din udvikling. Hver gang du gennemfører en øvelse eller skriver en refleksion, gemmes det her.</p>';
+    html += '<div id="dinProcesContainer"></div>';
+
+    html += buildActionBar();
+
+    document.getElementById('info-content').innerHTML = html;
     setupActionButtons();
+    renderDinProces();
+    bindExerciseEvents();
 
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var rect = infoPanel.getBoundingClientRect();
+            window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+        });
+    });
+}
+
+function bindExerciseEvents() {
     // Bind filter buttons
     document.querySelectorAll('.oevelser-filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -2135,11 +2317,7 @@ function showExercises() {
             this.classList.add('active');
             var filter = this.dataset.filter;
             document.querySelectorAll('.exercise-card').forEach(function(card) {
-                if (filter === 'alle' || card.dataset.kategori === filter) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (filter === 'alle' || card.dataset.kategori === filter) ? '' : 'none';
             });
         });
     });
@@ -2152,13 +2330,13 @@ function showExercises() {
             document.querySelectorAll('.exercise-card').forEach(function(c) {
                 c.classList.remove('expanded');
                 var btn = c.querySelector('.exercise-toggle');
-                if (btn) btn.textContent = 'Se \u00f8velse';
+                if (btn) btn.textContent = 'Se øvelse';
                 resetExerciseGuide(c);
             });
             if (!wasExpanded) {
                 this.classList.add('expanded');
                 var toggleBtn = this.querySelector('.exercise-toggle');
-                if (toggleBtn) toggleBtn.textContent = 'Luk \u00f8velse';
+                if (toggleBtn) toggleBtn.textContent = 'Luk øvelse';
             }
         });
     });
@@ -2177,14 +2355,117 @@ function showExercises() {
         });
     });
 
-    var infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(function() {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(function() {
-            var rect = infoPanel.getBoundingClientRect();
-            window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+    // Bind refleksion cards
+    document.querySelectorAll('.refleksion-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.refleksion-card-input')) return;
+            if (e.target.closest('.refleksion-gem-btn')) return;
+            var wasActive = this.classList.contains('active');
+            document.querySelectorAll('.refleksion-card').forEach(function(c) { c.classList.remove('active'); });
+            if (!wasActive) this.classList.add('active');
         });
     });
+
+    // Bind gem buttons
+    document.querySelectorAll('.refleksion-gem-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var card = this.closest('.refleksion-card');
+            var textarea = card.querySelector('.refleksion-card-input');
+            var svar = textarea.value.trim();
+            if (!svar) { textarea.focus(); textarea.style.borderColor = '#c4a67a'; setTimeout(function() { textarea.style.borderColor = ''; }, 2000); return; }
+            gemRefleksionSvar(this.dataset.refId, this.dataset.refTitel, svar);
+            this.textContent = 'Gemt ✓';
+            this.style.background = 'var(--primary)';
+            this.style.color = 'white';
+            var self = this;
+            setTimeout(function() { self.textContent = 'Gem refleksion'; self.style.background = ''; self.style.color = ''; textarea.value = ''; renderDinProces(); }, 1500);
+        });
+    });
+}
+
+function renderDinProces() {
+    var container = document.getElementById('dinProcesContainer');
+    if (!container) return;
+    var p = getProces();
+    var html = '';
+
+    var totalOev = p.oevelser.length;
+    var totalRef = p.refleksioner.length;
+    var totalJournal = p.journal.length;
+    var unikkeOev = [];
+    p.oevelser.forEach(function(o) { if (unikkeOev.indexOf(o.titel) === -1) unikkeOev.push(o.titel); });
+
+    html += '<div class="proces-stats">';
+    html += '<div class="proces-stat"><span class="proces-stat-tal">' + totalOev + '</span><span class="proces-stat-label">øvelser gennemført</span></div>';
+    html += '<div class="proces-stat"><span class="proces-stat-tal">' + unikkeOev.length + '</span><span class="proces-stat-label">forskellige øvelser</span></div>';
+    html += '<div class="proces-stat"><span class="proces-stat-tal">' + totalRef + '</span><span class="proces-stat-label">refleksioner skrevet</span></div>';
+    html += '<div class="proces-stat"><span class="proces-stat-tal">' + totalJournal + '</span><span class="proces-stat-label">journal-notater</span></div>';
+    html += '</div>';
+
+    // Journal
+    html += '<div class="proces-journal">';
+    html += '<h4 class="proces-journal-title">Dagbog</h4>';
+    html += '<p class="proces-journal-hint">Skriv hvad du mærker lige nu. Det behøver ikke være mere end et par ord.</p>';
+    html += '<textarea class="proces-journal-input" id="procesJournalInput" placeholder="Hvad fylder lige nu?" rows="3"></textarea>';
+    html += '<button class="proces-journal-gem" id="procesJournalGem">Gem notat</button>';
+    html += '</div>';
+
+    // Timeline
+    var allEntries = [];
+    p.oevelser.forEach(function(o) { allEntries.push({ type: 'oevelse', titel: o.titel, dato: o.dato, tid: o.tid || '' }); });
+    p.refleksioner.forEach(function(r) { allEntries.push({ type: 'refleksion', titel: r.titel, dato: r.dato, svar: r.svar }); });
+    p.journal.forEach(function(j) { allEntries.push({ type: 'journal', tekst: j.tekst, dato: j.dato, tid: j.tid || '' }); });
+    allEntries.sort(function(a, b) { return b.dato.localeCompare(a.dato); });
+
+    if (allEntries.length > 0) {
+        html += '<div class="proces-tidslinje">';
+        html += '<h4 class="proces-tidslinje-title">Din tidslinje</h4>';
+        var shown = Math.min(allEntries.length, 20);
+        for (var i = 0; i < shown; i++) {
+            var entry = allEntries[i];
+            html += '<div class="proces-entry proces-entry-' + entry.type + '">';
+            html += '<div class="proces-entry-dot"></div>';
+            html += '<div class="proces-entry-content">';
+            if (entry.type === 'oevelse') {
+                html += '<div class="proces-entry-label">Øvelse gennemført</div>';
+                html += '<div class="proces-entry-titel">' + entry.titel + '</div>';
+            } else if (entry.type === 'refleksion') {
+                html += '<div class="proces-entry-label">Refleksion</div>';
+                html += '<div class="proces-entry-titel">' + entry.titel + '</div>';
+                html += '<div class="proces-entry-svar">' + entry.svar + '</div>';
+            } else if (entry.type === 'journal') {
+                html += '<div class="proces-entry-label">Dagbog</div>';
+                html += '<div class="proces-entry-svar">' + entry.tekst + '</div>';
+            }
+            html += '<div class="proces-entry-dato">' + entry.dato + (entry.tid ? ' kl. ' + entry.tid : '') + '</div>';
+            html += '</div></div>';
+        }
+        html += '</div>';
+    } else {
+        html += '<div class="proces-tom">';
+        html += '<p>Din tidslinje er tom endnu</p>';
+        html += '<p class="proces-tom-hint">Gennemfør en øvelse eller skriv en refleksion — så begynder din proces at tage form her.</p>';
+        html += '</div>';
+    }
+
+    container.innerHTML = html;
+
+    // Bind journal
+    var gemBtn = document.getElementById('procesJournalGem');
+    var journalInput = document.getElementById('procesJournalInput');
+    if (gemBtn && journalInput) {
+        gemBtn.addEventListener('click', function() {
+            var tekst = journalInput.value.trim();
+            if (!tekst) { journalInput.focus(); journalInput.style.borderColor = '#c4a67a'; setTimeout(function() { journalInput.style.borderColor = ''; }, 2000); return; }
+            gemJournalNotat(tekst);
+            journalInput.value = '';
+            gemBtn.textContent = 'Gemt ✓';
+            gemBtn.style.background = 'var(--primary)';
+            gemBtn.style.color = 'white';
+            setTimeout(function() { gemBtn.textContent = 'Gem notat'; gemBtn.style.background = ''; gemBtn.style.color = ''; renderDinProces(); }, 1500);
+        });
+    }
 }
 
 function resetExerciseGuide(card) {
@@ -2195,7 +2476,7 @@ function resetExerciseGuide(card) {
     var startBtn = card.querySelector('.exercise-guide-start');
     var nextBtn = card.querySelector('.exercise-guide-next');
     var bar = card.querySelector('.exercise-guide-progress-bar');
-    if (startBtn) { startBtn.style.display = ''; startBtn.textContent = 'Start \u00f8velse'; }
+    if (startBtn) { startBtn.style.display = ''; startBtn.textContent = 'Start øvelse'; }
     if (nextBtn) nextBtn.style.display = 'none';
     if (bar) bar.style.width = '0%';
     card.removeAttribute('data-guide-step');
@@ -2213,7 +2494,7 @@ function startExerciseGuide(card) {
     var nextBtn = card.querySelector('.exercise-guide-next');
     var bar = card.querySelector('.exercise-guide-progress-bar');
     if (startBtn) startBtn.style.display = 'none';
-    if (nextBtn) { nextBtn.style.display = ''; nextBtn.textContent = 'N\u00e6ste trin'; }
+    if (nextBtn) { nextBtn.style.display = ''; nextBtn.textContent = 'Næste trin'; }
     var total = parseInt(steps.dataset.total) || lis.length;
     if (bar) bar.style.width = (1 / total * 100) + '%';
 }
@@ -2226,23 +2507,18 @@ function advanceExerciseGuide(card) {
     var total = lis.length;
     if (lis[current]) { lis[current].classList.remove('step-active'); lis[current].classList.add('step-done'); }
     var next = current + 1;
-    if (next < total) {
-        lis[next].classList.add('step-active');
-        card.setAttribute('data-guide-step', next);
-        lis[next].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    if (next < total) { lis[next].classList.add('step-active'); card.setAttribute('data-guide-step', next); lis[next].scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
     var bar = card.querySelector('.exercise-guide-progress-bar');
     if (bar) bar.style.width = ((next + 1) / total * 100) + '%';
-    if (next >= total - 1) {
-        var nextBtn = card.querySelector('.exercise-guide-next');
-        if (nextBtn) nextBtn.textContent = 'F\u00e6rdig';
-    }
+    if (next >= total - 1) { var nextBtn = card.querySelector('.exercise-guide-next'); if (nextBtn) nextBtn.textContent = 'Færdig'; }
     if (next >= total) {
         var startBtn = card.querySelector('.exercise-guide-start');
         var nextBtn2 = card.querySelector('.exercise-guide-next');
         if (startBtn) { startBtn.style.display = ''; startBtn.textContent = 'Start igen'; }
         if (nextBtn2) nextBtn2.style.display = 'none';
         lis.forEach(function(li) { li.classList.remove('step-active'); li.classList.add('step-done'); });
+        var idx2 = parseInt(card.getAttribute('data-index'));
+        if (exercises[idx2]) { markerOevelseGennemfoert(exercises[idx2].title); renderDinProces(); }
     }
 }
 
