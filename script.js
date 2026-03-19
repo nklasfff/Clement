@@ -1793,7 +1793,11 @@ function buildActionBar() {
         '</button>' +
     '</div>' +
     '<div style="margin-top: 15px; text-align: center;">' +
-        '<button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>' +
+        (currentEducation && currentView === 'circle' ?
+            '<button onclick="showUddannelser()" class="back-btn">← Tilbage til uddannelser</button>' :
+        currentView === 'circle' && currentTheme !== 'general' ?
+            '<button onclick="showTemaer()" class="back-btn">← Tilbage til temaer</button>' :
+            '<button onclick="resetToWelcome()" class="back-btn">↑ Tilbage til toppen</button>') +
     '</div>';
 }
 
@@ -2305,16 +2309,13 @@ function showTemaer() {
     });
 
     var infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(function() {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(function() {
-            var heading = infoPanel.querySelector('h2');
-            if (heading) {
-                var rect = heading.getBoundingClientRect();
-                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
-            }
-        });
-    });
+    infoPanel.scrollTop = 0;
+    setTimeout(function() {
+        var heading = infoPanel.querySelector('h2');
+        if (heading) {
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, 100);
 }
 
 function showUddannelser() {
@@ -2375,16 +2376,13 @@ function showUddannelser() {
     });
 
     var infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(function() {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(function() {
-            var heading = infoPanel.querySelector('h2');
-            if (heading) {
-                var rect = heading.getBoundingClientRect();
-                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
-            }
-        });
-    });
+    infoPanel.scrollTop = 0;
+    setTimeout(function() {
+        var heading = infoPanel.querySelector('h2');
+        if (heading) {
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, 100);
 }
 
 function showExercises() {
