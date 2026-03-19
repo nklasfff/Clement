@@ -63,17 +63,15 @@ body {
     max-width: 700px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    gap: 28px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .hero-photo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+    width: 100%;
+    border-radius: var(--radius);
     object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.25);
-    flex-shrink: 0;
+    border: 3px solid rgba(255,255,255,0.15);
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 
@@ -1753,8 +1751,7 @@ button.back-btn:hover {
     }
 
     .hero-photo {
-        width: 100px;
-        height: 100px;
+        width: 100%;
     }
 
     .hero-text h1 {
