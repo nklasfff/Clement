@@ -97,7 +97,7 @@ body {
 
 /* ═══ TOP BAR (hamburger + search) ═══ */
 .top-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -1661,11 +1661,8 @@ body.scrolled-past-hero .search-btn svg {
     overflow: hidden;
 }
 
-.onboarding-medallion img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+.onboarding-medallion svg {
+    opacity: 0.85;
 }
 
 .onboarding-steps {
