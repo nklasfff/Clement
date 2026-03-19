@@ -7,109 +7,163 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Nervesystemsterapi">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#7B9E89">
+    <meta name="theme-color" content="#5a7a68">
     <title>Nervesystemsterapi - Annemarie Clement</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menu overlay -->
+
+    <!-- ════ MENU OVERLAY ════ -->
     <div class="menu-overlay" id="menu-overlay">
         <div class="menu-panel">
-            <button class="menu-close" id="menu-close" aria-label="Luk menu">&times;</button>
+            <div class="menu-header">
+                <div class="menu-header-info">
+                    <div class="menu-header-initials">AC</div>
+                    <div class="menu-header-text">
+                        <h2>Annemarie Clement</h2>
+                        <span class="menu-header-sub">Nervesystemsterapeut</span>
+                    </div>
+                </div>
+                <button class="menu-close" id="menu-close" aria-label="Luk menu">&times;</button>
+            </div>
             <nav class="menu-nav">
-                <a href="#" class="menu-item" data-menu="about">Om Annemarie</a>
-                <a href="#" class="menu-item" data-menu="method">Min metode</a>
-                <a href="#" class="menu-item" data-menu="contact">Kontakt</a>
-                <a href="#" class="menu-item" data-menu="privacy">Privatlivspolitik</a>
-                <a href="#" class="menu-item" data-menu="bookmarks">Gemte sider</a>
-                <a href="#" class="menu-item" data-menu="settings">Indstillinger</a>
+                <div class="menu-section-label">Information</div>
+                <a href="#" class="menu-item" data-menu="about">
+                    <span class="menu-item-icon">&#9775;</span>
+                    Om Annemarie
+                </a>
+                <a href="#" class="menu-item" data-menu="method">
+                    <span class="menu-item-icon">&#9673;</span>
+                    Min metode
+                </a>
+                <a href="#" class="menu-item" data-menu="contact">
+                    <span class="menu-item-icon">&#9993;</span>
+                    Kontakt
+                </a>
+                <div class="menu-divider"></div>
+                <div class="menu-section-label">Personligt</div>
+                <a href="#" class="menu-item" data-menu="bookmarks">
+                    <span class="menu-item-icon">&#9733;</span>
+                    Gemte sider
+                </a>
+                <a href="#" class="menu-item" data-menu="settings">
+                    <span class="menu-item-icon">&#9881;</span>
+                    Indstillinger
+                </a>
+                <div class="menu-divider"></div>
+                <div class="menu-section-label">Juridisk</div>
+                <a href="#" class="menu-item" data-menu="privacy">
+                    <span class="menu-item-icon">&#128274;</span>
+                    Privatlivspolitik
+                </a>
             </nav>
         </div>
     </div>
 
-    <!-- Search overlay -->
+    <!-- ════ SEARCH OVERLAY ════ -->
     <div class="search-overlay" id="search-overlay">
-        <div class="search-container">
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Søg i indhold..." autocomplete="off">
-                <button class="search-clear" id="search-clear" aria-label="Ryd søgning">&times;</button>
-                <button class="search-close" id="search-close" aria-label="Luk søgning">&times;</button>
+        <div class="search-header">
+            <div class="search-input-wrap">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Søg i indhold..." autocomplete="off">
+                    <button class="search-clear" id="search-clear" aria-label="Ryd søgning">&times;</button>
+                </div>
             </div>
-            <div class="search-tags" id="search-tags">
-                <button class="search-tag" data-search="nervesystem">Nervesystem</button>
-                <button class="search-tag" data-search="angst">Angst</button>
-                <button class="search-tag" data-search="stress">Stress</button>
-                <button class="search-tag" data-search="traumer">Traumer</button>
-                <button class="search-tag" data-search="tilknytning">Tilknytning</button>
-                <button class="search-tag" data-search="søvn">Søvn</button>
-                <button class="search-tag" data-search="polyvagal">Polyvagal</button>
-                <button class="search-tag" data-search="kropsterapi">Kropsterapi</button>
-                <button class="search-tag" data-search="regulering">Regulering</button>
-                <button class="search-tag" data-search="relation">Relation</button>
-            </div>
-            <div class="search-results" id="search-results"></div>
+            <button class="search-close" id="search-close" aria-label="Luk søgning">&times;</button>
         </div>
+        <div class="search-tags" id="search-tags">
+            <button class="search-tag" data-search="nervesystem">Nervesystem</button>
+            <button class="search-tag" data-search="angst">Angst</button>
+            <button class="search-tag" data-search="stress">Stress</button>
+            <button class="search-tag" data-search="traumer">Traumer</button>
+            <button class="search-tag" data-search="tilknytning">Tilknytning</button>
+            <button class="search-tag" data-search="søvn">Søvn</button>
+            <button class="search-tag" data-search="polyvagal">Polyvagal</button>
+            <button class="search-tag" data-search="kropsterapi">Kropsterapi</button>
+            <button class="search-tag" data-search="regulering">Regulering</button>
+            <button class="search-tag" data-search="relation">Relation</button>
+        </div>
+        <div class="search-results" id="search-results"></div>
     </div>
 
-    <div class="container">
-        <header>
+    <!-- ════ TOP BAR ════ -->
+    <div class="top-bar" id="top-bar">
         <button class="nav-btn menu-btn" id="menu-btn" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <button class="nav-btn search-btn" id="search-btn" aria-label="Søg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="7"/>
                 <line x1="16.5" y1="16.5" x2="21" y2="21"/>
             </svg>
         </button>
-        <div class="hero-image">
-            <img src="hero.PNG" alt="Annemarie Clement">
-        </div>
-        <h1>Nervesystemsterapi</h1>
-        <p class="subtitle">Forstå hvordan jeg arbejder med dit nervesystem</p>
-    </header>
+    </div>
 
-       <div class="top-circles">
-            <div class="top-circle active" data-mode="klient">
-                <span>Til<br>klienter</span>
-            </div>
-            <div class="top-circle" data-mode="fagfolk">
-                <span>Til<br>fagfolk</span>
-            </div>
-            <div class="top-circle theme-selector" id="theme-selector">
-                <span id="theme-label">Vælg<br>tema</span>
-                <div class="theme-dropdown" id="theme-dropdown">
-                    <div class="theme-option" data-theme="general">Generelt</div>
-                    <div class="theme-option" data-theme="angst">Angst</div>
-                    <div class="theme-option" data-theme="tilknytning">Tilknytning</div>
-                    <div class="theme-option" data-theme="stress">Stress</div>
-                    <div class="theme-option" data-theme="traumer">Traumer</div>
-                    <div class="theme-option" data-theme="sovn">Søvn</div>
+    <div class="container">
+        <!-- ════ HERO SECTION ════ -->
+        <header class="hero-section" id="hero-section">
+            <div class="hero-inner">
+                <img src="hero.PNG" alt="Annemarie Clement" class="hero-photo">
+                <div class="hero-text">
+                    <h1>Nervesystems-<br>terapi</h1>
+                    <p class="subtitle">Forstå hvordan jeg arbejder med dit nervesystem</p>
                 </div>
             </div>
-            <div class="top-circle theme-selector" id="education-selector">
-                <span id="education-label">Uddan-<br>nelser</span>
-                <div class="theme-dropdown" id="education-dropdown">
-                    <div class="education-option" data-education="nervesystemsterapeut">Nervesystem-<br>sterapeut</div>
-                    <div class="education-option" data-education="teachertraining">Teacher<br>Training</div>
-                    <div class="education-option" data-education="tilknytningsspeciale">Tilknytnings-<br>speciale</div>
-                </div>
-            </div>
-            <div class="top-circle theme-selector" id="exercises-btn">
-                <span id="exercises-label">Prøv<br>øvelser</span>
-                <div class="theme-dropdown" id="exercises-dropdown">
-                    <div class="exercise-option" data-exercise="0">Find ro i nervesystemet</div>
-                    <div class="exercise-option" data-exercise="1">Mærk din sikre tilstand</div>
-                    <div class="exercise-option" data-exercise="2">Vagus-aktivering gennem åndedræt</div>
-                    <div class="exercise-option" data-exercise="3">Selvafgrænsning - mærk dit rum</div>
-                    <div class="exercise-option" data-exercise="4">Body scan - lyt til kroppen</div>
-                </div>
+        </header>
+
+        <!-- ════ ROLLE BAR ════ -->
+        <div class="rolle-bar" id="rolle-bar">
+            <div class="rolle-pills">
+                <button class="rolle-pill active" data-mode="klient">Til klienter</button>
+                <button class="rolle-pill" data-mode="fagfolk">Til fagfolk</button>
             </div>
         </div>
 
+        <!-- ════ MAIN CONTENT ════ -->
         <div class="main-content">
+            <!-- Hidden top-circles for backwards compatibility -->
+            <div class="top-circles">
+                <div class="top-circle active" data-mode="klient"><span>Til<br>klienter</span></div>
+                <div class="top-circle" data-mode="fagfolk"><span>Til<br>fagfolk</span></div>
+                <div class="top-circle theme-selector" id="theme-selector">
+                    <span id="theme-label">Vælg<br>tema</span>
+                    <div class="theme-dropdown" id="theme-dropdown">
+                        <div class="theme-option" data-theme="general">Generelt</div>
+                        <div class="theme-option" data-theme="angst">Angst</div>
+                        <div class="theme-option" data-theme="tilknytning">Tilknytning</div>
+                        <div class="theme-option" data-theme="stress">Stress</div>
+                        <div class="theme-option" data-theme="traumer">Traumer</div>
+                        <div class="theme-option" data-theme="sovn">Søvn</div>
+                    </div>
+                </div>
+                <div class="top-circle theme-selector" id="education-selector">
+                    <span id="education-label">Uddan-<br>nelser</span>
+                    <div class="theme-dropdown" id="education-dropdown">
+                        <div class="education-option" data-education="nervesystemsterapeut">Nervesystem-<br>sterapeut</div>
+                        <div class="education-option" data-education="teachertraining">Teacher<br>Training</div>
+                        <div class="education-option" data-education="tilknytningsspeciale">Tilknytnings-<br>speciale</div>
+                    </div>
+                </div>
+                <div class="top-circle theme-selector" id="exercises-btn">
+                    <span id="exercises-label">Prøv<br>øvelser</span>
+                    <div class="theme-dropdown" id="exercises-dropdown">
+                        <div class="exercise-option" data-exercise="0">Find ro i nervesystemet</div>
+                        <div class="exercise-option" data-exercise="1">Mærk din sikre tilstand</div>
+                        <div class="exercise-option" data-exercise="2">Vagus-aktivering gennem åndedræt</div>
+                        <div class="exercise-option" data-exercise="3">Selvafgrænsning - mærk dit rum</div>
+                        <div class="exercise-option" data-exercise="4">Body scan - lyt til kroppen</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section label -->
+            <div class="section-divider">
+                <span class="section-label">Cirkelmodellen</span>
+                <div class="section-divider-line"></div>
+            </div>
+
             <div class="svg-container">
                 <svg id="nervesystem-model" width="700" height="700" viewBox="0 0 700 700">
                     <g id="connections">
@@ -119,22 +173,17 @@
                         <line class="connection" data-from="nervesystem" data-to="psykobiologi" x1="350" y1="350" x2="350" y2="600" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="nervesystem" data-to="traumer" x1="350" y1="350" x2="120" y2="500" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="nervesystem" data-to="relation" x1="350" y1="350" x2="120" y2="200" stroke-dasharray="5 5"/>
-
                         <line class="connection" data-from="polyvagal" data-to="tilknytning" x1="350" y1="100" x2="580" y2="200" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="tilknytning" data-to="kropsterapi" x1="580" y1="200" x2="580" y2="500" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="kropsterapi" data-to="psykobiologi" x1="580" y1="500" x2="350" y2="600" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="psykobiologi" data-to="traumer" x1="350" y1="600" x2="120" y2="500" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="traumer" data-to="relation" x1="120" y1="500" x2="120" y2="200" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="relation" data-to="polyvagal" x1="120" y1="200" x2="350" y2="100" stroke-dasharray="5 5"/>
-
                         <line class="connection" data-from="polyvagal" data-to="kropsterapi" x1="350" y1="100" x2="580" y2="500" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="polyvagal" data-to="traumer" x1="350" y1="100" x2="120" y2="500" stroke-dasharray="5 5"/>
-
                         <line class="connection" data-from="tilknytning" data-to="psykobiologi" x1="580" y1="200" x2="350" y2="600" stroke-dasharray="5 5"/>
                         <line class="connection" data-from="tilknytning" data-to="relation" x1="580" y1="200" x2="120" y2="200" stroke-dasharray="5 5"/>
-
                         <line class="connection" data-from="kropsterapi" data-to="traumer" x1="580" y1="500" x2="120" y2="500" stroke-dasharray="5 5"/>
-
                         <line class="connection" data-from="psykobiologi" data-to="relation" x1="350" y1="600" x2="120" y2="200" stroke-dasharray="5 5"/>
                     </g>
 
@@ -170,50 +219,78 @@
                 </svg>
             </div>
 
+            <p class="cirkel-hint">Tryk på en cirkel for at udforske</p>
+
             <div class="info-panel" id="info-panel">
                 <div id="info-content">
-                    <h2>Velkommen til min verden</h2>
-                    <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
-
-                    <h2>Du kender følelsen</h2>
-                    <p>Vi kender den alle sammen. At sidde fast. At have ondt – i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
-                    <p>Og som behandler kender du frustrationen ved at søge den rette videreuddannelse – kurser der lover guld og grønne skove, men som ikke helt rammer det du mangler. Som ikke matcher din måde at arbejde på. Som ikke går dybt nok. Du længes efter viden der virkelig løfter din faglighed.</p>
-
-                    <h2>Hvad ligger bag?</h2>
-                    <p>Bag både smerten og frustrationen ligger ofte nervesystemet. Når vi overser sammenhængen – at alt hænger sammen med alt – udebliver resultaterne. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser. Det er fundamentet. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
-                    <p>For dig som behandler kan det være overvældende at finde den uddannelse der netop giver dig de redskaber du kan bruge. Hvor teori møder praksis. Hvor du selv kommer i proces. Hvor det bliver kropsligt og konkret.</p>
-
-<h2>Hvordan kan det vendes?</h2>
-<p>Transformation sker gennem forståelse. Når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder helbredelsen.</p>
-
-<h2>Min metode</h2>
-<p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
-<p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
-
-<div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
-    <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
-</div>
+                    <!-- Content loaded by JS -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Onboarding overlay -->
+    <!-- ════ DROPDOWN PANELS (bottom sheets) ════ -->
+    <div class="dropdown-overlay" id="dropdown-overlay"></div>
+    <div class="theme-dropdown-panel" id="theme-panel">
+        <div class="dropdown-panel-title">Vælg tema</div>
+        <button class="dropdown-panel-item active" data-theme="general">Generelt</button>
+        <button class="dropdown-panel-item" data-theme="angst">Angst</button>
+        <button class="dropdown-panel-item" data-theme="tilknytning">Tilknytning</button>
+        <button class="dropdown-panel-item" data-theme="stress">Stress</button>
+        <button class="dropdown-panel-item" data-theme="traumer">Traumer</button>
+        <button class="dropdown-panel-item" data-theme="sovn">Søvn</button>
+    </div>
+    <div class="theme-dropdown-panel" id="education-panel">
+        <div class="dropdown-panel-title">Uddannelser</div>
+        <button class="dropdown-panel-item" data-education="nervesystemsterapeut">Nervesystemsterapeut</button>
+        <button class="dropdown-panel-item" data-education="teachertraining">Teacher Training</button>
+        <button class="dropdown-panel-item" data-education="tilknytningsspeciale">Tilknytningsspeciale</button>
+    </div>
+    <div class="theme-dropdown-panel" id="exercises-panel">
+        <div class="dropdown-panel-title">Øvelser</div>
+        <button class="dropdown-panel-item" data-exercise="0">Find ro i nervesystemet</button>
+        <button class="dropdown-panel-item" data-exercise="1">Mærk din sikre tilstand</button>
+        <button class="dropdown-panel-item" data-exercise="2">Vagus-aktivering gennem åndedræt</button>
+        <button class="dropdown-panel-item" data-exercise="3">Selvafgrænsning - mærk dit rum</button>
+        <button class="dropdown-panel-item" data-exercise="4">Body scan - lyt til kroppen</button>
+    </div>
+
+    <!-- ════ BOTTOM NAVIGATION ════ -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <button class="bottom-nav-item active" data-nav="hjem">
+            <span class="bottom-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </span>
+            <span class="bottom-nav-label">Hjem</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="temaer">
+            <span class="bottom-nav-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            <span class="bottom-nav-label">Temaer</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="uddannelser">
+            <span class="bottom-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </span>
+            <span class="bottom-nav-label">Uddannelser</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="oevelser">
+            <span class="bottom-nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </span>
+            <span class="bottom-nav-label">Øvelser</span>
+        </button>
+    </nav>
+
+    <!-- ════ ONBOARDING ════ -->
     <div class="onboarding-overlay" id="onboarding-overlay">
         <div class="onboarding-card">
+            <div class="onboarding-medallion">
+                <img src="hero.PNG" alt="Annemarie Clement">
+            </div>
             <div class="onboarding-steps">
                 <div class="onboarding-step active" data-step="0">
-                    <div class="onboarding-icon">
-                        <svg width="48" height="48" viewBox="0 0 700 700" fill="none">
-                            <circle cx="350" cy="350" r="60" fill="#5a7a68"/>
-                            <circle cx="350" cy="140" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                            <circle cx="530" cy="240" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                            <circle cx="530" cy="460" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                            <circle cx="350" cy="560" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                            <circle cx="170" cy="460" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                            <circle cx="170" cy="240" r="45" fill="#e8f0ec" stroke="#b8c8bf" stroke-width="2"/>
-                        </svg>
-                    </div>
                     <h2>Velkommen</h2>
                     <p>Denne app er dit redskab til at forstå nervesystemsterapi — Annemarie Clements helhedsorienterede metode.</p>
                     <p class="onboarding-hint">Udforsk seks dimensioner der alle hænger sammen i en integreret cirkelmodel.</p>
@@ -228,38 +305,38 @@
                     <h2>To perspektiver</h2>
                     <p><strong>Til klienter</strong> — varm og personlig forklaring af hvordan nervesystemet påvirker dig.</p>
                     <p><strong>Til fagfolk</strong> — klinisk og videnskabelig dybde med fagterminologi.</p>
-                    <p class="onboarding-hint">Skift frit mellem de to perspektiver med knapperne øverst.</p>
+                    <p class="onboarding-hint">Skift frit mellem de to perspektiver.</p>
                 </div>
                 <div class="onboarding-step" data-step="2">
                     <div class="onboarding-icon">
                         <div class="onboarding-circles-demo">
-                            <div class="demo-circle demo-theme">Vælg<br>tema</div>
+                            <div class="demo-circle demo-theme">Temaer</div>
                             <div class="demo-circle demo-edu">Uddan-<br>nelser</div>
-                            <div class="demo-circle demo-exercise">Prøv<br>øvelser</div>
+                            <div class="demo-circle demo-exercise">Øvelser</div>
                         </div>
                     </div>
-                    <h2>Temaer, uddannelser & øvelser</h2>
-                    <p><strong>Temaer</strong> — filtrer indholdet efter emner som angst, stress, traumer eller søvn.</p>
-                    <p><strong>Uddannelser</strong> — se indhold for Annemaries tre uddannelsesprogrammer.</p>
-                    <p><strong>Øvelser</strong> — prøv fem praktiske nervesystemsøvelser.</p>
+                    <h2>Udforsk indholdet</h2>
+                    <p><strong>Temaer</strong> — filtrer efter emner som angst, stress, traumer eller søvn.</p>
+                    <p><strong>Uddannelser</strong> — se indhold for Annemaries uddannelsesprogrammer.</p>
+                    <p><strong>Øvelser</strong> — prøv praktiske nervesystemsøvelser.</p>
                 </div>
                 <div class="onboarding-step" data-step="3">
                     <div class="onboarding-icon">
                         <div class="onboarding-nav-demo">
                             <div class="demo-hamburger"><span></span><span></span><span></span></div>
                             <div class="demo-search">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
                             </div>
                         </div>
                     </div>
                     <h2>Menu & søgning</h2>
-                    <p>Brug <strong>menuen</strong> i venstre hjørne for at finde information om Annemarie, privatlivspolitik og indstillinger.</p>
-                    <p>Brug <strong>søgningen</strong> i højre hjørne til hurtigt at finde indhold på tværs af alle temaer.</p>
+                    <p>Brug <strong>menuen</strong> for at finde information om Annemarie, indstillinger og gemte sider.</p>
+                    <p>Brug <strong>søgningen</strong> til hurtigt at finde indhold på tværs af alle temaer.</p>
                 </div>
                 <div class="onboarding-step" data-step="4">
                     <div class="onboarding-icon">
                         <div class="onboarding-tap-demo">
-                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#5a7a68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/>
                                 <path d="M12 18v4"/>
                                 <path d="M8 22h8"/>
@@ -267,10 +344,11 @@
                         </div>
                     </div>
                     <h2>Tryk og udforsk</h2>
-                    <p>Tryk på en <strong>cirkel</strong> for at læse om den dimension. Tryk på <strong>stregerne</strong> mellem cirkler for at se hvordan dimensionerne hænger sammen.</p>
+                    <p>Tryk på en <strong>cirkel</strong> for at læse om den dimension. Tryk på <strong>stregerne</strong> mellem cirkler for at se dynamiske sammenhænge.</p>
                     <p class="onboarding-hint">Alt hænger sammen med alt — det er kernen i nervesystemsterapi.</p>
                 </div>
             </div>
+            <div class="onboarding-divider"></div>
             <div class="onboarding-dots" id="onboarding-dots">
                 <span class="onboarding-dot active" data-dot="0"></span>
                 <span class="onboarding-dot" data-dot="1"></span>
@@ -285,6 +363,7 @@
         </div>
     </div>
 
+    <script src="fordybelse-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

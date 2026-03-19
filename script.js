@@ -1027,6 +1027,23 @@ const exercises = [
         ]
     }
 ];
+// Merge fordybelse data into themes
+if (typeof fordybelseData !== 'undefined') {
+    Object.keys(fordybelseData).forEach(function(themeKey) {
+        if (themes[themeKey]) {
+            Object.keys(fordybelseData[themeKey]).forEach(function(circleKey) {
+                if (themes[themeKey].circles[circleKey]) {
+                    Object.keys(fordybelseData[themeKey][circleKey]).forEach(function(mode) {
+                        if (themes[themeKey].circles[circleKey][mode]) {
+                            themes[themeKey].circles[circleKey][mode].fordybelse = fordybelseData[themeKey][circleKey][mode];
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
 const circleNames = {
     nervesystem: 'Nervesystemsregulering',
     polyvagal: 'Polyvagal teori',
@@ -1789,6 +1806,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resetToWelcome();
     updateCenterCircle();
 
+    // New premium UI features
+    setupBottomNav();
+    setupRollePills();
+    setupDropdownPanels();
+    setupHeroScrollObserver();
+
     // Accordion toggle — event delegation on info-content
     document.getElementById('info-content').addEventListener('click', function(e) {
         const header = e.target.closest('.accordion-header');
@@ -2431,13 +2454,49 @@ function showCircleView(circleId) {
         </div>
     ` : '';
 
-    document.getElementById('info-content').innerHTML = `        <h2>${data.title}</h2>
-        <p>${data.text}</p>
-        ${connectionsSection}
-        ${buildActionBar()}
-    `;
+    // Use dedicated fordybelse field if available, otherwise use full text
+    var overviewText = data.text;
+    var deeperText = data.fordybelse || '';
 
-    setupActionButtons();
+    var tabsHTML = '<div class="content-tabs">' +
+        '<button class="content-tab active" data-tab="overblik">Overblik</button>' +
+        (deeperText ? '<button class="content-tab" data-tab="fordybelse">Fordybelse</button>' : '') +
+        (accordionItems ? '<button class="content-tab" data-tab="forbindelser">Forbindelser</button>' : '') +
+        '</div>';
+
+    var overviewPanel = '<div class="tab-panel active" data-panel="overblik">' +
+        '<p>' + overviewText + '</p>' +
+        '</div>';
+
+    var deeperPanel = deeperText ? '<div class="tab-panel" data-panel="fordybelse">' +
+        '<p>' + deeperText + '</p>' +
+        '</div>' : '';
+
+    var connectionsPanel = accordionItems ? '<div class="tab-panel" data-panel="forbindelser">' +
+        '<p class="accordion-section-title">Dynamiske sammenh\u00e6nge</p>' +
+        accordionItems +
+        '</div>' : '';
+
+    document.getElementById('info-content').innerHTML =
+        '<h2>' + data.title + '</h2>' +
+        tabsHTML +
+        overviewPanel +
+        deeperPanel +
+        connectionsPanel +
+        buildActionBar();
+
+    // Wire up tab clicks
+    document.querySelectorAll('#info-content .content-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('#info-content .content-tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('#info-content .tab-panel').forEach(function(p) { p.classList.remove('active'); });
+            tab.classList.add('active');
+            var panel = document.querySelector('#info-content .tab-panel[data-panel="' + tab.dataset.tab + '"]');
+            if (panel) panel.classList.add('active');
+        });
+    });
+
+    setupActionButtons();
 
     // Scroll to info panel so the user sees the content
     const infoPanel = document.getElementById('info-panel');
@@ -3003,4 +3062,226 @@ function setupOnboarding() {
             goToStep(parseInt(dot.dataset.dot));
         });
     });
+}
+
+// ===== PREMIUM UI FEATURES =====
+
+// Bottom navigation
+function setupBottomNav() {
+    var bottomNav = document.getElementById('bottom-nav');
+    if (!bottomNav) return;
+
+    bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var nav = item.dataset.nav;
+            closeAllDropdowns();
+
+            if (nav === 'hjem') {
+                bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
+                item.classList.add('active');
+                resetToWelcome();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (nav === 'temaer') {
+                toggleDropdownPanel('theme-panel', item);
+            } else if (nav === 'uddannelser') {
+                toggleDropdownPanel('education-panel', item);
+            } else if (nav === 'oevelser') {
+                toggleDropdownPanel('exercises-panel', item);
+            }
+        });
+    });
+}
+
+function toggleDropdownPanel(panelId, navItem) {
+    var panel = document.getElementById(panelId);
+    var overlay = document.getElementById('dropdown-overlay');
+    if (!panel) return;
+
+    var isOpen = panel.classList.contains('show');
+    closeAllDropdowns();
+
+    if (!isOpen) {
+        panel.classList.add('show');
+        overlay.classList.add('show');
+        navItem.classList.add('active');
+    }
+}
+
+function closeAllDropdowns() {
+    document.querySelectorAll('.theme-dropdown-panel').forEach(function(p) { p.classList.remove('show'); });
+    var overlay = document.getElementById('dropdown-overlay');
+    if (overlay) overlay.classList.remove('show');
+    // Reset bottom nav active state to hjem
+    var bottomNav = document.getElementById('bottom-nav');
+    if (bottomNav) {
+        bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
+        var hjemBtn = bottomNav.querySelector('[data-nav="hjem"]');
+        if (hjemBtn) hjemBtn.classList.add('active');
+    }
+}
+
+function setupDropdownPanels() {
+    // Overlay close
+    var overlay = document.getElementById('dropdown-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeAllDropdowns);
+    }
+
+    // Theme panel items
+    document.querySelectorAll('#theme-panel .dropdown-panel-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var themeId = item.dataset.theme;
+            currentTheme = themeId;
+            currentEducation = null;
+            if (currentMode === 'kursist') {
+                currentMode = 'klient';
+                updateRollePills();
+            }
+
+            // Update old hidden elements for compatibility
+            document.getElementById('education-label').innerHTML = 'Uddan-<br>nelser';
+            document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+            document.querySelectorAll('.theme-option').forEach(function(opt) { opt.classList.remove('active'); });
+            var oldOpt = document.querySelector('.theme-option[data-theme="' + themeId + '"]');
+            if (oldOpt) oldOpt.classList.add('active');
+            document.getElementById('theme-label').textContent = themeNames[themeId] || themeId;
+
+            // Update panel active state
+            document.querySelectorAll('#theme-panel .dropdown-panel-item').forEach(function(i) { i.classList.remove('active'); });
+            item.classList.add('active');
+
+            closeAllDropdowns();
+            updateCenterCircle();
+            showCircleView('nervesystem');
+        });
+    });
+
+    // Education panel items
+    document.querySelectorAll('#education-panel .dropdown-panel-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var eduId = item.dataset.education;
+            currentEducation = eduId;
+            currentMode = 'kursist';
+            currentTheme = 'general';
+
+            // Update old hidden elements for compatibility
+            document.getElementById('theme-label').innerHTML = 'Vælg<br>tema';
+            document.querySelectorAll('.theme-option').forEach(function(opt) { opt.classList.remove('active'); });
+            document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+            var oldOpt = document.querySelector('.education-option[data-education="' + eduId + '"]');
+            if (oldOpt) oldOpt.classList.add('active');
+            var label = educationNames[eduId];
+            document.getElementById('education-label').innerHTML = label.replace(' ', '<br>');
+
+            // Update panel active state
+            document.querySelectorAll('#education-panel .dropdown-panel-item').forEach(function(i) { i.classList.remove('active'); });
+            item.classList.add('active');
+
+            updateRollePills();
+            closeAllDropdowns();
+            updateCenterCircle();
+            showCircleView('nervesystem');
+        });
+    });
+
+    // Exercises panel items
+    document.querySelectorAll('#exercises-panel .dropdown-panel-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var exerciseIndex = parseInt(item.dataset.exercise);
+            currentEducation = null;
+            currentTheme = 'general';
+            if (currentMode === 'kursist') {
+                currentMode = 'klient';
+                updateRollePills();
+            }
+
+            document.querySelectorAll('#exercises-panel .dropdown-panel-item').forEach(function(i) { i.classList.remove('active'); });
+            item.classList.add('active');
+
+            closeAllDropdowns();
+            showExercises(exerciseIndex);
+
+            setTimeout(function() {
+                var cards = document.querySelectorAll('.exercise-card');
+                if (cards[exerciseIndex]) {
+                    var rect = cards[exerciseIndex].getBoundingClientRect();
+                    window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+                }
+            }, 100);
+        });
+    });
+}
+
+// Rolle pills (perspektiv-switch)
+function setupRollePills() {
+    document.querySelectorAll('.rolle-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+            var mode = pill.dataset.mode;
+            currentMode = mode;
+            currentEducation = null;
+            currentTheme = 'general';
+
+            updateRollePills();
+
+            // Update old hidden elements
+            document.querySelectorAll('.top-circle[data-mode]').forEach(function(c) { c.classList.remove('active'); });
+            var oldBtn = document.querySelector('.top-circle[data-mode="' + mode + '"]');
+            if (oldBtn) oldBtn.classList.add('active');
+            document.getElementById('theme-label').innerHTML = 'Vælg\u003cbr\u003etema';
+            document.querySelectorAll('.theme-option').forEach(function(opt) { opt.classList.remove('active'); });
+            var genOpt = document.querySelector('.theme-option[data-theme="general"]');
+            if (genOpt) genOpt.classList.add('active');
+            document.getElementById('education-label').innerHTML = 'Uddan-\u003cbr\u003enelser';
+            document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+
+            // Reset dropdown panels
+            document.querySelectorAll('#theme-panel .dropdown-panel-item').forEach(function(i) { i.classList.remove('active'); });
+            var genTheme = document.querySelector('#theme-panel .dropdown-panel-item[data-theme="general"]');
+            if (genTheme) genTheme.classList.add('active');
+            document.querySelectorAll('#education-panel .dropdown-panel-item').forEach(function(i) { i.classList.remove('active'); });
+
+            updateCenterCircle();
+
+            var infoPanelContent = document.getElementById('info-content');
+            infoPanelContent.style.opacity = '0.3';
+            setTimeout(function() {
+                if (currentView === 'circle' && currentCircle) {
+                    showCircleView(currentCircle);
+                } else {
+                    showWelcome();
+                }
+                infoPanelContent.style.opacity = '1';
+            }, 150);
+        });
+    });
+}
+
+function updateRollePills() {
+    document.querySelectorAll('.rolle-pill').forEach(function(pill) {
+        pill.classList.remove('active');
+        if (pill.dataset.mode === currentMode || (pill.dataset.mode === 'fagfolk' && currentMode === 'kursist')) {
+            pill.classList.add('active');
+        }
+        if (currentMode === 'kursist' && pill.dataset.mode === 'klient') {
+            pill.classList.remove('active');
+        }
+    });
+}
+
+// Hero scroll observer — change top bar icon colors
+function setupHeroScrollObserver() {
+    var hero = document.getElementById('hero-section');
+    if (!hero || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                document.body.classList.remove('scrolled-past-hero');
+            } else {
+                document.body.classList.add('scrolled-past-hero');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(hero);
 }
