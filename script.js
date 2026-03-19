@@ -2126,7 +2126,7 @@ function showWelcome() {
         <p>Tryk på en cirkel for at begynde. Skift mellem temaer for at se systemet fra forskellige vinkler. Denne app er bygget til at du kan bruge den som et fagligt opslagsværk — et redskab du vender tilbage til når du har brug for at forstå sammenhængene dybere.</p>
 
         <div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
-            <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
+            <a href="#" id="dynamics-link" class="dynamics-link">Forstå dynamikken bag ›</a>
         </div>
     `;
     } else {
@@ -2150,7 +2150,7 @@ function showWelcome() {
         <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
 
         <div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
-            <a href="#" id="dynamics-link" class="dynamics-link">forstå dynamikken bag ›</a>
+            <a href="#" id="dynamics-link" class="dynamics-link">Forstå dynamikken bag ›</a>
         </div>
     `;
     }
@@ -2173,11 +2173,6 @@ function createMiniDiagram(coords, options) {
     options = options || {};
     var stressed = options.stressed || [];
     var caption = options.caption || '';
-    var centerColor = '#5a7a68';
-    var outerFill = '#e8f0ec';
-    var outerStroke = '#b8c8bf';
-    var stressedFill = '#d6c3b6';
-    var stressedStroke = '#b89e8e';
 
     var ids = ['polyvagal', 'tilknytning', 'kropsterapi', 'psykobiologi', 'traumer', 'relation'];
     var labels = {
@@ -2191,22 +2186,46 @@ function createMiniDiagram(coords, options) {
     };
 
     var lineColor = '#5a7a68';
+    var diagramId = 'dyn-' + Math.random().toString(36).substr(2, 6);
 
     var svg = '<svg viewBox="-20 -5 360 330" class="dynamics-figure">';
 
+    // Gradient definitions matching main circle model
+    svg += '<defs>';
+    svg += '<radialGradient id="' + diagramId + '-centerGrad" cx="40%" cy="35%" r="65%">';
+    svg += '<stop offset="0%" stop-color="#6d917d"/>';
+    svg += '<stop offset="100%" stop-color="#4a6656"/>';
+    svg += '</radialGradient>';
+    svg += '<radialGradient id="' + diagramId + '-outerGrad" cx="40%" cy="35%" r="65%">';
+    svg += '<stop offset="0%" stop-color="#f2f7f4"/>';
+    svg += '<stop offset="60%" stop-color="#e4ede8"/>';
+    svg += '<stop offset="100%" stop-color="#d5e1da"/>';
+    svg += '</radialGradient>';
+    svg += '<radialGradient id="' + diagramId + '-stressGrad" cx="40%" cy="35%" r="65%">';
+    svg += '<stop offset="0%" stop-color="#e8d5c8"/>';
+    svg += '<stop offset="100%" stop-color="#d1b9a8"/>';
+    svg += '</radialGradient>';
+    svg += '<filter id="' + diagramId + '-shadow" x="-30%" y="-30%" width="160%" height="160%">';
+    svg += '<feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="rgba(90,122,104,0.15)"/>';
+    svg += '</filter>';
+    svg += '<filter id="' + diagramId + '-centerShadow" x="-30%" y="-30%" width="160%" height="160%">';
+    svg += '<feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(58,74,62,0.25)"/>';
+    svg += '</filter>';
+    svg += '</defs>';
+
     // Connection lines - center to all
     ids.forEach(function(id) {
-        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="' + lineColor + '" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>';
+        svg += '<line x1="' + coords.nervesystem.cx + '" y1="' + coords.nervesystem.cy + '" x2="' + coords[id].cx + '" y2="' + coords[id].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.15"/>';
     });
     // Ring connections
     for (var i = 0; i < ids.length; i++) {
         var next = ids[(i + 1) % ids.length];
-        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="' + lineColor + '" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>';
+        svg += '<line x1="' + coords[ids[i]].cx + '" y1="' + coords[ids[i]].cy + '" x2="' + coords[next].cx + '" y2="' + coords[next].cy + '" stroke="' + lineColor + '" stroke-width="0.8" stroke-dasharray="5 5" opacity="0.15"/>';
     }
     // Cross connections
     var crosses = [['polyvagal','kropsterapi'],['polyvagal','traumer'],['tilknytning','psykobiologi'],['tilknytning','relation'],['kropsterapi','traumer'],['psykobiologi','relation']];
     crosses.forEach(function(pair) {
-        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="' + lineColor + '" stroke-width="1" stroke-dasharray="4 4" opacity="0.35"/>';
+        svg += '<line x1="' + coords[pair[0]].cx + '" y1="' + coords[pair[0]].cy + '" x2="' + coords[pair[1]].cx + '" y2="' + coords[pair[1]].cy + '" stroke="' + lineColor + '" stroke-width="0.6" stroke-dasharray="5 5" opacity="0.15"/>';
     });
 
     // White mask circles behind colored circles so lines don't show through
@@ -2215,20 +2234,20 @@ function createMiniDiagram(coords, options) {
         svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="white"/>';
     });
 
-    // Center circle
-    svg += '<circle cx="' + coords.nervesystem.cx + '" cy="' + coords.nervesystem.cy + '" r="' + coords.nervesystem.r + '" fill="' + centerColor + '"/>';
-    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy - 4) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia">Nerve-</text>';
-    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy + 7) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia">system</text>';
+    // Center circle with gradient and shadow
+    svg += '<circle cx="' + coords.nervesystem.cx + '" cy="' + coords.nervesystem.cy + '" r="' + coords.nervesystem.r + '" fill="url(#' + diagramId + '-centerGrad)" stroke="rgba(255,255,255,0.15)" stroke-width="1" filter="url(#' + diagramId + '-centerShadow)"/>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy - 4) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia" letter-spacing="0.02em">Nerve-</text>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy + 7) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia" letter-spacing="0.02em">system</text>';
 
-    // Outer circles
+    // Outer circles with gradients and shadows
     ids.forEach(function(id) {
         var isStressed = stressed.indexOf(id) !== -1;
-        var fill = isStressed ? stressedFill : outerFill;
-        var stroke = isStressed ? stressedStroke : outerStroke;
-        svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>';
-        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 3) + '" text-anchor="middle" fill="#4a5a4e" font-size="6.5" font-family="Georgia">' + labels[id][0] + '</text>';
+        var fillRef = isStressed ? 'url(#' + diagramId + '-stressGrad)' : 'url(#' + diagramId + '-outerGrad)';
+        var strokeColor = isStressed ? 'rgba(177,150,128,0.3)' : 'rgba(90,122,104,0.15)';
+        svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="' + fillRef + '" stroke="' + strokeColor + '" stroke-width="1" filter="url(#' + diagramId + '-shadow)"/>';
+        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 3) + '" text-anchor="middle" fill="#3a4a3e" font-size="6.5" font-family="Georgia" letter-spacing="0.01em">' + labels[id][0] + '</text>';
         if (labels[id][1]) {
-            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#4a5a4e" font-size="6.5" font-family="Georgia">' + labels[id][1] + '</text>';
+            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#3a4a3e" font-size="6.5" font-family="Georgia" letter-spacing="0.01em">' + labels[id][1] + '</text>';
         }
     });
 
