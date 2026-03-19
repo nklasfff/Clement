@@ -391,68 +391,275 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 /* ═══ ØVELSER ═══ */
-.exercise-card {
-    background: var(--bg-warm);
-    border-radius: var(--radius-sm);
-    padding: 22px;
+/* ── Filter pills ── */
+.oevelser-filter {
+    display: flex;
+    gap: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid var(--primary-light);
-    transition: transform var(--transition), box-shadow var(--transition);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+.oevelser-filter::-webkit-scrollbar { display: none; }
+
+.oevelser-filter-btn {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 7px 18px;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.oevelser-filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.oevelser-filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* ── Exercise grid ── */
+.oevelser-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── Exercise card ── */
+.exercise-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 0;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-left: 4px solid transparent;
+}
+.exercise-card[data-kategori="regulering"] { border-left-color: var(--primary); }
+.exercise-card[data-kategori="aandedraet"] { border-left-color: #c4a67a; }
+.exercise-card[data-kategori="krop"] { border-left-color: var(--primary-light); }
+
+.exercise-card-inner {
+    padding: 22px 24px;
 }
 
 .exercise-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+}
+.exercise-card.expanded {
+    box-shadow: var(--shadow-lg);
+}
+
+.exercise-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .exercise-card h3 {
     font-family: 'Georgia', serif;
-    font-size: 1.3rem;
-    color: var(--text);
+    font-size: 1.05rem;
+    color: var(--primary);
     margin-top: 0;
-    margin-bottom: 12px;
-    font-weight: 500;
+    margin-bottom: 6px;
+    font-weight: 600;
     line-height: 1.4;
 }
 
+.exercise-tid-badge {
+    flex-shrink: 0;
+    background: var(--bg);
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Intro hidden by default, shown on expand */
 .exercise-intro {
     font-family: 'Georgia', serif;
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.92rem;
+    line-height: 1.7;
     color: var(--text-light);
-    margin-bottom: 18px;
-    font-style: italic;
+    margin-bottom: 16px;
+    display: none;
+}
+.exercise-card.expanded .exercise-intro {
+    display: block;
+    animation: fadeIn 0.3s ease;
 }
 
+/* Steps hidden by default */
 .exercise-steps {
-    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.exercise-card.expanded .exercise-steps {
+    display: block;
+    animation: fadeIn 0.3s ease;
 }
 
-.exercise-step {
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    line-height: 1.6;
+.exercise-steps li {
+    padding: 12px 0 12px 44px;
+    position: relative;
     color: var(--text-light);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+    border-left: 2px solid var(--primary-pale);
+    margin-left: 14px;
+}
+.exercise-steps li:last-child {
+    border-left-color: transparent;
 }
 
-.exercise-step:before {
+.exercise-steps li::before {
     content: attr(data-step);
-    flex-shrink: 0;
-    width: 25px;
-    height: 25px;
+    position: absolute;
+    left: -15px;
+    top: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     background: var(--primary-light);
     color: white;
-    border-radius: 50%;
+    font-size: 0.78rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
     font-weight: 600;
-    margin-top: 2px;
+}
+
+/* Guided step mode */
+.exercise-steps.guided li {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+.exercise-steps.guided li.step-active {
+    opacity: 1;
+}
+.exercise-steps.guided li.step-done {
+    opacity: 0.55;
+}
+.exercise-steps.guided li.step-done::before {
+    content: '\2713';
+    background: var(--primary);
+}
+
+/* Refleksion after exercise */
+.exercise-refleksion {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 18px;
+    background: var(--primary-pale);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-light);
+}
+.exercise-card.expanded .exercise-refleksion {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+.exercise-refleksion-header {
+    font-family: Georgia, serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.exercise-refleksion-tekst {
+    font-size: 0.9rem;
+    font-family: Georgia, serif;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Guide controls */
+.exercise-guide-controls {
+    display: none;
+    padding: 16px 0 4px;
+    gap: 10px;
+    align-items: center;
+}
+.exercise-card.expanded .exercise-guide-controls {
+    display: flex;
+}
+
+.exercise-guide-btn {
+    background: none;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+.exercise-guide-btn:hover {
+    background: var(--primary-pale);
+}
+
+.exercise-guide-next {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+.exercise-guide-next:hover {
+    background: var(--primary-light) !important;
+}
+
+.exercise-guide-progress {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.exercise-guide-progress-bar {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Toggle button */
+.exercise-toggle {
+    color: var(--primary);
+    font-size: 0.88rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: Georgia, serif;
+    padding: 0;
+    margin-top: 8px;
+    transition: var(--transition);
+}
+.exercise-toggle:hover {
+    color: var(--primary-light);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ═══ ACCORDION — Collapsible forbindelser ═══ */

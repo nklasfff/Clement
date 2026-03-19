@@ -971,61 +971,76 @@ const themes = {
 };
 
 const exercises = [
-    {
-        title: "Find ro i nervesystemet",
-        intro: "Denne øvelse er kernen i mit arbejde. Ved at lande i kroppen og mærke vejrtrækningen, aktiverer du naturligt den del af nervesystemet der skaber ro og sikkerhed. Det er simpelt, men dybt virkningsfuldt - og du kan gøre det hvor som helst.",
-        steps: [
-            "Sid eller læg dig komfortabelt. Luk gerne øjnene.",
-            "Læg én hånd på dit bryst og én på maven.",
-            "Mærk vejrtrækningen bevæge sig under dine hænder.",
-            "Pust langsomt ud gennem munden - længere end du puster ind.",
-            "Fortsæt i 3-5 minutter. Mærk kroppen blive tungere og mere afslappet."
-        ]
-    },
-    {
-        title: "Mærk din sikre tilstand",
-        intro: "Polyvagal teori lærer os at nervesystemet har forskellige tilstande. I denne øvelse lærer du at genkende og aktivere din 'grønne' sikre tilstand - den tilstand hvor healing sker. At kunne finde tilbage hertil er fundamentalt for dit velvære.",
-        steps: [
-            "Tænk på et sted hvor du føler dig tryg - måske dit hjem, naturen, eller hos en elsket person.",
-            "Luk øjnene og forestil dig at være der nu. Se detaljerne.",
-            "Mærk hvordan din krop reagerer. Bliver skuldrene bløde? Bliver vejret dybere?",
-            "Læg mærke til disse signaler - det er din sikre tilstand.",
-            "Øv dig i at genkalde denne følelse når du har brug for ro."
-        ]
-    },
-    {
-        title: "Vagus-aktivering gennem åndedræt",
-        intro: "Vagusnerven er motorvejen mellem hjerne og krop. Når vi aktiverer den gennem åndedræt, sender vi direkte besked til nervesystemet om at det er sikkert at slappe af. Denne øvelse er særligt kraftfuld ved stress og uro.",
-        steps: [
-            "Sid oprejst med en lige ryg.",
-            "Pust ind gennem næsen i 4 tællinger.",
-            "Hold vejret i 4 tællinger.",
-            "Pust langsomt ud gennem munden i 6-8 tællinger.",
-            "Gentag 10 gange. Mærk roen brede sig i kroppen."
-        ]
-    },
-    {
-        title: "Selvafgrænsning - mærk dit rum",
-        intro: "Tilknytning handler også om at kunne mærke hvor du slutter og andre begynder. Denne øvelse styrker din kropslige selvfornemmelse og giver en følelse af at have et eget sikkert rum - særligt værdifuldt hvis du let 'mister dig selv' i relationer.",
-        steps: [
-            "Stå med fødderne i hoftebredde. Mærk kontakten med gulvet.",
-            "Ryk let op og ned i knæene - mærk din vægt i benene.",
-            "Løft langsomt armene ud til siden - mærk dit rum omkring dig.",
-            "Forestil dig en boble omkring dig - det er dit rum.",
-            "Ånd roligt og mærk: 'Dette er mit rum. Jeg er her.'"
-        ]
-    },
-    {
-        title: "Body scan - lyt til kroppen",
-        intro: "Kroppen taler konstant til os gennem fornemmelser, men vi har glemt at lytte. Body scan genåbner denne dialog. Det er en grundlæggende øvelse i min praksis fordi den lærer dig at mærke hvad kroppen faktisk har brug for - før det bliver til symptomer.",
-        steps: [
-            "Læg dig på ryggen. Luk øjnene.",
-            "Start med fødderne - mærk dem uden at ændre noget.",
-            "Bevæg langsomt opmærksomheden op gennem ben, mave, bryst, arme, hoved.",
-            "Hvis du finder spændinger, ånd blidt ind i dem - lad dem være der.",
-            "Når du når hovedet, mærk hele kroppen på én gang i 1-2 minutter."
-        ]
-    }
+    {
+        title: "Find ro i nervesystemet",
+        kategori: "regulering",
+        tid: "3-5 min",
+        intro: "Denne øvelse er kernen i mit arbejde. Ved at lande i kroppen og mærke vejrtrækningen, aktiverer du naturligt den del af nervesystemet der skaber ro og sikkerhed. Det er simpelt, men dybt virkningsfuldt.",
+        steps: [
+            "Sid eller læg dig komfortabelt. Luk gerne øjnene.",
+            "Læg én hånd på dit bryst og én på maven.",
+            "Mærk vejrtrækningen bevæge sig under dine hænder.",
+            "Pust langsomt ud gennem munden \u2014 længere end du puster ind.",
+            "Fortsæt i 3-5 minutter. Mærk kroppen blive tungere og mere afslappet."
+        ],
+        refleksion: "Hvad lagde du mærke til? Var det lettere at mærke brystet eller maven? Den del der var sværest at mærke, er ofte den del der har mest brug for opmærksomhed."
+    },
+    {
+        title: "Mærk din sikre tilstand",
+        kategori: "regulering",
+        tid: "5 min",
+        intro: "Polyvagal teori lærer os at nervesystemet har forskellige tilstande. I denne øvelse lærer du at genkende og aktivere din sikre tilstand \u2014 den tilstand hvor healing sker.",
+        steps: [
+            "Tænk på et sted hvor du føler dig tryg \u2014 måske dit hjem, naturen, eller hos en elsket person.",
+            "Luk øjnene og forestil dig at være der nu. Se detaljerne.",
+            "Mærk hvordan din krop reagerer. Bliver skuldrene bløde? Bliver vejret dybere?",
+            "Læg mærke til disse signaler \u2014 det er din sikre tilstand.",
+            "Øv dig i at genkalde denne følelse når du har brug for ro."
+        ],
+        refleksion: "Hvilket billede kom først? Og hvad skete der i kroppen da du fandt det? Denne forbindelse mellem indre billede og kropslig respons er nervesystemets sprog."
+    },
+    {
+        title: "Vagus-aktivering gennem åndedræt",
+        kategori: "aandedraet",
+        tid: "4 min",
+        intro: "Vagusnerven er motorvejen mellem hjerne og krop. Når vi aktiverer den gennem åndedræt, sender vi direkte besked til nervesystemet om at det er sikkert at slappe af.",
+        steps: [
+            "Sid oprejst med en lige ryg.",
+            "Pust ind gennem næsen i 4 tællinger.",
+            "Hold vejret i 4 tællinger.",
+            "Pust langsomt ud gennem munden i 6-8 tællinger.",
+            "Gentag 10 gange. Mærk roen brede sig i kroppen."
+        ],
+        refleksion: "Blev udåndingen lettere mod slutningen? Når udåndingen forlænges naturligt, er det et tegn på at vagusnerven responderer \u2014 dit nervesystem begynder at stole på roen."
+    },
+    {
+        title: "Selvafgrænsning \u2014 mærk dit rum",
+        kategori: "krop",
+        tid: "3 min",
+        intro: "Denne øvelse styrker din kropslige selvfornemmelse og giver en følelse af at have et eget sikkert rum \u2014 særligt værdifuldt hvis du let mister dig selv i relationer.",
+        steps: [
+            "Stå med fødderne i hoftebredde. Mærk kontakten med gulvet.",
+            "Ryk let op og ned i knæene \u2014 mærk din vægt i benene.",
+            "Løft langsomt armene ud til siden \u2014 mærk dit rum omkring dig.",
+            "Forestil dig en boble omkring dig \u2014 det er dit rum.",
+            "Ånd roligt og mærk: \u2018Dette er mit rum. Jeg er her.\u2019"
+        ],
+        refleksion: "Føltes boblen stor eller lille? Var den tæt på kroppen eller langt ude? Din grænse i dag fortæller noget om hvad dit nervesystem har brug for lige nu."
+    },
+    {
+        title: "Body scan \u2014 lyt til kroppen",
+        kategori: "krop",
+        tid: "5-8 min",
+        intro: "Kroppen taler konstant til os gennem fornemmelser, men vi har glemt at lytte. Body scan genåbner denne dialog og lærer dig at mærke hvad kroppen har brug for.",
+        steps: [
+            "Læg dig på ryggen. Luk øjnene.",
+            "Start med fødderne \u2014 mærk dem uden at ændre noget.",
+            "Bevæg langsomt opmærksomheden op gennem ben, mave, bryst, arme, hoved.",
+            "Hvis du finder spændinger, ånd blidt ind i dem \u2014 lad dem være der.",
+            "Når du når hovedet, mærk hele kroppen på én gang i 1-2 minutter."
+        ],
+        refleksion: "Hvor holdt du spænding uden at vide det? Bare det at opdage det er begyndelsen på forandring. Kroppen løsner når den bliver set."
+    }
 ];
 // Merge fordybelse data into themes
 if (typeof fordybelseData !== 'undefined') {
@@ -2061,42 +2076,176 @@ function setupExercisesButton() {
 }
 
 function showExercises() {
-    currentView = 'exercises';
-    clearAllActive();
-    
-    const exercisesHTML = exercises.map((exercise, index) => `
-        <div class="exercise-card">
-            <h3>${exercise.title}</h3>
-            <p class="exercise-intro">${exercise.intro}</p>
-            <div class="exercise-steps">
-        ${exercise.steps.map((step, i) => `<div class="exercise-step" data-step="${i + 1}">${step}</div>`).join('')}
-            </div>
-        </div>
-    `).join('');
-    
-    document.getElementById('info-content').innerHTML = `
-        <h2>Prøv øvelserne</h2>
-        <p>Her er fem simple øvelser du kan prøve for at mærke hvordan nervesystemsregulering virker i praksis. Hver øvelse tager 3-5 minutter.</p>
-        ${exercisesHTML}
-        ${buildActionBar()}
-    `;
+    currentView = 'exercises';
+    clearAllActive();
+
+    var filterHTML = '<div class="oevelser-filter">';
+    filterHTML += '<button class="oevelser-filter-btn active" data-filter="alle">Alle</button>';
+    filterHTML += '<button class="oevelser-filter-btn" data-filter="regulering">Regulering</button>';
+    filterHTML += '<button class="oevelser-filter-btn" data-filter="aandedraet">\u00c5ndedr\u00e6t</button>';
+    filterHTML += '<button class="oevelser-filter-btn" data-filter="krop">Krop</button>';
+    filterHTML += '</div>';
+
+    var exercisesHTML = '';
+    exercises.forEach(function(exercise, index) {
+        exercisesHTML += '<div class="exercise-card" data-index="' + index + '" data-kategori="' + exercise.kategori + '">';
+        exercisesHTML += '<div class="exercise-card-inner">';
+        exercisesHTML += '<div class="exercise-card-top">';
+        exercisesHTML += '<h3>' + exercise.title + '</h3>';
+        exercisesHTML += '<span class="exercise-tid-badge">' + exercise.tid + '</span>';
+        exercisesHTML += '</div>';
+        exercisesHTML += '<p class="exercise-intro">' + exercise.intro + '</p>';
+        exercisesHTML += '<ol class="exercise-steps" data-total="' + exercise.steps.length + '">';
+        exercise.steps.forEach(function(step, i) {
+            exercisesHTML += '<li data-step="' + (i + 1) + '">' + step + '</li>';
+        });
+        exercisesHTML += '</ol>';
+
+        if (exercise.refleksion) {
+            exercisesHTML += '<div class="exercise-refleksion">';
+            exercisesHTML += '<div class="exercise-refleksion-header">Refleksion efter \u00f8velsen</div>';
+            exercisesHTML += '<p class="exercise-refleksion-tekst">' + exercise.refleksion + '</p>';
+            exercisesHTML += '</div>';
+        }
+
+        exercisesHTML += '<div class="exercise-guide-controls">';
+        exercisesHTML += '<button class="exercise-guide-btn exercise-guide-start">Start \u00f8velse</button>';
+        exercisesHTML += '<div class="exercise-guide-progress"><div class="exercise-guide-progress-bar"></div></div>';
+        exercisesHTML += '<button class="exercise-guide-btn exercise-guide-next" style="display:none;">N\u00e6ste trin</button>';
+        exercisesHTML += '</div>';
+
+        exercisesHTML += '<button class="exercise-toggle">Se \u00f8velse</button>';
+        exercisesHTML += '</div>';
+        exercisesHTML += '</div>';
+    });
+
+    document.getElementById('info-content').innerHTML =
+        '<h2>Pr\u00f8v \u00f8velserne</h2>' +
+        '<p>Konkrete redskaber til at m\u00e6rke hvordan nervesystemsregulering virker i praksis. Tryk p\u00e5 en \u00f8velse for at \u00e5bne den.</p>' +
+        filterHTML +
+        '<div class="oevelser-grid">' + exercisesHTML + '</div>' +
+        buildActionBar();
 
     setupActionButtons();
 
-    // Scroll to info panel so the user sees the exercises content
-    const infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(() => {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(() => {
-            const rect = infoPanel.getBoundingClientRect();
-            const offset = 80;
-            window.scrollTo({
-                top: window.pageYOffset + rect.top - offset,
-                behavior: 'smooth'
+    // Bind filter buttons
+    document.querySelectorAll('.oevelser-filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.oevelser-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+            var filter = this.dataset.filter;
+            document.querySelectorAll('.exercise-card').forEach(function(card) {
+                if (filter === 'alle' || card.dataset.kategori === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         });
     });
+
+    // Bind expand/collapse
+    document.querySelectorAll('.exercise-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.exercise-guide-controls')) return;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.exercise-card').forEach(function(c) {
+                c.classList.remove('expanded');
+                var btn = c.querySelector('.exercise-toggle');
+                if (btn) btn.textContent = 'Se \u00f8velse';
+                resetExerciseGuide(c);
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                var toggleBtn = this.querySelector('.exercise-toggle');
+                if (toggleBtn) toggleBtn.textContent = 'Luk \u00f8velse';
+            }
+        });
+    });
+
+    // Bind guided mode
+    document.querySelectorAll('.exercise-guide-start').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            startExerciseGuide(this.closest('.exercise-card'));
+        });
+    });
+    document.querySelectorAll('.exercise-guide-next').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            advanceExerciseGuide(this.closest('.exercise-card'));
+        });
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var rect = infoPanel.getBoundingClientRect();
+            window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+        });
+    });
 }
+
+function resetExerciseGuide(card) {
+    var steps = card.querySelector('.exercise-steps');
+    if (!steps) return;
+    steps.classList.remove('guided');
+    steps.querySelectorAll('li').forEach(function(li) { li.classList.remove('step-active', 'step-done'); });
+    var startBtn = card.querySelector('.exercise-guide-start');
+    var nextBtn = card.querySelector('.exercise-guide-next');
+    var bar = card.querySelector('.exercise-guide-progress-bar');
+    if (startBtn) { startBtn.style.display = ''; startBtn.textContent = 'Start \u00f8velse'; }
+    if (nextBtn) nextBtn.style.display = 'none';
+    if (bar) bar.style.width = '0%';
+    card.removeAttribute('data-guide-step');
+}
+
+function startExerciseGuide(card) {
+    var steps = card.querySelector('.exercise-steps');
+    if (!steps) return;
+    steps.classList.add('guided');
+    var lis = steps.querySelectorAll('li');
+    lis.forEach(function(li) { li.classList.remove('step-active', 'step-done'); });
+    if (lis[0]) lis[0].classList.add('step-active');
+    card.setAttribute('data-guide-step', '0');
+    var startBtn = card.querySelector('.exercise-guide-start');
+    var nextBtn = card.querySelector('.exercise-guide-next');
+    var bar = card.querySelector('.exercise-guide-progress-bar');
+    if (startBtn) startBtn.style.display = 'none';
+    if (nextBtn) { nextBtn.style.display = ''; nextBtn.textContent = 'N\u00e6ste trin'; }
+    var total = parseInt(steps.dataset.total) || lis.length;
+    if (bar) bar.style.width = (1 / total * 100) + '%';
+}
+
+function advanceExerciseGuide(card) {
+    var steps = card.querySelector('.exercise-steps');
+    if (!steps) return;
+    var lis = steps.querySelectorAll('li');
+    var current = parseInt(card.getAttribute('data-guide-step')) || 0;
+    var total = lis.length;
+    if (lis[current]) { lis[current].classList.remove('step-active'); lis[current].classList.add('step-done'); }
+    var next = current + 1;
+    if (next < total) {
+        lis[next].classList.add('step-active');
+        card.setAttribute('data-guide-step', next);
+        lis[next].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    var bar = card.querySelector('.exercise-guide-progress-bar');
+    if (bar) bar.style.width = ((next + 1) / total * 100) + '%';
+    if (next >= total - 1) {
+        var nextBtn = card.querySelector('.exercise-guide-next');
+        if (nextBtn) nextBtn.textContent = 'F\u00e6rdig';
+    }
+    if (next >= total) {
+        var startBtn = card.querySelector('.exercise-guide-start');
+        var nextBtn2 = card.querySelector('.exercise-guide-next');
+        if (startBtn) { startBtn.style.display = ''; startBtn.textContent = 'Start igen'; }
+        if (nextBtn2) nextBtn2.style.display = 'none';
+        lis.forEach(function(li) { li.classList.remove('step-active'); li.classList.add('step-done'); });
+    }
+}
+
 
 function showWelcome() {
     currentView = 'welcome';
