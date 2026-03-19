@@ -3239,14 +3239,53 @@ function showMenuContent(action) {
             title: 'Kontakt',
             html: `
                 <p class="menu-intro">Du er altid velkommen til at r\u00e6kke ud \u2014 uanset om du s\u00f8ger behandling, overvejer en uddannelse, eller bare har et sp\u00f8rgsm\u00e5l.</p>
-                <div class="menu-section">
-                    <h3>Find Annemarie</h3>
-                    <p>Bes\u00f8g <strong>annemarieclement.dk</strong> for at l\u00e6se mere om behandlinger, uddannelsesprogrammer og kommende kurser.</p>
-                    <p>P\u00e5 hjemmesiden kan du ogs\u00e5 booke en tid, tilmelde dig nyhedsbrevet eller l\u00e6se artikler om nervesystemarbejde.</p>
+
+                <div class="contact-cards">
+                    <a href="https://annemarieclement.dk" target="_blank" rel="noopener" class="contact-card">
+                        <span class="contact-card-icon">🌐</span>
+                        <div class="contact-card-info">
+                            <div class="contact-card-label">Hjemmeside</div>
+                            <div class="contact-card-value">annemarieclement.dk</div>
+                        </div>
+                        <span class="contact-card-arrow">›</span>
+                    </a>
+                    <a href="mailto:annemarie@annemarieclement.dk" class="contact-card">
+                        <span class="contact-card-icon">✉</span>
+                        <div class="contact-card-info">
+                            <div class="contact-card-label">E-mail</div>
+                            <div class="contact-card-value">annemarie@annemarieclement.dk</div>
+                        </div>
+                        <span class="contact-card-arrow">›</span>
+                    </a>
+                    <a href="tel:+4522544542" class="contact-card">
+                        <span class="contact-card-icon">📞</span>
+                        <div class="contact-card-info">
+                            <div class="contact-card-label">Telefon</div>
+                            <div class="contact-card-value">+45 2254 4542</div>
+                        </div>
+                        <span class="contact-card-arrow">›</span>
+                    </a>
+                    <a href="https://www.instagram.com/annemarieclement" target="_blank" rel="noopener" class="contact-card">
+                        <span class="contact-card-icon">📷</span>
+                        <div class="contact-card-info">
+                            <div class="contact-card-label">Instagram</div>
+                            <div class="contact-card-value">@annemarieclement</div>
+                        </div>
+                        <span class="contact-card-arrow">›</span>
+                    </a>
+                    <a href="https://linkedin.com/in/annemarie-clement-ba703731" target="_blank" rel="noopener" class="contact-card">
+                        <span class="contact-card-icon">💼</span>
+                        <div class="contact-card-info">
+                            <div class="contact-card-label">LinkedIn</div>
+                            <div class="contact-card-value">Annemarie Clement</div>
+                        </div>
+                        <span class="contact-card-arrow">›</span>
+                    </a>
                 </div>
-                <div class="menu-section">
-                    <h3>Sociale medier</h3>
-                    <p>F\u00f8lg Annemarie p\u00e5 sociale medier for daglig inspiration, \u00f8velser og indblik i nervesystemets verden. Her deler hun b\u00e5de fagligt indhold og personlige refleksioner fra sit arbejde.</p>
+
+                <div class="menu-section" style="margin-top: 28px;">
+                    <h3>Bes\u00f8g hjemmesiden</h3>
+                    <p>P\u00e5 <strong>annemarieclement.dk</strong> kan du l\u00e6se mere om behandlinger, uddannelsesprogrammer og kommende kurser. Her kan du ogs\u00e5 booke en tid eller tilmelde dig nyhedsbrevet.</p>
                 </div>
             `
         },

@@ -1922,6 +1922,74 @@ body.scrolled-past-hero .search-btn svg {
     font-style: italic;
 }
 
+/* ═══ CONTACT CARDS ═══ */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 1px 8px rgba(90,122,104,0.07);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+}
+
+.contact-card:active {
+    transform: scale(0.98);
+    background: var(--primary-pale);
+}
+
+.contact-card-icon {
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f2f7f4, #e8f0ec);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.contact-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-card-label {
+    font-family: 'Georgia', serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+
+.contact-card-value {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-card-arrow {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    opacity: 0.5;
+}
+
 /* ═══ SETTINGS ═══ */
 .menu-setting {
     display: flex;
