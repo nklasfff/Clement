@@ -2217,6 +2217,171 @@ function gemJournalNotat(tekst) {
     saveProces(p);
 }
 
+// ===== TEMA & UDDANNELSE VIEWS =====
+
+var themeDescriptions = {
+    general: 'Helhedsorienteret overblik over nervesystemsterapi',
+    angst: 'Forstå angstens aftryk i nervesystemet',
+    tilknytning: 'Udforskning af tilknytningsmønstre og relationer',
+    stress: 'Stressens indvirkning på krop og sind',
+    traumer: 'Traumebearbejdning og nervesystemet',
+    sovn: 'Søvnens forbindelse til nervesystemets tilstand'
+};
+
+var themeIcons = {
+    general: '◎',
+    angst: '☁',
+    tilknytning: '❋',
+    stress: '⚡',
+    traumer: '◈',
+    sovn: '☾'
+};
+
+var educationDescriptions = {
+    nervesystemsterapeut: 'Bliv certificeret nervesystemsterapeut. En dybdegående uddannelse der forener teori, krop og praksis i arbejdet med nervesystemet.',
+    teachertraining: 'Lær at undervise i nervesystemsterapi. For dig der vil bringe denne viden videre til andre behandlere.',
+    tilknytningsspeciale: 'Specialisering i tilknytningsmønstre og deres indvirkning på nervesystemet og den terapeutiske relation.'
+};
+
+var educationIcons = {
+    nervesystemsterapeut: '🎓',
+    teachertraining: '🧭',
+    tilknytningsspeciale: '🔗'
+};
+
+var educationBadges = {
+    nervesystemsterapeut: 'Certificering',
+    teachertraining: 'Overbygning',
+    tilknytningsspeciale: 'Specialisering'
+};
+
+function showTemaer() {
+    currentView = 'temaer';
+    clearAllActive();
+    updateBottomNavActive('temaer');
+
+    var html = '<h2>Udforsk temaer</h2>';
+    html += '<p class="tema-page-subtitle">Hvert tema belyser nervesystemet fra en bestemt vinkel. Vælg et tema for at se hvordan det påvirker alle seks dimensioner i cirkelmodellen.</p>';
+
+    html += '<p class="selection-current">Aktivt tema: <strong>' + (themeNames[currentTheme] || 'Generelt') + '</strong></p>';
+
+    html += '<div class="tema-card-grid">';
+    var themeKeys = Object.keys(themeNames);
+    themeKeys.forEach(function(key) {
+        var isActive = (currentTheme === key && !currentEducation) ? ' tema-card-active' : '';
+        html += '<div class="tema-card' + isActive + '" data-theme="' + key + '">';
+        html += '<span class="tema-card-icon">' + (themeIcons[key] || '◎') + '</span>';
+        html += '<div class="tema-card-name">' + themeNames[key] + '</div>';
+        html += '<div class="tema-card-desc">' + (themeDescriptions[key] || '') + '</div>';
+        html += '</div>';
+    });
+    html += '</div>';
+
+    html += buildActionBar();
+
+    document.getElementById('info-content').innerHTML = html;
+    setupActionButtons();
+
+    // Bind card clicks
+    document.querySelectorAll('.tema-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            var theme = this.dataset.theme;
+            currentTheme = theme;
+            currentEducation = null;
+            if (currentMode === 'kursist') {
+                currentMode = 'klient';
+                try { if (localStorage.getItem('pref-fagfolk') === '1') currentMode = 'fagfolk'; } catch(e) {}
+                updateRollePills();
+            }
+            // Update old UI for compatibility
+            document.querySelectorAll('.theme-option').forEach(function(opt) { opt.classList.remove('active'); });
+            var oldOpt = document.querySelector('.theme-option[data-theme="' + theme + '"]');
+            if (oldOpt) oldOpt.classList.add('active');
+            document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+
+            updateCenterCircle();
+            showCircleView('nervesystem');
+        });
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var heading = infoPanel.querySelector('h2');
+            if (heading) {
+                var rect = heading.getBoundingClientRect();
+                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+function showUddannelser() {
+    currentView = 'uddannelser';
+    clearAllActive();
+    updateBottomNavActive('uddannelser');
+
+    var html = '<h2>Uddannelsesspor</h2>';
+    html += '<p class="tema-page-subtitle">Tre specialiserede uddannelsesveje der bygger på cirkelmodellen. Vælg et spor for at udforske indholdet fra en kursistvinkel.</p>';
+
+    if (currentEducation) {
+        var cleanName = (educationNames[currentEducation] || '').replace(/-<br>/g, '').replace(/<br>/g, ' ');
+        html += '<p class="selection-current">Aktivt spor: <strong>' + cleanName + '</strong></p>';
+    }
+
+    html += '<div class="edu-card-grid">';
+    var eduKeys = Object.keys(educationDescriptions);
+    eduKeys.forEach(function(key) {
+        var isActive = (currentEducation === key) ? ' edu-card-active' : '';
+        var cleanName = (educationNames[key] || key).replace(/-<br>/g, '').replace(/<br>/g, ' ');
+        html += '<div class="edu-card' + isActive + '" data-education="' + key + '">';
+        html += '<span class="edu-card-icon">' + (educationIcons[key] || '🎓') + '</span>';
+        html += '<div class="edu-card-name">' + cleanName + '</div>';
+        html += '<div class="edu-card-desc">' + (educationDescriptions[key] || '') + '</div>';
+        html += '<span class="edu-card-badge">' + (educationBadges[key] || '') + '</span>';
+        html += '</div>';
+    });
+    html += '</div>';
+
+    html += buildActionBar();
+
+    document.getElementById('info-content').innerHTML = html;
+    setupActionButtons();
+
+    // Bind card clicks
+    document.querySelectorAll('.edu-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            var edu = this.dataset.education;
+            currentEducation = edu;
+            currentMode = 'kursist';
+            currentTheme = 'general';
+            // Update old UI for compatibility
+            document.querySelectorAll('.education-option').forEach(function(opt) { opt.classList.remove('active'); });
+            var oldOpt = document.querySelector('.education-option[data-education="' + edu + '"]');
+            if (oldOpt) oldOpt.classList.add('active');
+            document.querySelectorAll('.theme-option').forEach(function(opt) { opt.classList.remove('active'); });
+            document.querySelector('.theme-option[data-theme="general"]').classList.add('active');
+
+            updateRollePills();
+            updateCenterCircle();
+            showCircleView('nervesystem');
+        });
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    requestAnimationFrame(function() {
+        infoPanel.scrollTop = 0;
+        requestAnimationFrame(function() {
+            var heading = infoPanel.querySelector('h2');
+            if (heading) {
+                var rect = heading.getBoundingClientRect();
+                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
+            }
+        });
+    });
+}
+
 function showExercises() {
     currentView = 'exercises';
     clearAllActive();
@@ -3537,20 +3702,15 @@ function setupBottomNav() {
     bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(item) {
         item.addEventListener('click', function() {
             var nav = item.dataset.nav;
-            closeAllDropdowns();
 
             if (nav === 'hjem') {
-                bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
-                item.classList.add('active');
                 resetToWelcome();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (nav === 'temaer') {
-                toggleDropdownPanel('theme-panel', item);
+                showTemaer();
             } else if (nav === 'uddannelser') {
-                toggleDropdownPanel('education-panel', item);
+                showUddannelser();
             } else if (nav === 'oevelser') {
-                bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
-                item.classList.add('active');
                 showExercises();
             }
         });

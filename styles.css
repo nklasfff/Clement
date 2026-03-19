@@ -2200,81 +2200,159 @@ button.back-btn:hover {
     font-style: italic;
 }
 
-/* ═══ THEME / EDUCATION DROPDOWNS ═══ */
-/* These are now triggered from bottom nav */
-.theme-dropdown-panel {
-    position: fixed;
-    bottom: var(--nav-height);
-    left: 0;
-    right: 0;
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: var(--radius) var(--radius) 0 0;
-    box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    z-index: 99;
-    padding: 20px 0 8px;
-    padding-bottom: env(safe-area-inset-bottom, 8px);
-}
+/* ═══ TEMA & UDDANNELSE CARD VIEWS ═══ */
 
-.theme-dropdown-panel.show {
-    transform: translateY(0);
-}
-
-.dropdown-panel-title {
-    font-family: 'Georgia', serif;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    padding: 0 24px 12px;
-}
-
-.dropdown-panel-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 14px 24px;
-    font-family: 'Georgia', serif;
-    font-size: 0.95rem;
+.tema-page-subtitle {
     color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 28px;
+}
+
+.tema-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.tema-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 22px 16px 18px;
+    box-shadow: 0 2px 12px rgba(90,122,104,0.07);
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    background: none;
-    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.dropdown-panel-item:last-child {
-    border-bottom: none;
+.tema-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.dropdown-panel-item:hover {
-    background: var(--primary-pale);
+.tema-card:active {
+    transform: scale(0.97);
+}
+
+.tema-card.tema-card-active {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+}
+
+.tema-card.tema-card-active::before {
+    opacity: 1;
+}
+
+.tema-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    display: block;
+    line-height: 1;
+}
+
+.tema-card-name {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.tema-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.tema-card-active .tema-card-name {
     color: var(--primary);
 }
 
-.dropdown-panel-item.active {
-    background: var(--primary);
-    color: var(--white);
+/* Uddannelse cards — vertical list */
+.edu-card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 10px;
 }
 
-.dropdown-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.2);
-    z-index: 98;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease;
+.edu-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px 22px;
+    box-shadow: 0 2px 12px rgba(90,122,104,0.07);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+    position: relative;
 }
 
-.dropdown-overlay.show {
-    opacity: 1;
-    visibility: visible;
+.edu-card:active {
+    transform: scale(0.98);
+}
+
+.edu-card.edu-card-active {
+    border-left-color: var(--accent);
+    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+}
+
+.edu-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.edu-card-name {
+    font-family: 'Georgia', serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.edu-card-active .edu-card-name {
+    color: var(--primary);
+}
+
+.edu-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.edu-card-badge {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.72rem;
+    color: var(--primary);
+    background: var(--primary-pale);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* Current selection indicator on tema/edu pages */
+.selection-current {
+    text-align: center;
+    padding: 14px 0 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+@media (min-width: 500px) {
+    .tema-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Keep old dropdowns hidden */
