@@ -2220,6 +2220,7 @@ function gemJournalNotat(tekst) {
 function showExercises() {
     currentView = 'exercises';
     clearAllActive();
+    updateBottomNavActive('oevelser');
 
     var html = '<h2>Øvelser & refleksioner</h2>';
     html += '<p>Konkrete redskaber og stille rum til eftertanke. Her finder du både øvelser der regulerer dit nervesystem, refleksionsspørgsmål der hjælper dig med at se dybere — og en oversigt over din proces.</p>';
@@ -2303,8 +2304,14 @@ function showExercises() {
     requestAnimationFrame(function() {
         infoPanel.scrollTop = 0;
         requestAnimationFrame(function() {
-            var rect = infoPanel.getBoundingClientRect();
-            window.scrollTo({ top: window.pageYOffset + rect.top - 80, behavior: 'smooth' });
+            var heading = infoPanel.querySelector('h2');
+            if (heading) {
+                var rect = heading.getBoundingClientRect();
+                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
+            } else {
+                var rect = infoPanel.getBoundingClientRect();
+                window.scrollTo({ top: window.pageYOffset + rect.top - 20, behavior: 'smooth' });
+            }
         });
     });
 }
@@ -2527,6 +2534,7 @@ function showWelcome() {
     currentView = 'welcome';
     currentCircle = null;
     clearAllActive();
+    updateBottomNavActive('hjem');
 
     var welcomeHTML = '';
 
@@ -2687,6 +2695,7 @@ function showDynamics() {
     currentView = 'dynamics';
     currentCircle = null;
     clearAllActive();
+    updateBottomNavActive('hjem');
 
     var balanced = {
         nervesystem: { cx: 160, cy: 160, r: 40 },
@@ -2823,6 +2832,7 @@ function setupCircleClicks() {
 
 function showCircleView(circleId) {
     currentView = 'circle';
+    updateBottomNavActive('hjem');
     currentCircle = circleId;
     clearAllActive();
     
@@ -3511,6 +3521,15 @@ function setupOnboarding() {
 // ===== PREMIUM UI FEATURES =====
 
 // Bottom navigation
+
+function updateBottomNavActive(navName) {
+    var bottomNav = document.getElementById('bottom-nav');
+    if (!bottomNav) return;
+    bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
+    var target = bottomNav.querySelector('[data-nav="' + navName + '"]');
+    if (target) target.classList.add('active');
+}
+
 function setupBottomNav() {
     var bottomNav = document.getElementById('bottom-nav');
     if (!bottomNav) return;
@@ -3530,7 +3549,9 @@ function setupBottomNav() {
             } else if (nav === 'uddannelser') {
                 toggleDropdownPanel('education-panel', item);
             } else if (nav === 'oevelser') {
-                toggleDropdownPanel('exercises-panel', item);
+                bottomNav.querySelectorAll('.bottom-nav-item').forEach(function(n) { n.classList.remove('active'); });
+                item.classList.add('active');
+                showExercises();
             }
         });
     });
