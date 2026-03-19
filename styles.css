@@ -666,8 +666,9 @@ body.scrolled-past-hero .search-btn svg {
 .oevelser-section-label {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin: 8px 0 14px;
+    margin: 0 0 14px;
     font-family: Georgia, serif;
     font-size: 0.82rem;
     font-weight: 600;
@@ -686,11 +687,12 @@ body.scrolled-past-hero .search-btn svg {
     line-height: 1.7;
     margin-bottom: 18px;
     font-style: italic;
+    text-align: center;
 }
 .oevelser-divider {
     height: 1px;
     background: var(--border);
-    margin: 32px 0 28px;
+    margin: 44px 0 40px;
 }
 
 /* ── Refleksion cards ── */
