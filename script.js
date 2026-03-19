@@ -2238,9 +2238,9 @@ var themeIcons = {
 };
 
 var educationDescriptions = {
-    nervesystemsterapeut: 'Bliv certificeret nervesystemsterapeut. En dybdegående uddannelse der forener teori, krop og praksis i arbejdet med nervesystemet.',
-    teachertraining: 'Lær at undervise i nervesystemsterapi. For dig der vil bringe denne viden videre til andre behandlere.',
-    tilknytningsspeciale: 'Specialisering i tilknytningsmønstre og deres indvirkning på nervesystemet og den terapeutiske relation.'
+    nervesystemsterapeut: 'Bliv certificeret nervesystemsterapeut. 5 moduler, 70 timer. For behandlere, terapeuter, yogalærere og pædagoger der vil arbejde professionelt med nervesystemet.',
+    teachertraining: 'En lederuddannelse med nervesystemet i centrum. 9 måneder, 100 timer, 6 moduler. For ledere, HR-professionelle, facilitatorer og organisationsudviklere der vil lede med ro, klarhed og autenticitet.',
+    tilknytningsspeciale: '3-dages intensivkursus i de fire tilknytningsmønstre og deres indvirkning på nervesystemet, relationer og den terapeutiske proces. Inkl. 50 siders kompendium.'
 };
 
 var educationIcons = {
@@ -2250,9 +2250,9 @@ var educationIcons = {
 };
 
 var educationBadges = {
-    nervesystemsterapeut: 'Certificering',
-    teachertraining: 'Overbygning',
-    tilknytningsspeciale: 'Specialisering'
+    nervesystemsterapeut: '70 timer · 24.500 kr',
+    teachertraining: '100 timer · 34.500 kr',
+    tilknytningsspeciale: '3 dage · 6.000 kr'
 };
 
 function showTemaer() {
@@ -2322,8 +2322,8 @@ function showUddannelser() {
     clearAllActive();
     updateBottomNavActive('uddannelser');
 
-    var html = '<h2>Uddannelsesspor</h2>';
-    html += '<p class="tema-page-subtitle">Tre specialiserede uddannelsesveje der bygger på cirkelmodellen. Vælg et spor for at udforske indholdet fra en kursistvinkel.</p>';
+    var html = '<h2>Uddannelser</h2>';
+    html += '<p class="tema-page-subtitle">Tre specialiserede uddannelsesveje der bygger på cirkelmodellen. Alle uddannelser afholdes i København og inkluderer personlig vejledning fra Annemarie. Vælg et spor for at udforske indholdet.</p>';
 
     if (currentEducation) {
         var cleanName = (educationNames[currentEducation] || '').replace(/-<br>/g, '').replace(/<br>/g, ' ');
@@ -2342,6 +2342,11 @@ function showUddannelser() {
         html += '<span class="edu-card-badge">' + (educationBadges[key] || '') + '</span>';
         html += '</div>';
     });
+    html += '</div>';
+
+    html += '<div style="margin-top: 28px; padding: 20px; background: linear-gradient(135deg, #f7faf8, #eef4f0); border-radius: 14px; text-align: center;">';
+    html += '<p style="font-family: Georgia, serif; font-size: 0.92rem; color: var(--text-light); margin-bottom: 12px;">Har du spørgsmål om uddannelserne, eller vil du tilmelde dig?</p>';
+    html += '<a href="https://annemarieclement.dk" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 24px; background: var(--primary); color: white; border-radius: 24px; text-decoration: none; font-family: Georgia, serif; font-size: 0.9rem;">Læs mere på annemarieclement.dk</a>';
     html += '</div>';
 
     html += buildActionBar();
@@ -2730,22 +2735,24 @@ function showWelcome() {
     } else {
         welcomeHTML = `
         <h2>Velkommen til min verden</h2>
-        <p>Jeg hedder Annemarie Clement, og jeg arbejder med nervesystemet som indgang til healing. Denne app er dit redskab til at forstå min metode – uanset om du søger hjælp til dig selv eller faglig udvikling som behandler.</p>
+        <p>Jeg hedder Annemarie Clement. Jeg er nervesystemsterapeut, supervisor, psykoterapeut MPF og biologisk traumeterapeut — med 20 års erfaring. Denne app er dit redskab til at forstå min metode og udforske hvordan nervesystemet påvirker alt i dit liv.</p>
+
+        <p style="text-align: center; font-style: italic; color: var(--primary); margin: 28px 0; font-size: 1.05rem;"><em>Pas på dit nervesystem — det passer på dig.</em></p>
 
         <h2>Du kender følelsen</h2>
-        <p>Vi kender den alle sammen. At sidde fast. At have ondt – i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
-        <p>Og som behandler kender du frustrationen ved at søge den rette videreuddannelse – kurser der lover guld og grønne skove, men som ikke helt rammer det du mangler. Som ikke matcher din måde at arbejde på. Som ikke går dybt nok. Du længes efter viden der virkelig løfter din faglighed.</p>
+        <p>Vi kender den alle sammen. At sidde fast. At have ondt — i kroppen, i sindet, i relationer der ikke fungerer. At føle stress eller angst der ikke vil slippe, eller en træthed så dyb at livet mister farve. At mærke at noget fundamentalt er ude af balance, men ikke helt vide hvad eller hvordan.</p>
 
         <h2>Hvad ligger bag?</h2>
-        <p>Bag både smerten og frustrationen ligger ofte nervesystemet. Når vi overser sammenhængen – at alt hænger sammen med alt – udebliver resultaterne. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser. Det er fundamentet. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
-        <p>For dig som behandler kan det være overvældende at finde den uddannelse der netop giver dig de redskaber du kan bruge. Hvor teori møder praksis. Hvor du selv kommer i proces. Hvor det bliver kropsligt og konkret.</p>
-
-        <h2>Hvordan kan det vendes?</h2>
-        <p>Transformation sker gennem forståelse. Når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder helbredelsen.</p>
+        <p>Bag smerten ligger ofte nervesystemet. Dit nervesystem styrer søvn, fordøjelse, stress, relationer, følelser — det er dit fundament. Og i vores kultur er de fleste nervesystemer overstimulerede og underernærede.</p>
+        <p>Når vi overser sammenhængen — at alt hænger sammen med alt — udebliver resultaterne. Men når du lærer at møde din krop og dit nervesystem på dets egne præmisser — ikke gennem vilje, men gennem nærvær — begynder forandringen.</p>
 
         <h2>Min metode</h2>
-        <p>Min tilgang til nervesystemarbejde bygger på en dynamisk cirkelmodel. Seks hovedområder der hænger sammen: Nervesystemregulering, Kropsterapi & Behandling, Psykobiologi, Traumer & Dissociation, Terapeutisk Relation, og Tilknytningsspeciale.</p>
-        <p>I appen kan du udforske hver dimension — både som klient der søger healing og som fagperson der vil dykke dybere.</p>
+        <p>Min tilgang bygger på en dynamisk cirkelmodel med seks sammenhængende dimensioner: Nervesystemregulering, Polyvagal Teori, Tilknytningsmønstre, Kropsterapi, Psykobiologi, Traumer og den Terapeutiske Relation.</p>
+        <p>I min klinik i Hellerup arbejder jeg med kropsbaseret behandling på briks — fasciel frigørelse, åndedrætsarbejde og co-regulering. Jeg underviser også kommende terapeuter og ledere, og tilbyder supervision til behandlere.</p>
+
+        <h2>Hvad du kan her</h2>
+        <p>Tryk på en cirkel for at udforske en dimension. Skift mellem temaer som angst, stress, traumer og søvn for at se nervesystemet fra forskellige vinkler. Prøv øvelserne der bringer teorien ned i kroppen.</p>
+        <p>Selv når livet er svært, har vi et valg. Lad os begynde.</p>
 
         <div style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
             <a href="#" id="dynamics-link" class="dynamics-link">Forstå dynamikken bag ›</a>
@@ -3202,16 +3209,21 @@ function showMenuContent(action) {
         about: {
             title: 'Om Annemarie Clement',
             html: `
-                <p class="menu-intro">Bag denne app st\u00e5r et menneske med en dyb passion for at hj\u00e6lpe andre med at finde hjem i deres egen krop.</p>
+                <p class="menu-intro">Pas p\u00e5 dit nervesystem \u2014 det passer p\u00e5 dig.</p>
                 <div class="menu-section">
-                    <h3>Hvem er Annemarie?</h3>
-                    <p>Annemarie Clement er uddannet nervesystemsterapeut, afsp\u00e6ndingsp\u00e6dagog og kropsterapeut med mange \u00e5rs erfaring i at arbejde med menneskers nervesystemer. Hun har viet sit professionelle liv til at forst\u00e5 \u2014 og formidle \u2014 hvordan kroppen og nervesystemet h\u00e6nger uadskillelig sammen.</p>
+                    <h3>20 \u00e5rs erfaring</h3>
+                    <p>Annemarie Clement er nervesystemsterapeut, supervisor, psykoterapeut MPF og biologisk traumeterapeut med en professionsbachelor i psykomotorik (afsp\u00e6ndingsp\u00e6dagogik). Med 20 \u00e5rs erfaring som selvst\u00e6ndig psykoterapeut har hun viet sit faglige liv til at forst\u00e5 det system der ligger under alt det vi behandler.</p>
                     <p>Hendes rejse begyndte med en nysgerrighed: <em>Hvorfor reagerer vi som vi g\u00f8r?</em> Det sp\u00f8rgsm\u00e5l f\u00f8rte hende gennem uddannelser i polyvagal teori, tilknytningsm\u00f8nstre og traumebearbejdning \u2014 og ind i en helhedsforst\u00e5else der i dag b\u00e6rer hele hendes arbejde.</p>
                 </div>
                 <div class="menu-section">
-                    <h3>En underviser med hjertet f\u00f8rst</h3>
-                    <p>Annemarie underviser ogs\u00e5 kommende terapeuter gennem sine certificeringsuddannelser og specialkurser. Hendes undervisning er kendetegnet ved varme, dybde og en \u00e6gte tro p\u00e5 at forandring sker nedefra og op \u2014 gennem kroppen, ikke kun gennem forstanden.</p>
-                    <p>For hende handler det aldrig bare om teori. Det handler om <strong>at m\u00e6rke det i sin egen krop</strong>.</p>
+                    <h3>Behandling, undervisning og supervision</h3>
+                    <p>Fra sin klinik i Hellerup arbejder Annemarie med individuel kropsbaseret nervesystemsterapi \u2014 p\u00e5 briks, med fasciel frig\u00f8relse, \u00e5ndedr\u00e6tsarbejde og co-regulering. Hun underviser kommende terapeuter og ledere gennem sine certificeringsuddannelser, og tilbyder supervision til psykoterapeuter og psykologer.</p>
+                    <p>Annemarie er ogs\u00e5 foredragsholder og arbejder med virksomheder omkring mental trivsel og ledelse med nervesystemet i centrum.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Det der driver hende</h3>
+                    <p>For Annemarie handler det om <strong>n\u00e6rv\u00e6r, livsgl\u00e6de, begejstring og nysgerrighed</strong>. Hun tror p\u00e5 at forandring sker nedefra og op \u2014 gennem kroppen, ikke kun gennem forstanden. At nervesystemet er dit fundament, og at det skal n\u00e6res, \u00e6res og plejes.</p>
+                    <p><em>Selv n\u00e5r livet er sv\u00e6rt, har vi et valg.</em></p>
                 </div>
             `
         },
@@ -3232,6 +3244,48 @@ function showMenuContent(action) {
                 <div class="menu-section">
                     <h3>Hvad du kan her</h3>
                     <p>I appen kan du udforske hver dimension \u2014 se hvordan de h\u00e6nger sammen, l\u00e6s om dem fra dit eget perspektiv, og pr\u00f8v \u00f8velser der bringer teorien ned i kroppen. Tryk p\u00e5 en cirkel og begynd din udforskning.</p>
+                </div>
+            `
+        },
+        behandling: {
+            title: 'Kom i behandling',
+            html: `
+                <p class="menu-intro">Nervesystemsterapi er en kropsbaseret tilgang der arbejder med dit nervesystem som indgang til dyb og varig forandring.</p>
+                <div class="menu-section">
+                    <h3>Hvad sker der i en session?</h3>
+                    <p>Behandlingen foreg\u00e5r p\u00e5 briks i Annemaries klinik i Hellerup. Gennem fasciel frig\u00f8relse, \u00e5ndedr\u00e6tsarbejde og kropslig opm\u00e6rksomhed arbejder I sammen med at bringe dit nervesystem tilbage i balance. Annemaries eget regulerede nervesystem fungerer som co-regulerende anker \u2014 du m\u00e6rker det som en dyb tryghed i rummet.</p>
+                    <p>Tilgangen er bottom-up: vi starter med kroppen, ikke tankerne. Det er her de dybeste forandringer sker.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Hvem kan have gl\u00e6de af det?</h3>
+                    <p>Mennesker der oplever stress, angst, traumer, overv\u00e6ldelse, tr\u00e6thed, psykosomatiske symptomer, smerter, s\u00f8vnproblemer, fordøjelsesbesvær, hovedpine, ensomhed, depression eller en f\u00f8lelse af meningsl\u00f8shed.</p>
+                    <p>Kort sagt: alle der m\u00e6rker at noget fundamentalt er ude af balance \u2014 men ikke helt ved hvad eller hvordan.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Praktisk information</h3>
+                    <p><strong>Klinik:</strong> Marievej 2, 1. tv \u2014 2900 Hellerup</p>
+                    <p><strong>Beliggenhed:</strong> T\u00e6t p\u00e5 vandet, p\u00e5 en sidegade til Strandvejen</p>
+                    <p><strong>Booking:</strong> Ring <a href="tel:+4522544542" style="color: var(--primary);">+45 2254 4542</a> eller skriv til <a href="mailto:annemarie@annemarieclement.dk" style="color: var(--primary);">annemarie@annemarieclement.dk</a></p>
+                    <p>L\u00e6s mere og book tid p\u00e5 <a href="https://annemarieclement.dk" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">annemarieclement.dk</a></p>
+                </div>
+            `
+        },
+        supervision: {
+            title: 'Supervision',
+            html: `
+                <p class="menu-intro">Faglig sparring der styrker din terapeutiske praksis \u2014 med nervesystemet som omdrejningspunkt.</p>
+                <div class="menu-section">
+                    <h3>For hvem?</h3>
+                    <p>Annemarie tilbyder b\u00e5de gruppe- og individuel supervision til kvalificerede psykoterapeuter, psykologer og terapeuter under uddannelse. Supervisionen er forankret i nervesystemsterapi og integrerer polyvagal teori, tilknytningsm\u00f8nstre og kropsbaseret arbejde.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Hvad f\u00e5r du?</h3>
+                    <p>Et trygt fagligt rum hvor du kan bringe dine cases, dine tvivl og dine fornemmelser. Supervision hos Annemarie handler ikke kun om klienten \u2014 den handler ogs\u00e5 om <em>dig som terapeut</em>. Om hvad der sker i dit eget nervesystem i m\u00f8det med klienten.</p>
+                    <p>Du f\u00e5r hj\u00e6lp til at se m\u00f8nstre, udvide din tolerancezone og arbejde med den co-regulering der er kernen i terapeutisk forandring.</p>
+                </div>
+                <div class="menu-section">
+                    <h3>Kontakt</h3>
+                    <p>Skriv til <a href="mailto:annemarie@annemarieclement.dk" style="color: var(--primary);">annemarie@annemarieclement.dk</a> eller ring <a href="tel:+4522544542" style="color: var(--primary);">+45 2254 4542</a> for at h\u00f8re mere om muligheder og priser.</p>
                 </div>
             `
         },
