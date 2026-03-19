@@ -604,72 +604,79 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 .connection {
-    stroke: rgba(90, 122, 104, 0.2);
-    stroke-width: 1.5;
+    stroke: rgba(90, 122, 104, 0.12);
+    stroke-width: 1;
     fill: none;
-    stroke-dasharray: 4, 4;
+    stroke-dasharray: 6, 6;
     cursor: pointer;
-    transition: all var(--transition);
+    transition: all 0.4s ease;
 }
 
 .connection:hover {
     stroke: var(--primary-light);
-    stroke-width: 2.5;
+    stroke-width: 1.5;
+    stroke-dasharray: 8, 4;
 }
 
 .connection.active {
-    stroke: var(--primary-light);
-    stroke-width: 2.5;
+    stroke: var(--primary);
+    stroke-width: 1.5;
     stroke-dasharray: none;
 }
 
 .circle {
-    fill: var(--primary-pale);
-    stroke: rgba(90, 122, 104, 0.25);
-    stroke-width: 2;
+    fill: url(#outerGrad);
+    stroke: rgba(90, 122, 104, 0.15);
+    stroke-width: 1.5;
     cursor: pointer;
-    transition: all var(--transition);
+    transition: all 0.4s ease;
+    filter: url(#circleShadow);
 }
 
 .circle:hover {
-    fill: var(--primary-light);
-    stroke: var(--primary);
-    stroke-width: 3;
+    fill: url(#outerHoverGrad);
+    stroke: rgba(90, 122, 104, 0.3);
+    stroke-width: 1.5;
 }
 
 .circle.active {
-    fill: var(--primary-light);
-    stroke: var(--primary);
-    stroke-width: 3;
+    fill: var(--primary);
+    stroke: var(--primary-dark);
+    stroke-width: 2;
 }
 
 .center-circle {
-    fill: var(--primary);
-    stroke: var(--primary-dark);
+    fill: url(#centerGrad);
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 1.5;
+    filter: url(#centerShadow);
 }
 
 .center-circle:hover,
 .center-circle.active {
-    fill: var(--primary);
-    stroke: var(--primary-dark);
+    fill: url(#centerGrad);
+    stroke: rgba(255, 255, 255, 0.25);
 }
 
 .circle-text {
     font-family: 'Georgia', serif;
-    font-size: 17px;
+    font-size: 16px;
+    fill: var(--primary-dark);
     text-anchor: middle;
     pointer-events: none;
     font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .center-text {
     fill: white;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .outer-text {
-    fill: var(--primary);
+    fill: var(--primary-dark);
 }
 
 /* ═══ BOTTOM NAVIGATION ═══ */
