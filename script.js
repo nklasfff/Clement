@@ -2840,8 +2840,8 @@ function createMiniDiagram(coords, options) {
 
     // Center circle with gradient and shadow
     svg += '<circle cx="' + coords.nervesystem.cx + '" cy="' + coords.nervesystem.cy + '" r="' + coords.nervesystem.r + '" fill="url(#' + diagramId + '-centerGrad)" stroke="rgba(255,255,255,0.15)" stroke-width="1" filter="url(#' + diagramId + '-centerShadow)"/>';
-    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy - 4) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia" letter-spacing="0.02em">Nerve-</text>';
-    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy + 7) + '" text-anchor="middle" fill="white" font-size="7.5" font-family="Georgia" letter-spacing="0.02em">system</text>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy - 5) + '" text-anchor="middle" fill="white" font-size="9" font-family="Georgia" letter-spacing="0.02em">Nerve-</text>';
+    svg += '<text x="' + coords.nervesystem.cx + '" y="' + (coords.nervesystem.cy + 7) + '" text-anchor="middle" fill="white" font-size="9" font-family="Georgia" letter-spacing="0.02em">system</text>';
 
     // Outer circles with gradients and shadows
     ids.forEach(function(id) {
@@ -2849,9 +2849,9 @@ function createMiniDiagram(coords, options) {
         var fillRef = isStressed ? 'url(#' + diagramId + '-stressGrad)' : 'url(#' + diagramId + '-outerGrad)';
         var strokeColor = isStressed ? 'rgba(177,150,128,0.3)' : 'rgba(90,122,104,0.15)';
         svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="' + fillRef + '" stroke="' + strokeColor + '" stroke-width="1" filter="url(#' + diagramId + '-shadow)"/>';
-        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 3) + '" text-anchor="middle" fill="#3a4a3e" font-size="6.5" font-family="Georgia" letter-spacing="0.01em">' + labels[id][0] + '</text>';
+        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 4) + '" text-anchor="middle" fill="#3a4a3e" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][0] + '</text>';
         if (labels[id][1]) {
-            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#3a4a3e" font-size="6.5" font-family="Georgia" letter-spacing="0.01em">' + labels[id][1] + '</text>';
+            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#3a4a3e" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][1] + '</text>';
         }
     });
 
@@ -2869,43 +2869,43 @@ function showDynamics() {
     updateBottomNavActive('hjem');
 
     var balanced = {
-        nervesystem: { cx: 160, cy: 160, r: 40 },
-        polyvagal: { cx: 160, cy: 46, r: 30 },
-        tilknytning: { cx: 268, cy: 103, r: 30 },
-        kropsterapi: { cx: 268, cy: 217, r: 30 },
-        psykobiologi: { cx: 160, cy: 274, r: 30 },
-        traumer: { cx: 52, cy: 217, r: 30 },
-        relation: { cx: 52, cy: 103, r: 30 }
+        nervesystem: { cx: 160, cy: 160, r: 41 },
+        polyvagal: { cx: 160, cy: 46, r: 31 },
+        tilknytning: { cx: 268, cy: 103, r: 31 },
+        kropsterapi: { cx: 268, cy: 217, r: 31 },
+        psykobiologi: { cx: 160, cy: 274, r: 31 },
+        traumer: { cx: 52, cy: 217, r: 31 },
+        relation: { cx: 52, cy: 103, r: 31 }
     };
 
     var imbalanced = {
-        nervesystem: { cx: 155, cy: 158, r: 40 },
-        polyvagal: { cx: 168, cy: 36, r: 27 },
-        tilknytning: { cx: 288, cy: 80, r: 33 },
-        kropsterapi: { cx: 282, cy: 240, r: 27 },
-        psykobiologi: { cx: 132, cy: 275, r: 25 },
-        traumer: { cx: 32, cy: 212, r: 34 },
-        relation: { cx: 30, cy: 80, r: 32 }
+        nervesystem: { cx: 155, cy: 158, r: 41 },
+        polyvagal: { cx: 168, cy: 36, r: 28 },
+        tilknytning: { cx: 288, cy: 80, r: 34 },
+        kropsterapi: { cx: 282, cy: 240, r: 28 },
+        psykobiologi: { cx: 132, cy: 275, r: 26 },
+        traumer: { cx: 32, cy: 212, r: 35 },
+        relation: { cx: 30, cy: 80, r: 33 }
     };
 
     var traumeStressed = {
-        nervesystem: { cx: 152, cy: 162, r: 38 },
-        polyvagal: { cx: 165, cy: 48, r: 26 },
-        tilknytning: { cx: 265, cy: 110, r: 26 },
-        kropsterapi: { cx: 262, cy: 222, r: 26 },
-        psykobiologi: { cx: 148, cy: 278, r: 25 },
-        traumer: { cx: 35, cy: 208, r: 42 },
-        relation: { cx: 45, cy: 95, r: 27 }
+        nervesystem: { cx: 152, cy: 162, r: 39 },
+        polyvagal: { cx: 165, cy: 48, r: 27 },
+        tilknytning: { cx: 265, cy: 110, r: 27 },
+        kropsterapi: { cx: 262, cy: 222, r: 27 },
+        psykobiologi: { cx: 148, cy: 278, r: 26 },
+        traumer: { cx: 35, cy: 208, r: 43 },
+        relation: { cx: 45, cy: 95, r: 28 }
     };
 
     var multiStressed = {
-        nervesystem: { cx: 155, cy: 168, r: 36 },
-        polyvagal: { cx: 178, cy: 32, r: 24 },
-        tilknytning: { cx: 292, cy: 85, r: 35 },
-        kropsterapi: { cx: 280, cy: 245, r: 25 },
-        psykobiologi: { cx: 135, cy: 285, r: 23 },
-        traumer: { cx: 28, cy: 220, r: 38 },
-        relation: { cx: 32, cy: 88, r: 34 }
+        nervesystem: { cx: 155, cy: 168, r: 37 },
+        polyvagal: { cx: 178, cy: 32, r: 25 },
+        tilknytning: { cx: 292, cy: 85, r: 36 },
+        kropsterapi: { cx: 280, cy: 245, r: 26 },
+        psykobiologi: { cx: 135, cy: 285, r: 24 },
+        traumer: { cx: 28, cy: 220, r: 39 },
+        relation: { cx: 32, cy: 88, r: 35 }
     };
 
     var html = '<div class="dynamics-page">';
@@ -2978,16 +2978,13 @@ function showDynamics() {
     setupActionButtons();
 
     var infoPanel = document.getElementById('info-panel');
-    requestAnimationFrame(function() {
-        infoPanel.scrollTop = 0;
-        requestAnimationFrame(function() {
-            var rect = infoPanel.getBoundingClientRect();
-            window.scrollTo({
-                top: window.pageYOffset + rect.top - 80,
-                behavior: 'smooth'
-            });
-        });
-    });
+    infoPanel.scrollTop = 0;
+    setTimeout(function() {
+        var heading = infoPanel.querySelector('h2');
+        if (heading) {
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, 100);
 }
 
 

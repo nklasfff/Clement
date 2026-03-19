@@ -261,7 +261,7 @@ body.scrolled-past-hero .search-btn svg {
     color: var(--text-muted);
     font-size: 0.82rem;
     font-style: italic;
-    margin: 8px 0 0;
+    margin: -4px 0 0;
     padding: 0 24px;
 }
 
@@ -1127,8 +1127,8 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 .connection {
-    stroke: rgba(90, 122, 104, 0.12);
-    stroke-width: 1;
+    stroke: rgba(74, 102, 86, 0.35);
+    stroke-width: 1.2;
     fill: none;
     stroke-dasharray: 6, 6;
     cursor: pointer;
@@ -1183,7 +1183,7 @@ body.scrolled-past-hero .search-btn svg {
 
 .circle-text {
     font-family: 'Georgia', serif;
-    font-size: 16px;
+    font-size: 18px;
     fill: var(--primary-dark);
     text-anchor: middle;
     pointer-events: none;
@@ -1193,7 +1193,7 @@ body.scrolled-past-hero .search-btn svg {
 
 .center-text {
     fill: white;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 500;
     letter-spacing: 0.02em;
 }
@@ -2288,16 +2288,23 @@ button.back-btn:hover {
 
 /* ═══ Dynamics page ═══ */
 .dynamics-link {
+    display: inline-block;
     font-family: 'Georgia', serif;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: var(--primary);
     text-decoration: none;
     letter-spacing: 0.02em;
-    transition: color 0.2s ease;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #f0f5f1, #e4ede8);
+    border: 1px solid rgba(90, 122, 104, 0.15);
+    border-radius: 24px;
+    transition: all 0.2s ease;
 }
 
-.dynamics-link:hover {
-    color: var(--primary-light);
+.dynamics-link:hover,
+.dynamics-link:active {
+    background: linear-gradient(135deg, #e4ede8, #d5e1da);
+    color: var(--primary-dark);
 }
 
 .dynamics-page h3 {
