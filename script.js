@@ -2198,12 +2198,18 @@ var refleksioner = [
     }
 ];
 
+// ── HTML-sanitering af brugerinput ──
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 // ── Proces-tracking (localStorage) ──
 function getProces() {
     try { return JSON.parse(localStorage.getItem('nst_proces') || '{"oevelser":[],"refleksioner":[],"journal":[]}'); }
     catch(e) { return { oevelser: [], refleksioner: [], journal: [] }; }
 }
-function saveProces(p) { localStorage.setItem('nst_proces', JSON.stringify(p)); }
+function saveProces(p) { try { localStorage.setItem('nst_proces', JSON.stringify(p)); } catch(e) {} }
 
 function markerOevelseGennemfoert(titel) {
     var p = getProces();
@@ -2551,6 +2557,7 @@ function bindExerciseEvents() {
             var textarea = card.querySelector('.refleksion-card-input');
             var svar = textarea.value.trim();
             if (!svar) { textarea.focus(); textarea.style.borderColor = '#c4a67a'; setTimeout(function() { textarea.style.borderColor = ''; }, 2000); return; }
+            if (svar.length > 5000) { svar = svar.slice(0, 5000); }
             gemRefleksionSvar(this.dataset.refId, this.dataset.refTitel, svar);
             this.textContent = 'Gemt ✓';
             this.style.background = 'var(--primary)';
@@ -2609,11 +2616,11 @@ function renderDinProces() {
                 html += '<div class="proces-entry-titel">' + entry.titel + '</div>';
             } else if (entry.type === 'refleksion') {
                 html += '<div class="proces-entry-label">Refleksion</div>';
-                html += '<div class="proces-entry-titel">' + entry.titel + '</div>';
-                html += '<div class="proces-entry-svar">' + entry.svar + '</div>';
+                html += '<div class="proces-entry-titel">' + escapeHtml(entry.titel) + '</div>';
+                html += '<div class="proces-entry-svar">' + escapeHtml(entry.svar) + '</div>';
             } else if (entry.type === 'journal') {
                 html += '<div class="proces-entry-label">Dagbog</div>';
-                html += '<div class="proces-entry-svar">' + entry.tekst + '</div>';
+                html += '<div class="proces-entry-svar">' + escapeHtml(entry.tekst) + '</div>';
             }
             html += '<div class="proces-entry-dato">' + entry.dato + (entry.tid ? ' kl. ' + entry.tid : '') + '</div>';
             html += '</div></div>';
@@ -2635,6 +2642,7 @@ function renderDinProces() {
         gemBtn.addEventListener('click', function() {
             var tekst = journalInput.value.trim();
             if (!tekst) { journalInput.focus(); journalInput.style.borderColor = '#c4a67a'; setTimeout(function() { journalInput.style.borderColor = ''; }, 2000); return; }
+            if (tekst.length > 5000) { tekst = tekst.slice(0, 5000); }
             gemJournalNotat(tekst);
             journalInput.value = '';
             gemBtn.textContent = 'Gemt ✓';
@@ -3509,19 +3517,58 @@ function setupNewsletter() {
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            var email = document.getElementById('newsletter-email').value;
+            var emailInput = document.getElementById('newsletter-email');
+            var email = emailInput ? emailInput.value.trim() : '';
             if (!email) return;
-            try { localStorage.setItem('newsletter-subscribed', '1'); localStorage.setItem('newsletter-email', email); } catch(e) {}
-            // Send til Supabase hvis konfigureret (fire-and-forget)
-            if (window.SupabaseClient && SupabaseClient.isConfigured()) {
-                SupabaseClient.subscribeEmail(email).catch(function() {});
+            // Basic email format check
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                if (newsletterBox) {
+                    var errP = newsletterBox.querySelector('.menu-newsletter-error');
+                    if (!errP) {
+                        errP = document.createElement('p');
+                        errP.className = 'menu-newsletter-error';
+                        errP.style.cssText = 'color:#a94442;font-size:0.85em;margin:0.3em 0 0;';
+                        newsletterBox.appendChild(errP);
+                    }
+                    errP.textContent = 'Indtast venligst en gyldig email-adresse.';
+                }
+                return;
             }
-            if (gaveItem) gaveItem.style.display = '';
-            if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Tak for din tilmelding!</p>';
-            // Close menu and show essay
-            document.getElementById('menu-overlay').classList.remove('open');
-            document.body.style.overflow = '';
-            showGaveEssay();
+            // Send til Supabase hvis konfigureret
+            if (window.SupabaseClient && SupabaseClient.isConfigured()) {
+                var btn = form.querySelector('button');
+                if (btn) { btn.disabled = true; btn.textContent = 'Sender...'; }
+                SupabaseClient.subscribeEmail(email).then(function(result) {
+                    if (result.error) {
+                        if (btn) { btn.disabled = false; btn.textContent = 'Tilmeld'; }
+                        if (newsletterBox) {
+                            var errP = newsletterBox.querySelector('.menu-newsletter-error');
+                            if (!errP) {
+                                errP = document.createElement('p');
+                                errP.className = 'menu-newsletter-error';
+                                errP.style.cssText = 'color:#a94442;font-size:0.85em;margin:0.3em 0 0;';
+                                newsletterBox.appendChild(errP);
+                            }
+                            errP.textContent = 'Noget gik galt. Prøv igen.';
+                        }
+                    } else {
+                        try { localStorage.setItem('newsletter-subscribed', '1'); } catch(ex) {}
+                        if (gaveItem) gaveItem.style.display = '';
+                        if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Tak for din tilmelding!</p>';
+                        document.getElementById('menu-overlay').classList.remove('open');
+                        document.body.style.overflow = '';
+                        showGaveEssay();
+                    }
+                });
+            } else {
+                // Supabase ikke konfigureret — gem lokalt og vis gave alligevel
+                try { localStorage.setItem('newsletter-subscribed', '1'); } catch(ex) {}
+                if (gaveItem) gaveItem.style.display = '';
+                if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Tak! Din gave venter nedenfor.</p>';
+                document.getElementById('menu-overlay').classList.remove('open');
+                document.body.style.overflow = '';
+                showGaveEssay();
+            }
         });
     }
 }

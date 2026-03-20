@@ -21,8 +21,25 @@ CREATE TABLE IF NOT EXISTS notifications (
     active BOOLEAN DEFAULT true
 );
 
+-- Tabel: Øvelser
+CREATE TABLE IF NOT EXISTS exercises (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title TEXT NOT NULL,
+    kategori TEXT NOT NULL,
+    tid TEXT,
+    intro TEXT,
+    steps JSONB NOT NULL DEFAULT '[]',
+    refleksion TEXT,
+    sort_order INTEGER DEFAULT 0,
+    active BOOLEAN DEFAULT true,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_subscribers_email ON email_subscribers(email);
+CREATE INDEX IF NOT EXISTS idx_exercises_active ON exercises(active);
+CREATE INDEX IF NOT EXISTS idx_exercises_sort ON exercises(sort_order);
 CREATE INDEX IF NOT EXISTS idx_notifications_created ON notifications(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_notifications_active ON notifications(active);
 
@@ -58,12 +75,30 @@ CREATE POLICY "Admin kan oprette notifikationer" ON notifications
 CREATE POLICY "Admin kan redigere notifikationer" ON notifications
     FOR UPDATE TO authenticated USING (true);
 
--- ═══════════════════════════════════════════
--- Seed data — velkomstnotifikation
--- ═══════════════════════════════════════════
+-- Exercises: Alle kan læse aktive, kun admin kan oprette/redigere
+ALTER TABLE exercises ENABLE ROW LEVEL SECURITY;
 
-INSERT INTO notifications (notification_id, title, body) VALUES (
-    '2026-03-19-welcome',
-    'Velkommen til Nervesystemsterapi',
-    'Tak fordi du har slået notifikationer til. Du vil modtage besked når der tilføjes nyt indhold.'
-) ON CONFLICT (notification_id) DO NOTHING;
+CREATE POLICY "Alle kan læse aktive øvelser" ON exercises
+    FOR SELECT TO anon USING (active = true);
+
+CREATE POLICY "Admin kan læse alle øvelser" ON exercises
+    FOR SELECT TO authenticated USING (true);
+
+CREATE POLICY "Admin kan oprette øvelser" ON exercises
+    FOR INSERT TO authenticated WITH CHECK (true);
+
+CREATE POLICY "Admin kan redigere øvelser" ON exercises
+    FOR UPDATE TO authenticated USING (true);
+
+-- Auto-update updated_at
+CREATE OR REPLACE FUNCTION update_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER exercises_updated_at
+    BEFORE UPDATE ON exercises
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at();
