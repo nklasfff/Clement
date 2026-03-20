@@ -3600,7 +3600,7 @@ function checkForNewNotifications() {
                 if ('Notification' in window && Notification.permission === 'granted') {
                     new Notification(latest.title || 'Nyt fra Annemarie', {
                         body: latest.body || '',
-                        icon: 'hero.PNG',
+                        icon: 'hero.jpg',
                         tag: 'clement-' + latest.id
                     });
                 }
