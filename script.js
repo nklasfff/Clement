@@ -3512,6 +3512,10 @@ function setupNewsletter() {
             var email = document.getElementById('newsletter-email').value;
             if (!email) return;
             try { localStorage.setItem('newsletter-subscribed', '1'); localStorage.setItem('newsletter-email', email); } catch(e) {}
+            // Send til Supabase hvis konfigureret (fire-and-forget)
+            if (window.SupabaseClient && SupabaseClient.isConfigured()) {
+                SupabaseClient.subscribeEmail(email).catch(function() {});
+            }
             if (gaveItem) gaveItem.style.display = '';
             if (newsletterBox) newsletterBox.innerHTML = '<p class="menu-newsletter-done">Tak for din tilmelding!</p>';
             // Close menu and show essay
@@ -3590,23 +3594,33 @@ function checkForNewNotifications() {
     var lastSeen = '';
     try { lastSeen = localStorage.getItem('notif-last-seen') || ''; } catch(e) {}
 
-    fetch('notifications.json?t=' + Date.now())
-        .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function(data) {
-            if (!data.notifications || !data.notifications.length) return;
-            var latest = data.notifications[0];
-            if (latest.id && latest.id !== lastSeen) {
-                try { localStorage.setItem('notif-last-seen', latest.id); } catch(e) {}
-                if ('Notification' in window && Notification.permission === 'granted') {
-                    new Notification(latest.title || 'Nyt fra Annemarie', {
-                        body: latest.body || '',
-                        icon: 'hero.jpg',
-                        tag: 'clement-' + latest.id
-                    });
-                }
+    // Brug Supabase hvis konfigureret, ellers fald tilbage til notifications.json
+    var notifPromise;
+    if (window.SupabaseClient && SupabaseClient.isConfigured()) {
+        notifPromise = SupabaseClient.getNotifications().then(function(result) {
+            return result.data || [];
+        });
+    } else {
+        notifPromise = fetch('notifications.json?t=' + Date.now())
+            .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function(data) { return data.notifications || []; })
+            .catch(function() { return []; });
+    }
+
+    notifPromise.then(function(notifications) {
+        if (!notifications.length) return;
+        var latest = notifications[0];
+        if (latest.id && latest.id !== lastSeen) {
+            try { localStorage.setItem('notif-last-seen', latest.id); } catch(e) {}
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification(latest.title || 'Nyt fra Annemarie', {
+                    body: latest.body || '',
+                    icon: 'hero.jpg',
+                    tag: 'clement-' + latest.id
+                });
             }
-        })
-        .catch(function() { /* notifications.json not available yet — silent */ });
+        }
+    });
 }
 
 function showGaveEssay() {

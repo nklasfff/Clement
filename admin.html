@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="supabase-url" content="">
+    <meta name="supabase-anon-key" content="">
+    <title>Administration — Nervesystemsterapi</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #5a7a68;
+            --primary-dark: #3a4a3e;
+            --primary-pale: #e8f0ec;
+            --bg: #FAF7F4;
+            --text: #3a4a3e;
+            --text-muted: #8a9a8e;
+            --white: #ffffff;
+            --border: rgba(90, 122, 104, 0.15);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        /* ── Login ── */
+        .login-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .login-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 48px 36px;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(90,122,104,0.1);
+        }
+        .login-card h1 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .login-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--bg);
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: var(--primary-dark); }
+        .btn-full { width: 100%; }
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+        .btn-outline:hover {
+            background: var(--primary-pale);
+        }
+        .error-msg {
+            color: #c0392b;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            display: none;
+        }
+
+        /* ── Dashboard ── */
+        .dashboard { display: none; }
+        .dashboard.active { display: block; }
+        .dash-header {
+            background: var(--white);
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .dash-header h1 {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        .dash-body {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
+
+        /* ── Sections ── */
+        .section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(90,122,104,0.06);
+        }
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .section-count {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* ── Subscriber list ── */
+        .sub-list {
+            list-style: none;
+        }
+        .sub-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .sub-item:last-child { border-bottom: none; }
+        .sub-email { font-weight: bold; }
+        .sub-date { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* ── Notification list ── */
+        .notif-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .notif-item:last-child { border-bottom: none; }
+        .notif-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .notif-title { font-weight: bold; font-size: 0.95rem; }
+        .notif-date { color: var(--text-muted); font-size: 0.8rem; }
+        .notif-body { color: var(--text-muted); font-size: 0.85rem; }
+        .notif-toggle {
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--primary);
+            background: none;
+            border: none;
+            font-family: inherit;
+            text-decoration: underline;
+            margin-top: 6px;
+        }
+
+        /* ── New notification form ── */
+        .new-notif-form { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .new-notif-form.open { display: block; }
+
+        /* ── Empty state ── */
+        .empty {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+            padding: 12px 0;
+        }
+
+        /* ── Loading ── */
+        .loading {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 12px 0;
+        }
+
+        @media (max-width: 500px) {
+            .login-card { padding: 36px 24px; }
+            .dash-header { padding: 16px 20px; }
+            .section { padding: 20px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ════ LOGIN ════ -->
+    <div class="login-wrap" id="login-screen">
+        <div class="login-card">
+            <h1>Administration</h1>
+            <p>Log ind for at administrere indhold og tilmeldinger.</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Adgangskode</label>
+                    <input type="password" id="login-password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-full">Log ind</button>
+                <p class="error-msg" id="login-error"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ════ DASHBOARD ════ -->
+    <div class="dashboard" id="dashboard">
+        <div class="dash-header">
+            <h1>Nervesystemsterapi</h1>
+            <button class="btn btn-sm btn-outline" id="logout-btn">Log ud</button>
+        </div>
+        <div class="dash-body">
+
+            <!-- Subscribers -->
+            <div class="section">
+                <h2>Email-tilmeldinger</h2>
+                <p class="section-count" id="sub-count">Indlæser...</p>
+                <div class="section-actions">
+                    <button class="btn btn-sm btn-outline" id="export-csv-btn">Eksporter CSV</button>
+                </div>
+                <ul class="sub-list" id="sub-list">
+                    <li class="loading">Indlæser...</li>
+                </ul>
+            </div>
+
+            <!-- Notifications -->
+            <div class="section">
+                <h2>Notifikationer</h2>
+                <p class="section-count" id="notif-count">Indlæser...</p>
+                <div class="section-actions">
+                    <button class="btn btn-sm" id="new-notif-btn">Ny notifikation</button>
+                </div>
+                <div id="notif-list">
+                    <p class="loading">Indlæser...</p>
+                </div>
+
+                <div class="new-notif-form" id="new-notif-form">
+                    <form id="notif-form">
+                        <div class="form-group">
+                            <label for="notif-title">Titel</label>
+                            <input type="text" id="notif-title" required placeholder="F.eks. Ny øvelse tilføjet">
+                        </div>
+                        <div class="form-group">
+                            <label for="notif-body">Besked</label>
+                            <textarea id="notif-body" placeholder="Kort beskrivelse af den nye opdatering..."></textarea>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" class="btn btn-sm">Opret</button>
+                            <button type="button" class="btn btn-sm btn-outline" id="cancel-notif-btn">Annuller</button>
+                        </div>
+                        <p class="error-msg" id="notif-error"></p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
