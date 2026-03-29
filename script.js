@@ -970,6 +970,136 @@ const themes = {
    
 };
 
+// ── Selvvurdering: 6 cirkler × 3 spørgsmål ──
+const vurderingData = {
+    polyvagal: {
+        label: 'Polyvagal teori',
+        ikon: '◎',
+        farve: '#5a7a68',
+        klient: {
+            intro: 'Hvordan oplever du dit nervesystems tre tilstande i hverdagen?',
+            spoergsmaal: [
+                'Hvor ofte føler du dig tryg og rolig i kroppen?',
+                'Kan du mærke forskel på, om du er i alarm eller i ro?',
+                'Hvor let er det for dig at finde tilbage til ro efter stress?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder klientens autonome reguleringskapacitet.',
+            spoergsmaal: [
+                'I hvilken grad kan klienten identificere egne autonome tilstande?',
+                'Hvor effektivt kan klienten skifte fra sympatisk aktivering til ventral vagal?',
+                'Vurder klientens window of tolerance bredde.'
+            ]
+        }
+    },
+    tilknytning: {
+        label: 'Tilknytningsmønstre',
+        ikon: '❋',
+        farve: '#7B9E89',
+        klient: {
+            intro: 'Hvordan oplever du tryghed og nærhed i dine relationer?',
+            spoergsmaal: [
+                'Føler du dig tryg nok til at vise sårbarhed over for andre?',
+                'Kan du bede om hjælp, når du har brug for det?',
+                'Hvor meget påvirker din opvækst dine relationer i dag?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder klientens tilknytningsmønstre og relationelle kapacitet.',
+            spoergsmaal: [
+                'I hvilken grad viser klienten organiseret vs. desorganiseret tilknytning?',
+                'Vurder klientens kapacitet for at modtage co-regulering.',
+                'Hvor bevidst er klienten om egne tilknytningsmønstre?'
+            ]
+        }
+    },
+    kropsterapi: {
+        label: 'Kropsterapi & Behandling',
+        ikon: '✦',
+        farve: '#b8956a',
+        klient: {
+            intro: 'Hvordan er din forbindelse til din krop?',
+            spoergsmaal: [
+                'Hvor godt kan du mærke signaler fra din krop (spænding, smerter, ro)?',
+                'Føler du dig til stede i kroppen i hverdagen?',
+                'Kan din krop slappe af, når du giver den mulighed for det?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder klientens kropslige bevidsthed og somatiske ressourcer.',
+            spoergsmaal: [
+                'Vurder klientens interoceptive bevidsthed.',
+                'I hvilken grad viser klienten somatisk dissociation vs. embodiment?',
+                'Hvor responsiv er klienten over for somatiske interventioner?'
+            ]
+        }
+    },
+    psykobiologi: {
+        label: 'Psykobiologi',
+        ikon: '◈',
+        farve: '#8fa69b',
+        klient: {
+            intro: 'Hvordan oplever du forbindelsen mellem krop og sind?',
+            spoergsmaal: [
+                'Hvordan er din søvnkvalitet og dit energiniveau?',
+                'Hvor meget påvirker stress din krop (mave, hovedpine, spænding)?',
+                'Føler du at dine tanker og din krop arbejder sammen?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder klientens psykobiologiske integration.',
+            spoergsmaal: [
+                'Vurder graden af allostatisk belastning hos klienten.',
+                'I hvilken grad påvirker autonom dysregulering klientens kognitive funktion?',
+                'Vurder klientens HPA-akse reaktivitet baseret på symptombillede.'
+            ]
+        }
+    },
+    traumer: {
+        label: 'Traumer & Bearbejdning',
+        ikon: '◇',
+        farve: '#d4b898',
+        klient: {
+            intro: 'Hvordan påvirker tidligere svære oplevelser dig i dag?',
+            spoergsmaal: [
+                'Hvor ofte reagerer du kraftigt på ting der minder om noget fra fortiden?',
+                'Kan du tænke på svære oplevelser uden at blive overvældet?',
+                'Føler du at du har bearbejdet det der er sket dig?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder klientens traumebelastning og integrative kapacitet.',
+            spoergsmaal: [
+                'Vurder graden af ubearbejdet traumemateriale.',
+                'I hvilken grad viser klienten dissociative reaktioner under aktivering?',
+                'Hvor stor er klientens kapacitet for titreret traumeeksponering?'
+            ]
+        }
+    },
+    relation: {
+        label: 'Terapeutisk Relation',
+        ikon: '∞',
+        farve: '#6a8f7b',
+        klient: {
+            intro: 'Hvordan oplever du det at modtage støtte og hjælp?',
+            spoergsmaal: [
+                'Føler du dig tryg i relationen til din terapeut/behandler?',
+                'Kan du mærke en forskel i din krop, når du er sammen med nogen der forstår dig?',
+                'Hvor åben er du for at lade andre hjælpe dig?'
+            ]
+        },
+        fagfolk: {
+            intro: 'Vurder den terapeutiske alliance og relationelle dynamik.',
+            spoergsmaal: [
+                'Vurder kvaliteten af den terapeutiske alliance.',
+                'I hvilken grad kan klienten bruge den terapeutiske relation til co-regulering?',
+                'Vurder klientens kapacitet for relationel sårbarhed i terapien.'
+            ]
+        }
+    }
+};
+
 const exercises = [
     {
         title: "Find ro i nervesystemet",
@@ -2229,6 +2359,17 @@ function gemJournalNotat(tekst) {
     saveProces(p);
 }
 
+// ── Selvvurdering (localStorage) ──
+function getVurderinger() {
+    try { return JSON.parse(localStorage.getItem('nst_vurdering') || '[]'); }
+    catch(e) { return []; }
+}
+function saveVurdering(entry) {
+    var arr = getVurderinger();
+    arr.push(entry);
+    try { localStorage.setItem('nst_vurdering', JSON.stringify(arr)); } catch(e) {}
+}
+
 // ===== TEMA & UDDANNELSE VIEWS =====
 
 var themeDescriptions = {
@@ -2977,6 +3118,22 @@ function showDynamics() {
     html += '<h3>For dig som fagperson</h3>';
     html += '<p>Modellen giver dig en ramme for at forstå hvorfor enkeltstående metoder ofte når et loft. Når du kan se hele systemet — ikke bare det symptom klienten kommer med — kan du identificere hvilke forbindelser der er belastet og hvor reguleringen har brug for støtte. Det er fundamentet i Annemaries metode og i de uddannelser hun tilbyder.</p>';
 
+    // CTA: Kortlæg dit eget billede
+    html += '<div class="vurdering-cta">';
+    html += '<div class="vurdering-cta-inner">';
+    html += '<h3>Kortlæg dit eget billede</h3>';
+    html += '<p>Nu hvor du forstår dynamikken, kan du kortlægge din egen situation. Besvar 18 korte spørgsmål og få et personligt overblik over dit nervesystems balance.</p>';
+    var tidligereCount = getVurderinger().length;
+    if (tidligereCount > 0) {
+        html += '<p class="vurdering-cta-note">Du har ' + tidligereCount + ' tidligere ' + (tidligereCount === 1 ? 'vurdering' : 'vurderinger') + '. Start en ny for at se din udvikling.</p>';
+    }
+    html += '<button class="vurdering-cta-btn" onclick="startVurdering()">Start din vurdering</button>';
+    if (tidligereCount > 0) {
+        html += '<button class="vurdering-historik-btn" onclick="showVurderingHistorik()">Se din udvikling over tid</button>';
+    }
+    html += '</div>';
+    html += '</div>';
+
     // Action bar and back link
     html += buildActionBar().replace('resetToWelcome()', 'resetToWelcome()');
 
@@ -2996,6 +3153,569 @@ function showDynamics() {
     }, 100);
 }
 
+
+
+
+// ══════ SELVVURDERING ══════
+
+var vurderingState = {
+    trinIndex: 0,
+    cirkelKeys: Object.keys(vurderingData),
+    scores: {}
+};
+
+function startVurdering() {
+    vurderingState.trinIndex = 0;
+    vurderingState.scores = {};
+    vurderingState.cirkelKeys.forEach(function(key) {
+        vurderingState.scores[key] = { generel: 5, vinkler: [5, 5, 5] };
+    });
+    currentView = 'vurdering';
+    renderVurderingTrin();
+}
+
+function renderVurderingTrin() {
+    var keys = vurderingState.cirkelKeys;
+    var idx = vurderingState.trinIndex;
+    var key = keys[idx];
+    var data = vurderingData[key];
+    var mode = (currentMode === 'fagfolk') ? 'fagfolk' : 'klient';
+    var modeData = data[mode];
+    var sc = vurderingState.scores[key];
+
+    var html = '<div class="vurdering-flow">';
+
+    // Progress bar
+    html += '<div class="vurdering-progress">';
+    for (var i = 0; i < keys.length; i++) {
+        var cls = i < idx ? 'done' : (i === idx ? 'active' : '');
+        html += '<div class="vurdering-step ' + cls + '">';
+        html += '<span class="vurdering-step-dot" style="background:' + vurderingData[keys[i]].farve + '"></span>';
+        html += '<span class="vurdering-step-label">' + vurderingData[keys[i]].label.split(' ')[0] + '</span>';
+        html += '</div>';
+    }
+    html += '</div>';
+
+    // Trin-header
+    html += '<div class="vurdering-header" style="border-left: 4px solid ' + data.farve + '">';
+    html += '<span class="vurdering-ikon">' + data.ikon + '</span>';
+    html += '<div><h2>' + data.label + '</h2>';
+    html += '<p class="vurdering-intro">' + modeData.intro + '</p></div>';
+    html += '</div>';
+
+    // Generel score
+    html += '<div class="vurdering-sektion">';
+    html += '<label class="vurdering-label">Samlet oplevelse</label>';
+    html += '<div class="vurdering-slider-row">';
+    html += '<input type="range" min="1" max="10" value="' + sc.generel + '" class="vurdering-slider" data-target="generel" style="accent-color:' + data.farve + '">';
+    html += '<span class="vurdering-value" id="val-generel">' + sc.generel + '</span>';
+    html += '</div>';
+    html += '<div class="vurdering-scale-labels"><span>1 — Meget udfordret</span><span>10 — Optimal</span></div>';
+    html += '</div>';
+
+    // 3 uddybende spoergsmaal
+    html += '<div class="vurdering-uddybning">';
+    html += '<h3>Tre vinkler</h3>';
+    for (var v = 0; v < 3; v++) {
+        html += '<div class="vurdering-sektion">';
+        html += '<label class="vurdering-label">' + modeData.spoergsmaal[v] + '</label>';
+        html += '<div class="vurdering-slider-row">';
+        html += '<input type="range" min="1" max="10" value="' + sc.vinkler[v] + '" class="vurdering-slider" data-target="vinkel-' + v + '" style="accent-color:' + data.farve + '">';
+        html += '<span class="vurdering-value" id="val-vinkel-' + v + '">' + sc.vinkler[v] + '</span>';
+        html += '</div>';
+        html += '</div>';
+    }
+    html += '</div>';
+
+    // Mini-opsummering
+    html += '<div class="vurdering-mini-opsummering">';
+    html += '<h4>Din score for ' + data.label + '</h4>';
+    html += renderMiniBarChart(key);
+    html += '</div>';
+
+    // Navigation
+    html += '<div class="vurdering-nav">';
+    if (idx > 0) {
+        html += '<button class="vurdering-btn-back" onclick="vurderingForrige()">← Forrige</button>';
+    } else {
+        html += '<button class="vurdering-btn-back" onclick="showDynamics()">← Tilbage</button>';
+    }
+    if (idx < keys.length - 1) {
+        html += '<button class="vurdering-btn-next" onclick="vurderingNaeste()">Næste →</button>';
+    } else {
+        html += '<button class="vurdering-btn-next vurdering-btn-finish" onclick="afslutVurdering()">Se dit resultat →</button>';
+    }
+    html += '</div>';
+
+    html += '</div>';
+
+    document.getElementById('info-content').innerHTML = html;
+
+    // Bind sliders
+    document.querySelectorAll('.vurdering-slider').forEach(function(slider) {
+        slider.addEventListener('input', function() {
+            var target = this.dataset.target;
+            var val = parseInt(this.value);
+            if (target === 'generel') {
+                vurderingState.scores[key].generel = val;
+            } else {
+                var vi = parseInt(target.split('-')[1]);
+                vurderingState.scores[key].vinkler[vi] = val;
+            }
+            var valEl = document.getElementById('val-' + target);
+            if (valEl) valEl.textContent = val;
+            var mini = document.querySelector('.vurdering-mini-opsummering');
+            if (mini) {
+                mini.innerHTML = '<h4>Din score for ' + data.label + '</h4>' + renderMiniBarChart(key);
+            }
+        });
+    });
+
+    var infoPanel = document.getElementById('info-panel');
+    infoPanel.scrollTop = 0;
+}
+
+function renderMiniBarChart(cirkelKey) {
+    var sc = vurderingState.scores[cirkelKey];
+    var data = vurderingData[cirkelKey];
+    var mode = (currentMode === 'fagfolk') ? 'fagfolk' : 'klient';
+    var avg = Math.round((sc.generel + sc.vinkler[0] + sc.vinkler[1] + sc.vinkler[2]) / 4 * 10) / 10;
+
+    var html = '<div class="mini-bar-chart">';
+    html += '<div class="mini-bar-row">';
+    html += '<span class="mini-bar-label">Samlet</span>';
+    html += '<div class="mini-bar-track"><div class="mini-bar-fill" style="width:' + (sc.generel * 10) + '%;background:' + data.farve + '"></div></div>';
+    html += '<span class="mini-bar-val">' + sc.generel + '</span>';
+    html += '</div>';
+    for (var i = 0; i < 3; i++) {
+        var shortLabel = data[mode].spoergsmaal[i].split(' ').slice(0, 4).join(' ') + '…';
+        html += '<div class="mini-bar-row">';
+        html += '<span class="mini-bar-label">' + shortLabel + '</span>';
+        html += '<div class="mini-bar-track"><div class="mini-bar-fill" style="width:' + (sc.vinkler[i] * 10) + '%;background:' + data.farve + ';opacity:0.7"></div></div>';
+        html += '<span class="mini-bar-val">' + sc.vinkler[i] + '</span>';
+        html += '</div>';
+    }
+    html += '<div class="mini-bar-avg">Gennemsnit: <strong>' + avg + '</strong> / 10</div>';
+    html += '</div>';
+    return html;
+}
+
+function vurderingNaeste() {
+    if (vurderingState.trinIndex < vurderingState.cirkelKeys.length - 1) {
+        vurderingState.trinIndex++;
+        renderVurderingTrin();
+    }
+}
+
+function vurderingForrige() {
+    if (vurderingState.trinIndex > 0) {
+        vurderingState.trinIndex--;
+        renderVurderingTrin();
+    }
+}
+
+function afslutVurdering() {
+    var entry = {
+        dato: new Date().toISOString().slice(0, 10),
+        tid: new Date().toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' }),
+        mode: currentMode,
+        scores: JSON.parse(JSON.stringify(vurderingState.scores))
+    };
+    saveVurdering(entry);
+    showVurderingResultat(entry);
+}
+
+function showVurderingResultat(entry) {
+    currentView = 'vurdering-resultat';
+    var keys = Object.keys(entry.scores);
+    var html = '<div class="vurdering-resultat">';
+
+    html += '<h2>Dit nervesystems billede</h2>';
+    html += '<p class="vurdering-dato">Vurdering fra ' + entry.dato + ' kl. ' + (entry.tid || '') + '</p>';
+
+    // ── SVG Radar-chart ──
+    html += buildRadarChart(entry.scores);
+
+    // ── Sorteret bar-chart ──
+    var sorted = keys.map(function(k) {
+        var s = entry.scores[k];
+        return { key: k, avg: Math.round((s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4 * 10) / 10 };
+    }).sort(function(a, b) { return a.avg - b.avg; });
+
+    html += '<h3>Dine dimensioner — sorteret</h3>';
+    html += '<div class="resultat-bars">';
+    sorted.forEach(function(item) {
+        var d = vurderingData[item.key];
+        html += '<div class="resultat-bar-row">';
+        html += '<span class="resultat-bar-label">' + d.ikon + ' ' + d.label + '</span>';
+        html += '<div class="resultat-bar-track"><div class="resultat-bar-fill" style="width:' + (item.avg * 10) + '%;background:' + d.farve + '"></div></div>';
+        html += '<span class="resultat-bar-val">' + item.avg + '</span>';
+        html += '</div>';
+    });
+    html += '</div>';
+
+    // ── Algoritmisk analyse med SAMMENHAENGE ──
+    html += buildAnalyse(entry.scores, sorted);
+
+    // ── Anbefalinger ──
+    html += buildAnbefalinger(sorted);
+
+    // Navigation
+    html += '<div class="vurdering-nav">';
+    html += '<button class="vurdering-btn-back" onclick="showDynamics()">← Tilbage til dynamikken</button>';
+    var alleVurd = getVurderinger();
+    if (alleVurd.length > 1) {
+        html += '<button class="vurdering-btn-next" onclick="showVurderingHistorik()">Se din udvikling →</button>';
+    }
+    html += '</div>';
+
+    html += '</div>';
+    document.getElementById('info-content').innerHTML = html;
+    document.getElementById('info-panel').scrollTop = 0;
+}
+
+function buildRadarChart(scores) {
+    var keys = Object.keys(scores);
+    var cx = 160, cy = 160, r = 120;
+    var svg = '<div class="radar-container"><svg viewBox="0 0 320 340" class="radar-svg">';
+
+    // Background grid (5 rings)
+    for (var ring = 1; ring <= 5; ring++) {
+        var rr = r * ring / 5;
+        var points = [];
+        for (var i = 0; i < keys.length; i++) {
+            var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
+            points.push(Math.round(cx + rr * Math.cos(angle)) + ',' + Math.round(cy + rr * Math.sin(angle)));
+        }
+        svg += '<polygon points="' + points.join(' ') + '" fill="none" stroke="#e0e8e3" stroke-width="0.5"/>';
+    }
+
+    // Axis lines
+    for (var i = 0; i < keys.length; i++) {
+        var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
+        var ex = Math.round(cx + r * Math.cos(angle));
+        var ey = Math.round(cy + r * Math.sin(angle));
+        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ex + '" y2="' + ey + '" stroke="#d0d8d3" stroke-width="0.5"/>';
+    }
+
+    // Data polygon
+    var dataPoints = [];
+    for (var i = 0; i < keys.length; i++) {
+        var s = scores[keys[i]];
+        var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
+        var val = avg / 10;
+        var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
+        var px = Math.round(cx + r * val * Math.cos(angle));
+        var py = Math.round(cy + r * val * Math.sin(angle));
+        dataPoints.push(px + ',' + py);
+    }
+    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="rgba(90,122,104,0.2)" stroke="#5a7a68" stroke-width="2"/>';
+
+    // Data dots + labels
+    for (var i = 0; i < keys.length; i++) {
+        var s = scores[keys[i]];
+        var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
+        var val = avg / 10;
+        var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
+        var px = Math.round(cx + r * val * Math.cos(angle));
+        var py = Math.round(cy + r * val * Math.sin(angle));
+        var d = vurderingData[keys[i]];
+        svg += '<circle cx="' + px + '" cy="' + py + '" r="4" fill="' + d.farve + '" stroke="white" stroke-width="1.5"/>';
+
+        // Label
+        var lx = Math.round(cx + (r + 18) * Math.cos(angle));
+        var ly = Math.round(cy + (r + 18) * Math.sin(angle));
+        var anchor = 'middle';
+        if (Math.cos(angle) < -0.3) anchor = 'end';
+        if (Math.cos(angle) > 0.3) anchor = 'start';
+        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" fill="#3a4a3e" font-size="10" font-family="Georgia">' + d.label.split(' ')[0] + '</text>';
+        svg += '<text x="' + lx + '" y="' + (ly + 12) + '" text-anchor="' + anchor + '" fill="#8a9a8e" font-size="9" font-family="Georgia">' + (Math.round(avg * 10) / 10) + '/10</text>';
+    }
+
+    svg += '</svg></div>';
+    return svg;
+}
+
+function buildAnalyse(scores, sorted) {
+    var html = '<div class="resultat-analyse">';
+    html += '<h3>Analyse: Hvordan dine dimensioner påvirker hinanden</h3>';
+
+    // Find de 2 laveste
+    var laveste = sorted.slice(0, 2);
+    var sourceData = themes[currentTheme] || themes.general;
+    var connections = sourceData.connections || {};
+
+    laveste.forEach(function(item) {
+        var d = vurderingData[item.key];
+        html += '<div class="analyse-blok" style="border-left: 3px solid ' + d.farve + '">';
+        html += '<h4>' + d.ikon + ' ' + d.label + ' <span class="analyse-score">(' + item.avg + '/10)</span></h4>';
+
+        // Find forbindelser til andre lave areas
+        var forbindelser = [];
+        sorted.forEach(function(other) {
+            if (other.key === item.key) return;
+            var connKey1 = item.key + '-' + other.key;
+            var connKey2 = other.key + '-' + item.key;
+            var conn = connections[connKey1] || connections[connKey2];
+            if (conn) {
+                var mode = (currentMode === 'fagfolk') ? 'fagfolk' : 'klient';
+                var text = conn[mode] || conn.klient || '';
+                if (text && other.avg < 7) {
+                    forbindelser.push({
+                        otherKey: other.key,
+                        otherLabel: vurderingData[other.key] ? vurderingData[other.key].label : other.key,
+                        otherScore: other.avg,
+                        text: text
+                    });
+                }
+            }
+        });
+
+        if (forbindelser.length > 0) {
+            html += '<p class="analyse-intro">Denne dimension påvirkes af:</p>';
+            html += '<ul class="analyse-forbindelser">';
+            forbindelser.slice(0, 3).forEach(function(f) {
+                html += '<li><strong>' + f.otherLabel + '</strong> (' + f.otherScore + '/10): ' + f.text.substring(0, 150) + (f.text.length > 150 ? '…' : '') + '</li>';
+            });
+            html += '</ul>';
+        }
+        html += '</div>';
+    });
+
+    html += '</div>';
+    return html;
+}
+
+function buildAnbefalinger(sorted) {
+    var html = '<div class="resultat-anbefalinger">';
+    html += '<h3>Dine anbefalinger</h3>';
+    html += '<p>Baseret på din vurdering anbefaler vi at starte her:</p>';
+
+    // Map cirkel-keys til exercise-kategorier
+    var exerciseMap = {
+        polyvagal: 'regulering',
+        kropsterapi: 'krop',
+        psykobiologi: 'aandedraet',
+        traumer: 'regulering',
+        tilknytning: 'regulering',
+        relation: 'regulering'
+    };
+
+    var topPriority = sorted.slice(0, 3);
+    html += '<div class="anbefaling-liste">';
+    topPriority.forEach(function(item, i) {
+        var d = vurderingData[item.key];
+        html += '<div class="anbefaling-kort">';
+        html += '<div class="anbefaling-nr">' + (i + 1) + '</div>';
+        html += '<div class="anbefaling-indhold">';
+        html += '<h4>' + d.ikon + ' ' + d.label + '</h4>';
+        html += '<p class="anbefaling-score">Din score: ' + item.avg + '/10</p>';
+
+        // Find relevant exercise
+        var kat = exerciseMap[item.key] || 'regulering';
+        var ex = null;
+        for (var e = 0; e < exercises.length; e++) {
+            if (exercises[e].kategori === kat) { ex = exercises[e]; break; }
+        }
+        if (ex) {
+            html += '<p class="anbefaling-oevelse">Prøv øvelsen: <a href="javascript:void(0)" onclick="showExercises()">' + ex.title + '</a></p>';
+        }
+
+        html += '<p class="anbefaling-tema"><a href="javascript:void(0)" onclick="showCircleView(\x27' + item.key + '\x27)">Udforsk ' + d.label + ' i cirkelmodellen \u2192</a></p>';
+        html += '</div>';
+        html += '</div>';
+    });
+    html += '</div>';
+
+    html += '</div>';
+    return html;
+}
+
+function showVurderingHistorik() {
+    currentView = 'vurdering-historik';
+    var alle = getVurderinger();
+    var keys = Object.keys(vurderingData);
+
+    var html = '<div class="vurdering-historik">';
+    html += '<h2>Din udvikling over tid</h2>';
+
+    if (alle.length === 0) {
+        html += '<p>Du har ingen vurderinger endnu. <a href="javascript:void(0)" onclick="startVurdering()">Start din første vurdering</a></p>';
+        html += '</div>';
+        document.getElementById('info-content').innerHTML = html;
+        return;
+    }
+
+    // ── Udviklingsgraf (SVG) ──
+    if (alle.length >= 2) {
+        html += buildUdviklingsgraf(alle);
+    }
+
+    // ── Sammenligning siden sidst ──
+    if (alle.length >= 2) {
+        html += buildSammenligning(alle);
+    }
+
+    // ── Liste over vurderinger ──
+    html += '<h3>Alle vurderinger</h3>';
+    html += '<div class="historik-liste">';
+    for (var i = alle.length - 1; i >= 0; i--) {
+        var e = alle[i];
+        var totalAvg = 0;
+        keys.forEach(function(k) {
+            var s = e.scores[k];
+            if (s) totalAvg += (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
+        });
+        totalAvg = Math.round(totalAvg / keys.length * 10) / 10;
+
+        html += '<div class="historik-entry" onclick="showVurderingResultat(getVurderinger()[' + i + '])">';
+        html += '<div class="historik-dato">' + e.dato + (e.tid ? ' kl. ' + e.tid : '') + '</div>';
+        html += '<div class="historik-avg">Gennemsnit: <strong>' + totalAvg + '</strong>/10</div>';
+
+        // Mini inline bars
+        html += '<div class="historik-mini-bars">';
+        keys.forEach(function(k) {
+            var s = e.scores[k];
+            if (!s) return;
+            var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
+            var d = vurderingData[k];
+            html += '<div class="historik-mini-bar" title="' + d.label + ': ' + (Math.round(avg*10)/10) + '">';
+            html += '<div class="historik-mini-fill" style="height:' + (avg * 10) + '%;background:' + d.farve + '"></div>';
+            html += '</div>';
+        });
+        html += '</div>';
+
+        html += '</div>';
+    }
+    html += '</div>';
+
+    // Nav
+    html += '<div class="vurdering-nav">';
+    html += '<button class="vurdering-btn-back" onclick="showDynamics()">← Tilbage</button>';
+    html += '<button class="vurdering-btn-next" onclick="startVurdering()">Ny vurdering</button>';
+    html += '</div>';
+
+    html += '</div>';
+    document.getElementById('info-content').innerHTML = html;
+    document.getElementById('info-panel').scrollTop = 0;
+}
+
+function buildUdviklingsgraf(alle) {
+    var keys = Object.keys(vurderingData);
+    var w = 300, h = 180, padL = 30, padR = 10, padT = 10, padB = 30;
+    var plotW = w - padL - padR;
+    var plotH = h - padT - padB;
+    var n = alle.length;
+
+    var svg = '<div class="udvikling-graf-container">';
+    svg += '<h3>Udvikling over tid</h3>';
+    svg += '<svg viewBox="0 0 ' + w + ' ' + h + '" class="udvikling-svg">';
+
+    // Y-axis grid
+    for (var y = 0; y <= 10; y += 2) {
+        var yy = padT + plotH - (y / 10 * plotH);
+        svg += '<line x1="' + padL + '" y1="' + yy + '" x2="' + (w - padR) + '" y2="' + yy + '" stroke="#e8ede9" stroke-width="0.5"/>';
+        svg += '<text x="' + (padL - 4) + '" y="' + (yy + 3) + '" text-anchor="end" fill="#8a9a8e" font-size="8" font-family="Georgia">' + y + '</text>';
+    }
+
+    // X-axis labels (dates)
+    for (var i = 0; i < n; i++) {
+        var xx = padL + (n === 1 ? plotW / 2 : (i / (n - 1)) * plotW);
+        var label = alle[i].dato.slice(5);
+        svg += '<text x="' + xx + '" y="' + (h - 5) + '" text-anchor="middle" fill="#8a9a8e" font-size="7" font-family="Georgia">' + label + '</text>';
+    }
+
+    // Lines per dimension
+    keys.forEach(function(k) {
+        var d = vurderingData[k];
+        var points = [];
+        for (var i = 0; i < n; i++) {
+            var s = alle[i].scores[k];
+            if (!s) continue;
+            var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
+            var xx = padL + (n === 1 ? plotW / 2 : (i / (n - 1)) * plotW);
+            var yy = padT + plotH - (avg / 10 * plotH);
+            points.push(Math.round(xx) + ',' + Math.round(yy));
+        }
+        if (points.length > 1) {
+            svg += '<polyline points="' + points.join(' ') + '" fill="none" stroke="' + d.farve + '" stroke-width="1.5" stroke-linecap="round"/>';
+        }
+        // Dots
+        points.forEach(function(p) {
+            var parts = p.split(',');
+            svg += '<circle cx="' + parts[0] + '" cy="' + parts[1] + '" r="3" fill="' + d.farve + '" stroke="white" stroke-width="1"/>';
+        });
+    });
+
+    svg += '</svg>';
+
+    // Legend
+    svg += '<div class="udvikling-legend">';
+    keys.forEach(function(k) {
+        var d = vurderingData[k];
+        svg += '<span class="udvikling-legend-item"><span class="udvikling-legend-dot" style="background:' + d.farve + '"></span>' + d.label.split(' ')[0] + '</span>';
+    });
+    svg += '</div>';
+
+    svg += '</div>';
+    return svg;
+}
+
+function buildSammenligning(alle) {
+    var keys = Object.keys(vurderingData);
+    var seneste = alle[alle.length - 1];
+    var forrige = alle[alle.length - 2];
+
+    var html = '<div class="sammenligning">';
+    html += '<h3>Ændringer siden sidst</h3>';
+    html += '<p class="sammenligning-periode">' + forrige.dato + ' → ' + seneste.dato + '</p>';
+
+    html += '<div class="sammenligning-liste">';
+    keys.forEach(function(k) {
+        var s1 = forrige.scores[k];
+        var s2 = seneste.scores[k];
+        if (!s1 || !s2) return;
+        var avg1 = Math.round((s1.generel + s1.vinkler[0] + s1.vinkler[1] + s1.vinkler[2]) / 4 * 10) / 10;
+        var avg2 = Math.round((s2.generel + s2.vinkler[0] + s2.vinkler[1] + s2.vinkler[2]) / 4 * 10) / 10;
+        var diff = Math.round((avg2 - avg1) * 10) / 10;
+        var d = vurderingData[k];
+        var cls = diff > 0 ? 'positiv' : (diff < 0 ? 'negativ' : 'neutral');
+
+        html += '<div class="sammenligning-row ' + cls + '">';
+        html += '<span class="sammenligning-ikon" style="color:' + d.farve + '">' + d.ikon + '</span>';
+        html += '<span class="sammenligning-label">' + d.label + '</span>';
+        html += '<span class="sammenligning-scores">' + avg1 + ' → ' + avg2 + '</span>';
+        html += '<span class="sammenligning-diff">' + (diff > 0 ? '+' : '') + diff + '</span>';
+        html += '</div>';
+    });
+    html += '</div>';
+
+    // Samlet vurdering i ord
+    var totalDiff = 0;
+    var count = 0;
+    keys.forEach(function(k) {
+        var s1 = forrige.scores[k]; var s2 = seneste.scores[k];
+        if (!s1 || !s2) return;
+        var a1 = (s1.generel + s1.vinkler[0] + s1.vinkler[1] + s1.vinkler[2]) / 4;
+        var a2 = (s2.generel + s2.vinkler[0] + s2.vinkler[1] + s2.vinkler[2]) / 4;
+        totalDiff += (a2 - a1);
+        count++;
+    });
+    var avgDiff = count > 0 ? Math.round(totalDiff / count * 10) / 10 : 0;
+
+    html += '<div class="sammenligning-opsummering">';
+    if (avgDiff > 0.5) {
+        html += '<p>Dit nervesystem viser positiv udvikling. Den gennemsnitlige forbedring er <strong>+' + avgDiff + '</strong> point. Bliv ved med det du gør.</p>';
+    } else if (avgDiff < -0.5) {
+        html += '<p>Dine scores er faldet en smule (gennemsnit: <strong>' + avgDiff + '</strong>). Det er helt normalt — regulering er ikke lineær. Vær tålmodig med dig selv.</p>';
+    } else {
+        html += '<p>Dine scores er stabile. Stabilitet er også fremgang — det betyder at dit nervesystem holder fast i de ressourcer det har opbygget.</p>';
+    }
+    html += '</div>';
+
+    html += '</div>';
+    return html;
+}
 
 function setupCircleClicks() {
     const circles = document.querySelectorAll('.circle');
