@@ -2811,3 +2811,650 @@ button.back-btn:hover {
     line-height: 1.7;
     margin: 20px 0;
 }
+
+/* ══════ SELVVURDERING ══════ */
+
+/* CTA på dynamikken */
+.vurdering-cta {
+    margin: 40px 0 20px;
+    padding: 0;
+}
+.vurdering-cta-inner {
+    background: linear-gradient(135deg, var(--primary-pale), #f5f0eb);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid rgba(90,122,104,0.15);
+}
+.vurdering-cta h3 {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+    margin: 0 0 10px;
+}
+.vurdering-cta p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+.vurdering-cta-note {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    font-style: italic;
+}
+.vurdering-cta-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 14px 32px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.vurdering-cta-btn:hover {
+    background: var(--primary-dark);
+}
+.vurdering-historik-btn {
+    display: block;
+    margin: 12px auto 0;
+    background: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    padding: 10px 24px;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.vurdering-historik-btn:hover {
+    background: var(--primary-pale);
+}
+
+/* Vurderingsflow */
+.vurdering-flow {
+    padding: 0 0 20px;
+}
+.vurdering-progress {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 24px;
+    padding: 0 4px;
+}
+.vurdering-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.35;
+    transition: opacity 0.3s;
+}
+.vurdering-step.active,
+.vurdering-step.done {
+    opacity: 1;
+}
+.vurdering-step-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.3s;
+}
+.vurdering-step.active .vurdering-step-dot {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 3px rgba(90,122,104,0.2);
+}
+.vurdering-step-label {
+    font-family: Georgia, serif;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+.vurdering-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+}
+.vurdering-ikon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+.vurdering-header h2 {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin: 0 0 6px;
+}
+.vurdering-intro {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+.vurdering-sektion {
+    margin-bottom: 20px;
+}
+.vurdering-label {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+.vurdering-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.vurdering-slider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e0e8e3;
+    border-radius: 3px;
+    outline: none;
+}
+.vurdering-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+.vurdering-value {
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 28px;
+    text-align: center;
+}
+.vurdering-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+.vurdering-uddybning {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e8ede9;
+}
+.vurdering-uddybning h3 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: var(--primary);
+    margin: 0 0 16px;
+}
+
+/* Mini bar-chart */
+.mini-bar-chart {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+}
+.mini-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.mini-bar-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    width: 110px;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mini-bar-track {
+    flex: 1;
+    height: 8px;
+    background: #e8ede9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.mini-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+.mini-bar-val {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 20px;
+    text-align: right;
+}
+.mini-bar-avg {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e8ede9;
+}
+
+/* Vurdering navigation */
+.vurdering-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #e8ede9;
+}
+.vurdering-btn-back,
+.vurdering-btn-next {
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+.vurdering-btn-back {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid #d0d8d3;
+}
+.vurdering-btn-back:hover {
+    background: #e8ede9;
+}
+.vurdering-btn-next {
+    background: var(--primary);
+    color: white;
+}
+.vurdering-btn-next:hover {
+    background: var(--primary-dark);
+}
+.vurdering-btn-finish {
+    background: var(--accent);
+}
+.vurdering-btn-finish:hover {
+    background: #a07a52;
+}
+
+/* ── Resultatside ── */
+.vurdering-resultat {
+    padding: 0 0 20px;
+}
+.vurdering-resultat h2 {
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+    margin: 0 0 4px;
+}
+.vurdering-dato {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 24px;
+}
+.vurdering-resultat h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin: 28px 0 14px;
+}
+
+/* Radar chart */
+.radar-container {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+.radar-svg {
+    width: 100%;
+    max-width: 340px;
+}
+
+/* Resultat bars */
+.resultat-bars {
+    margin: 0 0 8px;
+}
+.resultat-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.resultat-bar-label {
+    font-family: Georgia, serif;
+    font-size: 0.82rem;
+    color: var(--text);
+    width: 140px;
+    flex-shrink: 0;
+}
+.resultat-bar-track {
+    flex: 1;
+    height: 10px;
+    background: #e8ede9;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.resultat-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+.resultat-bar-val {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 28px;
+    text-align: right;
+}
+
+/* Analyse */
+.resultat-analyse {
+    margin: 24px 0;
+}
+.analyse-blok {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 14px;
+}
+.analyse-blok h4 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: var(--primary-dark);
+    margin: 0 0 8px;
+}
+.analyse-score {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.analyse-intro {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin: 0 0 8px;
+}
+.analyse-forbindelser {
+    margin: 0;
+    padding-left: 18px;
+}
+.analyse-forbindelser li {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* Anbefalinger */
+.resultat-anbefalinger {
+    margin: 24px 0;
+}
+.resultat-anbefalinger > p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+.anbefaling-liste {
+    margin-top: 14px;
+}
+.anbefaling-kort {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.anbefaling-nr {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.anbefaling-indhold h4 {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+    margin: 0 0 4px;
+}
+.anbefaling-score {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+}
+.anbefaling-oevelse,
+.anbefaling-tema {
+    font-size: 0.85rem;
+    margin: 4px 0;
+}
+.anbefaling-oevelse a,
+.anbefaling-tema a {
+    color: var(--primary);
+    text-decoration: none;
+}
+.anbefaling-oevelse a:hover,
+.anbefaling-tema a:hover {
+    text-decoration: underline;
+}
+
+/* ── Historik ── */
+.vurdering-historik {
+    padding: 0 0 20px;
+}
+.vurdering-historik h2 {
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+    margin: 0 0 20px;
+}
+.vurdering-historik h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin: 24px 0 12px;
+}
+
+/* Historik entries */
+.historik-liste {
+    margin: 0 0 20px;
+}
+.historik-entry {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.historik-entry:hover {
+    background: var(--primary-pale);
+}
+.historik-dato {
+    font-family: Georgia, serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    font-weight: 500;
+}
+.historik-avg {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 4px 0 10px;
+}
+.historik-mini-bars {
+    display: flex;
+    gap: 4px;
+    height: 40px;
+    align-items: flex-end;
+}
+.historik-mini-bar {
+    flex: 1;
+    background: #e8ede9;
+    border-radius: 3px 3px 0 0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.historik-mini-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 3px 3px 0 0;
+    transition: height 0.5s;
+}
+
+/* Udviklingsgraf */
+.udvikling-graf-container {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin: 0 0 20px;
+}
+.udvikling-svg {
+    width: 100%;
+}
+.udvikling-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.udvikling-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: Georgia, serif;
+}
+.udvikling-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Sammenligning */
+.sammenligning {
+    margin: 20px 0;
+}
+.sammenligning-periode {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+}
+.sammenligning-liste {
+    margin: 0 0 14px;
+}
+.sammenligning-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+.sammenligning-row.positiv {
+    background: rgba(90,122,104,0.06);
+}
+.sammenligning-row.negativ {
+    background: rgba(184,149,106,0.08);
+}
+.sammenligning-row.neutral {
+    background: var(--bg);
+}
+.sammenligning-ikon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+.sammenligning-label {
+    flex: 1;
+    font-family: Georgia, serif;
+    font-size: 0.88rem;
+    color: var(--text);
+}
+.sammenligning-scores {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+.sammenligning-diff {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 36px;
+    text-align: right;
+}
+.sammenligning-row.positiv .sammenligning-diff {
+    color: var(--primary);
+}
+.sammenligning-row.negativ .sammenligning-diff {
+    color: var(--accent);
+}
+.sammenligning-opsummering {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-top: 14px;
+}
+.sammenligning-opsummering p {
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Mobil-optimering for vurdering ── */
+@media (max-width: 480px) {
+    .vurdering-step-label {
+        font-size: 0.55rem;
+    }
+    .vurdering-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .mini-bar-label {
+        width: 80px;
+        font-size: 0.68rem;
+    }
+    .resultat-bar-label {
+        width: 100px;
+        font-size: 0.75rem;
+    }
+    .sammenligning-row {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .sammenligning-label {
+        font-size: 0.8rem;
+    }
+    .anbefaling-kort {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
