@@ -3,22 +3,22 @@
    ═══════════════════════════════════════════ */
 
 :root {
-    --primary: #5a7a68;
-    --primary-light: #7B9E89;
-    --primary-dark: #3a4a3e;
-    --primary-pale: #e8f0ec;
+    --primary: #8A7F93;
+    --primary-light: #A79DB0;
+    --primary-dark: #4A4354;
+    --primary-pale: #EDEAF1;
     --accent: #b8956a;
     --accent-light: #d4b898;
     --bg: #FAF7F4;
     --bg-warm: #f5f0eb;
-    --text: #3a4a3e;
-    --text-light: #4a5a4e;
-    --text-muted: #8a9a8e;
+    --text: #3E3845;
+    --text-light: #5A5163;
+    --text-muted: #918B9A;
     --white: #ffffff;
-    --border: rgba(90, 122, 104, 0.1);
-    --shadow: 0 2px 20px rgba(90, 122, 104, 0.08);
-    --shadow-hover: 0 8px 30px rgba(90, 122, 104, 0.15);
-    --shadow-lg: 0 12px 40px rgba(90, 122, 104, 0.12);
+    --border: rgba(138, 127, 147, 0.1);
+    --shadow: 0 2px 20px rgba(138, 127, 147, 0.08);
+    --shadow-hover: 0 8px 30px rgba(138, 127, 147, 0.15);
+    --shadow-lg: 0 12px 40px rgba(138, 127, 147, 0.12);
     --radius: 20px;
     --radius-sm: 12px;
     --transition: 0.3s ease;
@@ -986,7 +986,7 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 .accordion-item {
-    border-left: 3px solid rgba(90, 122, 104, 0.15);
+    border-left: 3px solid rgba(138, 127, 147, 0.15);
     margin-bottom: 6px;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     background: var(--bg-warm);
@@ -994,7 +994,7 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 .accordion-item:hover {
-    box-shadow: 0 2px 8px rgba(90, 122, 104, 0.08);
+    box-shadow: 0 2px 8px rgba(138, 127, 147, 0.08);
 }
 
 .accordion-item.open {
@@ -1012,7 +1012,7 @@ body.scrolled-past-hero .search-btn svg {
 }
 
 .accordion-header:hover {
-    background: rgba(90, 122, 104, 0.04);
+    background: rgba(138, 127, 147, 0.04);
 }
 
 .accordion-header-text {
@@ -1149,7 +1149,7 @@ body.scrolled-past-hero .search-btn svg {
 
 .circle {
     fill: url(#outerGrad);
-    stroke: rgba(90, 122, 104, 0.15);
+    stroke: rgba(138, 127, 147, 0.15);
     stroke-width: 1.5;
     cursor: pointer;
     transition: all 0.4s ease;
@@ -1158,7 +1158,7 @@ body.scrolled-past-hero .search-btn svg {
 
 .circle:hover {
     fill: url(#outerHoverGrad);
-    stroke: rgba(90, 122, 104, 0.3);
+    stroke: rgba(138, 127, 147, 0.3);
     stroke-width: 1.5;
 }
 
@@ -1410,7 +1410,7 @@ body.scrolled-past-hero .search-btn svg {
 
 .menu-item:hover {
     color: var(--primary);
-    background: rgba(90, 122, 104, 0.04);
+    background: rgba(138, 127, 147, 0.04);
 }
 
 .menu-item-icon {
@@ -1579,7 +1579,7 @@ body.scrolled-past-hero .search-btn svg {
 .gave-hero {
     text-align: center;
     padding: 40px 20px 30px;
-    background: linear-gradient(180deg, #5a7a68 0%, #4a6656 100%);
+    background: linear-gradient(180deg, #8A7F93 0%, #6B6278 100%);
     color: white;
     border-radius: 0 0 24px 24px;
     margin-bottom: 32px;
@@ -1746,7 +1746,7 @@ body.scrolled-past-hero .search-btn svg {
     background: var(--white);
     border-radius: 24px;
     padding: 0 12px;
-    border: 1.5px solid rgba(90, 122, 104, 0.15);
+    border: 1.5px solid rgba(138, 127, 147, 0.15);
     transition: border-color 0.2s ease;
 }
 
@@ -2200,7 +2200,7 @@ body.scrolled-past-hero .search-btn svg {
     padding: 16px 18px;
     background: var(--white);
     border-radius: 14px;
-    box-shadow: 0 1px 8px rgba(90,122,104,0.07);
+    box-shadow: 0 1px 8px rgba(138, 127, 147,0.07);
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
@@ -2219,7 +2219,7 @@ body.scrolled-past-hero .search-btn svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f2f7f4, #e8f0ec);
+    background: linear-gradient(135deg, #F2F0F5, #EDEAF1);
     border-radius: 10px;
     flex-shrink: 0;
 }
@@ -2315,7 +2315,7 @@ body.scrolled-past-hero .search-btn svg {
     display: block;
     width: 44px;
     height: 26px;
-    background: rgba(90, 122, 104, 0.15);
+    background: rgba(138, 127, 147, 0.15);
     border-radius: 13px;
     transition: background var(--transition);
     position: relative;
@@ -2368,7 +2368,7 @@ button.back-btn:hover {
     letter-spacing: 0.02em;
     padding: 10px 22px;
     background: linear-gradient(135deg, #f0f5f1, #e4ede8);
-    border: 1px solid rgba(90, 122, 104, 0.15);
+    border: 1px solid rgba(138, 127, 147, 0.15);
     border-radius: 24px;
     transition: all 0.2s ease;
 }
@@ -2456,7 +2456,7 @@ button.back-btn:hover {
 
 .action-btn {
     background: none;
-    border: 1.5px solid rgba(90, 122, 104, 0.15);
+    border: 1.5px solid rgba(138, 127, 147, 0.15);
     border-radius: 50%;
     width: 42px;
     height: 42px;
@@ -2519,7 +2519,7 @@ button.back-btn:hover {
 .bookmark-remove {
     background: none;
     border: none;
-    color: rgba(90, 122, 104, 0.2);
+    color: rgba(138, 127, 147, 0.2);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 4px 8px;
@@ -2559,7 +2559,7 @@ button.back-btn:hover {
     background: var(--white);
     border-radius: 16px;
     padding: 22px 16px 18px;
-    box-shadow: 0 2px 12px rgba(90,122,104,0.07);
+    box-shadow: 0 2px 12px rgba(138, 127, 147,0.07);
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -2628,7 +2628,7 @@ button.back-btn:hover {
     background: var(--white);
     border-radius: 16px;
     padding: 24px 22px;
-    box-shadow: 0 2px 12px rgba(90,122,104,0.07);
+    box-shadow: 0 2px 12px rgba(138, 127, 147,0.07);
     cursor: pointer;
     transition: all 0.3s ease;
     border-left: 4px solid var(--primary);
@@ -2754,8 +2754,8 @@ button.back-btn:hover {
         right: 0;
         max-width: 700px;
         margin: 0 auto;
-        border-left: 1px solid rgba(90, 122, 104, 0.12);
-        border-right: 1px solid rgba(90, 122, 104, 0.12);
+        border-left: 1px solid rgba(138, 127, 147, 0.12);
+        border-right: 1px solid rgba(138, 127, 147, 0.12);
         pointer-events: none;
         z-index: 150;
     }
@@ -2824,7 +2824,7 @@ button.back-btn:hover {
     border-radius: var(--radius);
     padding: 28px 24px;
     text-align: center;
-    border: 1px solid rgba(90,122,104,0.15);
+    border: 1px solid rgba(138, 127, 147,0.15);
 }
 .vurdering-cta h3 {
     font-family: Georgia, serif;
@@ -2906,7 +2906,7 @@ button.back-btn:hover {
 }
 .vurdering-step.active .vurdering-step-dot {
     transform: scale(1.4);
-    box-shadow: 0 0 0 3px rgba(90,122,104,0.2);
+    box-shadow: 0 0 0 3px rgba(138, 127, 147,0.2);
 }
 .vurdering-step-label {
     font-family: Georgia, serif;
@@ -2960,7 +2960,7 @@ button.back-btn:hover {
     height: 6px;
     -webkit-appearance: none;
     appearance: none;
-    background: #e0e8e3;
+    background: #DDD9E3;
     border-radius: 3px;
     outline: none;
 }
@@ -2992,7 +2992,7 @@ button.back-btn:hover {
 .vurdering-uddybning {
     margin-top: 24px;
     padding-top: 16px;
-    border-top: 1px solid #e8ede9;
+    border-top: 1px solid #E8E5ED;
 }
 .vurdering-uddybning h3 {
     font-family: Georgia, serif;
@@ -3025,7 +3025,7 @@ button.back-btn:hover {
 .mini-bar-track {
     flex: 1;
     height: 8px;
-    background: #e8ede9;
+    background: #E8E5ED;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -3048,7 +3048,7 @@ button.back-btn:hover {
     color: var(--text-light);
     margin-top: 10px;
     padding-top: 8px;
-    border-top: 1px solid #e8ede9;
+    border-top: 1px solid #E8E5ED;
 }
 
 /* Vurdering navigation */
@@ -3058,7 +3058,7 @@ button.back-btn:hover {
     gap: 12px;
     margin-top: 28px;
     padding-top: 20px;
-    border-top: 1px solid #e8ede9;
+    border-top: 1px solid #E8E5ED;
 }
 .vurdering-btn-back,
 .vurdering-btn-next {
@@ -3073,10 +3073,10 @@ button.back-btn:hover {
 .vurdering-btn-back {
     background: var(--bg);
     color: var(--text);
-    border: 1px solid #d0d8d3;
+    border: 1px solid #CCC8D3;
 }
 .vurdering-btn-back:hover {
-    background: #e8ede9;
+    background: #E8E5ED;
 }
 .vurdering-btn-next {
     background: var(--primary);
@@ -3145,7 +3145,7 @@ button.back-btn:hover {
 .resultat-bar-track {
     flex: 1;
     height: 10px;
-    background: #e8ede9;
+    background: #E8E5ED;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -3311,7 +3311,7 @@ button.back-btn:hover {
 }
 .historik-mini-bar {
     flex: 1;
-    background: #e8ede9;
+    background: #E8E5ED;
     border-radius: 3px 3px 0 0;
     height: 100%;
     position: relative;
@@ -3379,7 +3379,7 @@ button.back-btn:hover {
     margin-bottom: 4px;
 }
 .sammenligning-row.positiv {
-    background: rgba(90,122,104,0.06);
+    background: rgba(138, 127, 147,0.06);
 }
 .sammenligning-row.negativ {
     background: rgba(184,149,106,0.08);

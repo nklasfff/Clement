@@ -975,7 +975,7 @@ const vurderingData = {
     polyvagal: {
         label: 'Polyvagal teori',
         ikon: '◎',
-        farve: '#5a7a68',
+        farve: '#8A7F93',
         klient: {
             intro: 'Hvordan oplever du dit nervesystems tre tilstande i hverdagen?',
             spoergsmaal: [
@@ -996,7 +996,7 @@ const vurderingData = {
     tilknytning: {
         label: 'Tilknytningsmønstre',
         ikon: '❋',
-        farve: '#7B9E89',
+        farve: '#A79DB0',
         klient: {
             intro: 'Hvordan oplever du tryghed og nærhed i dine relationer?',
             spoergsmaal: [
@@ -1038,7 +1038,7 @@ const vurderingData = {
     psykobiologi: {
         label: 'Psykobiologi',
         ikon: '◈',
-        farve: '#8fa69b',
+        farve: '#9B93A6',
         klient: {
             intro: 'Hvordan oplever du forbindelsen mellem krop og sind?',
             spoergsmaal: [
@@ -1080,7 +1080,7 @@ const vurderingData = {
     relation: {
         label: 'Terapeutisk Relation',
         ikon: '∞',
-        farve: '#6a8f7b',
+        farve: '#7D7589',
         klient: {
             intro: 'Hvordan oplever du det at modtage støtte og hjælp?',
             spoergsmaal: [
@@ -2939,7 +2939,7 @@ function createMiniDiagram(coords, options) {
         relation: ['Relation', '']
     };
 
-    var lineColor = '#5a7a68';
+    var lineColor = '#8A7F93';
     var diagramId = 'dyn-' + Math.random().toString(36).substr(2, 6);
 
     var svg = '<svg viewBox="-20 -5 360 330" class="dynamics-figure">';
@@ -2947,23 +2947,23 @@ function createMiniDiagram(coords, options) {
     // Gradient definitions matching main circle model
     svg += '<defs>';
     svg += '<radialGradient id="' + diagramId + '-centerGrad" cx="40%" cy="35%" r="65%">';
-    svg += '<stop offset="0%" stop-color="#6d917d"/>';
-    svg += '<stop offset="100%" stop-color="#4a6656"/>';
+    svg += '<stop offset="0%" stop-color="#9B93A6"/>';
+    svg += '<stop offset="100%" stop-color="#6B6278"/>';
     svg += '</radialGradient>';
     svg += '<radialGradient id="' + diagramId + '-outerGrad" cx="40%" cy="35%" r="65%">';
-    svg += '<stop offset="0%" stop-color="#f2f7f4"/>';
-    svg += '<stop offset="60%" stop-color="#e4ede8"/>';
-    svg += '<stop offset="100%" stop-color="#d5e1da"/>';
+    svg += '<stop offset="0%" stop-color="#F2F0F5"/>';
+    svg += '<stop offset="60%" stop-color="#E4E0EB"/>';
+    svg += '<stop offset="100%" stop-color="#D5D0DE"/>';
     svg += '</radialGradient>';
     svg += '<radialGradient id="' + diagramId + '-stressGrad" cx="40%" cy="35%" r="65%">';
     svg += '<stop offset="0%" stop-color="#e8d5c8"/>';
     svg += '<stop offset="100%" stop-color="#d1b9a8"/>';
     svg += '</radialGradient>';
     svg += '<filter id="' + diagramId + '-shadow" x="-30%" y="-30%" width="160%" height="160%">';
-    svg += '<feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="rgba(90,122,104,0.15)"/>';
+    svg += '<feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="rgba(138, 127, 147,0.15)"/>';
     svg += '</filter>';
     svg += '<filter id="' + diagramId + '-centerShadow" x="-30%" y="-30%" width="160%" height="160%">';
-    svg += '<feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(58,74,62,0.25)"/>';
+    svg += '<feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(74, 67, 84,0.25)"/>';
     svg += '</filter>';
     svg += '</defs>';
 
@@ -2997,11 +2997,11 @@ function createMiniDiagram(coords, options) {
     ids.forEach(function(id) {
         var isStressed = stressed.indexOf(id) !== -1;
         var fillRef = isStressed ? 'url(#' + diagramId + '-stressGrad)' : 'url(#' + diagramId + '-outerGrad)';
-        var strokeColor = isStressed ? 'rgba(177,150,128,0.3)' : 'rgba(90,122,104,0.15)';
+        var strokeColor = isStressed ? 'rgba(177,150,128,0.3)' : 'rgba(138, 127, 147,0.15)';
         svg += '<circle cx="' + coords[id].cx + '" cy="' + coords[id].cy + '" r="' + coords[id].r + '" fill="' + fillRef + '" stroke="' + strokeColor + '" stroke-width="1" filter="url(#' + diagramId + '-shadow)"/>';
-        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 4) + '" text-anchor="middle" fill="#3a4a3e" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][0] + '</text>';
+        svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy - 4) + '" text-anchor="middle" fill="#4A4354" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][0] + '</text>';
         if (labels[id][1]) {
-            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#3a4a3e" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][1] + '</text>';
+            svg += '<text x="' + coords[id].cx + '" y="' + (coords[id].cy + 7) + '" text-anchor="middle" fill="#4A4354" font-size="8" font-family="Georgia" letter-spacing="0.01em">' + labels[id][1] + '</text>';
         }
     });
 
@@ -3387,7 +3387,7 @@ function buildRadarChart(scores) {
             var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
             points.push(Math.round(cx + rr * Math.cos(angle)) + ',' + Math.round(cy + rr * Math.sin(angle)));
         }
-        svg += '<polygon points="' + points.join(' ') + '" fill="none" stroke="#e0e8e3" stroke-width="0.5"/>';
+        svg += '<polygon points="' + points.join(' ') + '" fill="none" stroke="#DDD9E3" stroke-width="0.5"/>';
     }
 
     // Axis lines
@@ -3395,7 +3395,7 @@ function buildRadarChart(scores) {
         var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
         var ex = Math.round(cx + r * Math.cos(angle));
         var ey = Math.round(cy + r * Math.sin(angle));
-        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ex + '" y2="' + ey + '" stroke="#d0d8d3" stroke-width="0.5"/>';
+        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ex + '" y2="' + ey + '" stroke="#CCC8D3" stroke-width="0.5"/>';
     }
 
     // Data polygon
@@ -3409,7 +3409,7 @@ function buildRadarChart(scores) {
         var py = Math.round(cy + r * val * Math.sin(angle));
         dataPoints.push(px + ',' + py);
     }
-    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="rgba(90,122,104,0.2)" stroke="#5a7a68" stroke-width="2"/>';
+    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="rgba(138, 127, 147,0.2)" stroke="#8A7F93" stroke-width="2"/>';
 
     // Data dots + labels
     for (var i = 0; i < keys.length; i++) {
@@ -3428,8 +3428,8 @@ function buildRadarChart(scores) {
         var anchor = 'middle';
         if (Math.cos(angle) < -0.3) anchor = 'end';
         if (Math.cos(angle) > 0.3) anchor = 'start';
-        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" fill="#3a4a3e" font-size="10" font-family="Georgia">' + d.label.split(' ')[0] + '</text>';
-        svg += '<text x="' + lx + '" y="' + (ly + 12) + '" text-anchor="' + anchor + '" fill="#8a9a8e" font-size="9" font-family="Georgia">' + (Math.round(avg * 10) / 10) + '/10</text>';
+        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" fill="#4A4354" font-size="10" font-family="Georgia">' + d.label.split(' ')[0] + '</text>';
+        svg += '<text x="' + lx + '" y="' + (ly + 12) + '" text-anchor="' + anchor + '" fill="#918B9A" font-size="9" font-family="Georgia">' + (Math.round(avg * 10) / 10) + '/10</text>';
     }
 
     svg += '</svg></div>';
@@ -3614,15 +3614,15 @@ function buildUdviklingsgraf(alle) {
     // Y-axis grid
     for (var y = 0; y <= 10; y += 2) {
         var yy = padT + plotH - (y / 10 * plotH);
-        svg += '<line x1="' + padL + '" y1="' + yy + '" x2="' + (w - padR) + '" y2="' + yy + '" stroke="#e8ede9" stroke-width="0.5"/>';
-        svg += '<text x="' + (padL - 4) + '" y="' + (yy + 3) + '" text-anchor="end" fill="#8a9a8e" font-size="8" font-family="Georgia">' + y + '</text>';
+        svg += '<line x1="' + padL + '" y1="' + yy + '" x2="' + (w - padR) + '" y2="' + yy + '" stroke="#E8E5ED" stroke-width="0.5"/>';
+        svg += '<text x="' + (padL - 4) + '" y="' + (yy + 3) + '" text-anchor="end" fill="#918B9A" font-size="8" font-family="Georgia">' + y + '</text>';
     }
 
     // X-axis labels (dates)
     for (var i = 0; i < n; i++) {
         var xx = padL + (n === 1 ? plotW / 2 : (i / (n - 1)) * plotW);
         var label = alle[i].dato.slice(5);
-        svg += '<text x="' + xx + '" y="' + (h - 5) + '" text-anchor="middle" fill="#8a9a8e" font-size="7" font-family="Georgia">' + label + '</text>';
+        svg += '<text x="' + xx + '" y="' + (h - 5) + '" text-anchor="middle" fill="#918B9A" font-size="7" font-family="Georgia">' + label + '</text>';
     }
 
     // Lines per dimension
@@ -3890,8 +3890,8 @@ function clearAllActive() {
     document.querySelectorAll('.connection').forEach(c => c.classList.remove('active'));
     
     document.querySelectorAll('.outer-text').forEach(t => {
-        t.style.fill = '#5a7a68';
-        t.setAttribute('fill', '#5a7a68');
+        t.style.fill = '#8A7F93';
+        t.setAttribute('fill', '#8A7F93');
     });
 }
 
@@ -4395,15 +4395,15 @@ function showGaveEssay() {
     clearAllActive();
     updateBottomNavActive('');
 
-    var ill1 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><circle cx="100" cy="60" r="30" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.6"/><circle cx="100" cy="60" r="18" fill="none" stroke="#5a7a68" stroke-width="1" opacity="0.4"/><circle cx="100" cy="60" r="6" fill="#5a7a68" opacity="0.3"/><path d="M60 105 C80 85, 120 85, 140 105" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.5"/></svg></div>';
+    var ill1 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#F0EEF3"/><circle cx="100" cy="60" r="30" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.6"/><circle cx="100" cy="60" r="18" fill="none" stroke="#8A7F93" stroke-width="1" opacity="0.4"/><circle cx="100" cy="60" r="6" fill="#8A7F93" opacity="0.3"/><path d="M60 105 C80 85, 120 85, 140 105" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.5"/></svg></div>';
 
-    var ill2 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><line x1="40" y1="110" x2="160" y2="110" stroke="#5a7a68" stroke-width="1" opacity="0.3"/><path d="M40 110 Q60 40, 100 70 Q140 100, 160 50" fill="none" stroke="#5a7a68" stroke-width="1.8" opacity="0.5"/><circle cx="100" cy="70" r="3" fill="#b8956a" opacity="0.6"/></svg></div>';
+    var ill2 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#F0EEF3"/><line x1="40" y1="110" x2="160" y2="110" stroke="#8A7F93" stroke-width="1" opacity="0.3"/><path d="M40 110 Q60 40, 100 70 Q140 100, 160 50" fill="none" stroke="#8A7F93" stroke-width="1.8" opacity="0.5"/><circle cx="100" cy="70" r="3" fill="#b8956a" opacity="0.6"/></svg></div>';
 
-    var ill3 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><ellipse cx="80" cy="70" rx="25" ry="25" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><ellipse cx="120" cy="70" rx="25" ry="25" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><path d="M95 55 Q100 50, 105 55" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/><path d="M95 85 Q100 90, 105 85" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/></svg></div>';
+    var ill3 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#F0EEF3"/><ellipse cx="80" cy="70" rx="25" ry="25" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.4"/><ellipse cx="120" cy="70" rx="25" ry="25" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.4"/><path d="M95 55 Q100 50, 105 55" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/><path d="M95 85 Q100 90, 105 85" fill="none" stroke="#b8956a" stroke-width="1" opacity="0.5"/></svg></div>';
 
-    var ill4 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><path d="M50 100 L50 50 Q50 35, 65 35 L75 35" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><path d="M75 35 Q90 35, 95 50 L100 70 Q105 85, 115 85 L135 85" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><circle cx="50" cy="100" r="4" fill="#b8956a" opacity="0.5"/><circle cx="135" cy="85" r="4" fill="#5a7a68" opacity="0.5"/><path d="M135 85 L135 50 Q135 40, 150 40 L160 40" fill="none" stroke="#5a7a68" stroke-width="1" stroke-dasharray="3 3" opacity="0.3"/></svg></div>';
+    var ill4 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#F0EEF3"/><path d="M50 100 L50 50 Q50 35, 65 35 L75 35" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.4"/><path d="M75 35 Q90 35, 95 50 L100 70 Q105 85, 115 85 L135 85" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.4"/><circle cx="50" cy="100" r="4" fill="#b8956a" opacity="0.5"/><circle cx="135" cy="85" r="4" fill="#8A7F93" opacity="0.5"/><path d="M135 85 L135 50 Q135 40, 150 40 L160 40" fill="none" stroke="#8A7F93" stroke-width="1" stroke-dasharray="3 3" opacity="0.3"/></svg></div>';
 
-    var ill5 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#f0f4f1"/><circle cx="100" cy="70" r="40" fill="none" stroke="#5a7a68" stroke-width="1" opacity="0.2"/><circle cx="100" cy="70" r="28" fill="none" stroke="#5a7a68" stroke-width="1.2" opacity="0.3"/><circle cx="100" cy="70" r="16" fill="none" stroke="#5a7a68" stroke-width="1.5" opacity="0.4"/><circle cx="100" cy="70" r="5" fill="#5a7a68" opacity="0.4"/><path d="M55 110 Q100 95, 145 110" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.4"/></svg></div>';
+    var ill5 = '<div class="gave-illustration"><svg viewBox="0 0 200 140"><rect width="200" height="140" rx="16" fill="#F0EEF3"/><circle cx="100" cy="70" r="40" fill="none" stroke="#8A7F93" stroke-width="1" opacity="0.2"/><circle cx="100" cy="70" r="28" fill="none" stroke="#8A7F93" stroke-width="1.2" opacity="0.3"/><circle cx="100" cy="70" r="16" fill="none" stroke="#8A7F93" stroke-width="1.5" opacity="0.4"/><circle cx="100" cy="70" r="5" fill="#8A7F93" opacity="0.4"/><path d="M55 110 Q100 95, 145 110" fill="none" stroke="#b8956a" stroke-width="1.2" opacity="0.4"/></svg></div>';
 
     var html = '<div class="gave-page">';
     html += '<div class="gave-hero">';
