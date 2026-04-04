@@ -65,14 +65,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 }
 
 .hero-photo {
-    width: 100%;
+    width: calc(100% + 20px);
+    margin: -10px;
     border-radius: var(--radius);
     object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.15);
+    object-position: center;
+    border: 3px solid var(--primary-light);
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    clip-path: inset(8px round var(--radius));
 }
 
 .hero-text {
@@ -2706,7 +2711,8 @@ button.back-btn:hover {
     }
 
     .hero-photo {
-        width: 100%;
+        width: calc(100% + 16px);
+        margin: -8px;
     }
 
     .hero-text h1 {
