@@ -68,16 +68,18 @@ body {
     overflow: hidden;
 }
 
-.hero-photo {
-    width: calc(100% + 20px);
-    margin: -10px;
+.hero-photo-wrap {
     border-radius: var(--radius);
-    object-fit: cover;
-    object-position: center;
     border: 3px solid var(--primary-light);
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
     overflow: hidden;
-    clip-path: inset(8px round var(--radius));
+    line-height: 0;
+}
+.hero-photo {
+    width: calc(100% + 8%);
+    margin: -4.5% -4% -7% -4%;
+    display: block;
+    object-fit: cover;
 }
 
 .hero-text {
@@ -2711,8 +2713,8 @@ button.back-btn:hover {
     }
 
     .hero-photo {
-        width: calc(100% + 16px);
-        margin: -8px;
+        width: calc(100% + 8%);
+        margin: -4.5% -4% -7% -4%;
     }
 
     .hero-text h1 {
