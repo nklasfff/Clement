@@ -4382,7 +4382,7 @@ function checkForNewNotifications() {
             if ('Notification' in window && Notification.permission === 'granted') {
                 new Notification(latest.title || 'Nyt fra Annemarie', {
                     body: latest.body || '',
-                    icon: 'hero.jpg',
+                    icon: 'IMG_2320.png',
                     tag: 'clement-' + latest.id
                 });
             }
