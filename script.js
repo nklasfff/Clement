@@ -2494,7 +2494,7 @@ function showUddannelser() {
     });
     html += '</div>';
 
-    html += '<div style="margin-top: 28px; padding: 20px; background: linear-gradient(135deg, #f7faf8, #eef4f0); border-radius: 14px; text-align: center;">';
+    html += '<div style="margin-top: 28px; padding: 20px; background: linear-gradient(135deg, #F2F0F5, #EDEAF1); border-radius: 14px; text-align: center;">';
     html += '<p style="font-family: Georgia, serif; font-size: 0.92rem; color: var(--text-light); margin-bottom: 12px;">Har du spørgsmål om uddannelserne, eller vil du tilmelde dig?</p>';
     html += '<a href="https://annemarieclement.dk" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 24px; background: var(--primary); color: white; border-radius: 24px; text-decoration: none; font-family: Georgia, serif; font-size: 0.9rem;">Læs mere på annemarieclement.dk</a>';
     html += '</div>';
@@ -4643,7 +4643,7 @@ function performSearch(query, index, resultsContainer, closeCallback) {
         var snippet = getSnippet(m.text, lower);
         var modeLabel = m.mode === 'klient' ? 'Klient' : m.mode === 'kursist' ? 'Kursist' : 'Fagfolk';
         html += '<div class="search-result-item" data-type="' + m.type + '" data-theme="' + (m.themeId || '') + '" data-education="' + (m.educationId || '') + '" data-circle="' + m.circleId + '" data-mode="' + m.mode + '">';
-        html += '<div class="search-result-title">' + m.label + ' <span style="font-size:0.8rem;color:#9aaa9e;font-weight:400;">(' + modeLabel + ')</span></div>';
+        html += '<div class="search-result-title">' + m.label + ' <span style="font-size:0.8rem;color:#918B9A;font-weight:400;">(' + modeLabel + ')</span></div>';
         html += '<div class="search-result-context">' + snippet + '</div>';
         html += '</div>';
     }

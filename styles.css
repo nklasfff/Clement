@@ -1435,7 +1435,7 @@ body.scrolled-past-hero .search-btn svg {
 .menu-newsletter {
     margin: 8px 24px 16px;
     padding: 18px;
-    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    background: linear-gradient(135deg, #F2F0F5, #EDEAF1);
     border-radius: 14px;
     text-align: center;
 }
@@ -1658,7 +1658,7 @@ body.scrolled-past-hero .search-btn svg {
 .gave-closing {
     margin-top: 32px;
     padding: 24px;
-    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    background: linear-gradient(135deg, #F2F0F5, #EDEAF1);
     border-radius: 14px;
     text-align: center;
 }
@@ -2367,7 +2367,7 @@ button.back-btn:hover {
     text-decoration: none;
     letter-spacing: 0.02em;
     padding: 10px 22px;
-    background: linear-gradient(135deg, #f0f5f1, #e4ede8);
+    background: linear-gradient(135deg, #F2F0F5, #E4E0EB);
     border: 1px solid rgba(138, 127, 147, 0.15);
     border-radius: 24px;
     transition: all 0.2s ease;
@@ -2375,7 +2375,7 @@ button.back-btn:hover {
 
 .dynamics-link:hover,
 .dynamics-link:active {
-    background: linear-gradient(135deg, #e4ede8, #d5e1da);
+    background: linear-gradient(135deg, #E4E0EB, #D5D0DE);
     color: var(--primary-dark);
 }
 
@@ -2584,7 +2584,7 @@ button.back-btn:hover {
 
 .tema-card.tema-card-active {
     border-color: var(--primary);
-    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    background: linear-gradient(135deg, #F2F0F5, #EDEAF1);
 }
 
 .tema-card.tema-card-active::before {
@@ -2641,7 +2641,7 @@ button.back-btn:hover {
 
 .edu-card.edu-card-active {
     border-left-color: var(--accent);
-    background: linear-gradient(135deg, #f7faf8, #eef4f0);
+    background: linear-gradient(135deg, #F2F0F5, #EDEAF1);
 }
 
 .edu-card-icon {
