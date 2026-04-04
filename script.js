@@ -4478,10 +4478,6 @@ function showGaveEssay() {
 
     var infoPanel = document.getElementById('info-panel');
     infoPanel.scrollTop = 0;
-    setTimeout(function() {
-        var hero = document.querySelector('.gave-hero');
-        if (hero) hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
 }
 
 // ===== SEARCH =====
