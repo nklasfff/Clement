@@ -3131,6 +3131,7 @@ function showDynamics() {
     if (tidligereCount > 0) {
         html += '<button class="vurdering-historik-btn" onclick="showVurderingHistorik()">Se din udvikling over tid</button>';
     }
+    html += '<a href="javascript:void(0)" class="vurdering-eksempel-link" onclick="showVurderingEksempel()">Se eksempel på resultat</a>';
     html += '</div>';
     html += '</div>';
 
@@ -3323,6 +3324,34 @@ function afslutVurdering() {
     };
     saveVurdering(entry);
     showVurderingResultat(entry);
+}
+
+function showVurderingEksempel() {
+    // Demo-data til at vise det raffinerede radar-chart uden at gennemføre alle 18 spørgsmål
+    var eksempelEntry = {
+        dato: 'eksempel',
+        tid: '',
+        scores: {
+            polyvagal:    { generel: 6, vinkler: [5, 7, 6] },
+            tilknytning:  { generel: 4, vinkler: [3, 5, 4] },
+            kropsterapi:  { generel: 7, vinkler: [8, 6, 7] },
+            psykobiologi: { generel: 5, vinkler: [4, 6, 5] },
+            traumer:      { generel: 3, vinkler: [2, 4, 3] },
+            relation:     { generel: 8, vinkler: [7, 9, 8] }
+        }
+    };
+    showVurderingResultat(eksempelEntry);
+    // Tilføj en lille note øverst så det er tydeligt at det er et eksempel
+    var panel = document.getElementById('info-content');
+    if (panel) {
+        var note = document.createElement('div');
+        note.className = 'vurdering-eksempel-note';
+        note.innerHTML = '<strong>Eksempel</strong> — dette er demo-data der viser hvordan din egen resultatside vil se ud.';
+        var resultatDiv = panel.querySelector('.vurdering-resultat');
+        if (resultatDiv) {
+            resultatDiv.insertBefore(note, resultatDiv.firstChild);
+        }
+    }
 }
 
 function showVurderingResultat(entry) {

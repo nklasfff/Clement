@@ -2883,6 +2883,38 @@ button.back-btn:hover {
 .vurdering-historik-btn:hover {
     background: var(--primary-pale);
 }
+.vurdering-eksempel-link {
+    display: block;
+    margin: 14px auto 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: rgba(138, 127, 147, 0.3);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.vurdering-eksempel-link:hover {
+    color: var(--primary);
+}
+.vurdering-eksempel-note {
+    background: var(--primary-pale);
+    border-left: 3px solid var(--primary-light);
+    padding: 12px 16px;
+    margin: 0 0 20px;
+    border-radius: var(--radius-sm);
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+.vurdering-eksempel-note strong {
+    color: var(--primary-dark);
+    font-style: normal;
+}
 
 /* Vurderingsflow */
 .vurdering-flow {
