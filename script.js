@@ -3379,7 +3379,63 @@ function buildRadarChart(scores) {
     var cx = 160, cy = 160, r = 120;
     var svg = '<div class="radar-container"><svg viewBox="0 0 320 340" class="radar-svg">';
 
-    // Background grid (5 rings)
+    // ============================================================
+    // <defs>: Gradients + filters for et blødt, organisk udtryk
+    // ============================================================
+    svg += '<defs>';
+
+    // Radial gradient til baggrund (blødt lys fra centrum)
+    svg += '<radialGradient id="radarBgGrad" cx="50%" cy="50%" r="50%">';
+    svg += '<stop offset="0%" stop-color="#F7F4FA" stop-opacity="1"/>';
+    svg += '<stop offset="70%" stop-color="#EDEAF1" stop-opacity="0.6"/>';
+    svg += '<stop offset="100%" stop-color="#EDEAF1" stop-opacity="0"/>';
+    svg += '</radialGradient>';
+
+    // Radial gradient til selve data-polygonen
+    svg += '<radialGradient id="radarDataGrad" cx="50%" cy="50%" r="50%">';
+    svg += '<stop offset="0%" stop-color="#A79DB0" stop-opacity="0.45"/>';
+    svg += '<stop offset="60%" stop-color="#8A7F93" stop-opacity="0.30"/>';
+    svg += '<stop offset="100%" stop-color="#4A4354" stop-opacity="0.18"/>';
+    svg += '</radialGradient>';
+
+    // Soft glow filter: blur + merge (giver datafiguren et aura-look)
+    svg += '<filter id="radarGlow" x="-20%" y="-20%" width="140%" height="140%">';
+    svg += '<feGaussianBlur stdDeviation="3.5" result="blur"/>';
+    svg += '<feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1.4 0" result="boosted"/>';
+    svg += '<feMerge>';
+    svg += '<feMergeNode in="boosted"/>';
+    svg += '<feMergeNode in="SourceGraphic"/>';
+    svg += '</feMerge>';
+    svg += '</filter>';
+
+    // Indre skygge til grid-ringene (giver dybde)
+    svg += '<filter id="radarInnerShadow" x="-20%" y="-20%" width="140%" height="140%">';
+    svg += '<feGaussianBlur stdDeviation="1.2" result="softBlur"/>';
+    svg += '</filter>';
+
+    // Organisk tekstur med feTurbulence (meget subtil)
+    svg += '<filter id="radarTexture" x="-10%" y="-10%" width="120%" height="120%">';
+    svg += '<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="5"/>';
+    svg += '<feColorMatrix type="matrix" values="0 0 0 0 0.54  0 0 0 0 0.50  0 0 0 0 0.58  0 0 0 0.06 0"/>';
+    svg += '<feComposite in2="SourceGraphic" operator="in"/>';
+    svg += '</filter>';
+
+    // Pr.-punkt radial gradienter (én pr. dimension)
+    keys.forEach(function(k) {
+        var d = vurderingData[k];
+        svg += '<radialGradient id="dot-' + k + '" cx="35%" cy="35%" r="65%">';
+        svg += '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>';
+        svg += '<stop offset="40%" stop-color="' + d.farve + '" stop-opacity="1"/>';
+        svg += '<stop offset="100%" stop-color="' + d.farve + '" stop-opacity="1"/>';
+        svg += '</radialGradient>';
+    });
+
+    svg += '</defs>';
+
+    // Blød baggrundscirkel
+    svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r + 8) + '" fill="url(#radarBgGrad)"/>';
+
+    // Background grid (5 rings) — svagere og med subtil gradient
     for (var ring = 1; ring <= 5; ring++) {
         var rr = r * ring / 5;
         var points = [];
@@ -3387,7 +3443,8 @@ function buildRadarChart(scores) {
             var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
             points.push(Math.round(cx + rr * Math.cos(angle)) + ',' + Math.round(cy + rr * Math.sin(angle)));
         }
-        svg += '<polygon points="' + points.join(' ') + '" fill="none" stroke="#DDD9E3" stroke-width="0.5"/>';
+        var opacity = 0.25 + (ring * 0.08);
+        svg += '<polygon points="' + points.join(' ') + '" fill="none" stroke="#C8C2D0" stroke-width="0.6" stroke-opacity="' + opacity + '"/>';
     }
 
     // Axis lines
@@ -3395,11 +3452,12 @@ function buildRadarChart(scores) {
         var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
         var ex = Math.round(cx + r * Math.cos(angle));
         var ey = Math.round(cy + r * Math.sin(angle));
-        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ex + '" y2="' + ey + '" stroke="#CCC8D3" stroke-width="0.5"/>';
+        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ex + '" y2="' + ey + '" stroke="#C8C2D0" stroke-width="0.5" stroke-opacity="0.5"/>';
     }
 
-    // Data polygon
+    // Beregn data-punkter én gang
     var dataPoints = [];
+    var pointData = [];
     for (var i = 0; i < keys.length; i++) {
         var s = scores[keys[i]];
         var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
@@ -3408,28 +3466,36 @@ function buildRadarChart(scores) {
         var px = Math.round(cx + r * val * Math.cos(angle));
         var py = Math.round(cy + r * val * Math.sin(angle));
         dataPoints.push(px + ',' + py);
+        pointData.push({ px: px, py: py, avg: avg, angle: angle, key: keys[i] });
     }
-    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="rgba(138, 127, 147,0.2)" stroke="#8A7F93" stroke-width="2"/>';
+
+    // Lag 1: blur-skygge af polygonen (glow)
+    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="#8A7F93" fill-opacity="0.25" filter="url(#radarGlow)"/>';
+
+    // Lag 2: gradient-fyldt polygon
+    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="url(#radarDataGrad)" stroke="#8A7F93" stroke-width="1.8" stroke-linejoin="round"/>';
+
+    // Lag 3: subtil tekstur ovenpå (meget lav opacitet)
+    svg += '<polygon points="' + dataPoints.join(' ') + '" fill="#8A7F93" filter="url(#radarTexture)" opacity="0.4"/>';
 
     // Data dots + labels
-    for (var i = 0; i < keys.length; i++) {
-        var s = scores[keys[i]];
-        var avg = (s.generel + s.vinkler[0] + s.vinkler[1] + s.vinkler[2]) / 4;
-        var val = avg / 10;
-        var angle = (Math.PI * 2 * i / keys.length) - Math.PI / 2;
-        var px = Math.round(cx + r * val * Math.cos(angle));
-        var py = Math.round(cy + r * val * Math.sin(angle));
-        var d = vurderingData[keys[i]];
-        svg += '<circle cx="' + px + '" cy="' + py + '" r="4" fill="' + d.farve + '" stroke="white" stroke-width="1.5"/>';
+    for (var i = 0; i < pointData.length; i++) {
+        var p = pointData[i];
+        var d = vurderingData[p.key];
+
+        // Yder-glow på punktet
+        svg += '<circle cx="' + p.px + '" cy="' + p.py + '" r="7" fill="' + d.farve + '" fill-opacity="0.25"/>';
+        // Selve punktet med radial gradient (3D-følelse)
+        svg += '<circle cx="' + p.px + '" cy="' + p.py + '" r="4.5" fill="url(#dot-' + p.key + ')" stroke="white" stroke-width="1.5"/>';
 
         // Label
-        var lx = Math.round(cx + (r + 18) * Math.cos(angle));
-        var ly = Math.round(cy + (r + 18) * Math.sin(angle));
+        var lx = Math.round(cx + (r + 18) * Math.cos(p.angle));
+        var ly = Math.round(cy + (r + 18) * Math.sin(p.angle));
         var anchor = 'middle';
-        if (Math.cos(angle) < -0.3) anchor = 'end';
-        if (Math.cos(angle) > 0.3) anchor = 'start';
-        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" fill="#4A4354" font-size="10" font-family="Georgia">' + d.label.split(' ')[0] + '</text>';
-        svg += '<text x="' + lx + '" y="' + (ly + 12) + '" text-anchor="' + anchor + '" fill="#918B9A" font-size="9" font-family="Georgia">' + (Math.round(avg * 10) / 10) + '/10</text>';
+        if (Math.cos(p.angle) < -0.3) anchor = 'end';
+        if (Math.cos(p.angle) > 0.3) anchor = 'start';
+        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" fill="#4A4354" font-size="10" font-family="Georgia" font-weight="600">' + d.label.split(' ')[0] + '</text>';
+        svg += '<text x="' + lx + '" y="' + (ly + 12) + '" text-anchor="' + anchor + '" fill="#918B9A" font-size="9" font-family="Georgia">' + (Math.round(p.avg * 10) / 10) + '/10</text>';
     }
 
     svg += '</svg></div>';
